@@ -1,0 +1,6 @@
+scenario_id,target_id,model,n_trades,n_skipped,n_unrealized,total_pnl,return_on_bankroll,return_on_turnover,win_rate,avg_pnl,max_drawdown,pnl_per_trade_std
+TRD01,target_up_1h,limix,0,31,0,0.0,0.0,,,,0.0,
+TRD01,target_up_1h,base_rate,0,0,0,0.0,0.0,,,,0.0,
+TRD01,target_up_1h,price_unchanged,0,0,0,0.0,0.0,,,,0.0,
+TRD01,target_up_1h,mean_reversion,0,0,0,0.0,0.0,,,,0.0,
+TRD01,target_up_1h,momentum,0,0,0,0.0,0.0,,,,0.0,

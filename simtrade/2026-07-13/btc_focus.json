@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-07-13T08:11:11.597037+00:00",
+  "scenario_id": "DOM01",
+  "model": "limix",
+  "bankroll": 10000.0,
+  "stake": 100.0,
+  "status": "INSUFFICIENT_DATA",
+  "n_trades": 0,
+  "total_pnl": 0.0,
+  "final_return_pct": null,
+  "trades": [],
+  "eth_comparison": {
+    "status": "INSUFFICIENT_DATA",
+    "n_trades": 0,
+    "n_skipped": 0,
+    "total_pnl": 0.0,
+    "final_return_pct": null,
+    "trades": []
+  }
+}

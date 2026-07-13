@@ -1,0 +1,81 @@
+{
+  "scenario_id": "TRD01",
+  "name": "1小时价格方向",
+  "run_date": "2026-07-13",
+  "generated_at": "2026-07-13T08:08:59.356927+00:00",
+  "run_id": "208783c4-d830-4206-a9fe-37c1eb4a7872",
+  "pipeline_status": "PIPELINE_PASS",
+  "effect_status": "INCONCLUSIVE",
+  "targets": {
+    "target_up_1h": {
+      "task": "classification",
+      "n_train": 3414,
+      "n_predict": 417,
+      "status": "ok",
+      "notes": [],
+      "limix": {
+        "task_id": "1b8197f50d6b010ec9a4c37c4de7af92",
+        "model_type": "LIMIX_7M",
+        "elapsed_s": 6.227,
+        "error": null
+      },
+      "matured_metrics": {
+        "limix": {
+          "n": 0
+        },
+        "base_rate": {
+          "n": 0
+        },
+        "price_unchanged": {
+          "n": 0
+        },
+        "mean_reversion": {
+          "n": 0
+        },
+        "momentum": {
+          "n": 0
+        },
+        "n_matured": 0
+      },
+      "pending_labels": 417,
+      "simtrade": {
+        "n_trades": 0,
+        "total_pnl": 0.0,
+        "return_on_bankroll": 0.0,
+        "win_rate": null,
+        "max_drawdown": 0.0,
+        "n_unrealized": 0
+      }
+    }
+  },
+  "data_quality": {
+    "snapshot_rows": 5583,
+    "freshest_snapshot": "2026-07-13T08:05:10.017791+00:00",
+    "missing_rate": {
+      "mid_price": 0.1074,
+      "spread": 0.1074,
+      "bid_depth": 0.0041,
+      "ask_depth": 0.0041,
+      "orderbook_imbalance": 0.0041,
+      "volume_1h": 0.0,
+      "volume_24h": 0.0103,
+      "trade_count_1h": 0.0,
+      "return_1h": 0.0,
+      "return_6h": 0.0021,
+      "return_24h": 0.0475,
+      "volatility": 0.0,
+      "liquidity": 0.0,
+      "hours_to_resolution": 0.0,
+      "buy_slippage_1000_now": 0.0145,
+      "fill_ratio_1000": 0.0041,
+      "tradable_now": 0.0,
+      "threshold_num": 0.8347,
+      "btc_spot": 0.1736,
+      "eth_spot": 0.1736,
+      "threshold_ratio": 0.8884
+    },
+    "api_errors": []
+  },
+  "universe_size": 484,
+  "primary_metric": "return_on_bankroll"
+}

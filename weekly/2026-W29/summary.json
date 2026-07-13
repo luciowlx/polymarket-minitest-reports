@@ -1,0 +1,336 @@
+{
+  "week": "2026-W29",
+  "generated_at": "2026-07-13T04:54:54.797557+00:00",
+  "dates": [
+    "2026-07-13",
+    "2026-07-14",
+    "2026-07-15",
+    "2026-07-16",
+    "2026-07-17",
+    "2026-07-18",
+    "2026-07-19"
+  ],
+  "recommendation_rules": "推荐规则:effect=BETTER → continue;PIPELINE_FAIL≥3 天 → stop(修复后重跑);INSUFFICIENT 为主 → adjust(扩 universe/降门槛);NOT_BETTER 且 n≥100 → adjust(换特征/换模型档);近满分指标(cls logloss<0.05 或 reg r2>0.99)→ 标注疑似泄漏,adjust",
+  "scenarios": {
+    "DOM01": {
+      "name": "加密货币价格阈值",
+      "pipeline_pass_days": 0,
+      "daily_statuses": {
+        "2026-07-13": "INSUFFICIENT_DATA",
+        "2026-07-14": "MISSING",
+        "2026-07-15": "MISSING",
+        "2026-07-16": "MISSING",
+        "2026-07-17": "MISSING",
+        "2026-07-18": "MISSING",
+        "2026-07-19": "MISSING"
+      },
+      "effect_status": "INCONCLUSIVE",
+      "n_matured": {
+        "target_up_24h": 0,
+        "target_delta_24h": 0,
+        "final_outcome_yes": 0
+      },
+      "n_pending": {
+        "target_up_24h": 0,
+        "target_delta_24h": 0,
+        "final_outcome_yes": 0
+      },
+      "data_quality": {
+        "days_with_report": 1,
+        "avg_snapshot_rows": 60.0,
+        "total_api_errors": 0,
+        "latest_universe_size": 60
+      },
+      "recommendation": "adjust",
+      "reasons": [
+        "INSUFFICIENT_DATA 为主(1/1 天),建议扩大 universe 或降低门槛"
+      ]
+    },
+    "DOM02": {
+      "name": "AI 模型发布",
+      "pipeline_pass_days": 0,
+      "daily_statuses": {
+        "2026-07-13": "INSUFFICIENT_DATA",
+        "2026-07-14": "MISSING",
+        "2026-07-15": "MISSING",
+        "2026-07-16": "MISSING",
+        "2026-07-17": "MISSING",
+        "2026-07-18": "MISSING",
+        "2026-07-19": "MISSING"
+      },
+      "effect_status": "INCONCLUSIVE",
+      "n_matured": {
+        "target_up_24h": 0,
+        "target_delta_24h": 0,
+        "final_outcome_yes": 0
+      },
+      "n_pending": {
+        "target_up_24h": 0,
+        "target_delta_24h": 0,
+        "final_outcome_yes": 0
+      },
+      "data_quality": {
+        "days_with_report": 1,
+        "avg_snapshot_rows": 60.0,
+        "total_api_errors": 0,
+        "latest_universe_size": 60
+      },
+      "recommendation": "adjust",
+      "reasons": [
+        "INSUFFICIENT_DATA 为主(1/1 天),建议扩大 universe 或降低门槛"
+      ]
+    },
+    "DOM03": {
+      "name": "宏观经济",
+      "pipeline_pass_days": 0,
+      "daily_statuses": {
+        "2026-07-13": "INSUFFICIENT_DATA",
+        "2026-07-14": "MISSING",
+        "2026-07-15": "MISSING",
+        "2026-07-16": "MISSING",
+        "2026-07-17": "MISSING",
+        "2026-07-18": "MISSING",
+        "2026-07-19": "MISSING"
+      },
+      "effect_status": "INCONCLUSIVE",
+      "n_matured": {
+        "target_up_24h": 0,
+        "target_delta_24h": 0,
+        "final_outcome_yes": 0
+      },
+      "n_pending": {
+        "target_up_24h": 0,
+        "target_delta_24h": 0,
+        "final_outcome_yes": 0
+      },
+      "data_quality": {
+        "days_with_report": 1,
+        "avg_snapshot_rows": 60.0,
+        "total_api_errors": 0,
+        "latest_universe_size": 60
+      },
+      "recommendation": "adjust",
+      "reasons": [
+        "INSUFFICIENT_DATA 为主(1/1 天),建议扩大 universe 或降低门槛"
+      ]
+    },
+    "DOM04": {
+      "name": "选举与立法",
+      "pipeline_pass_days": 0,
+      "daily_statuses": {
+        "2026-07-13": "INSUFFICIENT_DATA",
+        "2026-07-14": "MISSING",
+        "2026-07-15": "MISSING",
+        "2026-07-16": "MISSING",
+        "2026-07-17": "MISSING",
+        "2026-07-18": "MISSING",
+        "2026-07-19": "MISSING"
+      },
+      "effect_status": "INCONCLUSIVE",
+      "n_matured": {
+        "target_up_24h": 0,
+        "target_delta_24h": 0,
+        "final_outcome_yes": 0
+      },
+      "n_pending": {
+        "target_up_24h": 0,
+        "target_delta_24h": 0,
+        "final_outcome_yes": 0
+      },
+      "data_quality": {
+        "days_with_report": 1,
+        "avg_snapshot_rows": 69.0,
+        "total_api_errors": 0,
+        "latest_universe_size": 69
+      },
+      "recommendation": "adjust",
+      "reasons": [
+        "INSUFFICIENT_DATA 为主(1/1 天),建议扩大 universe 或降低门槛"
+      ]
+    },
+    "DOM05": {
+      "name": "地缘政治",
+      "pipeline_pass_days": 0,
+      "daily_statuses": {
+        "2026-07-13": "INSUFFICIENT_DATA",
+        "2026-07-14": "MISSING",
+        "2026-07-15": "MISSING",
+        "2026-07-16": "MISSING",
+        "2026-07-17": "MISSING",
+        "2026-07-18": "MISSING",
+        "2026-07-19": "MISSING"
+      },
+      "effect_status": "INCONCLUSIVE",
+      "n_matured": {
+        "target_up_24h": 0,
+        "target_delta_24h": 0,
+        "final_outcome_yes": 0
+      },
+      "n_pending": {
+        "target_up_24h": 0,
+        "target_delta_24h": 0,
+        "final_outcome_yes": 0
+      },
+      "data_quality": {
+        "days_with_report": 1,
+        "avg_snapshot_rows": 60.0,
+        "total_api_errors": 0,
+        "latest_universe_size": 60
+      },
+      "recommendation": "adjust",
+      "reasons": [
+        "INSUFFICIENT_DATA 为主(1/1 天),建议扩大 universe 或降低门槛"
+      ]
+    },
+    "TRD01": {
+      "name": "1小时价格方向",
+      "pipeline_pass_days": 0,
+      "daily_statuses": {
+        "2026-07-13": "INSUFFICIENT_DATA",
+        "2026-07-14": "MISSING",
+        "2026-07-15": "MISSING",
+        "2026-07-16": "MISSING",
+        "2026-07-17": "MISSING",
+        "2026-07-18": "MISSING",
+        "2026-07-19": "MISSING"
+      },
+      "effect_status": "INCONCLUSIVE",
+      "n_matured": {
+        "target_up_1h": 0
+      },
+      "n_pending": {
+        "target_up_1h": 0
+      },
+      "data_quality": {
+        "days_with_report": 1,
+        "avg_snapshot_rows": 400.0,
+        "total_api_errors": 0,
+        "latest_universe_size": 400
+      },
+      "recommendation": "adjust",
+      "reasons": [
+        "INSUFFICIENT_DATA 为主(1/1 天),建议扩大 universe 或降低门槛"
+      ]
+    },
+    "TRD02": {
+      "name": "6小时价差回归",
+      "pipeline_pass_days": 0,
+      "daily_statuses": {
+        "2026-07-13": "INSUFFICIENT_DATA",
+        "2026-07-14": "MISSING",
+        "2026-07-15": "MISSING",
+        "2026-07-16": "MISSING",
+        "2026-07-17": "MISSING",
+        "2026-07-18": "MISSING",
+        "2026-07-19": "MISSING"
+      },
+      "effect_status": "INCONCLUSIVE",
+      "n_matured": {
+        "target_delta_6h": 0
+      },
+      "n_pending": {
+        "target_delta_6h": 0
+      },
+      "data_quality": {
+        "days_with_report": 1,
+        "avg_snapshot_rows": 400.0,
+        "total_api_errors": 0,
+        "latest_universe_size": 400
+      },
+      "recommendation": "adjust",
+      "reasons": [
+        "INSUFFICIENT_DATA 为主(1/1 天),建议扩大 universe 或降低门槛"
+      ]
+    },
+    "TRD03": {
+      "name": "1小时成交量激增",
+      "pipeline_pass_days": 0,
+      "daily_statuses": {
+        "2026-07-13": "INSUFFICIENT_DATA",
+        "2026-07-14": "MISSING",
+        "2026-07-15": "MISSING",
+        "2026-07-16": "MISSING",
+        "2026-07-17": "MISSING",
+        "2026-07-18": "MISSING",
+        "2026-07-19": "MISSING"
+      },
+      "effect_status": "INCONCLUSIVE",
+      "n_matured": {
+        "target_volume_spike_1h": 0
+      },
+      "n_pending": {
+        "target_volume_spike_1h": 0
+      },
+      "data_quality": {
+        "days_with_report": 1,
+        "avg_snapshot_rows": 400.0,
+        "total_api_errors": 0,
+        "latest_universe_size": 400
+      },
+      "recommendation": "adjust",
+      "reasons": [
+        "INSUFFICIENT_DATA 为主(1/1 天),建议扩大 universe 或降低门槛"
+      ]
+    },
+    "TRD04": {
+      "name": "1小时买入滑点",
+      "pipeline_pass_days": 0,
+      "daily_statuses": {
+        "2026-07-13": "INSUFFICIENT_DATA",
+        "2026-07-14": "MISSING",
+        "2026-07-15": "MISSING",
+        "2026-07-16": "MISSING",
+        "2026-07-17": "MISSING",
+        "2026-07-18": "MISSING",
+        "2026-07-19": "MISSING"
+      },
+      "effect_status": "INCONCLUSIVE",
+      "n_matured": {
+        "target_buy_slippage_1000_1h": 0
+      },
+      "n_pending": {
+        "target_buy_slippage_1000_1h": 0
+      },
+      "data_quality": {
+        "days_with_report": 1,
+        "avg_snapshot_rows": 400.0,
+        "total_api_errors": 0,
+        "latest_universe_size": 400
+      },
+      "recommendation": "adjust",
+      "reasons": [
+        "INSUFFICIENT_DATA 为主(1/1 天),建议扩大 universe 或降低门槛"
+      ]
+    },
+    "TRD05": {
+      "name": "1小时可交易性",
+      "pipeline_pass_days": 0,
+      "daily_statuses": {
+        "2026-07-13": "INSUFFICIENT_DATA",
+        "2026-07-14": "MISSING",
+        "2026-07-15": "MISSING",
+        "2026-07-16": "MISSING",
+        "2026-07-17": "MISSING",
+        "2026-07-18": "MISSING",
+        "2026-07-19": "MISSING"
+      },
+      "effect_status": "INCONCLUSIVE",
+      "n_matured": {
+        "target_tradable_1h": 0
+      },
+      "n_pending": {
+        "target_tradable_1h": 0
+      },
+      "data_quality": {
+        "days_with_report": 1,
+        "avg_snapshot_rows": 400.0,
+        "total_api_errors": 0,
+        "latest_universe_size": 400
+      },
+      "recommendation": "adjust",
+      "reasons": [
+        "INSUFFICIENT_DATA 为主(1/1 天),建议扩大 universe 或降低门槛"
+      ]
+    }
+  }
+}
