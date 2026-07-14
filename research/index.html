@@ -1,0 +1,88 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Polymarket 场景调研:因果性×历史数据可行性(2026-07-14)</title>
+<style>
+body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;margin:2rem auto;max-width:1000px;padding:0 1rem;color:#1a1a1a;line-height:1.65}
+h1{font-size:1.45rem}h2{font-size:1.2rem;margin-top:2.2rem;border-bottom:2px solid #e0e0e0;padding-bottom:.3rem}
+h3{font-size:1.02rem;margin-top:1.5rem}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.88rem}
+th,td{border:1px solid #ddd;padding:.45rem .6rem;text-align:left;vertical-align:top}
+th{background:#f5f6f8}tr:nth-child(even){background:#fafbfc}
+.badge{display:inline-block;padding:.1rem .5rem;border-radius:10px;font-size:.78rem;font-weight:600;color:#fff}
+.b5{background:#1a7f37}.b4{background:#4a9d4a}.b3{background:#b8860b}.b2{background:#c0662a}.b1{background:#b03030}
+.keep{background:#1a7f37}.adjust{background:#b8860b}.drop{background:#b03030}
+.muted{color:#777;font-size:.85rem}
+code{background:#f0f1f3;padding:.05rem .35rem;border-radius:4px;font-size:.85em}
+.hl{background:#fff8dc;padding:.8rem 1rem;border-left:4px solid #b8860b;margin:1rem 0}
+</style></head><body>
+<h1>Polymarket 场景调研:因果性 × 历史数据可行性</h1>
+<p class="muted">2026-07-14 · 5 个并行调研智能体 · 全部结论来自本次会话的真实 API 调用(约 700 次请求) · 服务于 LimiX 结构化预测 + 模拟交易实验</p>
+
+<div class="hl"><b>一句话结论:</b>最值得做的是 <b>加密货币每日阈值阶梯</b>(BTC/ETH/SOL/XRP "X 日是否高于 $Y")——因果性满分(币安 1 分钟 K 线收盘价 vs 行权价,近乎期权定价问题)、已有 <b>~13,500 个已结算市场</b> 可立即回测、日频结算、流动性充足(单日事件成交 $1.4M–$7.3M)。天气温度、每日涨跌方向为第二梯队。现有 10 个场景中 <b>4 个建议降级或移除</b>(AI 发布、地缘政治、成交量尖峰为无因果/非结构化;滑点/可交易性应转为执行成本模型而非独立场景)。</div>
+
+<h2>1. Top 10 数据场景排名</h2>
+<p class="muted">因果分:5=结构化驱动近乎决定结果(如现货价 vs 行权价);3=强统计驱动(如民调/赔率);1=新闻公告驱动、无结构化变量。</p>
+<table>
+<tr><th>#</th><th>场景</th><th>因果</th><th>因果驱动(免费数据源,均已实测)</th><th>结算频率</th><th>历史样本</th><th>回测可行性</th><th>LimiX 适配</th></tr>
+<tr><td>1</td><td><b>每日加密阈值阶梯</b><br>"Bitcoin above $X on July 15?"(BTC/ETH/SOL/XRP,各 11 档×5 个到期日)</td><td><span class="badge b5">5</span></td><td>币安 BTC/USDT 1 分钟 K 线 12:00 ET 收盘 vs 行权价(OKX K 线免费,已 2/2 交叉验证结算)</td><td>每日</td><td>~13,500 市场(2025-08 起)<br>≈230 万小时级特征行</td><td><b>最强</b>:价格史+结算全可回填</td><td><b>最佳</b>:spot-strike 距离、TTE、波动率 → 二元期权框架</td></tr>
+<tr><td>2</td><td><b>每日 Up or Down</b>(BTC/ETH/SOL/XRP/BNB/DOGE,昨日正午→今日正午)</td><td><span class="badge b5">5</span></td><td>同上(币安收盘差符号)</td><td>每日</td><td>~2,000 市场(2025-04 起)</td><td>强</td><td>好:干净方向标签,~50/50 基率,最诚实的检验</td></tr>
+<tr><td>3</td><td><b>每日城市温度区间</b>(~25 个城市最高/最低温 buckets)</td><td><span class="badge b5">5</span></td><td>NOAA/NWS 与 Open-Meteo 预报(免费,预报+历史存档都已实测)</td><td>每日 ~50 城市日</td><td>726 已结算事件</td><td>强(市场仅提前 2-3 天开)</td><td><b>极佳</b>:预报值 vs 区间 = 教科书式表格任务</td></tr>
+<tr><td>4</td><td><b>Trump 周度支持率区间</b></td><td><span class="badge b5">5</span></td><td>VoteHub 聚合民调 API(免费,已实测 1,017 条)</td><td>每周×6 档</td><td>70 事件(2025-03 起)≈420 结果</td><td>可行(每市场约 6 天价格史)</td><td>好:宏观/政治家族中唯一样本充裕的</td></tr>
+<tr><td>5</td><td><b>体育胜负盘</b>(MLB/网球/足球/UFC/电竞)</td><td><span class="badge b3">3</span></td><td>博彩赔率/球队评级(部分免费;这是短板)</td><td><b>每日 ~377 场结算</b></td><td>数万</td><td>价格史可回填;赔率史需外购</td><td>好:平台最大流动性家族;先做纯价格特征版</td></tr>
+<tr><td>6</td><td>Fed 议息决议 buckets</td><td><span class="badge b4">4</span></td><td>国债收益率曲线 CSV(免费已测;FedWatch 被 403)</td><td>年 8 次</td><td>19 事件</td><td>价格史极深(~133 天/市场)</td><td><b>小样本致命</b>:有效 n=19,只能与 CPI/就业池化</td></tr>
+<tr><td>7</td><td>CPI/通胀区间</td><td><span class="badge b4">4</span></td><td>BLS 公开 API(免费已测)+ 克利夫兰联储 nowcast</td><td>年 12 次</td><td>35 事件</td><td>可行</td><td>同上:必须池化,单家族不可训练</td></tr>
+<tr><td>8</td><td>小时级 BTC 阈值阶梯(每小时 20 档)</td><td><span class="badge b5">5</span></td><td>同 #1</td><td><b>每小时</b></td><td>~14,000 市场(1 个月)</td><td>可行</td><td>中:样本巨大但单档流动性太薄($2-4k/事件),不宜做模拟盘</td></tr>
+<tr><td>9</td><td>周末票房区间</td><td><span class="badge b4">4</span></td><td>Box Office Mojo 历史(免费)、影院数/预售</td><td>每周 2-4 事件</td><td>204 事件</td><td>可行</td><td>中:配菜,样本少</td></tr>
+<tr><td>10</td><td>5 分钟 Up or Down(全天候,7 币种)</td><td><span class="badge b5">5</span></td><td>Chainlink 数据流(历史 tick 非免费 REST,有基差风险)</td><td><b>每 5 分钟</b>,>10 万已结算</td><td>>100,000</td><td>部分</td><td><b>不适配</b>:市场生命 5 分钟,无特征历史可言;是 HFT 场,不是表格模型场</td></tr>
+</table>
+
+<h2>2. 现有 10 个场景审计(哪些非结构化 / 无因果)</h2>
+<table>
+<tr><th>场景</th><th>因果</th><th>判定</th><th>核心问题与建议</th></tr>
+<tr><td><b>DOM01 加密价格阈值</b></td><td><span class="badge b5">5</span></td><td><span class="badge keep">保留+升级</span></td><td>唯一特征即因果驱动的场景(已接现货价)。两个修复:① <code>final_outcome_yes</code> 目前训练行数为 0——universe 只采活跃市场,永远没有已结算样本;应从 Gamma closed 市场收割历史标签(已验证 100/100 带 outcomePrices)。② 应聚焦每日阶梯子家族(首页即有 375 个每日阈值市场)</td></tr>
+<tr><td><b>DOM02 AI 发布</b></td><td><span class="badge b2">2</span></td><td><span class="badge drop">移除/收窄</span></td><td>公告驱动、零结构化重叠;实测 AI 标签 1,038 个市场<b>成交量中位数=0</b>,仅 12 个日成交>$10k;窗口内仅 7% 结算。唯一可救的子集:LMArena 榜单类市场(榜单可抓取)</td></tr>
+<tr><td><b>DOM03 宏观</b></td><td><span class="badge b3">3</span></td><td><span class="badge adjust">调整</span></td><td>需加 FRED/BLS 驱动特征(FRED CSV 已实测 954 行),目标应转为数据阈值市场的 final_outcome;当前 24h 方向标签 83% 是"持平",模型只能学"什么都不会发生"</td></tr>
+<tr><td><b>DOM04 选举</b></td><td><span class="badge b3">3</span></td><td><span class="badge adjust">降级</span></td><td>结算以年计,7 天实验拿不到任何结算信号;整个周期是一次相关抽样,n 无法放大。诚实用法:作为 TRD 执行研究的流动性池,不作领域预测场景</td></tr>
+<tr><td><b>DOM05 地缘政治</b></td><td><span class="badge b1">1</span></td><td><span class="badge drop">移除</span></td><td>教科书式 1 分场景:无任何可测驱动变量,LimiX 只能学微结构自相关,任何"阳性结果"在老板面前都站不住。另发现分类 bug:关键词 <code>strike</code> 误匹配电竞游戏 Counter-Strike,需修复</td></tr>
+<tr><td><b>TRD01 1h 方向</b></td><td><span class="badge b2">2</span></td><td><span class="badge adjust">调整</span></td><td>保留为诚实的微结构基准,但必须<b>价差感知开仓</b>:预期波动 > 入场价差成本才开仓,否则结构性亏损(首日 −0.82% 的直接原因——每笔入场即付 ~1% 价差,而 1h 波动中位数远小于此)</td></tr>
+<tr><td><b>TRD02 6h 回归</b></td><td><span class="badge b2">2</span></td><td><span class="badge adjust">调整</span></td><td>作为 MAE 诊断可留;做 PnL 需降低开仓门槛+价差感知,或限定高换手市场</td></tr>
+<tr><td><b>TRD03 成交量尖峰</b></td><td><span class="badge b1">1</span></td><td><span class="badge drop">移除</span></td><td>反身性指标、无因果驱动、不产生交易。留作内部监控可以,放进老板报告会招致"so what"</td></tr>
+<tr><td><b>TRD04 滑点</b></td><td><span class="badge b4">4</span></td><td><span class="badge drop">转用途</span></td><td>机械可预测但无独立交易价值;正确用法:并入 TRD01/02 的<b>执行成本模型</b>(开仓 gating)</td></tr>
+<tr><td><b>TRD05 可交易性</b></td><td><span class="badge b4">4</span></td><td><span class="badge drop">转用途</span></td><td>同上:作为交易场景的 universe 过滤器。它的 BETTER_THAN_BASELINE 徽章是当前报告里最误导的一行</td></tr>
+</table>
+
+<h2>3. 历史数据 API 能力矩阵(全部实测)</h2>
+<table>
+<tr><th>数据</th><th>接口</th><th>回溯深度</th><th>粒度/限制</th></tr>
+<tr><td>价格历史</td><td><code>clob /prices-history</code></td><td><b>2023-01 起,1 分钟级</b></td><td>已结算市场必须用 <code>startTs</code>(15 天分块;<code>interval=max</code> 仅 fidelity≥720 即 12h 步长);相对 interval 锚定当前时间,对已结算市场返回空</td></tr>
+<tr><td><b>盘口历史</b></td><td><code>clob /orderbook-history</code>(未公开)</td><td><b>2025-11-12 起(全局起点)</b></td><td>完整买卖档快照,密度 ~3-4 秒/张;毫秒时间戳;1000 条/页 → 批量回填成本高(活跃 token ~520 万张快照)</td></tr>
+<tr><td>成交记录</td><td><code>data-api /trades</code></td><td><b>仅最近 ~4,000 笔</b>(offset 硬顶 3000,limit 顶 1000)</td><td>不可回填历史成交流;只能前向采集(我们已在做)</td></tr>
+<tr><td>结算标签</td><td><code>gamma closed=true</code></td><td>全历史</td><td><code>outcomePrices</code> 100/100 齐全;/markets offset 顶 2000 → 需按日期/成交量分片枚举或用 keyset;当前平台每天 ~7,452 个市场结算(大头是 5 分钟盘)</td></tr>
+<tr><td>持仓大户</td><td><code>data-api /holders</code></td><td>当前</td><td>公开可用(proxyWallet/amount 等)——潜在特征源</td></tr>
+<tr><td>免费因果驱动源</td><td colspan="3">已实测可用:OKX K 线(1H 到 2022 年、1m 深度充足)、Open-Meteo(预报+历史)、api.weather.gov、VoteHub 民调、treasury.gov 收益率 CSV、BLS API、FRED CSV。不可用:CME FedWatch(403 反爬)</td></tr>
+<tr><td>限流</td><td colspan="3">本次 ~700 请求 0 次 429;gamma 中位延迟 0.69s。注意两个未公开行为(orderbook-history、trades offset 顶)随时可能变更</td></tr>
+</table>
+
+<h2>4. 第二阶段提案(讨论稿)</h2>
+<h3>4.1 场景组合(建议)</h3>
+<table>
+<tr><th>优先级</th><th>场景</th><th>目标</th><th>为什么</th></tr>
+<tr><td>P0</td><td>BTC/ETH 每日阈值阶梯</td><td>final_outcome_yes(LimiX 概率 vs 市场价的 edge 交易)</td><td>因果满分+样本最大+日频结算+可立即回测</td></tr>
+<tr><td>P0</td><td>每日 Up or Down(BTC/ETH)</td><td>方向二分类</td><td>最诚实的 50/50 检验,与阶梯互补</td></tr>
+<tr><td>P1</td><td>城市温度区间</td><td>bucket 分类</td><td>非金融对照组:证明 LimiX 因果能力可迁移</td></tr>
+<tr><td>P1</td><td>TRD01(价差感知修正版)</td><td>1h 方向</td><td>保留作微结构基准,修 gating 后重上</td></tr>
+<tr><td>P2</td><td>Trump 周度支持率 / 体育胜负盘</td><td>bucket / 二分类</td><td>样本充裕,驱动源免费,作扩展验证</td></tr>
+</table>
+<h3>4.2 回测(立即可做,无需等待前向数据)</h3>
+<p>BTC 每日阶梯:~3,550 个已结算市场 × 每小时特征行 ≈ <b>60 万行</b>训练/验证数据今天就能构建。特征=OKX 现货-行权价距离、剩余时间、已实现波动率、市场 mid、阶梯位置;标签=<code>outcomePrices</code>。时间顺序切分(如 2025-08~2026-04 训练,2026-05~07 验证),LimiX vs 市场自身报价 vs GBM 基线,主指标=模拟收益率(与前向实验同一套 simtrade 规则)。</p>
+<h3>4.3 模拟盘参数(BTC 举例,与老板讨论用)</h3>
+<table>
+<tr><th>参数</th><th>建议值</th><th>说明</th></tr>
+<tr><td>虚拟本金</td><td>10,000 USDC</td><td>每模型独立记账</td></tr>
+<tr><td>单笔</td><td>100 USDC(1%)</td><td>固定注,先不做凯利</td></tr>
+<tr><td>开仓条件</td><td>|LimiX 概率 − 市场价| ≥ 0.05 且价差 ≤ 0.02</td><td>edge 必须覆盖价差成本(首日教训)</td></tr>
+<tr><td>预期频率</td><td>BTC+ETH 每天 22 档 × 5 到期日,估计 5–15 笔/天</td><td>一周 50–100 笔,首周即可过 30 笔结论门槛</td></tr>
+<tr><td>平仓</td><td>持有至结算(次日正午 ET)</td><td>结算价 0/1,收益率完全客观</td></tr>
+</table>
+<p class="muted">注:5 分钟 Up-or-Down 虽然样本最多、因果也满分,但不适合 LimiX 表格框架(市场生命周期太短,无特征历史),明确不推荐。</p>
+</body></html>
