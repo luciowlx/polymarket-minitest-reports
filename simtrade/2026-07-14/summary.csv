@@ -14,11 +14,11 @@ TRD01,target_up_1h,base_rate,0,0,0,0.0,0.0,,,,0.0,
 TRD01,target_up_1h,price_unchanged,0,0,0,0.0,0.0,,,,0.0,
 TRD01,target_up_1h,mean_reversion,0,0,0,0.0,0.0,,,,0.0,
 TRD01,target_up_1h,momentum,0,0,0,0.0,0.0,,,,0.0,
-TRD02,target_delta_6h,limix,0,97,0,0.0,0.0,,,,0.0,
+TRD02,target_delta_6h,limix,52,45,0,-67.89471384930378,-0.006789471384930378,-0.013056675740250727,0.46153846153846156,-1.3056675740250727,149.09930516545995,13.624903820103203
 TRD02,target_delta_6h,base_rate,0,0,0,0.0,0.0,,,,0.0,
 TRD02,target_delta_6h,price_unchanged,0,0,0,0.0,0.0,,,,0.0,
-TRD02,target_delta_6h,mean_reversion,0,20,0,0.0,0.0,,,,0.0,
-TRD02,target_delta_6h,momentum,0,20,0,0.0,0.0,,,,0.0,
+TRD02,target_delta_6h,mean_reversion,8,12,0,-64.02287123707718,-0.006402287123707718,-0.08002858904634648,0.625,-8.002858904634648,67.17273954116062,28.694649374210353
+TRD02,target_delta_6h,momentum,8,12,0,-4.541544136728944,-0.00045415441367289435,-0.0056769301709111795,0.375,-0.567693017091118,55.551758183337114,25.965285473378863
 DOM02,target_delta_24h,limix,0,40,0,0.0,0.0,,,,0.0,
 DOM02,target_delta_24h,base_rate,0,0,0,0.0,0.0,,,,0.0,
 DOM02,target_delta_24h,price_unchanged,0,0,0,0.0,0.0,,,,0.0,
