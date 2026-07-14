@@ -2,23 +2,21 @@
   "scenario_id": "DOM05",
   "name": "地缘政治",
   "run_date": "2026-07-14",
-  "generated_at": "2026-07-14T04:30:06.571294+00:00",
-  "run_id": "0903d639-d6b0-4173-a809-ef74d5a4fa73",
-  "pipeline_status": "INSUFFICIENT_DATA",
+  "generated_at": "2026-07-14T07:31:12.289066+00:00",
+  "run_id": "724b6a17-5240-48b7-8a8d-b4ef39cb1033",
+  "pipeline_status": "PIPELINE_PASS",
   "effect_status": "INCONCLUSIVE",
   "targets": {
     "target_up_24h": {
       "task": "classification",
-      "n_train": 0,
-      "n_predict": 0,
-      "status": "INSUFFICIENT_DATA",
-      "notes": [
-        "train_rows=0<MIN_TRAIN_ROWS(30)"
-      ],
+      "n_train": 418,
+      "n_predict": 63,
+      "status": "ok",
+      "notes": [],
       "limix": {
-        "task_id": "",
-        "model_type": "",
-        "elapsed_s": 0.0,
+        "task_id": "2918b63ad70d72d7bd9a4ee3ffe2b08b",
+        "model_type": "LIMIX_7M",
+        "elapsed_s": 5.338,
         "error": null
       },
       "matured_metrics": {
@@ -39,28 +37,26 @@
         },
         "n_matured": 0
       },
-      "pending_labels": 0,
+      "pending_labels": 63,
       "simtrade": {
         "n_trades": 0,
-        "total_pnl": null,
-        "return_on_bankroll": null,
+        "total_pnl": 0.0,
+        "return_on_bankroll": 0.0,
         "win_rate": null,
-        "max_drawdown": null,
+        "max_drawdown": 0.0,
         "n_unrealized": 0
       }
     },
     "target_delta_24h": {
       "task": "regression",
-      "n_train": 0,
-      "n_predict": 0,
-      "status": "INSUFFICIENT_DATA",
-      "notes": [
-        "train_rows=0<MIN_TRAIN_ROWS(30)"
-      ],
+      "n_train": 418,
+      "n_predict": 63,
+      "status": "ok",
+      "notes": [],
       "limix": {
-        "task_id": "",
-        "model_type": "",
-        "elapsed_s": 0.0,
+        "task_id": "a9e42959aa6df2b3793a50946bea5dac",
+        "model_type": "LIMIX_7M",
+        "elapsed_s": 5.017,
         "error": null
       },
       "matured_metrics": {
@@ -81,13 +77,13 @@
         },
         "n_matured": 0
       },
-      "pending_labels": 0,
+      "pending_labels": 63,
       "simtrade": {
         "n_trades": 0,
-        "total_pnl": null,
-        "return_on_bankroll": null,
+        "total_pnl": 0.0,
+        "return_on_bankroll": 0.0,
         "win_rate": null,
-        "max_drawdown": null,
+        "max_drawdown": 0.0,
         "n_unrealized": 0
       }
     },
@@ -135,8 +131,8 @@
     }
   },
   "data_quality": {
-    "snapshot_rows": 3600,
-    "freshest_snapshot": "2026-07-14T04:18:46.363646+00:00",
+    "snapshot_rows": 4320,
+    "freshest_snapshot": "2026-07-14T07:20:28.602362+00:00",
     "missing_rate": {
       "mid_price": 0.1825,
       "spread": 0.1825,

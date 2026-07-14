@@ -2,23 +2,21 @@
   "scenario_id": "DOM03",
   "name": "宏观经济",
   "run_date": "2026-07-14",
-  "generated_at": "2026-07-14T04:30:05.831045+00:00",
-  "run_id": "0903d639-d6b0-4173-a809-ef74d5a4fa73",
-  "pipeline_status": "INSUFFICIENT_DATA",
+  "generated_at": "2026-07-14T07:31:10.608366+00:00",
+  "run_id": "724b6a17-5240-48b7-8a8d-b4ef39cb1033",
+  "pipeline_status": "PIPELINE_PASS",
   "effect_status": "INCONCLUSIVE",
   "targets": {
     "target_up_24h": {
       "task": "classification",
-      "n_train": 0,
-      "n_predict": 0,
-      "status": "INSUFFICIENT_DATA",
-      "notes": [
-        "train_rows=0<MIN_TRAIN_ROWS(30)"
-      ],
+      "n_train": 405,
+      "n_predict": 62,
+      "status": "ok",
+      "notes": [],
       "limix": {
-        "task_id": "",
-        "model_type": "",
-        "elapsed_s": 0.0,
+        "task_id": "78e2be8530acb69d92685fee634ef84b",
+        "model_type": "LIMIX_7M",
+        "elapsed_s": 5.858,
         "error": null
       },
       "matured_metrics": {
@@ -39,28 +37,26 @@
         },
         "n_matured": 0
       },
-      "pending_labels": 0,
+      "pending_labels": 62,
       "simtrade": {
         "n_trades": 0,
-        "total_pnl": null,
-        "return_on_bankroll": null,
+        "total_pnl": 0.0,
+        "return_on_bankroll": 0.0,
         "win_rate": null,
-        "max_drawdown": null,
+        "max_drawdown": 0.0,
         "n_unrealized": 0
       }
     },
     "target_delta_24h": {
       "task": "regression",
-      "n_train": 0,
-      "n_predict": 0,
-      "status": "INSUFFICIENT_DATA",
-      "notes": [
-        "train_rows=0<MIN_TRAIN_ROWS(30)"
-      ],
+      "n_train": 405,
+      "n_predict": 62,
+      "status": "ok",
+      "notes": [],
       "limix": {
-        "task_id": "",
-        "model_type": "",
-        "elapsed_s": 0.0,
+        "task_id": "3f490f1e8163e76d7b5a2144cc6e6884",
+        "model_type": "LIMIX_7M",
+        "elapsed_s": 5.103,
         "error": null
       },
       "matured_metrics": {
@@ -81,13 +77,13 @@
         },
         "n_matured": 0
       },
-      "pending_labels": 0,
+      "pending_labels": 62,
       "simtrade": {
         "n_trades": 0,
-        "total_pnl": null,
-        "return_on_bankroll": null,
+        "total_pnl": 0.0,
+        "return_on_bankroll": 0.0,
         "win_rate": null,
-        "max_drawdown": null,
+        "max_drawdown": 0.0,
         "n_unrealized": 0
       }
     },
@@ -135,33 +131,33 @@
     }
   },
   "data_quality": {
-    "snapshot_rows": 3568,
-    "freshest_snapshot": "2026-07-14T04:18:46.691976+00:00",
+    "snapshot_rows": 4288,
+    "freshest_snapshot": "2026-07-14T07:20:25.077262+00:00",
     "missing_rate": {
-      "mid_price": 0.1538,
-      "spread": 0.1538,
-      "bid_depth": 0.0192,
-      "ask_depth": 0.0192,
-      "orderbook_imbalance": 0.0192,
-      "volume_1h": 0.0192,
-      "volume_24h": 0.0481,
+      "mid_price": 0.1495,
+      "spread": 0.1495,
+      "bid_depth": 0.0187,
+      "ask_depth": 0.0187,
+      "orderbook_imbalance": 0.0187,
+      "volume_1h": 0.0187,
+      "volume_24h": 0.0467,
       "trade_count_1h": 0.0,
-      "return_1h": 0.0192,
-      "return_6h": 0.0192,
-      "return_24h": 0.0192,
-      "volatility": 0.0192,
+      "return_1h": 0.0187,
+      "return_6h": 0.0187,
+      "return_24h": 0.0187,
+      "volatility": 0.0187,
       "liquidity": 0.0,
       "hours_to_resolution": 0.0,
-      "buy_slippage_1000_now": 0.0192,
-      "fill_ratio_1000": 0.0192,
+      "buy_slippage_1000_now": 0.0187,
+      "fill_ratio_1000": 0.0187,
       "tradable_now": 0.0,
-      "threshold_num": 0.9904,
-      "btc_spot": 0.1154,
-      "eth_spot": 0.1154,
+      "threshold_num": 0.9907,
+      "btc_spot": 0.1121,
+      "eth_spot": 0.1121,
       "threshold_ratio": 1.0
     },
     "api_errors": []
   },
-  "universe_size": 104,
+  "universe_size": 107,
   "primary_metric": "return_on_bankroll"
 }

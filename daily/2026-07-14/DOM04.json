@@ -2,23 +2,21 @@
   "scenario_id": "DOM04",
   "name": "选举与立法",
   "run_date": "2026-07-14",
-  "generated_at": "2026-07-14T04:30:06.198598+00:00",
-  "run_id": "0903d639-d6b0-4173-a809-ef74d5a4fa73",
-  "pipeline_status": "INSUFFICIENT_DATA",
+  "generated_at": "2026-07-14T07:31:11.476468+00:00",
+  "run_id": "724b6a17-5240-48b7-8a8d-b4ef39cb1033",
+  "pipeline_status": "PIPELINE_PASS",
   "effect_status": "INCONCLUSIVE",
   "targets": {
     "target_up_24h": {
       "task": "classification",
-      "n_train": 0,
-      "n_predict": 0,
-      "status": "INSUFFICIENT_DATA",
-      "notes": [
-        "train_rows=0<MIN_TRAIN_ROWS(30)"
-      ],
+      "n_train": 356,
+      "n_predict": 62,
+      "status": "ok",
+      "notes": [],
       "limix": {
-        "task_id": "",
-        "model_type": "",
-        "elapsed_s": 0.0,
+        "task_id": "bd3079a1ff15d7e7b8f63a4940941414",
+        "model_type": "LIMIX_7M",
+        "elapsed_s": 4.969,
         "error": null
       },
       "matured_metrics": {
@@ -39,28 +37,26 @@
         },
         "n_matured": 0
       },
-      "pending_labels": 0,
+      "pending_labels": 62,
       "simtrade": {
         "n_trades": 0,
-        "total_pnl": null,
-        "return_on_bankroll": null,
+        "total_pnl": 0.0,
+        "return_on_bankroll": 0.0,
         "win_rate": null,
-        "max_drawdown": null,
+        "max_drawdown": 0.0,
         "n_unrealized": 0
       }
     },
     "target_delta_24h": {
       "task": "regression",
-      "n_train": 0,
-      "n_predict": 0,
-      "status": "INSUFFICIENT_DATA",
-      "notes": [
-        "train_rows=0<MIN_TRAIN_ROWS(30)"
-      ],
+      "n_train": 356,
+      "n_predict": 62,
+      "status": "ok",
+      "notes": [],
       "limix": {
-        "task_id": "",
-        "model_type": "",
-        "elapsed_s": 0.0,
+        "task_id": "19fa9e367e32eadb296d81d469fcc301",
+        "model_type": "LIMIX_7M",
+        "elapsed_s": 11.47,
         "error": null
       },
       "matured_metrics": {
@@ -81,13 +77,13 @@
         },
         "n_matured": 0
       },
-      "pending_labels": 0,
+      "pending_labels": 62,
       "simtrade": {
         "n_trades": 0,
-        "total_pnl": null,
-        "return_on_bankroll": null,
+        "total_pnl": 0.0,
+        "return_on_bankroll": 0.0,
         "win_rate": null,
-        "max_drawdown": null,
+        "max_drawdown": 0.0,
         "n_unrealized": 0
       }
     },
@@ -135,11 +131,11 @@
     }
   },
   "data_quality": {
-    "snapshot_rows": 3820,
-    "freshest_snapshot": "2026-07-14T04:18:07.782920+00:00",
+    "snapshot_rows": 4573,
+    "freshest_snapshot": "2026-07-14T07:19:37.744597+00:00",
     "missing_rate": {
-      "mid_price": 0.1308,
-      "spread": 0.1308,
+      "mid_price": 0.1364,
+      "spread": 0.1364,
       "bid_depth": 0.0,
       "ask_depth": 0.0,
       "orderbook_imbalance": 0.0,
@@ -148,20 +144,20 @@
       "trade_count_1h": 0.0,
       "return_1h": 0.0,
       "return_6h": 0.0,
-      "return_24h": 0.0,
+      "return_24h": 0.0091,
       "volatility": 0.0,
       "liquidity": 0.0,
       "hours_to_resolution": 0.0,
-      "buy_slippage_1000_now": 0.028,
+      "buy_slippage_1000_now": 0.0273,
       "fill_ratio_1000": 0.0,
       "tradable_now": 0.0,
       "threshold_num": 1.0,
-      "btc_spot": 0.0467,
-      "eth_spot": 0.0467,
+      "btc_spot": 0.0455,
+      "eth_spot": 0.0455,
       "threshold_ratio": 1.0
     },
     "api_errors": []
   },
-  "universe_size": 107,
+  "universe_size": 110,
   "primary_metric": "return_on_bankroll"
 }
