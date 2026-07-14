@@ -1,0 +1,71 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BTC 每日阈值阶梯 · LimiX 历史回测(2026-07-14)</title>
+<style>
+body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;margin:2rem auto;max-width:980px;padding:0 1rem;color:#1a1a1a;line-height:1.65}
+h1{font-size:1.4rem}h2{font-size:1.15rem;margin-top:2rem;border-bottom:2px solid #e0e0e0;padding-bottom:.3rem}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.9rem}
+th,td{border:1px solid #ddd;padding:.45rem .6rem;text-align:right}
+th{background:#f5f6f8}td:first-child,th:first-child{text-align:left}
+tr:nth-child(even){background:#fafbfc}
+.pos{color:#1a7f37;font-weight:600}.neg{color:#b03030;font-weight:600}
+.hl{background:#fff8dc;padding:.8rem 1rem;border-left:4px solid #b8860b;margin:1rem 0}
+.muted{color:#777;font-size:.85rem}code{background:#f0f1f3;padding:.05rem .35rem;border-radius:4px}
+b.main{background:#eef6ee;padding:0 .3rem}
+</style></head><body>
+<h1>BTC 每日阈值阶梯 · LimiX 历史回测</h1>
+<p class="muted">2026-07-14 · 真实 Polymarket 已结算市场 + OKX 现货 · 严格时点安全(walk-forward) · 模拟交易口径与前向实验一致</p>
+
+<div class="hl"><b>一句话结论:</b>回测链路全部打通(3,431 个真实已结算市场),但在"因果性最强"的 BTC 每日阶梯上,<b>市场自身报价已近乎有效</b>(LogLoss 0.117,校准极好):74 天验证窗内<b>没有任何模型能统计显著地跑赢市场</b>。LimiX 7M/16M 两档均稳定为负(−32.7% / −37.3%),接近显著为负;GBM 表面 +10.5% 但去掉最好 5 笔即转负、bootstrap 不显著。<b>这不是坏消息</b>——它证明了评估体系是诚实的,并把问题从"LimiX 能不能预测"精确化为"LimiX 的概率校准在近价区间不如市场"。</div>
+
+<h2>1. 实验设置</h2>
+<table>
+<tr><th>项</th><th style="text-align:left">值</th></tr>
+<tr><td>数据</td><td style="text-align:left">2025-08-13 ~ 2026-07-13 全部已结算 "Bitcoin above $X on &lt;date&gt;?" 市场:<b>3,431 个</b>(314 个交易日 × ~11 档),YES 结算率 45.4%</td></tr>
+<tr><td>特征(严格时点)</td><td style="text-align:left">市场 mid(决策时刻前最后成交价点)、OKX 现货(仅用已完结 1H K 线)、行权价、log 价内程度、24h/72h 已实现波动率、剩余时间、阶梯位置、成交量/流动性</td></tr>
+<tr><td>标签</td><td style="text-align:left">链上结算结果 outcomePrices(与币安正午收盘 2/2 交叉验证一致)</td></tr>
+<tr><td>切分</td><td style="text-align:left">按到期日:训练 2025-08~2026-04(2,584 市场 / 14,982 行)→ 验证 2026-05-01~07-13(832 市场 / 4,947 行),无任何未来信息</td></tr>
+<tr><td>模拟盘规则</td><td style="text-align:left">本金 10,000 USDC / 每笔 100 / 每市场在到期前 24h 决策一次 / |模型概率−市场价| ≥ 0.05 开仓 / 入场付半价差 0.005 / 持有至结算(0 或 1)/ 无手续费</td></tr>
+</table>
+
+<h2>2. 预测质量(验证集 4,947 行,全部决策时点)</h2>
+<table>
+<tr><th>模型</th><th>LogLoss ↓</th><th>AUC</th><th>说明</th></tr>
+<tr><td><b>市场自身报价</b></td><td><b class="main">0.1171</b></td><td>0.992</td><td style="text-align:left">基准:把 mid 当概率。校准极好 = 有效市场</td></tr>
+<tr><td>逻辑回归</td><td>0.1306</td><td>0.992</td><td style="text-align:left">最接近市场,但没超过</td></tr>
+<tr><td>LimiX 7M</td><td>0.2258</td><td>0.986</td><td style="text-align:left">近价区间过度自信(校准差)</td></tr>
+<tr><td>GBM (LightGBM)</td><td>0.2742</td><td>0.991</td><td style="text-align:left">排序好但校准差</td></tr>
+<tr><td>LimiX 16M</td><td>0.3144</td><td>0.981</td><td style="text-align:left">比 7M 更差(与前向任务上 16M&gt;7M 相反)</td></tr>
+</table>
+
+<h2>3. 模拟交易收益(核心指标,到期前 24h 决策)</h2>
+<table>
+<tr><th>模型</th><th>成交笔数</th><th>总盈亏 USDC</th><th>收益率</th><th>胜率</th><th>bootstrap 95% CI(总盈亏)</th><th>结论</th></tr>
+<tr><td>市场自身</td><td>0</td><td>0</td><td>0%</td><td>—</td><td>—</td><td style="text-align:left">按定义无 edge(基准)</td></tr>
+<tr><td>GBM</td><td>157</td><td class="pos">+1,046</td><td class="pos">+10.46%</td><td>68.2%</td><td>[−1,365, +3,677]</td><td style="text-align:left"><b>不显著</b>;去掉最好 5 笔 → <span class="neg">−957</span>;月度 +525/−585/+1,106</td></tr>
+<tr><td>逻辑回归</td><td>87</td><td class="pos">+102</td><td class="pos">+1.02%</td><td>70.1%</td><td>[−1,212, +1,401]</td><td style="text-align:left">不显著(≈0)</td></tr>
+<tr><td><b>LimiX 7M</b></td><td>170</td><td class="neg">−3,269</td><td class="neg">−32.69%</td><td>42.9%</td><td>[−6,479, +373]</td><td style="text-align:left"><b>接近显著为负</b>;月度 −1,117/−2,238/+87,中位单笔 −100</td></tr>
+<tr><td>LimiX 16M</td><td>167</td><td class="neg">−3,729</td><td class="neg">−37.29%</td><td>—</td><td>—</td><td style="text-align:left">更差</td></tr>
+<tr><td>基率(对照)</td><td>223</td><td class="neg">−5,538</td><td class="neg">−55.38%</td><td>—</td><td>—</td><td style="text-align:left">垃圾策略如预期巨亏(体系有效性的负对照)</td></tr>
+</table>
+<p class="muted">到期前 6h 决策点的稳健性检查方向一致(LimiX −12.1%,GBM +11.0% 但同样不稳健);tte6 时基率对照靠"彩票式做空高价市场"偶得 +26%(胜率仅 14.9%)——单窗口原始收益率噪声大,这正是需要 bootstrap 与多窗口验证的原因。</p>
+
+<h2>4. 解读与建议</h2>
+<ol>
+<li><b>方法论层面全部达标</b>:因果场景选择正确(现货 vs 行权价确实近乎决定结果,全模型 AUC≈0.99)、历史数据可完整获取、防泄漏与成本口径经得起推敲、负对照(基率)如预期巨亏。这套回测机器可每周重跑、可扩到 ETH/温度/体育。</li>
+<li><b>市场自身是最强预测者</b>:BTC 阶梯是 Polymarket 上流动性最好的家族之一,套利者已把价格打得很准。在这里赚钱的门槛不是"预测对",而是"比市场校准得更准 + 覆盖交易成本"——74 天内没人做到。</li>
+<li><b>LimiX 当前不产生 alpha,且输在校准</b>:AUC 0.986 说明排序能力尚可,LogLoss 0.226 说明概率数值过度自信——它以自信的错误概率高频触发开仓(170 笔,全场最多之一)并稳定亏损。若要继续投入,优先级为:① 输出概率做等渗校准(isotonic);② 加入盘口历史(undocumented orderbook-history,2025-11 起可回填)、资金费率、ETF 流入等更强特征;③ 或转战市场校准可能更弱的场景(温度、体育)。</li>
+<li><b>GBM 的 +10.5% 不可作为结论</b>报给任何人:CI 含 0、去 top5 转负、月度翻覆。</li>
+<li><b>对第二阶段的建议</b>:前向 7 天实验照常(它测的目标不同,LimiX 曾在 delta_6h 回归上显优);把本回测机器每周对新结算数据增量重跑,作为"LimiX 是否进步"的固定考场;下一个回测目标建议温度市场(因果同样满分,但做市竞争弱于 crypto,更可能存在可捕获的校准误差)。</li>
+</ol>
+
+<h2>5. 诚实假设清单</h2>
+<ul class="muted">
+<li>入场成本按半价差 0.005 固定(近价档实测价差 ~0.01,合理但偏乐观;真实滑点未计——盘口历史回填后可精确化)</li>
+<li>假设每笔 100 USDC 均可按 mid±半价差成交(近价档流动性 $18k-$75k,成立)</li>
+<li>无手续费(Polymarket 无 taker 费,成立)</li>
+<li>单验证窗(74 天);滚动多窗口验证在每周增量重跑中积累</li>
+<li>LimiX 任务 ID 可追溯:7M=fcd70421…、16M=c470f562…(6-9 秒完成 15k 行训练推理)</li>
+</ul>
+<p><a href="index.html">← 返回场景调研报告</a></p>
+</body></html>
