@@ -2,72 +2,99 @@
   "scenario_id": "TRD03",
   "name": "1小时成交量激增",
   "run_date": "2026-07-14",
-  "generated_at": "2026-07-14T02:45:55.122681+00:00",
-  "run_id": "dcdfe9e9-624d-49b4-9397-cf9b1eb04a5a",
+  "generated_at": "2026-07-14T04:30:09.917966+00:00",
+  "run_id": "0903d639-d6b0-4173-a809-ef74d5a4fa73",
   "pipeline_status": "PIPELINE_PASS",
-  "effect_status": "INCONCLUSIVE",
+  "effect_status": "NOT_BETTER",
   "targets": {
     "target_volume_spike_1h": {
       "task": "classification",
       "n_train": 3926,
       "n_predict": 410,
       "status": "ok",
-      "notes": [],
+      "notes": [
+        "idempotent_skip"
+      ],
       "limix": {
         "task_id": "a29fbba1ab149b3481634dc902be5a08",
         "model_type": "LIMIX_7M",
-        "elapsed_s": 5.615,
+        "elapsed_s": 0.0,
         "error": null
       },
       "matured_metrics": {
         "limix": {
-          "n": 0
+          "n": 266,
+          "logloss": 0.733621,
+          "brier": 0.535703,
+          "auc": 0.505817,
+          "balanced_accuracy": 0.514474,
+          "macro_f1": 0.484042
         },
         "base_rate": {
-          "n": 0
+          "n": 266,
+          "logloss": 0.654229,
+          "brier": 0.46121,
+          "auc": 0.5,
+          "balanced_accuracy": 0.5,
+          "macro_f1": 0.416667
         },
         "price_unchanged": {
-          "n": 0
+          "n": 266,
+          "logloss": 0.733139,
+          "brier": 0.477143,
+          "auc": 0.5,
+          "balanced_accuracy": 0.5,
+          "macro_f1": 0.416667
         },
         "mean_reversion": {
-          "n": 0
+          "n": 266,
+          "logloss": 0.658398,
+          "brier": 0.465473,
+          "auc": 0.484037,
+          "balanced_accuracy": 0.501316,
+          "macro_f1": 0.4959
         },
         "momentum": {
-          "n": 0
+          "n": 266,
+          "logloss": 0.659587,
+          "brier": 0.466656,
+          "auc": 0.515963,
+          "balanced_accuracy": 0.521053,
+          "macro_f1": 0.521233
         },
-        "n_matured": 0
+        "n_matured": 266
       },
-      "pending_labels": 410
+      "pending_labels": 144
     }
   },
   "data_quality": {
-    "snapshot_rows": 21289,
-    "freshest_snapshot": "2026-07-14T02:31:35.844324+00:00",
+    "snapshot_rows": 24454,
+    "freshest_snapshot": "2026-07-14T04:19:08.123660+00:00",
     "missing_rate": {
-      "mid_price": 0.2363,
-      "spread": 0.2363,
-      "bid_depth": 0.0587,
-      "ask_depth": 0.0587,
-      "orderbook_imbalance": 0.0587,
-      "volume_1h": 0.012,
-      "volume_24h": 0.008,
+      "mid_price": 0.2617,
+      "spread": 0.2617,
+      "bid_depth": 0.049,
+      "ask_depth": 0.049,
+      "orderbook_imbalance": 0.0612,
+      "volume_1h": 0.0089,
+      "volume_24h": 0.0679,
       "trade_count_1h": 0.0,
-      "return_1h": 0.036,
-      "return_6h": 0.0134,
-      "return_24h": 0.1028,
-      "volatility": 0.0134,
-      "liquidity": 0.0,
+      "return_1h": 0.0657,
+      "return_6h": 0.0746,
+      "return_24h": 0.1715,
+      "volatility": 0.0713,
+      "liquidity": 0.0056,
       "hours_to_resolution": 0.0,
-      "buy_slippage_1000_now": 0.1228,
-      "fill_ratio_1000": 0.0587,
+      "buy_slippage_1000_now": 0.1325,
+      "fill_ratio_1000": 0.049,
       "tradable_now": 0.0,
-      "threshold_num": 0.8291,
-      "btc_spot": 0.0467,
-      "eth_spot": 0.0467,
-      "threshold_ratio": 0.8772
+      "threshold_num": 0.7606,
+      "btc_spot": 0.0367,
+      "eth_spot": 0.0367,
+      "threshold_ratio": 0.8018
     },
     "api_errors": []
   },
-  "universe_size": 749,
+  "universe_size": 898,
   "primary_metric": "legacy"
 }

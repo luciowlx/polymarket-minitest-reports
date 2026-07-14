@@ -2,8 +2,8 @@
   "scenario_id": "DOM05",
   "name": "地缘政治",
   "run_date": "2026-07-14",
-  "generated_at": "2026-07-14T02:45:53.608433+00:00",
-  "run_id": "dcdfe9e9-624d-49b4-9397-cf9b1eb04a5a",
+  "generated_at": "2026-07-14T04:30:06.571294+00:00",
+  "run_id": "0903d639-d6b0-4173-a809-ef74d5a4fa73",
   "pipeline_status": "INSUFFICIENT_DATA",
   "effect_status": "INCONCLUSIVE",
   "targets": {
@@ -135,8 +135,8 @@
     }
   },
   "data_quality": {
-    "snapshot_rows": 3180,
-    "freshest_snapshot": "2026-07-14T02:31:30.367062+00:00",
+    "snapshot_rows": 3600,
+    "freshest_snapshot": "2026-07-14T04:18:46.363646+00:00",
     "missing_rate": {
       "mid_price": 0.1825,
       "spread": 0.1825,
@@ -156,8 +156,8 @@
       "fill_ratio_1000": 0.0952,
       "tradable_now": 0.0,
       "threshold_num": 1.0,
-      "btc_spot": 0.0635,
-      "eth_spot": 0.0635,
+      "btc_spot": 0.0556,
+      "eth_spot": 0.0556,
       "threshold_ratio": 1.0
     },
     "api_errors": []

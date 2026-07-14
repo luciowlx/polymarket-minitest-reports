@@ -2,8 +2,8 @@
   "scenario_id": "DOM02",
   "name": "AI 模型发布",
   "run_date": "2026-07-14",
-  "generated_at": "2026-07-14T02:45:53.205156+00:00",
-  "run_id": "dcdfe9e9-624d-49b4-9397-cf9b1eb04a5a",
+  "generated_at": "2026-07-14T04:30:05.473430+00:00",
+  "run_id": "0903d639-d6b0-4173-a809-ef74d5a4fa73",
   "pipeline_status": "INSUFFICIENT_DATA",
   "effect_status": "INCONCLUSIVE",
   "targets": {
@@ -135,8 +135,8 @@
     }
   },
   "data_quality": {
-    "snapshot_rows": 3167,
-    "freshest_snapshot": "2026-07-14T02:31:35.844324+00:00",
+    "snapshot_rows": 3587,
+    "freshest_snapshot": "2026-07-14T04:18:53.355623+00:00",
     "missing_rate": {
       "mid_price": 0.3241,
       "spread": 0.3241,
