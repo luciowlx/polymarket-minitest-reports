@@ -1,0 +1,81 @@
+{
+  "scenario_id": "TRD02",
+  "name": "6小时价差回归",
+  "run_date": "2026-07-14",
+  "generated_at": "2026-07-14T02:45:54.572841+00:00",
+  "run_id": "dcdfe9e9-624d-49b4-9397-cf9b1eb04a5a",
+  "pipeline_status": "PIPELINE_PASS",
+  "effect_status": "INCONCLUSIVE",
+  "targets": {
+    "target_delta_6h": {
+      "task": "regression",
+      "n_train": 5000,
+      "n_predict": 410,
+      "status": "ok",
+      "notes": [],
+      "limix": {
+        "task_id": "cd81d478010f04e115c529b1499c7ca5",
+        "model_type": "LIMIX_7M",
+        "elapsed_s": 5.913,
+        "error": null
+      },
+      "matured_metrics": {
+        "limix": {
+          "n": 0
+        },
+        "base_rate": {
+          "n": 0
+        },
+        "price_unchanged": {
+          "n": 0
+        },
+        "mean_reversion": {
+          "n": 0
+        },
+        "momentum": {
+          "n": 0
+        },
+        "n_matured": 0
+      },
+      "pending_labels": 410,
+      "simtrade": {
+        "n_trades": 0,
+        "total_pnl": 0.0,
+        "return_on_bankroll": 0.0,
+        "win_rate": null,
+        "max_drawdown": 0.0,
+        "n_unrealized": 0
+      }
+    }
+  },
+  "data_quality": {
+    "snapshot_rows": 21289,
+    "freshest_snapshot": "2026-07-14T02:31:35.844324+00:00",
+    "missing_rate": {
+      "mid_price": 0.2363,
+      "spread": 0.2363,
+      "bid_depth": 0.0587,
+      "ask_depth": 0.0587,
+      "orderbook_imbalance": 0.0587,
+      "volume_1h": 0.012,
+      "volume_24h": 0.008,
+      "trade_count_1h": 0.0,
+      "return_1h": 0.036,
+      "return_6h": 0.0134,
+      "return_24h": 0.1028,
+      "volatility": 0.0134,
+      "liquidity": 0.0,
+      "hours_to_resolution": 0.0,
+      "buy_slippage_1000_now": 0.1228,
+      "fill_ratio_1000": 0.0587,
+      "tradable_now": 0.0,
+      "threshold_num": 0.8291,
+      "btc_spot": 0.0467,
+      "eth_spot": 0.0467,
+      "threshold_ratio": 0.8772
+    },
+    "api_errors": []
+  },
+  "universe_size": 749,
+  "primary_metric": "return_on_bankroll"
+}
