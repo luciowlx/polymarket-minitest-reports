@@ -1,5 +1,5 @@
 scenario_id,target_id,model,n_trades,n_skipped,n_unrealized,total_pnl,return_on_bankroll,return_on_turnover,win_rate,avg_pnl,max_drawdown,pnl_per_trade_std
-TRD01,target_up_1h,limix,28,67,0,-81.90548811894006,-0.008190548811894006,-0.02925196004247859,0.2857142857142857,-2.925196004247859,82.06574452919645,7.644647183555308
+TRD01,target_up_1h,limix,44,51,0,100.86818794854369,0.010086818794854369,0.022924588170123567,0.29545454545454547,2.2924588170123568,84.25515733398284,31.562510426869572
 TRD01,target_up_1h,base_rate,0,0,0,0.0,0.0,,,,0.0,
 TRD01,target_up_1h,price_unchanged,0,0,0,0.0,0.0,,,,0.0,
 TRD01,target_up_1h,mean_reversion,0,0,0,0.0,0.0,,,,0.0,
