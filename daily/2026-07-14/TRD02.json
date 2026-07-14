@@ -2,10 +2,10 @@
   "scenario_id": "TRD02",
   "name": "6小时价差回归",
   "run_date": "2026-07-14",
-  "generated_at": "2026-07-14T07:31:14.971330+00:00",
-  "run_id": "724b6a17-5240-48b7-8a8d-b4ef39cb1033",
+  "generated_at": "2026-07-14T10:30:15.519337+00:00",
+  "run_id": "23962d48-7e15-4016-ae33-c41071811ae2",
   "pipeline_status": "PIPELINE_PASS",
-  "effect_status": "INCONCLUSIVE",
+  "effect_status": "NOT_BETTER",
   "targets": {
     "target_delta_6h": {
       "task": "regression",
@@ -23,61 +23,81 @@
       },
       "matured_metrics": {
         "limix": {
-          "n": 0
+          "n": 309,
+          "mae": 0.015148,
+          "rmse": 0.036216,
+          "r2": -0.362298,
+          "direction_accuracy": 0.650485
         },
         "base_rate": {
-          "n": 0
+          "n": 309,
+          "mae": 0.012227,
+          "rmse": 0.031132,
+          "r2": -0.006635,
+          "direction_accuracy": 0.728155
         },
         "price_unchanged": {
-          "n": 0
+          "n": 309,
+          "mae": 0.012223,
+          "rmse": 0.03113,
+          "r2": -0.006551,
+          "direction_accuracy": 0.33657
         },
         "mean_reversion": {
-          "n": 0
+          "n": 309,
+          "mae": 0.011451,
+          "rmse": 0.029977,
+          "r2": 0.06663,
+          "direction_accuracy": 0.556634
         },
         "momentum": {
-          "n": 0
+          "n": 309,
+          "mae": 0.013444,
+          "rmse": 0.034126,
+          "r2": -0.209621,
+          "direction_accuracy": 0.485437
         },
-        "n_matured": 0
+        "n_matured": 309
       },
-      "pending_labels": 410,
+      "pending_labels": 101,
       "simtrade": {
-        "n_trades": 0,
-        "total_pnl": 0.0,
-        "return_on_bankroll": 0.0,
-        "win_rate": null,
-        "max_drawdown": 0.0,
+        "n_trades": 52,
+        "total_pnl": -67.89471384930378,
+        "return_on_bankroll": -0.006789471384930378,
+        "win_rate": 0.46153846153846156,
+        "max_drawdown": 149.09930516545995,
         "n_unrealized": 0
       }
     }
   },
   "data_quality": {
-    "snapshot_rows": 30724,
-    "freshest_snapshot": "2026-07-14T07:20:54.037835+00:00",
+    "snapshot_rows": 36519,
+    "freshest_snapshot": "2026-07-14T10:21:23.161787+00:00",
     "missing_rate": {
-      "mid_price": 0.3143,
-      "spread": 0.3143,
-      "bid_depth": 0.0427,
-      "ask_depth": 0.0427,
-      "orderbook_imbalance": 0.0679,
-      "volume_1h": 0.0068,
-      "volume_24h": 0.1203,
+      "mid_price": 0.3503,
+      "spread": 0.3503,
+      "bid_depth": 0.0388,
+      "ask_depth": 0.0388,
+      "orderbook_imbalance": 0.0975,
+      "volume_1h": 0.006,
+      "volume_24h": 0.1562,
       "trade_count_1h": 0.0,
-      "return_1h": 0.1339,
-      "return_6h": 0.1697,
-      "return_24h": 0.257,
-      "volatility": 0.1659,
-      "liquidity": 0.0136,
+      "return_1h": 0.1786,
+      "return_6h": 0.2295,
+      "return_24h": 0.3106,
+      "volatility": 0.2269,
+      "liquidity": 0.0267,
       "hours_to_resolution": 0.0,
-      "buy_slippage_1000_now": 0.1629,
-      "fill_ratio_1000": 0.0427,
+      "buy_slippage_1000_now": 0.1855,
+      "fill_ratio_1000": 0.0388,
       "tradable_now": 0.0,
-      "threshold_num": 0.7856,
-      "btc_spot": 0.032,
-      "eth_spot": 0.032,
-      "threshold_ratio": 0.8225
+      "threshold_num": 0.8041,
+      "btc_spot": 0.0276,
+      "eth_spot": 0.0276,
+      "threshold_ratio": 0.8387
     },
     "api_errors": []
   },
-  "universe_size": 1031,
+  "universe_size": 1159,
   "primary_metric": "return_on_bankroll"
 }
