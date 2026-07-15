@@ -1,0 +1,54 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>加密全家族回测 + 校准实验(2026-07-15)</title>
+<style>
+body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;margin:2rem auto;max-width:980px;padding:0 1rem;color:#1a1a1a;line-height:1.65}
+h1{font-size:1.4rem}h2{font-size:1.15rem;margin-top:2rem;border-bottom:2px solid #e0e0e0;padding-bottom:.3rem}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.88rem}
+th,td{border:1px solid #ddd;padding:.4rem .55rem;text-align:right}
+th{background:#f5f6f8}td:first-child,th:first-child{text-align:left}
+tr:nth-child(even){background:#fafbfc}
+.pos{color:#1a7f37;font-weight:600}.neg{color:#b03030;font-weight:600}
+.hl{background:#fff8dc;padding:.8rem 1rem;border-left:4px solid #b8860b;margin:1rem 0}
+.muted{color:#777;font-size:.85rem}code{background:#f0f1f3;padding:.05rem .35rem;border-radius:4px}
+b.mk{background:#eef6ee;padding:0 .3rem}
+</style></head><body>
+<h1>加密全家族回测 + 等渗/Platt 校准实验</h1>
+<p class="muted">2026-07-15 · BTC+ETH 阶梯与涨跌共 7,790 个已结算市场 · walk-forward(2026-05-01 前训练 / 后测试)· 回答"校准能否让 LimiX 翻盘"</p>
+
+<div class="hl"><b>两个硬结论:</b>① <b>校准(等渗/Platt)不能稳健地让 LimiX 赢过市场或 raw</b>——有时改善 LogLoss,但收益率不跟随,我上线时标记的"过度矫正"担忧被证实。② 更重要:<b>单个 2.5 个月窗口的模拟收益率被方差主导,不能用来判优</b>——仅把训练截止点挪动 45 天,同一个 raw LimiX 的阶梯 tte24 收益率就从 −4% 崩到 −85%。这把结论钉死在:<b>要判断 LimiX 是否有 alpha,必须靠前向实验长期累积每日结算样本,而不是任何单窗口回测。</b></div>
+
+<h2>1. 校准三方对照(阶梯家族,同一测试集 9,934 行)</h2>
+<table>
+<tr><th>校准窗</th><th>变体</th><th>LogLoss ↓</th><th>tte24 收益率</th><th>tte6 收益率</th></tr>
+<tr><td rowspan="3">45 天</td><td>raw LimiX</td><td>0.1312</td><td class="neg">−4.32%</td><td class="pos">+36.31%</td></tr>
+<tr><td>等渗校准</td><td>0.1376</td><td class="neg">−40.16%</td><td class="pos">+22.72%</td></tr>
+<tr><td>Platt(sigmoid)</td><td>0.1353</td><td class="neg">−24.36%</td><td class="pos">+12.53%</td></tr>
+<tr><td rowspan="3">90 天</td><td>raw LimiX</td><td>0.1381</td><td class="neg">−85.02%</td><td class="neg">−12.27%</td></tr>
+<tr><td>等渗校准</td><td>0.1115</td><td class="pos">+0.79%</td><td class="pos">+41.96%</td></tr>
+<tr><td>Platt(sigmoid)</td><td>0.1116</td><td class="neg">−9.89%</td><td class="pos">+49.10%</td></tr>
+</table>
+<p class="muted">注意同一变体在两个窗口间的巨幅摆动(raw tte24:−4%↔−85%)——这不是校准效应,是训练窗变化引入的方差。没有任何校准方法在两个窗口都稳健获胜。市场自身 LogLoss 0.105 / ECE 0.010,仍是校准最好的"模型"。</p>
+
+<h2>2. 涨跌家族——更诚实的 50/50 战场(测试集 590 行)</h2>
+<table>
+<tr><th>变体</th><th>LogLoss ↓</th><th>ECE</th><th>AUC</th><th>tte24 收益率</th><th>说明</th></tr>
+<tr><td>市场自身</td><td><b class="mk">0.5066</b></td><td>0.047</td><td>0.808</td><td>0%(基准)</td><td style="text-align:left">这里市场也很不确定(LogLoss 0.51,远高于阶梯的 0.11)</td></tr>
+<tr><td>raw LimiX</td><td>0.5330</td><td>0.063</td><td>0.805</td><td class="pos">+3.04%</td><td style="text-align:left">74 笔,小幅正;最稳健的变体</td></tr>
+<tr><td>等渗校准</td><td>0.5486</td><td>0.057</td><td>0.801</td><td>+0.07%</td><td style="text-align:left">未改善</td></tr>
+<tr><td>GBM</td><td>0.7088</td><td>0.153</td><td>0.816</td><td class="pos">+29.16%</td><td style="text-align:left"><b>不可信</b>:LogLoss 比基率还差、ECE 0.15(校准极烂),134 笔靠方差博出来的假阳性</td></tr>
+</table>
+<p class="muted">涨跌市场是比阶梯更值得做的对象:市场自身在这里真正不确定(AUC 0.81 而非 0.99),存在被模型改进的空间。raw LimiX 小幅为正但未显著超越市场;GBM 的 +29% 是典型的"少量交易+烂校准"假象(和上一份报告里 GBM 的 +10.5% 同一个坑)。</p>
+
+<h2>3. 生产系统的三处调整(已落地)</h2>
+<ol>
+<li><b>修复择优挑选偏差</b>:CRY 场景的效果判定原写成 <code>max(limix, limix_cal)</code>——这正是我们批评 GBM 假阳性时的多重比较偏差。已改为<b>只用 raw LimiX 作主模型</b>,limix_cal 降为账本里的诊断项(仍记录,但不作为头条、不参与择优)。</li>
+<li><b>limix_cal 保留但降级</b>:前向实验里继续记录 raw 与 cal 两条,用真实结算数据长期观察校准是否在某些区间有用,但不让它污染结论。</li>
+<li><b>确认主战场</b>:阶梯上市场近乎有效(无人可赢),涨跌上市场真正不确定——前向实验的 alpha 若存在,更可能出现在涨跌与 ETH 上,报告排序据此。</li>
+</ol>
+
+<h2>4. 给老板的一句话</h2>
+<p>回测机器已把该问的都问完了:链路对、市场在阶梯上近乎无敌、校准不是银弹、单窗口收益率不可信。<b>剩下唯一能给出可信收益率结论的,是正在运行的前向实验</b>——它每天累积真实结算样本,几周后 bootstrap 才有统计功效。今晚 00:00(北京)第一批 CRY 市场结算,收益率数字开始逐日累积。</p>
+<p class="muted">方法脚本:<code>backtest/run_backtest_cal.py</code>(等渗版)+ 内联 sigmoid/窗宽对照;数据 7,790 市场 / 43,845 特征行。</p>
+<p><a href="index.html">← 场景调研</a> · <a href="backtest_btc.html">← BTC 阶梯首次回测</a></p>
+</body></html>
