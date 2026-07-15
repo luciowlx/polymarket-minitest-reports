@@ -2,8 +2,8 @@
   "scenario_id": "DOM05",
   "name": "地缘政治",
   "run_date": "2026-07-15",
-  "generated_at": "2026-07-15T02:31:35.431192+00:00",
-  "run_id": "ae56d2ef-1f3d-4b7b-822e-183f886dc15e",
+  "generated_at": "2026-07-15T04:30:14.410547+00:00",
+  "run_id": "10ca9b41-1ce3-4ba4-a8fc-3c7671a663de",
   "pipeline_status": "PIPELINE_PASS",
   "effect_status": "INCONCLUSIVE",
   "targets": {
@@ -12,11 +12,13 @@
       "n_train": 1280,
       "n_predict": 62,
       "status": "ok",
-      "notes": [],
+      "notes": [
+        "idempotent_skip"
+      ],
       "limix": {
         "task_id": "72c1057e021176974220f00851614dce",
         "model_type": "LIMIX_7M",
-        "elapsed_s": 4.841,
+        "elapsed_s": 0.0,
         "error": null
       },
       "matured_metrics": {
@@ -52,11 +54,13 @@
       "n_train": 1280,
       "n_predict": 62,
       "status": "ok",
-      "notes": [],
+      "notes": [
+        "idempotent_skip"
+      ],
       "limix": {
         "task_id": "f3d51ed092b4807d37f7f39c180088a4",
         "model_type": "LIMIX_7M",
-        "elapsed_s": 4.699,
+        "elapsed_s": 0.0,
         "error": null
       },
       "matured_metrics": {
@@ -93,7 +97,7 @@
       "n_predict": 0,
       "status": "INSUFFICIENT_DATA",
       "notes": [
-        "train_rows=0<MIN_TRAIN_ROWS(30)"
+        "idempotent_skip"
       ],
       "limix": {
         "task_id": "",
@@ -131,33 +135,33 @@
     }
   },
   "data_quality": {
-    "snapshot_rows": 6120,
-    "freshest_snapshot": "2026-07-15T02:17:00.515659+00:00",
+    "snapshot_rows": 6600,
+    "freshest_snapshot": "2026-07-15T04:16:17.144189+00:00",
     "missing_rate": {
-      "mid_price": 0.1643,
-      "spread": 0.1643,
-      "bid_depth": 0.0929,
-      "ask_depth": 0.0929,
-      "orderbook_imbalance": 0.0929,
-      "volume_1h": 0.0286,
+      "mid_price": 0.1631,
+      "spread": 0.1631,
+      "bid_depth": 0.0922,
+      "ask_depth": 0.0922,
+      "orderbook_imbalance": 0.0922,
+      "volume_1h": 0.0284,
       "volume_24h": 0.0,
       "trade_count_1h": 0.0,
-      "return_1h": 0.05,
-      "return_6h": 0.0286,
-      "return_24h": 0.2143,
-      "volatility": 0.0286,
+      "return_1h": 0.0496,
+      "return_6h": 0.0284,
+      "return_24h": 0.2128,
+      "volatility": 0.0284,
       "liquidity": 0.0,
       "hours_to_resolution": 0.0,
-      "buy_slippage_1000_now": 0.1786,
-      "fill_ratio_1000": 0.0929,
+      "buy_slippage_1000_now": 0.1773,
+      "fill_ratio_1000": 0.0922,
       "tradable_now": 0.0,
       "threshold_num": 1.0,
-      "btc_spot": 0.0429,
-      "eth_spot": 0.0429,
+      "btc_spot": 0.0426,
+      "eth_spot": 0.0426,
       "threshold_ratio": 1.0
     },
     "api_errors": []
   },
-  "universe_size": 140,
+  "universe_size": 141,
   "primary_metric": "return_on_bankroll"
 }

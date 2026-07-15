@@ -2,8 +2,8 @@
   "scenario_id": "TRD02",
   "name": "6小时价差回归",
   "run_date": "2026-07-15",
-  "generated_at": "2026-07-15T02:31:40.474149+00:00",
-  "run_id": "ae56d2ef-1f3d-4b7b-822e-183f886dc15e",
+  "generated_at": "2026-07-15T04:30:19.120834+00:00",
+  "run_id": "10ca9b41-1ce3-4ba4-a8fc-3c7671a663de",
   "pipeline_status": "PIPELINE_PASS",
   "effect_status": "NOT_BETTER",
   "targets": {
@@ -12,11 +12,13 @@
       "n_train": 5000,
       "n_predict": 570,
       "status": "ok",
-      "notes": [],
+      "notes": [
+        "idempotent_skip"
+      ],
       "limix": {
         "task_id": "67e23028959446590a47680eeb45f92f",
         "model_type": "LIMIX_7M",
-        "elapsed_s": 5.656,
+        "elapsed_s": 0.0,
         "error": null
       },
       "matured_metrics": {
@@ -69,33 +71,33 @@
     }
   },
   "data_quality": {
-    "snapshot_rows": 46473,
-    "freshest_snapshot": "2026-07-15T02:17:14.238828+00:00",
+    "snapshot_rows": 50621,
+    "freshest_snapshot": "2026-07-15T04:16:31.848230+00:00",
     "missing_rate": {
-      "mid_price": 0.3791,
-      "spread": 0.3791,
-      "bid_depth": 0.0481,
-      "ask_depth": 0.0481,
-      "orderbook_imbalance": 0.088,
-      "volume_1h": 0.012,
-      "volume_24h": 0.1753,
+      "mid_price": 0.3942,
+      "spread": 0.3942,
+      "bid_depth": 0.0455,
+      "ask_depth": 0.0455,
+      "orderbook_imbalance": 0.0899,
+      "volume_1h": 0.0102,
+      "volume_24h": 0.1863,
       "trade_count_1h": 0.0,
-      "return_1h": 0.2019,
-      "return_6h": 0.3,
-      "return_24h": 0.3753,
-      "volatility": 0.2981,
-      "liquidity": 0.0361,
+      "return_1h": 0.2079,
+      "return_6h": 0.3259,
+      "return_24h": 0.399,
+      "volatility": 0.3241,
+      "liquidity": 0.0407,
       "hours_to_resolution": 0.0,
-      "buy_slippage_1000_now": 0.2266,
-      "fill_ratio_1000": 0.0481,
+      "buy_slippage_1000_now": 0.2319,
+      "fill_ratio_1000": 0.0455,
       "tradable_now": 0.0,
-      "threshold_num": 0.831,
-      "btc_spot": 0.0171,
-      "eth_spot": 0.0171,
-      "threshold_ratio": 0.8589
+      "threshold_num": 0.8364,
+      "btc_spot": 0.0162,
+      "eth_spot": 0.0162,
+      "threshold_ratio": 0.864
     },
     "api_errors": []
   },
-  "universe_size": 1580,
+  "universe_size": 1669,
   "primary_metric": "return_on_bankroll"
 }

@@ -2,8 +2,8 @@
   "scenario_id": "DOM02",
   "name": "AI 模型发布",
   "run_date": "2026-07-15",
-  "generated_at": "2026-07-15T02:31:31.090102+00:00",
-  "run_id": "ae56d2ef-1f3d-4b7b-822e-183f886dc15e",
+  "generated_at": "2026-07-15T04:30:10.231223+00:00",
+  "run_id": "10ca9b41-1ce3-4ba4-a8fc-3c7671a663de",
   "pipeline_status": "PIPELINE_PASS",
   "effect_status": "INCONCLUSIVE",
   "targets": {
@@ -12,11 +12,13 @@
       "n_train": 756,
       "n_predict": 63,
       "status": "ok",
-      "notes": [],
+      "notes": [
+        "idempotent_skip"
+      ],
       "limix": {
         "task_id": "0918695ecff2f4a2f947c9993b2300a1",
         "model_type": "LIMIX_7M",
-        "elapsed_s": 4.857,
+        "elapsed_s": 0.0,
         "error": null
       },
       "matured_metrics": {
@@ -52,11 +54,13 @@
       "n_train": 756,
       "n_predict": 63,
       "status": "ok",
-      "notes": [],
+      "notes": [
+        "idempotent_skip"
+      ],
       "limix": {
         "task_id": "caeea83de43c1e4868a6bea312f4534b",
         "model_type": "LIMIX_7M",
-        "elapsed_s": 4.802,
+        "elapsed_s": 0.0,
         "error": null
       },
       "matured_metrics": {
@@ -93,7 +97,7 @@
       "n_predict": 0,
       "status": "INSUFFICIENT_DATA",
       "notes": [
-        "train_rows=0<MIN_TRAIN_ROWS(30)"
+        "idempotent_skip"
       ],
       "limix": {
         "task_id": "",
@@ -131,33 +135,33 @@
     }
   },
   "data_quality": {
-    "snapshot_rows": 6107,
-    "freshest_snapshot": "2026-07-15T02:17:00.670959+00:00",
+    "snapshot_rows": 6587,
+    "freshest_snapshot": "2026-07-15T04:16:16.387577+00:00",
     "missing_rate": {
-      "mid_price": 0.2695,
-      "spread": 0.2695,
-      "bid_depth": 0.0426,
-      "ask_depth": 0.0426,
-      "orderbook_imbalance": 0.0426,
-      "volume_1h": 0.0496,
+      "mid_price": 0.2657,
+      "spread": 0.2657,
+      "bid_depth": 0.035,
+      "ask_depth": 0.035,
+      "orderbook_imbalance": 0.035,
+      "volume_1h": 0.042,
       "volume_24h": 0.0,
       "trade_count_1h": 0.0,
-      "return_1h": 0.0496,
-      "return_6h": 0.0496,
-      "return_24h": 0.0567,
-      "volatility": 0.0496,
+      "return_1h": 0.042,
+      "return_6h": 0.042,
+      "return_24h": 0.049,
+      "volatility": 0.042,
       "liquidity": 0.0,
       "hours_to_resolution": 0.0,
-      "buy_slippage_1000_now": 0.0426,
-      "fill_ratio_1000": 0.0426,
+      "buy_slippage_1000_now": 0.035,
+      "fill_ratio_1000": 0.035,
       "tradable_now": 0.0,
-      "threshold_num": 0.8936,
-      "btc_spot": 0.0071,
-      "eth_spot": 0.0071,
+      "threshold_num": 0.8881,
+      "btc_spot": 0.007,
+      "eth_spot": 0.007,
       "threshold_ratio": 1.0
     },
     "api_errors": []
   },
-  "universe_size": 141,
+  "universe_size": 143,
   "primary_metric": "return_on_bankroll"
 }
