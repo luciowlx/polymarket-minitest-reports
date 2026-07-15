@@ -1,0 +1,101 @@
+{
+  "scenario_id": "TRD02",
+  "name": "6小时价差回归",
+  "run_date": "2026-07-15",
+  "generated_at": "2026-07-15T02:31:40.474149+00:00",
+  "run_id": "ae56d2ef-1f3d-4b7b-822e-183f886dc15e",
+  "pipeline_status": "PIPELINE_PASS",
+  "effect_status": "NOT_BETTER",
+  "targets": {
+    "target_delta_6h": {
+      "task": "regression",
+      "n_train": 5000,
+      "n_predict": 570,
+      "status": "ok",
+      "notes": [],
+      "limix": {
+        "task_id": "67e23028959446590a47680eeb45f92f",
+        "model_type": "LIMIX_7M",
+        "elapsed_s": 5.656,
+        "error": null
+      },
+      "matured_metrics": {
+        "limix": {
+          "n": 309,
+          "mae": 0.015148,
+          "rmse": 0.036216,
+          "r2": -0.362298,
+          "direction_accuracy": 0.650485
+        },
+        "base_rate": {
+          "n": 309,
+          "mae": 0.012227,
+          "rmse": 0.031132,
+          "r2": -0.006635,
+          "direction_accuracy": 0.728155
+        },
+        "price_unchanged": {
+          "n": 309,
+          "mae": 0.012223,
+          "rmse": 0.03113,
+          "r2": -0.006551,
+          "direction_accuracy": 0.33657
+        },
+        "mean_reversion": {
+          "n": 309,
+          "mae": 0.011451,
+          "rmse": 0.029977,
+          "r2": 0.06663,
+          "direction_accuracy": 0.556634
+        },
+        "momentum": {
+          "n": 309,
+          "mae": 0.013444,
+          "rmse": 0.034126,
+          "r2": -0.209621,
+          "direction_accuracy": 0.485437
+        },
+        "n_matured": 309
+      },
+      "pending_labels": 671,
+      "simtrade": {
+        "n_trades": 52,
+        "total_pnl": -67.89471384930378,
+        "return_on_bankroll": -0.006789471384930378,
+        "win_rate": 0.46153846153846156,
+        "max_drawdown": 149.09930516545995,
+        "n_unrealized": 0
+      }
+    }
+  },
+  "data_quality": {
+    "snapshot_rows": 46473,
+    "freshest_snapshot": "2026-07-15T02:17:14.238828+00:00",
+    "missing_rate": {
+      "mid_price": 0.3791,
+      "spread": 0.3791,
+      "bid_depth": 0.0481,
+      "ask_depth": 0.0481,
+      "orderbook_imbalance": 0.088,
+      "volume_1h": 0.012,
+      "volume_24h": 0.1753,
+      "trade_count_1h": 0.0,
+      "return_1h": 0.2019,
+      "return_6h": 0.3,
+      "return_24h": 0.3753,
+      "volatility": 0.2981,
+      "liquidity": 0.0361,
+      "hours_to_resolution": 0.0,
+      "buy_slippage_1000_now": 0.2266,
+      "fill_ratio_1000": 0.0481,
+      "tradable_now": 0.0,
+      "threshold_num": 0.831,
+      "btc_spot": 0.0171,
+      "eth_spot": 0.0171,
+      "threshold_ratio": 0.8589
+    },
+    "api_errors": []
+  },
+  "universe_size": 1580,
+  "primary_metric": "return_on_bankroll"
+}
