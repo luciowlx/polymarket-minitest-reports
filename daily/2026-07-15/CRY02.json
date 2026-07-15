@@ -1,0 +1,49 @@
+{
+  "scenario_id": "CRY02",
+  "name": "加密每日涨跌",
+  "run_date": "2026-07-15",
+  "generated_at": "2026-07-15T08:10:26.504378+00:00",
+  "run_id": "128bb7bf-e2e9-44f6-a793-73f5ebd48ea8",
+  "pipeline_status": "PIPELINE_PASS",
+  "effect_status": "INCONCLUSIVE",
+  "targets": {
+    "final_outcome_yes": {
+      "task": "classification",
+      "n_train": 3961,
+      "n_predict": 3,
+      "status": "PIPELINE_PASS",
+      "notes": [],
+      "limix": {
+        "task_id": "0014de483c38aed8802ff4cd634f8d0b",
+        "model_type": "LIMIX_7M",
+        "elapsed_s": 24.544,
+        "error": null
+      },
+      "matured_metrics": {
+        "limix": {},
+        "base_rate": {},
+        "price_unchanged": {},
+        "mean_reversion": {},
+        "momentum": {},
+        "n_matured": 0
+      },
+      "pending_labels": 0,
+      "simtrade": {
+        "n_trades": 3,
+        "total_pnl": -4.1929271708683515,
+        "return_on_bankroll": -0.00041929271708683515,
+        "win_rate": 0.0,
+        "max_drawdown": 4.1929271708683515,
+        "n_unrealized": 3
+      }
+    }
+  },
+  "data_quality": {
+    "snapshot_rows": 0,
+    "freshest_snapshot": "",
+    "missing_rate": {},
+    "api_errors": []
+  },
+  "universe_size": 3,
+  "primary_metric": "return_on_bankroll"
+}

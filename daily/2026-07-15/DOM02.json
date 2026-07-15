@@ -2,8 +2,8 @@
   "scenario_id": "DOM02",
   "name": "AI 模型发布",
   "run_date": "2026-07-15",
-  "generated_at": "2026-07-15T04:30:10.231223+00:00",
-  "run_id": "10ca9b41-1ce3-4ba4-a8fc-3c7671a663de",
+  "generated_at": "2026-07-15T07:30:15.902911+00:00",
+  "run_id": "5be8773e-9b5e-4762-8a77-a78a9b1d6f06",
   "pipeline_status": "PIPELINE_PASS",
   "effect_status": "INCONCLUSIVE",
   "targets": {
@@ -23,29 +23,54 @@
       },
       "matured_metrics": {
         "limix": {
-          "n": 0
+          "n": 22,
+          "logloss": 0.885306,
+          "brier": 0.562062,
+          "auc": 0.710481,
+          "balanced_accuracy": 0.457143,
+          "macro_f1": 0.457516
         },
         "base_rate": {
-          "n": 0
+          "n": 22,
+          "logloss": 1.070511,
+          "brier": 0.647377,
+          "auc": 0.5,
+          "balanced_accuracy": 0.333333,
+          "macro_f1": 0.208333
         },
         "price_unchanged": {
-          "n": 0
+          "n": 22,
+          "logloss": 1.681927,
+          "brier": 0.942273,
+          "auc": 0.5,
+          "balanced_accuracy": 0.333333,
+          "macro_f1": 0.208333
         },
         "mean_reversion": {
-          "n": 0
+          "n": 22,
+          "logloss": 1.056969,
+          "brier": 0.637672,
+          "auc": 0.560551,
+          "balanced_accuracy": 0.333333,
+          "macro_f1": 0.208333
         },
         "momentum": {
-          "n": 0
+          "n": 22,
+          "logloss": 1.066152,
+          "brier": 0.643595,
+          "auc": 0.545331,
+          "balanced_accuracy": 0.333333,
+          "macro_f1": 0.208333
         },
-        "n_matured": 0
+        "n_matured": 22
       },
-      "pending_labels": 123,
+      "pending_labels": 101,
       "simtrade": {
-        "n_trades": 0,
-        "total_pnl": 0.0,
-        "return_on_bankroll": 0.0,
-        "win_rate": null,
-        "max_drawdown": 0.0,
+        "n_trades": 11,
+        "total_pnl": -139.3067796064195,
+        "return_on_bankroll": -0.01393067796064195,
+        "win_rate": 0.45454545454545453,
+        "max_drawdown": 143.31719627308613,
         "n_unrealized": 0
       }
     },
@@ -65,29 +90,49 @@
       },
       "matured_metrics": {
         "limix": {
-          "n": 0
+          "n": 22,
+          "mae": 0.071118,
+          "rmse": 0.171404,
+          "r2": -0.103426,
+          "direction_accuracy": 0.545455
         },
         "base_rate": {
-          "n": 0
+          "n": 22,
+          "mae": 0.063868,
+          "rmse": 0.163288,
+          "r2": -0.001405,
+          "direction_accuracy": 0.727273
         },
         "price_unchanged": {
-          "n": 0
+          "n": 22,
+          "mae": 0.063818,
+          "rmse": 0.163269,
+          "r2": -0.001174,
+          "direction_accuracy": 0.272727
         },
         "mean_reversion": {
-          "n": 0
+          "n": 22,
+          "mae": 0.061591,
+          "rmse": 0.160738,
+          "r2": 0.029625,
+          "direction_accuracy": 0.636364
         },
         "momentum": {
-          "n": 0
+          "n": 22,
+          "mae": 0.068432,
+          "rmse": 0.166946,
+          "r2": -0.04677,
+          "direction_accuracy": 0.545455
         },
-        "n_matured": 0
+        "n_matured": 22
       },
-      "pending_labels": 123,
+      "pending_labels": 101,
       "simtrade": {
-        "n_trades": 0,
-        "total_pnl": 0.0,
-        "return_on_bankroll": 0.0,
-        "win_rate": null,
-        "max_drawdown": 0.0,
+        "n_trades": 7,
+        "total_pnl": -143.81588540121695,
+        "return_on_bankroll": -0.014381588540121695,
+        "win_rate": 0.2857142857142857,
+        "max_drawdown": 144.3580855579977,
         "n_unrealized": 0
       }
     },
@@ -135,33 +180,33 @@
     }
   },
   "data_quality": {
-    "snapshot_rows": 6587,
-    "freshest_snapshot": "2026-07-15T04:16:16.387577+00:00",
+    "snapshot_rows": 7307,
+    "freshest_snapshot": "2026-07-15T07:24:26.305312+00:00",
     "missing_rate": {
-      "mid_price": 0.2657,
-      "spread": 0.2657,
-      "bid_depth": 0.035,
-      "ask_depth": 0.035,
-      "orderbook_imbalance": 0.035,
-      "volume_1h": 0.042,
+      "mid_price": 0.2727,
+      "spread": 0.2727,
+      "bid_depth": 0.013,
+      "ask_depth": 0.013,
+      "orderbook_imbalance": 0.013,
+      "volume_1h": 0.013,
       "volume_24h": 0.0,
       "trade_count_1h": 0.0,
-      "return_1h": 0.042,
-      "return_6h": 0.042,
-      "return_24h": 0.049,
-      "volatility": 0.042,
+      "return_1h": 0.013,
+      "return_6h": 0.026,
+      "return_24h": 0.0325,
+      "volatility": 0.013,
       "liquidity": 0.0,
       "hours_to_resolution": 0.0,
-      "buy_slippage_1000_now": 0.035,
-      "fill_ratio_1000": 0.035,
+      "buy_slippage_1000_now": 0.013,
+      "fill_ratio_1000": 0.013,
       "tradable_now": 0.0,
-      "threshold_num": 0.8881,
-      "btc_spot": 0.007,
-      "eth_spot": 0.007,
+      "threshold_num": 0.8896,
+      "btc_spot": 0.3961,
+      "eth_spot": 0.3961,
       "threshold_ratio": 1.0
     },
     "api_errors": []
   },
-  "universe_size": 143,
+  "universe_size": 154,
   "primary_metric": "return_on_bankroll"
 }
