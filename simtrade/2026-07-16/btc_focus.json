@@ -1,0 +1,341 @@
+{
+  "generated_at": "2026-07-15T16:15:09.278917+00:00",
+  "scenario_id": "DOM01",
+  "model": "limix",
+  "bankroll": 10000.0,
+  "stake": 100.0,
+  "status": "OK",
+  "n_trades": 23,
+  "total_pnl": 503.754921,
+  "final_return_pct": 5.0375,
+  "trades": [
+    {
+      "question": "Will the price of Bitcoin be above $62,000 on July 16?",
+      "target_id": "target_delta_24h",
+      "direction": "long_yes",
+      "entry_price": 0.65,
+      "exit_price": 0.9615,
+      "pnl": 47.923077,
+      "realized": true,
+      "anchor_ts": "2026-07-14T07:15:00+00:00",
+      "exit_ts": "2026-07-15T07:15:00+00:00"
+    },
+    {
+      "question": "Will the price of Bitcoin be above $64,000 on July 15?",
+      "target_id": "target_delta_24h",
+      "direction": "long_yes",
+      "entry_price": 0.15,
+      "exit_price": 0.815,
+      "pnl": 443.333333,
+      "realized": true,
+      "anchor_ts": "2026-07-14T07:15:00+00:00",
+      "exit_ts": "2026-07-15T07:15:00+00:00"
+    },
+    {
+      "question": "Will Bitcoin reach $67,500 in July?",
+      "target_id": "target_delta_24h",
+      "direction": "long_no",
+      "entry_price": 0.69,
+      "exit_price": 0.465,
+      "pnl": -32.608696,
+      "realized": true,
+      "anchor_ts": "2026-07-14T07:15:00+00:00",
+      "exit_ts": "2026-07-15T07:15:00+00:00"
+    },
+    {
+      "question": "Will Bitcoin reach $80,000 by December 31, 2026?",
+      "target_id": "target_up_24h",
+      "direction": "long_yes",
+      "entry_price": 0.3,
+      "exit_price": 0.325,
+      "pnl": 8.333333,
+      "realized": true,
+      "anchor_ts": "2026-07-14T07:15:00+00:00",
+      "exit_ts": "2026-07-15T07:15:00+00:00"
+    },
+    {
+      "question": "Will Bitcoin dip to $57,500 in July?",
+      "target_id": "target_up_24h",
+      "direction": "long_no",
+      "entry_price": 0.72,
+      "exit_price": 0.875,
+      "pnl": 21.527778,
+      "realized": true,
+      "anchor_ts": "2026-07-14T07:15:00+00:00",
+      "exit_ts": "2026-07-15T07:15:00+00:00"
+    },
+    {
+      "question": "Will the price of Bitcoin be above $62,000 on July 16?",
+      "target_id": "target_up_24h",
+      "direction": "long_yes",
+      "entry_price": 0.65,
+      "exit_price": 0.9615,
+      "pnl": 47.923077,
+      "realized": true,
+      "anchor_ts": "2026-07-14T07:15:00+00:00",
+      "exit_ts": "2026-07-15T07:15:00+00:00"
+    },
+    {
+      "question": "Will the price of Bitcoin be above $60,000 on July 15?",
+      "target_id": "target_delta_24h",
+      "direction": "long_yes",
+      "entry_price": 0.969,
+      "exit_price": 0.9995,
+      "pnl": 3.147575,
+      "realized": true,
+      "anchor_ts": "2026-07-14T07:15:00+00:00",
+      "exit_ts": "2026-07-15T07:15:00+00:00"
+    },
+    {
+      "question": "Will Bitcoin reach $72,500 in July?",
+      "target_id": "target_up_24h",
+      "direction": "long_no",
+      "entry_price": 0.96,
+      "exit_price": 0.885,
+      "pnl": -7.8125,
+      "realized": true,
+      "anchor_ts": "2026-07-14T07:15:00+00:00",
+      "exit_ts": "2026-07-15T07:15:00+00:00"
+    },
+    {
+      "question": "Will the price of Bitcoin be above $62,000 on July 15?",
+      "target_id": "target_delta_24h",
+      "direction": "long_yes",
+      "entry_price": 0.69,
+      "exit_price": 0.9905,
+      "pnl": 43.550725,
+      "realized": true,
+      "anchor_ts": "2026-07-14T07:15:00+00:00",
+      "exit_ts": "2026-07-15T07:15:00+00:00"
+    },
+    {
+      "question": "Will the price of Bitcoin be above $60,000 on July 15?",
+      "target_id": "target_up_24h",
+      "direction": "long_yes",
+      "entry_price": 0.969,
+      "exit_price": 0.9995,
+      "pnl": 3.147575,
+      "realized": true,
+      "anchor_ts": "2026-07-14T07:15:00+00:00",
+      "exit_ts": "2026-07-15T07:15:00+00:00"
+    },
+    {
+      "question": "Will the price of Bitcoin be above $62,000 on July 15?",
+      "target_id": "target_up_24h",
+      "direction": "long_yes",
+      "entry_price": 0.69,
+      "exit_price": 0.9905,
+      "pnl": 43.550725,
+      "realized": true,
+      "anchor_ts": "2026-07-14T07:15:00+00:00",
+      "exit_ts": "2026-07-15T07:15:00+00:00"
+    },
+    {
+      "question": "Will Bitcoin dip to $55,000 by December 31, 2026?",
+      "target_id": "target_up_24h",
+      "direction": "long_no",
+      "entry_price": 0.4,
+      "exit_price": 0.495,
+      "pnl": 23.75,
+      "realized": true,
+      "anchor_ts": "2026-07-14T07:15:00+00:00",
+      "exit_ts": "2026-07-15T07:15:00+00:00"
+    },
+    {
+      "question": "Will Bitcoin dip to $60,000 in July?",
+      "target_id": "target_delta_24h",
+      "direction": "long_yes",
+      "entry_price": 0.58,
+      "exit_price": 0.335,
+      "pnl": -42.241379,
+      "realized": true,
+      "anchor_ts": "2026-07-14T07:15:00+00:00",
+      "exit_ts": "2026-07-15T07:15:00+00:00"
+    },
+    {
+      "question": "Will the price of Bitcoin be above $68,000 on July 16?",
+      "target_id": "target_up_24h",
+      "direction": "long_no",
+      "entry_price": 0.997,
+      "exit_price": 0.9795,
+      "pnl": -1.755266,
+      "realized": true,
+      "anchor_ts": "2026-07-14T07:15:00+00:00",
+      "exit_ts": "2026-07-15T07:15:00+00:00"
+    },
+    {
+      "question": "Will Bitcoin reach $72,500 in July?",
+      "target_id": "target_delta_24h",
+      "direction": "long_no",
+      "entry_price": 0.96,
+      "exit_price": 0.885,
+      "pnl": -7.8125,
+      "realized": true,
+      "anchor_ts": "2026-07-14T07:15:00+00:00",
+      "exit_ts": "2026-07-15T07:15:00+00:00"
+    },
+    {
+      "question": "Will Bitcoin dip to $55,000 in July?",
+      "target_id": "target_up_24h",
+      "direction": "long_no",
+      "entry_price": 0.85,
+      "exit_price": 0.935,
+      "pnl": 10.0,
+      "realized": true,
+      "anchor_ts": "2026-07-14T07:15:00+00:00",
+      "exit_ts": "2026-07-15T07:15:00+00:00"
+    },
+    {
+      "question": "Will the price of Bitcoin be above $66,000 on July 15?",
+      "target_id": "target_up_24h",
+      "direction": "long_no",
+      "entry_price": 0.992,
+      "exit_price": 0.9295,
+      "pnl": -6.300403,
+      "realized": true,
+      "anchor_ts": "2026-07-14T07:15:00+00:00",
+      "exit_ts": "2026-07-15T07:15:00+00:00"
+    },
+    {
+      "question": "Will Bitcoin dip to $60,000 in July?",
+      "target_id": "target_up_24h",
+      "direction": "long_yes",
+      "entry_price": 0.58,
+      "exit_price": 0.335,
+      "pnl": -42.241379,
+      "realized": true,
+      "anchor_ts": "2026-07-14T07:15:00+00:00",
+      "exit_ts": "2026-07-15T07:15:00+00:00"
+    },
+    {
+      "question": "Will Bitcoin reach $70,000 in July?",
+      "target_id": "target_up_24h",
+      "direction": "long_no",
+      "entry_price": 0.88,
+      "exit_price": 0.745,
+      "pnl": -15.340909,
+      "realized": true,
+      "anchor_ts": "2026-07-14T07:15:00+00:00",
+      "exit_ts": "2026-07-15T07:15:00+00:00"
+    },
+    {
+      "question": "Will Bitcoin dip to $57,500 in July?",
+      "target_id": "target_delta_24h",
+      "direction": "long_no",
+      "entry_price": 0.72,
+      "exit_price": 0.875,
+      "pnl": 21.527778,
+      "realized": true,
+      "anchor_ts": "2026-07-14T07:15:00+00:00",
+      "exit_ts": "2026-07-15T07:15:00+00:00"
+    },
+    {
+      "question": "Will Bitcoin reach $67,500 in July?",
+      "target_id": "target_up_24h",
+      "direction": "long_no",
+      "entry_price": 0.69,
+      "exit_price": 0.465,
+      "pnl": -32.608696,
+      "realized": true,
+      "anchor_ts": "2026-07-14T07:15:00+00:00",
+      "exit_ts": "2026-07-15T07:15:00+00:00"
+    },
+    {
+      "question": "Will Bitcoin dip to $50,000 by December 31, 2026?",
+      "target_id": "target_up_24h",
+      "direction": "long_yes",
+      "entry_price": 0.44,
+      "exit_price": 0.345,
+      "pnl": -21.590909,
+      "realized": true,
+      "anchor_ts": "2026-07-14T07:15:00+00:00",
+      "exit_ts": "2026-07-15T07:15:00+00:00"
+    },
+    {
+      "question": "Will Bitcoin reach $70,000 July 13-19?",
+      "target_id": "target_up_24h",
+      "direction": "long_no",
+      "entry_price": 0.987,
+      "exit_price": 0.951,
+      "pnl": -3.647416,
+      "realized": true,
+      "anchor_ts": "2026-07-14T07:15:00+00:00",
+      "exit_ts": "2026-07-15T07:15:00+00:00"
+    }
+  ],
+  "eth_comparison": {
+    "status": "OK",
+    "n_trades": 6,
+    "n_skipped": 256,
+    "total_pnl": 385.015262,
+    "final_return_pct": 3.8502,
+    "trades": [
+      {
+        "question": "Will the price of Ethereum be above $1,800 on July 15?",
+        "target_id": "target_up_24h",
+        "direction": "long_yes",
+        "entry_price": 0.39,
+        "exit_price": 0.9735,
+        "pnl": 149.615385,
+        "realized": true,
+        "anchor_ts": "2026-07-14T07:15:00+00:00",
+        "exit_ts": "2026-07-15T07:15:00+00:00"
+      },
+      {
+        "question": "Will the price of Ethereum be above $1,700 on July 15?",
+        "target_id": "target_delta_24h",
+        "direction": "long_yes",
+        "entry_price": 0.941,
+        "exit_price": 0.9985,
+        "pnl": 6.110521,
+        "realized": true,
+        "anchor_ts": "2026-07-14T07:15:00+00:00",
+        "exit_ts": "2026-07-15T07:15:00+00:00"
+      },
+      {
+        "question": "Will the price of Ethereum be above $1,800 on July 15?",
+        "target_id": "target_delta_24h",
+        "direction": "long_yes",
+        "entry_price": 0.39,
+        "exit_price": 0.9735,
+        "pnl": 149.615385,
+        "realized": true,
+        "anchor_ts": "2026-07-14T07:15:00+00:00",
+        "exit_ts": "2026-07-15T07:15:00+00:00"
+      },
+      {
+        "question": "Will the price of Ethereum be above $1,700 on July 15?",
+        "target_id": "target_up_24h",
+        "direction": "long_yes",
+        "entry_price": 0.941,
+        "exit_price": 0.9985,
+        "pnl": 6.110521,
+        "realized": true,
+        "anchor_ts": "2026-07-14T07:15:00+00:00",
+        "exit_ts": "2026-07-15T07:15:00+00:00"
+      },
+      {
+        "question": "Will the price of Ethereum be above $1,900 on July 15?",
+        "target_id": "target_up_24h",
+        "direction": "long_no",
+        "entry_price": 0.985,
+        "exit_price": 0.8625,
+        "pnl": -12.436548,
+        "realized": true,
+        "anchor_ts": "2026-07-14T07:15:00+00:00",
+        "exit_ts": "2026-07-15T07:15:00+00:00"
+      },
+      {
+        "question": "Will Ethereum reach $2,000 in July?",
+        "target_id": "target_up_24h",
+        "direction": "long_yes",
+        "entry_price": 0.25,
+        "exit_price": 0.465,
+        "pnl": 86.0,
+        "realized": true,
+        "anchor_ts": "2026-07-14T07:15:00+00:00",
+        "exit_ts": "2026-07-15T07:15:00+00:00"
+      }
+    ]
+  }
+}

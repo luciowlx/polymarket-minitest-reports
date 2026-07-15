@@ -1,0 +1,49 @@
+{
+  "scenario_id": "CRY01",
+  "name": "加密每日阈值阶梯",
+  "run_date": "2026-07-16",
+  "generated_at": "2026-07-15T16:08:45.104485+00:00",
+  "run_id": "ac8bb1de-28c7-4fa2-8f59-a2adff50fac5",
+  "pipeline_status": "PIPELINE_PASS",
+  "effect_status": "INCONCLUSIVE",
+  "targets": {
+    "final_outcome_yes": {
+      "task": "classification",
+      "n_train": 39884,
+      "n_predict": 66,
+      "status": "PIPELINE_PASS",
+      "notes": [],
+      "limix": {
+        "task_id": "fd785331f05882d2810623dbb8b56cfd",
+        "model_type": "LIMIX_7M",
+        "elapsed_s": 166.029,
+        "error": null
+      },
+      "matured_metrics": {
+        "limix": {},
+        "base_rate": {},
+        "price_unchanged": {},
+        "mean_reversion": {},
+        "momentum": {},
+        "n_matured": 0
+      },
+      "pending_labels": 0,
+      "simtrade": {
+        "n_trades": 25,
+        "total_pnl": 814.306009804008,
+        "return_on_bankroll": 0.0814306009804008,
+        "win_rate": 0.52,
+        "max_drawdown": 124.72470566601976,
+        "n_unrealized": 25
+      }
+    }
+  },
+  "data_quality": {
+    "snapshot_rows": 0,
+    "freshest_snapshot": "",
+    "missing_rate": {},
+    "api_errors": []
+  },
+  "universe_size": 66,
+  "primary_metric": "return_on_bankroll"
+}
