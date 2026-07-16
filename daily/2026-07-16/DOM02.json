@@ -2,8 +2,8 @@
   "scenario_id": "DOM02",
   "name": "AI 模型发布",
   "run_date": "2026-07-16",
-  "generated_at": "2026-07-16T01:01:41.712324+00:00",
-  "run_id": "abfe64c5-bccd-47f7-8569-a29d37f84c5f",
+  "generated_at": "2026-07-16T01:30:12.269454+00:00",
+  "run_id": "fb18bbbe-daff-4d01-a916-1f44282eeded",
   "pipeline_status": "PIPELINE_PASS",
   "effect_status": "INCONCLUSIVE",
   "targets": {
@@ -12,11 +12,13 @@
       "n_train": 1787,
       "n_predict": 61,
       "status": "ok",
-      "notes": [],
+      "notes": [
+        "idempotent_skip"
+      ],
       "limix": {
         "task_id": "3abacae5a26934f58eaf9998a71a9b74",
         "model_type": "LIMIX_7M",
-        "elapsed_s": 4.792,
+        "elapsed_s": 0.0,
         "error": null
       },
       "matured_metrics": {
@@ -77,11 +79,13 @@
       "n_train": 1787,
       "n_predict": 61,
       "status": "ok",
-      "notes": [],
+      "notes": [
+        "idempotent_skip"
+      ],
       "limix": {
         "task_id": "e3a943c979d046ac2de2fdaec61794ae",
         "model_type": "LIMIX_7M",
-        "elapsed_s": 4.937,
+        "elapsed_s": 0.0,
         "error": null
       },
       "matured_metrics": {
@@ -138,7 +142,7 @@
       "n_predict": 0,
       "status": "INSUFFICIENT_DATA",
       "notes": [
-        "train_rows=0<MIN_TRAIN_ROWS(30)"
+        "idempotent_skip"
       ],
       "limix": {
         "task_id": "",
@@ -176,11 +180,11 @@
     }
   },
   "data_quality": {
-    "snapshot_rows": 11507,
-    "freshest_snapshot": "2026-07-16T00:46:04.833792+00:00",
+    "snapshot_rows": 11627,
+    "freshest_snapshot": "2026-07-16T01:16:05.429328+00:00",
     "missing_rate": {
-      "mid_price": 0.2798,
-      "spread": 0.2798,
+      "mid_price": 0.2679,
+      "spread": 0.2679,
       "bid_depth": 0.0,
       "ask_depth": 0.0,
       "orderbook_imbalance": 0.0,
@@ -189,7 +193,7 @@
       "trade_count_1h": 0.0,
       "return_1h": 0.0119,
       "return_6h": 0.0,
-      "return_24h": 0.0298,
+      "return_24h": 0.006,
       "volatility": 0.0,
       "liquidity": 0.0,
       "hours_to_resolution": 0.0,
@@ -197,8 +201,8 @@
       "fill_ratio_1000": 0.0,
       "tradable_now": 0.0,
       "threshold_num": 0.8869,
-      "btc_spot": 0.1071,
-      "eth_spot": 0.1071,
+      "btc_spot": 0.1012,
+      "eth_spot": 0.1012,
       "threshold_ratio": 1.0
     },
     "api_errors": []

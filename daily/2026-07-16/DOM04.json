@@ -2,8 +2,8 @@
   "scenario_id": "DOM04",
   "name": "选举与立法",
   "run_date": "2026-07-16",
-  "generated_at": "2026-07-16T01:01:45.480179+00:00",
-  "run_id": "abfe64c5-bccd-47f7-8569-a29d37f84c5f",
+  "generated_at": "2026-07-16T01:30:15.903614+00:00",
+  "run_id": "fb18bbbe-daff-4d01-a916-1f44282eeded",
   "pipeline_status": "PIPELINE_PASS",
   "effect_status": "INCONCLUSIVE",
   "targets": {
@@ -12,11 +12,13 @@
       "n_train": 2173,
       "n_predict": 77,
       "status": "ok",
-      "notes": [],
+      "notes": [
+        "idempotent_skip"
+      ],
       "limix": {
         "task_id": "1f77daa40301902be79405201b09b3f3",
         "model_type": "LIMIX_7M",
-        "elapsed_s": 5.19,
+        "elapsed_s": 0.0,
         "error": null
       },
       "matured_metrics": {
@@ -77,11 +79,13 @@
       "n_train": 2173,
       "n_predict": 77,
       "status": "ok",
-      "notes": [],
+      "notes": [
+        "idempotent_skip"
+      ],
       "limix": {
         "task_id": "89a4df8edf6b936d3e9e1b5f5d7dfa16",
         "model_type": "LIMIX_7M",
-        "elapsed_s": 5.589,
+        "elapsed_s": 0.0,
         "error": null
       },
       "matured_metrics": {
@@ -138,7 +142,7 @@
       "n_predict": 0,
       "status": "INSUFFICIENT_DATA",
       "notes": [
-        "train_rows=0<MIN_TRAIN_ROWS(30)"
+        "idempotent_skip"
       ],
       "limix": {
         "task_id": "",
@@ -176,8 +180,8 @@
     }
   },
   "data_quality": {
-    "snapshot_rows": 12075,
-    "freshest_snapshot": "2026-07-16T00:45:38.867440+00:00",
+    "snapshot_rows": 12221,
+    "freshest_snapshot": "2026-07-16T01:15:38.628591+00:00",
     "missing_rate": {
       "mid_price": 0.1111,
       "spread": 0.1111,
@@ -197,8 +201,8 @@
       "fill_ratio_1000": 0.0111,
       "tradable_now": 0.0,
       "threshold_num": 1.0,
-      "btc_spot": 0.0278,
-      "eth_spot": 0.0278,
+      "btc_spot": 0.0222,
+      "eth_spot": 0.0222,
       "threshold_ratio": 1.0
     },
     "api_errors": []

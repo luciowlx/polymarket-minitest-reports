@@ -2,8 +2,8 @@
   "scenario_id": "TRD04",
   "name": "1小时买入滑点",
   "run_date": "2026-07-16",
-  "generated_at": "2026-07-16T01:01:58.045986+00:00",
-  "run_id": "abfe64c5-bccd-47f7-8569-a29d37f84c5f",
+  "generated_at": "2026-07-16T01:30:28.535796+00:00",
+  "run_id": "fb18bbbe-daff-4d01-a916-1f44282eeded",
   "pipeline_status": "PIPELINE_PASS",
   "effect_status": "BETTER_THAN_BASELINE",
   "targets": {
@@ -12,11 +12,13 @@
       "n_train": 5000,
       "n_predict": 523,
       "status": "ok",
-      "notes": [],
+      "notes": [
+        "idempotent_skip"
+      ],
       "limix": {
         "task_id": "7c372551f30376353f2db14eeff566e7",
         "model_type": "LIMIX_7M",
-        "elapsed_s": 7.756,
+        "elapsed_s": 0.0,
         "error": null
       },
       "matured_metrics": {
@@ -61,33 +63,33 @@
     }
   },
   "data_quality": {
-    "snapshot_rows": 93151,
-    "freshest_snapshot": "2026-07-16T00:46:20.155225+00:00",
+    "snapshot_rows": 94107,
+    "freshest_snapshot": "2026-07-16T01:16:16.721230+00:00",
     "missing_rate": {
-      "mid_price": 0.4587,
-      "spread": 0.4587,
+      "mid_price": 0.4586,
+      "spread": 0.4586,
       "bid_depth": 0.0344,
       "ask_depth": 0.0344,
-      "orderbook_imbalance": 0.0973,
+      "orderbook_imbalance": 0.0971,
       "volume_1h": 0.0026,
-      "volume_24h": 0.2585,
+      "volume_24h": 0.258,
       "trade_count_1h": 0.0,
-      "return_1h": 0.2672,
-      "return_6h": 0.4432,
-      "return_24h": 0.5185,
-      "volatility": 0.4402,
-      "liquidity": 0.0651,
+      "return_1h": 0.2667,
+      "return_6h": 0.4424,
+      "return_24h": 0.5153,
+      "volatility": 0.4394,
+      "liquidity": 0.065,
       "hours_to_resolution": 0.0,
-      "buy_slippage_1000_now": 0.2615,
+      "buy_slippage_1000_now": 0.2614,
       "fill_ratio_1000": 0.0344,
       "tradable_now": 0.0,
-      "threshold_num": 0.8766,
-      "btc_spot": 0.0189,
-      "eth_spot": 0.0189,
-      "threshold_ratio": 0.8989
+      "threshold_num": 0.8761,
+      "btc_spot": 0.0181,
+      "eth_spot": 0.0181,
+      "threshold_ratio": 0.8988
     },
     "api_errors": []
   },
-  "universe_size": 2642,
+  "universe_size": 2647,
   "primary_metric": "legacy"
 }

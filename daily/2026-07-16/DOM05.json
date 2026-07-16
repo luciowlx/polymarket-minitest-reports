@@ -2,8 +2,8 @@
   "scenario_id": "DOM05",
   "name": "地缘政治",
   "run_date": "2026-07-16",
-  "generated_at": "2026-07-16T01:01:47.347849+00:00",
-  "run_id": "abfe64c5-bccd-47f7-8569-a29d37f84c5f",
+  "generated_at": "2026-07-16T01:30:17.760049+00:00",
+  "run_id": "fb18bbbe-daff-4d01-a916-1f44282eeded",
   "pipeline_status": "PIPELINE_PASS",
   "effect_status": "INCONCLUSIVE",
   "targets": {
@@ -12,11 +12,13 @@
       "n_train": 3191,
       "n_predict": 61,
       "status": "ok",
-      "notes": [],
+      "notes": [
+        "idempotent_skip"
+      ],
       "limix": {
         "task_id": "b76f3017dd1c578bc2feb7e554bbfe9c",
         "model_type": "LIMIX_7M",
-        "elapsed_s": 5.57,
+        "elapsed_s": 0.0,
         "error": null
       },
       "matured_metrics": {
@@ -77,11 +79,13 @@
       "n_train": 3191,
       "n_predict": 61,
       "status": "ok",
-      "notes": [],
+      "notes": [
+        "idempotent_skip"
+      ],
       "limix": {
         "task_id": "6f88339134da72e967703c706dd64626",
         "model_type": "LIMIX_7M",
-        "elapsed_s": 5.733,
+        "elapsed_s": 0.0,
         "error": null
       },
       "matured_metrics": {
@@ -138,7 +142,7 @@
       "n_predict": 0,
       "status": "INSUFFICIENT_DATA",
       "notes": [
-        "train_rows=0<MIN_TRAIN_ROWS(30)"
+        "idempotent_skip"
       ],
       "limix": {
         "task_id": "",
@@ -176,8 +180,8 @@
     }
   },
   "data_quality": {
-    "snapshot_rows": 11520,
-    "freshest_snapshot": "2026-07-16T00:46:06.335333+00:00",
+    "snapshot_rows": 11640,
+    "freshest_snapshot": "2026-07-16T01:16:06.084747+00:00",
     "missing_rate": {
       "mid_price": 0.1523,
       "spread": 0.1523,
