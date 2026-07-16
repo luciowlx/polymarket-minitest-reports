@@ -1,0 +1,208 @@
+{
+  "scenario_id": "DOM04",
+  "name": "选举与立法",
+  "run_date": "2026-07-16",
+  "generated_at": "2026-07-16T01:01:45.480179+00:00",
+  "run_id": "abfe64c5-bccd-47f7-8569-a29d37f84c5f",
+  "pipeline_status": "PIPELINE_PASS",
+  "effect_status": "INCONCLUSIVE",
+  "targets": {
+    "target_up_24h": {
+      "task": "classification",
+      "n_train": 2173,
+      "n_predict": 77,
+      "status": "ok",
+      "notes": [],
+      "limix": {
+        "task_id": "1f77daa40301902be79405201b09b3f3",
+        "model_type": "LIMIX_7M",
+        "elapsed_s": 5.19,
+        "error": null
+      },
+      "matured_metrics": {
+        "limix": {
+          "n": 23,
+          "logloss": 1.050741,
+          "brier": 0.547526,
+          "auc": 0.844811,
+          "balanced_accuracy": 0.751515,
+          "macro_f1": 0.610893
+        },
+        "base_rate": {
+          "n": 23,
+          "logloss": 1.054281,
+          "brier": 0.635488,
+          "auc": 0.5,
+          "balanced_accuracy": 0.333333,
+          "macro_f1": 0.215686
+        },
+        "price_unchanged": {
+          "n": 23,
+          "logloss": 1.613381,
+          "brier": 0.901957,
+          "auc": 0.5,
+          "balanced_accuracy": 0.333333,
+          "macro_f1": 0.215686
+        },
+        "mean_reversion": {
+          "n": 23,
+          "logloss": 1.091843,
+          "brier": 0.6395,
+          "auc": 0.439241,
+          "balanced_accuracy": 0.272727,
+          "macro_f1": 0.222222
+        },
+        "momentum": {
+          "n": 23,
+          "logloss": 1.158693,
+          "brier": 0.698634,
+          "auc": 0.587338,
+          "balanced_accuracy": 0.424242,
+          "macro_f1": 0.183333
+        },
+        "n_matured": 23
+      },
+      "pending_labels": 177,
+      "simtrade": {
+        "n_trades": 17,
+        "total_pnl": 21.996897677335312,
+        "return_on_bankroll": 0.002199689767733531,
+        "win_rate": 0.7058823529411765,
+        "max_drawdown": 28.91956591126716,
+        "n_unrealized": 0
+      }
+    },
+    "target_delta_24h": {
+      "task": "regression",
+      "n_train": 2173,
+      "n_predict": 77,
+      "status": "ok",
+      "notes": [],
+      "limix": {
+        "task_id": "89a4df8edf6b936d3e9e1b5f5d7dfa16",
+        "model_type": "LIMIX_7M",
+        "elapsed_s": 5.589,
+        "error": null
+      },
+      "matured_metrics": {
+        "limix": {
+          "n": 23,
+          "mae": 0.020681,
+          "rmse": 0.030134,
+          "r2": -0.191209,
+          "direction_accuracy": 0.869565
+        },
+        "base_rate": {
+          "n": 23,
+          "mae": 0.017102,
+          "rmse": 0.030189,
+          "r2": -0.195539,
+          "direction_accuracy": 0.913043
+        },
+        "price_unchanged": {
+          "n": 23,
+          "mae": 0.017522,
+          "rmse": 0.030555,
+          "r2": -0.224668,
+          "direction_accuracy": 0.173913
+        },
+        "mean_reversion": {
+          "n": 23,
+          "mae": 0.025076,
+          "rmse": 0.03893,
+          "r2": -0.988068,
+          "direction_accuracy": 0.521739
+        },
+        "momentum": {
+          "n": 23,
+          "mae": 0.016772,
+          "rmse": 0.031147,
+          "r2": -0.27263,
+          "direction_accuracy": 0.478261
+        },
+        "n_matured": 23
+      },
+      "pending_labels": 177,
+      "simtrade": {
+        "n_trades": 14,
+        "total_pnl": 51.227666908104545,
+        "return_on_bankroll": 0.005122766690810455,
+        "win_rate": 0.8571428571428571,
+        "max_drawdown": 3.20689275489981,
+        "n_unrealized": 0
+      }
+    },
+    "final_outcome_yes": {
+      "task": "classification",
+      "n_train": 0,
+      "n_predict": 0,
+      "status": "INSUFFICIENT_DATA",
+      "notes": [
+        "train_rows=0<MIN_TRAIN_ROWS(30)"
+      ],
+      "limix": {
+        "task_id": "",
+        "model_type": "",
+        "elapsed_s": 0.0,
+        "error": null
+      },
+      "matured_metrics": {
+        "limix": {
+          "n": 0
+        },
+        "base_rate": {
+          "n": 0
+        },
+        "price_unchanged": {
+          "n": 0
+        },
+        "mean_reversion": {
+          "n": 0
+        },
+        "momentum": {
+          "n": 0
+        },
+        "n_matured": 0
+      },
+      "pending_labels": 0,
+      "simtrade": {
+        "n_trades": 0,
+        "total_pnl": null,
+        "return_on_bankroll": null,
+        "win_rate": null,
+        "max_drawdown": null,
+        "n_unrealized": 0
+      }
+    }
+  },
+  "data_quality": {
+    "snapshot_rows": 12075,
+    "freshest_snapshot": "2026-07-16T00:45:38.867440+00:00",
+    "missing_rate": {
+      "mid_price": 0.1111,
+      "spread": 0.1111,
+      "bid_depth": 0.0111,
+      "ask_depth": 0.0111,
+      "orderbook_imbalance": 0.0111,
+      "volume_1h": 0.0,
+      "volume_24h": 0.0,
+      "trade_count_1h": 0.0,
+      "return_1h": 0.0222,
+      "return_6h": 0.0,
+      "return_24h": 0.0,
+      "volatility": 0.0,
+      "liquidity": 0.0,
+      "hours_to_resolution": 0.0,
+      "buy_slippage_1000_now": 0.0278,
+      "fill_ratio_1000": 0.0111,
+      "tradable_now": 0.0,
+      "threshold_num": 1.0,
+      "btc_spot": 0.0278,
+      "eth_spot": 0.0278,
+      "threshold_ratio": 1.0
+    },
+    "api_errors": []
+  },
+  "universe_size": 180,
+  "primary_metric": "return_on_bankroll"
+}
