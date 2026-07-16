@@ -1,0 +1,52 @@
+{
+  "scenario_id": "CRY02",
+  "name": "加密每日涨跌",
+  "scenario_display": "比特币/以太坊「今天涨还是跌」",
+  "bet_type_hint": "本场景押什么:押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
+  "run_date": "2026-07-17",
+  "generated_at": "2026-07-16T16:06:37.460786+00:00",
+  "run_id": "60625a3a-3bbb-4313-9ca1-118158f7ed08",
+  "pipeline_status": "PIPELINE_PASS",
+  "effect_status": "INCONCLUSIVE",
+  "targets": {
+    "final_outcome_yes": {
+      "task": "classification",
+      "n_train": 3961,
+      "n_predict": 1,
+      "status": "PIPELINE_PASS",
+      "notes": [],
+      "limix": {
+        "task_id": "b8b01419e1b9afe09ce07176dd2c06fc",
+        "model_type": "LIMIX_7M",
+        "elapsed_s": 19.519,
+        "error": null
+      },
+      "matured_metrics": {
+        "limix": {},
+        "base_rate": {},
+        "price_unchanged": {},
+        "mean_reversion": {},
+        "momentum": {},
+        "n_matured": 0
+      },
+      "pending_labels": 0,
+      "display": "押事件最终结果",
+      "simtrade": {
+        "n_trades": 9,
+        "total_pnl": -139.16109681615472,
+        "return_on_bankroll": -0.013916109681615472,
+        "win_rate": 0.2222222222222222,
+        "max_drawdown": 287.74653098982424,
+        "n_unrealized": 7
+      }
+    }
+  },
+  "data_quality": {
+    "snapshot_rows": 0,
+    "freshest_snapshot": "",
+    "missing_rate": {},
+    "api_errors": []
+  },
+  "universe_size": 1,
+  "primary_metric": "return_on_bankroll"
+}
