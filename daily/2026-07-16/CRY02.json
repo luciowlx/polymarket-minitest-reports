@@ -1,22 +1,24 @@
 {
   "scenario_id": "CRY02",
   "name": "加密每日涨跌",
+  "scenario_display": "比特币/以太坊「今天涨还是跌」",
+  "bet_type_hint": "本场景押什么:押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
   "run_date": "2026-07-16",
-  "generated_at": "2026-07-15T16:08:59.559678+00:00",
-  "run_id": "ac8bb1de-28c7-4fa2-8f59-a2adff50fac5",
+  "generated_at": "2026-07-16T10:01:40.612254+00:00",
+  "run_id": "c9997b13-a1c1-48a8-8b6f-521e4e088a80",
   "pipeline_status": "PIPELINE_PASS",
   "effect_status": "INCONCLUSIVE",
   "targets": {
     "final_outcome_yes": {
       "task": "classification",
       "n_train": 3961,
-      "n_predict": 1,
+      "n_predict": 4,
       "status": "PIPELINE_PASS",
       "notes": [],
       "limix": {
-        "task_id": "c4a737d4d53de0e384bcf5c5cf6efcae",
+        "task_id": "b2be1c737bea4f2def3cc3c208667194",
         "model_type": "LIMIX_7M",
-        "elapsed_s": 5.258,
+        "elapsed_s": 11.747,
         "error": null
       },
       "matured_metrics": {
@@ -28,13 +30,14 @@
         "n_matured": 0
       },
       "pending_labels": 0,
+      "display": "押事件最终结果",
       "simtrade": {
-        "n_trades": 4,
-        "total_pnl": 235.76740270576315,
-        "return_on_bankroll": 0.023576740270576314,
-        "win_rate": 0.5,
-        "max_drawdown": 8.82352941176471,
-        "n_unrealized": 4
+        "n_trades": 8,
+        "total_pnl": 42.90349200236559,
+        "return_on_bankroll": 0.004290349200236559,
+        "win_rate": 0.25,
+        "max_drawdown": 112.34860883797056,
+        "n_unrealized": 6
       }
     }
   },
@@ -44,6 +47,6 @@
     "missing_rate": {},
     "api_errors": []
   },
-  "universe_size": 1,
+  "universe_size": 4,
   "primary_metric": "return_on_bankroll"
 }
