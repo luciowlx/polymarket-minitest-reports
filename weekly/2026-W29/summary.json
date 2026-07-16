@@ -1,6 +1,6 @@
 {
   "week": "2026-W29",
-  "generated_at": "2026-07-13T04:54:54.797557+00:00",
+  "generated_at": "2026-07-16T06:42:13.743419+00:00",
   "dates": [
     "2026-07-13",
     "2026-07-14",
@@ -11,325 +11,1385 @@
     "2026-07-19"
   ],
   "recommendation_rules": "推荐规则:effect=BETTER → continue;PIPELINE_FAIL≥3 天 → stop(修复后重跑);INSUFFICIENT 为主 → adjust(扩 universe/降门槛);NOT_BETTER 且 n≥100 → adjust(换特征/换模型档);近满分指标(cls logloss<0.05 或 reg r2>0.99)→ 标注疑似泄漏,adjust",
+  "recommendation_rules_simtrade": "前置规则(§18,优先级最高):可交易 target 且 n_trades≥SIM_MIN_TRADES 且 LimiX 收益率>0 且 >最好基线 → continue",
+  "scenario_order": [
+    "CRY01",
+    "CRY02",
+    "DOM01",
+    "TRD01",
+    "TRD02",
+    "DOM02",
+    "DOM03",
+    "DOM04",
+    "DOM05",
+    "TRD03",
+    "TRD04",
+    "TRD05"
+  ],
+  "scenario_order_note": "场景按因果优先级固定排序:CRY01 > CRY02 > DOM01 > TRD01 > TRD02 > 其余 —— CRY01/CRY02 的结算由币安现货收盘价直接决定(近乎二元期权),因果性最强且日频结算;DOM01 有现货价格驱动;TRD01/TRD02 直接对应可交易的价格方向。",
+  "btc_focus": {
+    "status": "OK",
+    "scenario_id": "DOM01",
+    "model": "limix",
+    "bankroll": 10000.0,
+    "stake": 100.0,
+    "entities": {
+      "BTC": {
+        "n_trades": 96,
+        "total_pnl": -69.88612537233753,
+        "final_return_pct": -0.6988612537233753,
+        "trades": [
+          {
+            "question": "Will Bitcoin dip to $50,000 by December 31, 2026?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.44,
+            "exit_price": 0.345,
+            "pnl": -21.590909090909097
+          },
+          {
+            "question": "Will Bitcoin reach $80,000 by December 31, 2026?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.3,
+            "exit_price": 0.325,
+            "pnl": 8.333333333333341
+          },
+          {
+            "question": "Will Bitcoin reach $72,500 in July?",
+            "target_id": "target_up_24h",
+            "direction": "long_no",
+            "entry_price": 0.96,
+            "exit_price": 0.885,
+            "pnl": -7.812499999999996
+          },
+          {
+            "question": "Will Bitcoin reach $70,000 in July?",
+            "target_id": "target_up_24h",
+            "direction": "long_no",
+            "entry_price": 0.88,
+            "exit_price": 0.745,
+            "pnl": -15.340909090909092
+          },
+          {
+            "question": "Will Bitcoin reach $67,500 in July?",
+            "target_id": "target_up_24h",
+            "direction": "long_no",
+            "entry_price": 0.69,
+            "exit_price": 0.46499999999999997,
+            "pnl": -32.608695652173914
+          },
+          {
+            "question": "Will Bitcoin dip to $57,500 in July?",
+            "target_id": "target_up_24h",
+            "direction": "long_no",
+            "entry_price": 0.72,
+            "exit_price": 0.875,
+            "pnl": 21.527777777777782
+          },
+          {
+            "question": "Will Bitcoin dip to $55,000 in July?",
+            "target_id": "target_up_24h",
+            "direction": "long_no",
+            "entry_price": 0.85,
+            "exit_price": 0.935,
+            "pnl": 10.000000000000009
+          },
+          {
+            "question": "Will Bitcoin dip to $60,000 in July?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.58,
+            "exit_price": 0.335,
+            "pnl": -42.24137931034482
+          },
+          {
+            "question": "Will the price of Bitcoin be above $60,000 on July 15?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.969,
+            "exit_price": 0.9995,
+            "pnl": 3.1475748194014534
+          },
+          {
+            "question": "Will the price of Bitcoin be above $62,000 on July 15?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.69,
+            "exit_price": 0.9904999999999999,
+            "pnl": 43.55072463768116
+          },
+          {
+            "question": "Will the price of Bitcoin be above $66,000 on July 15?",
+            "target_id": "target_up_24h",
+            "direction": "long_no",
+            "entry_price": 0.992,
+            "exit_price": 0.9295,
+            "pnl": -6.300403225806452
+          },
+          {
+            "question": "Will the price of Bitcoin be above $62,000 on July 16?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.65,
+            "exit_price": 0.9615,
+            "pnl": 47.92307692307692
+          },
+          {
+            "question": "Will the price of Bitcoin be above $68,000 on July 16?",
+            "target_id": "target_up_24h",
+            "direction": "long_no",
+            "entry_price": 0.997,
+            "exit_price": 0.9795,
+            "pnl": -1.7552657973921724
+          },
+          {
+            "question": "Will Bitcoin reach $70,000 July 13-19?",
+            "target_id": "target_up_24h",
+            "direction": "long_no",
+            "entry_price": 0.987,
+            "exit_price": 0.951,
+            "pnl": -3.6474164133738634
+          },
+          {
+            "question": "Will Bitcoin dip to $55,000 by December 31, 2026?",
+            "target_id": "target_up_24h",
+            "direction": "long_no",
+            "entry_price": 0.4,
+            "exit_price": 0.495,
+            "pnl": 23.749999999999993
+          },
+          {
+            "question": "Will Bitcoin reach $72,500 in July?",
+            "target_id": "target_delta_24h",
+            "direction": "long_no",
+            "entry_price": 0.96,
+            "exit_price": 0.885,
+            "pnl": -7.812499999999996
+          },
+          {
+            "question": "Will Bitcoin reach $67,500 in July?",
+            "target_id": "target_delta_24h",
+            "direction": "long_no",
+            "entry_price": 0.69,
+            "exit_price": 0.46499999999999997,
+            "pnl": -32.608695652173914
+          },
+          {
+            "question": "Will Bitcoin dip to $57,500 in July?",
+            "target_id": "target_delta_24h",
+            "direction": "long_no",
+            "entry_price": 0.72,
+            "exit_price": 0.875,
+            "pnl": 21.527777777777782
+          },
+          {
+            "question": "Will Bitcoin dip to $60,000 in July?",
+            "target_id": "target_delta_24h",
+            "direction": "long_yes",
+            "entry_price": 0.58,
+            "exit_price": 0.335,
+            "pnl": -42.24137931034482
+          },
+          {
+            "question": "Will the price of Bitcoin be above $60,000 on July 15?",
+            "target_id": "target_delta_24h",
+            "direction": "long_yes",
+            "entry_price": 0.969,
+            "exit_price": 0.9995,
+            "pnl": 3.1475748194014534
+          },
+          {
+            "question": "Will the price of Bitcoin be above $62,000 on July 15?",
+            "target_id": "target_delta_24h",
+            "direction": "long_yes",
+            "entry_price": 0.69,
+            "exit_price": 0.9904999999999999,
+            "pnl": 43.55072463768116
+          },
+          {
+            "question": "Will the price of Bitcoin be above $64,000 on July 15?",
+            "target_id": "target_delta_24h",
+            "direction": "long_yes",
+            "entry_price": 0.15,
+            "exit_price": 0.815,
+            "pnl": 443.3333333333333
+          },
+          {
+            "question": "Will the price of Bitcoin be above $62,000 on July 16?",
+            "target_id": "target_delta_24h",
+            "direction": "long_yes",
+            "entry_price": 0.65,
+            "exit_price": 0.9615,
+            "pnl": 47.92307692307692
+          },
+          {
+            "question": "Will Bitcoin dip to $50,000 by December 31, 2026?",
+            "target_id": "target_up_24h",
+            "direction": "long_no",
+            "entry_price": 0.6599999999999999,
+            "exit_price": 0.685,
+            "pnl": 3.7878787878788085
+          },
+          {
+            "question": "Will Bitcoin dip to $40,000 by December 31, 2026?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.19,
+            "exit_price": 0.14500000000000002,
+            "pnl": -23.68421052631578
+          },
+          {
+            "question": "Will Bitcoin reach $77,500 in July?",
+            "target_id": "target_up_24h",
+            "direction": "long_no",
+            "entry_price": 0.981,
+            "exit_price": 0.9845,
+            "pnl": 0.3567787971457756
+          },
+          {
+            "question": "Will Bitcoin reach $75,000 in July?",
+            "target_id": "target_up_24h",
+            "direction": "long_no",
+            "entry_price": 0.952,
+            "exit_price": 0.9625,
+            "pnl": 1.1029411764705952
+          },
+          {
+            "question": "Will Bitcoin reach $72,500 in July?",
+            "target_id": "target_up_24h",
+            "direction": "long_no",
+            "entry_price": 0.89,
+            "exit_price": 0.915,
+            "pnl": 2.8089887640449462
+          },
+          {
+            "question": "Will Bitcoin reach $70,000 in July?",
+            "target_id": "target_up_24h",
+            "direction": "long_no",
+            "entry_price": 0.74,
+            "exit_price": 0.775,
+            "pnl": 4.729729729729733
+          },
+          {
+            "question": "Will Bitcoin reach $67,500 in July?",
+            "target_id": "target_up_24h",
+            "direction": "long_no",
+            "entry_price": 0.45999999999999996,
+            "exit_price": 0.495,
+            "pnl": 7.60869565217392
+          },
+          {
+            "question": "Will Bitcoin dip to $57,500 in July?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.14,
+            "exit_price": 0.11499999999999999,
+            "pnl": -17.857142857142872
+          },
+          {
+            "question": "Will Bitcoin dip to $55,000 in July?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.07,
+            "exit_price": 0.0485,
+            "pnl": -30.71428571428572
+          },
+          {
+            "question": "Will Bitcoin dip to $60,000 in July?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.34,
+            "exit_price": 0.295,
+            "pnl": -13.23529411764707
+          },
+          {
+            "question": "Will the price of Bitcoin be above $62,000 on July 16?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.959,
+            "exit_price": 0.989,
+            "pnl": 3.1282586027111603
+          },
+          {
+            "question": "Will the price of Bitcoin be above $64,000 on July 16?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.69,
+            "exit_price": 0.805,
+            "pnl": 16.666666666666682
+          },
+          {
+            "question": "Will the price of Bitcoin be above $66,000 on July 16?",
+            "target_id": "target_up_24h",
+            "direction": "long_no",
+            "entry_price": 0.806,
+            "exit_price": 0.9285,
+            "pnl": 15.198511166253093
+          },
+          {
+            "question": "Will the price of Bitcoin be above $68,000 on July 16?",
+            "target_id": "target_up_24h",
+            "direction": "long_no",
+            "entry_price": 0.974,
+            "exit_price": 0.9945,
+            "pnl": 2.1047227926078103
+          },
+          {
+            "question": "Will the price of Bitcoin be above $60,000 on July 17?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.986,
+            "exit_price": 0.9935,
+            "pnl": 0.7606490872211017
+          },
+          {
+            "question": "Will the price of Bitcoin be above $62,000 on July 17?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.92,
+            "exit_price": 0.9584999999999999,
+            "pnl": 4.184782608695637
+          },
+          {
+            "question": "Will the price of Bitcoin be above $64,000 on July 17?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.65,
+            "exit_price": 0.685,
+            "pnl": 5.3846153846153895
+          },
+          {
+            "question": "Will the price of Bitcoin be above $66,000 on July 17?",
+            "target_id": "target_up_24h",
+            "direction": "long_no",
+            "entry_price": 0.758,
+            "exit_price": 0.8245,
+            "pnl": 8.773087071240107
+          },
+          {
+            "question": "Will the price of Bitcoin be above $68,000 on July 17?",
+            "target_id": "target_up_24h",
+            "direction": "long_no",
+            "entry_price": 0.949,
+            "exit_price": 0.9775,
+            "pnl": 3.003161222339313
+          },
+          {
+            "question": "Will Bitcoin reach $70,000 July 13-19?",
+            "target_id": "target_up_24h",
+            "direction": "long_no",
+            "entry_price": 0.943,
+            "exit_price": 0.972,
+            "pnl": 3.075291622481445
+          },
+          {
+            "question": "Will Bitcoin reach $68,000 July 13-19?",
+            "target_id": "target_up_24h",
+            "direction": "long_no",
+            "entry_price": 0.827,
+            "exit_price": 0.892,
+            "pnl": 7.85973397823459
+          },
+          {
+            "question": "Will Bitcoin dip to $60,000 July 13-19?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.08,
+            "exit_price": 0.032,
+            "pnl": -60.0
+          },
+          {
+            "question": "Will the price of Bitcoin be above $52,000 on July 20?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.999,
+            "exit_price": 0.9955,
+            "pnl": -0.3503503503503451
+          },
+          {
+            "question": "Will the price of Bitcoin be above $54,000 on July 20?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.999,
+            "exit_price": 0.994,
+            "pnl": -0.500500500500501
+          },
+          {
+            "question": "Will the price of Bitcoin be above $56,000 on July 20?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.989,
+            "exit_price": 0.993,
+            "pnl": 0.4044489383215373
+          },
+          {
+            "question": "Will the price of Bitcoin be above $58,000 on July 20?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.989,
+            "exit_price": 0.9864999999999999,
+            "pnl": -0.2527805864509664
+          },
+          {
+            "question": "Will the price of Bitcoin be above $60,000 on July 20?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.96,
+            "exit_price": 0.9675,
+            "pnl": 0.7812500000000066
+          },
+          {
+            "question": "Will the price of Bitcoin be above $62,000 on July 20?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.85,
+            "exit_price": 0.88,
+            "pnl": 3.529411764705886
+          },
+          {
+            "question": "Will the price of Bitcoin be above $64,000 on July 20?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.62,
+            "exit_price": 0.62,
+            "pnl": 0.0
+          },
+          {
+            "question": "Will the price of Bitcoin be above $66,000 on July 20?",
+            "target_id": "target_up_24h",
+            "direction": "long_no",
+            "entry_price": 0.7,
+            "exit_price": 0.74,
+            "pnl": 5.71428571428572
+          },
+          {
+            "question": "Will the price of Bitcoin be above $68,000 on July 20?",
+            "target_id": "target_up_24h",
+            "direction": "long_no",
+            "entry_price": 0.899,
+            "exit_price": 0.9305,
+            "pnl": 3.503893214682978
+          },
+          {
+            "question": "Will the price of Bitcoin be above $70,000 on July 20?",
+            "target_id": "target_up_24h",
+            "direction": "long_no",
+            "entry_price": 0.978,
+            "exit_price": 0.9855,
+            "pnl": 0.7668711656441782
+          },
+          {
+            "question": "Will the price of Bitcoin be above $54,000 on July 21?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.998,
+            "exit_price": 0.9964999999999999,
+            "pnl": -0.1503006012024105
+          },
+          {
+            "question": "Will the price of Bitcoin be above $60,000 on July 21?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.95,
+            "exit_price": 0.9584999999999999,
+            "pnl": 0.8947368421052582
+          },
+          {
+            "question": "Will the price of Bitcoin be above $62,000 on July 21?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.84,
+            "exit_price": 0.865,
+            "pnl": 2.976190476190479
+          },
+          {
+            "question": "Will the price of Bitcoin be above $64,000 on July 21?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.61,
+            "exit_price": 0.605,
+            "pnl": -0.8196721311475418
+          },
+          {
+            "question": "Will the price of Bitcoin be above $66,000 on July 21?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.32,
+            "exit_price": 0.295,
+            "pnl": -7.812500000000007
+          },
+          {
+            "question": "Will the price of Bitcoin be above $68,000 on July 21?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.13,
+            "exit_price": 0.08499999999999999,
+            "pnl": -34.61538461538462
+          },
+          {
+            "question": "Will the price of Bitcoin be above $70,000 on July 21?",
+            "target_id": "target_up_24h",
+            "direction": "long_no",
+            "entry_price": 0.97,
+            "exit_price": 0.9755,
+            "pnl": 0.5670103092783567
+          },
+          {
+            "question": "Will the price of Bitcoin be above $74,000 on July 21?",
+            "target_id": "target_up_24h",
+            "direction": "long_no",
+            "entry_price": 0.998,
+            "exit_price": 0.9955,
+            "pnl": -0.25050100200400266
+          },
+          {
+            "question": "Will Bitcoin dip to $55,000 by December 31, 2026?",
+            "target_id": "target_up_24h",
+            "direction": "long_no",
+            "entry_price": 0.49,
+            "exit_price": 0.515,
+            "pnl": 5.102040816326536
+          },
+          {
+            "question": "Will Bitcoin dip to $50,000 by December 31, 2026?",
+            "target_id": "target_delta_24h",
+            "direction": "long_no",
+            "entry_price": 0.6599999999999999,
+            "exit_price": 0.685,
+            "pnl": 3.7878787878788085
+          },
+          {
+            "question": "Will Bitcoin reach $72,500 in July?",
+            "target_id": "target_delta_24h",
+            "direction": "long_no",
+            "entry_price": 0.89,
+            "exit_price": 0.915,
+            "pnl": 2.8089887640449462
+          },
+          {
+            "question": "Will Bitcoin reach $70,000 in July?",
+            "target_id": "target_delta_24h",
+            "direction": "long_no",
+            "entry_price": 0.74,
+            "exit_price": 0.775,
+            "pnl": 4.729729729729733
+          },
+          {
+            "question": "Will Bitcoin reach $67,500 in July?",
+            "target_id": "target_delta_24h",
+            "direction": "long_no",
+            "entry_price": 0.45999999999999996,
+            "exit_price": 0.495,
+            "pnl": 7.60869565217392
+          },
+          {
+            "question": "Will Bitcoin dip to $57,500 in July?",
+            "target_id": "target_delta_24h",
+            "direction": "long_yes",
+            "entry_price": 0.14,
+            "exit_price": 0.11499999999999999,
+            "pnl": -17.857142857142872
+          },
+          {
+            "question": "Will Bitcoin dip to $55,000 in July?",
+            "target_id": "target_delta_24h",
+            "direction": "long_yes",
+            "entry_price": 0.07,
+            "exit_price": 0.0485,
+            "pnl": -30.71428571428572
+          },
+          {
+            "question": "Will Bitcoin dip to $60,000 in July?",
+            "target_id": "target_delta_24h",
+            "direction": "long_yes",
+            "entry_price": 0.34,
+            "exit_price": 0.295,
+            "pnl": -13.23529411764707
+          },
+          {
+            "question": "Will the price of Bitcoin be above $62,000 on July 16?",
+            "target_id": "target_delta_24h",
+            "direction": "long_no",
+            "entry_price": 0.04300000000000004,
+            "exit_price": 0.01100000000000001,
+            "pnl": -74.41860465116278
+          },
+          {
+            "question": "Will the price of Bitcoin be above $64,000 on July 16?",
+            "target_id": "target_delta_24h",
+            "direction": "long_no",
+            "entry_price": 0.31999999999999995,
+            "exit_price": 0.19499999999999995,
+            "pnl": -39.06250000000001
+          },
+          {
+            "question": "Will the price of Bitcoin be above $66,000 on July 16?",
+            "target_id": "target_delta_24h",
+            "direction": "long_no",
+            "entry_price": 0.806,
+            "exit_price": 0.9285,
+            "pnl": 15.198511166253093
+          },
+          {
+            "question": "Will the price of Bitcoin be above $68,000 on July 16?",
+            "target_id": "target_delta_24h",
+            "direction": "long_no",
+            "entry_price": 0.974,
+            "exit_price": 0.9945,
+            "pnl": 2.1047227926078103
+          },
+          {
+            "question": "Will the price of Bitcoin be above $60,000 on July 17?",
+            "target_id": "target_delta_24h",
+            "direction": "long_no",
+            "entry_price": 0.02300000000000002,
+            "exit_price": 0.00649999999999995,
+            "pnl": -71.73913043478284
+          },
+          {
+            "question": "Will the price of Bitcoin be above $62,000 on July 17?",
+            "target_id": "target_delta_24h",
+            "direction": "long_no",
+            "entry_price": 0.08999999999999997,
+            "exit_price": 0.04150000000000009,
+            "pnl": -53.88888888888877
+          },
+          {
+            "question": "Will the price of Bitcoin be above $64,000 on July 17?",
+            "target_id": "target_delta_24h",
+            "direction": "long_no",
+            "entry_price": 0.36,
+            "exit_price": 0.31499999999999995,
+            "pnl": -12.50000000000001
+          },
+          {
+            "question": "Will the price of Bitcoin be above $66,000 on July 17?",
+            "target_id": "target_delta_24h",
+            "direction": "long_no",
+            "entry_price": 0.758,
+            "exit_price": 0.8245,
+            "pnl": 8.773087071240107
+          },
+          {
+            "question": "Will the price of Bitcoin be above $68,000 on July 17?",
+            "target_id": "target_delta_24h",
+            "direction": "long_no",
+            "entry_price": 0.949,
+            "exit_price": 0.9775,
+            "pnl": 3.003161222339313
+          },
+          {
+            "question": "Will Bitcoin reach $70,000 July 13-19?",
+            "target_id": "target_delta_24h",
+            "direction": "long_no",
+            "entry_price": 0.943,
+            "exit_price": 0.972,
+            "pnl": 3.075291622481445
+          },
+          {
+            "question": "Will Bitcoin reach $68,000 July 13-19?",
+            "target_id": "target_delta_24h",
+            "direction": "long_no",
+            "entry_price": 0.827,
+            "exit_price": 0.892,
+            "pnl": 7.85973397823459
+          },
+          {
+            "question": "Will Bitcoin dip to $60,000 July 13-19?",
+            "target_id": "target_delta_24h",
+            "direction": "long_yes",
+            "entry_price": 0.08,
+            "exit_price": 0.032,
+            "pnl": -60.0
+          },
+          {
+            "question": "Will the price of Bitcoin be above $62,000 on July 20?",
+            "target_id": "target_delta_24h",
+            "direction": "long_no",
+            "entry_price": 0.16000000000000003,
+            "exit_price": 0.12,
+            "pnl": -25.000000000000018
+          },
+          {
+            "question": "Will the price of Bitcoin be above $64,000 on July 20?",
+            "target_id": "target_delta_24h",
+            "direction": "long_no",
+            "entry_price": 0.4,
+            "exit_price": 0.38,
+            "pnl": -5.000000000000004
+          },
+          {
+            "question": "Will the price of Bitcoin be above $66,000 on July 20?",
+            "target_id": "target_delta_24h",
+            "direction": "long_no",
+            "entry_price": 0.7,
+            "exit_price": 0.74,
+            "pnl": 5.71428571428572
+          },
+          {
+            "question": "Will the price of Bitcoin be above $68,000 on July 20?",
+            "target_id": "target_delta_24h",
+            "direction": "long_no",
+            "entry_price": 0.899,
+            "exit_price": 0.9305,
+            "pnl": 3.503893214682978
+          },
+          {
+            "question": "Will the price of Bitcoin be above $54,000 on July 21?",
+            "target_id": "target_delta_24h",
+            "direction": "long_yes",
+            "entry_price": 0.998,
+            "exit_price": 0.9964999999999999,
+            "pnl": -0.1503006012024105
+          },
+          {
+            "question": "Will the price of Bitcoin be above $60,000 on July 21?",
+            "target_id": "target_delta_24h",
+            "direction": "long_yes",
+            "entry_price": 0.95,
+            "exit_price": 0.9584999999999999,
+            "pnl": 0.8947368421052582
+          },
+          {
+            "question": "Will the price of Bitcoin be above $62,000 on July 21?",
+            "target_id": "target_delta_24h",
+            "direction": "long_yes",
+            "entry_price": 0.84,
+            "exit_price": 0.865,
+            "pnl": 2.976190476190479
+          },
+          {
+            "question": "Will the price of Bitcoin be above $64,000 on July 21?",
+            "target_id": "target_delta_24h",
+            "direction": "long_yes",
+            "entry_price": 0.61,
+            "exit_price": 0.605,
+            "pnl": -0.8196721311475418
+          },
+          {
+            "question": "Will the price of Bitcoin be above $66,000 on July 21?",
+            "target_id": "target_delta_24h",
+            "direction": "long_yes",
+            "entry_price": 0.32,
+            "exit_price": 0.295,
+            "pnl": -7.812500000000007
+          },
+          {
+            "question": "Will the price of Bitcoin be above $68,000 on July 21?",
+            "target_id": "target_delta_24h",
+            "direction": "long_yes",
+            "entry_price": 0.13,
+            "exit_price": 0.08499999999999999,
+            "pnl": -34.61538461538462
+          },
+          {
+            "question": "Will the price of Bitcoin be above $70,000 on July 21?",
+            "target_id": "target_delta_24h",
+            "direction": "long_yes",
+            "entry_price": 0.05,
+            "exit_price": 0.0245,
+            "pnl": -51.00000000000001
+          },
+          {
+            "question": "Will the price of Bitcoin be above $74,000 on July 21?",
+            "target_id": "target_delta_24h",
+            "direction": "long_yes",
+            "entry_price": 0.02,
+            "exit_price": 0.0045000000000000005,
+            "pnl": -77.5
+          },
+          {
+            "question": "Will Bitcoin dip to $55,000 by December 31, 2026?",
+            "target_id": "target_delta_24h",
+            "direction": "long_no",
+            "entry_price": 0.49,
+            "exit_price": 0.515,
+            "pnl": 5.102040816326536
+          }
+        ]
+      },
+      "ETH": {
+        "n_trades": 24,
+        "total_pnl": 320.15331228726586,
+        "final_return_pct": 3.2015331228726587,
+        "trades": [
+          {
+            "question": "Will Ethereum reach $2,000 in July?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.25,
+            "exit_price": 0.46499999999999997,
+            "pnl": 85.99999999999999
+          },
+          {
+            "question": "Will the price of Ethereum be above $1,700 on July 15?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.941,
+            "exit_price": 0.9984999999999999,
+            "pnl": 6.110520722635494
+          },
+          {
+            "question": "Will the price of Ethereum be above $1,800 on July 15?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.39,
+            "exit_price": 0.9735,
+            "pnl": 149.6153846153846
+          },
+          {
+            "question": "Will the price of Ethereum be above $1,900 on July 15?",
+            "target_id": "target_up_24h",
+            "direction": "long_no",
+            "entry_price": 0.985,
+            "exit_price": 0.8625,
+            "pnl": -12.436548223350247
+          },
+          {
+            "question": "Will the price of Ethereum be above $1,700 on July 15?",
+            "target_id": "target_delta_24h",
+            "direction": "long_yes",
+            "entry_price": 0.941,
+            "exit_price": 0.9984999999999999,
+            "pnl": 6.110520722635494
+          },
+          {
+            "question": "Will the price of Ethereum be above $1,800 on July 15?",
+            "target_id": "target_delta_24h",
+            "direction": "long_yes",
+            "entry_price": 0.39,
+            "exit_price": 0.9735,
+            "pnl": 149.6153846153846
+          },
+          {
+            "question": "Will the price of Ethereum be above $1,800 on July 16?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.89,
+            "exit_price": 0.992,
+            "pnl": 11.460674157303368
+          },
+          {
+            "question": "Will the price of Ethereum be above $2,000 on July 16?",
+            "target_id": "target_up_24h",
+            "direction": "long_no",
+            "entry_price": 0.98,
+            "exit_price": 0.9535,
+            "pnl": -2.704081632653058
+          },
+          {
+            "question": "Will the price of Ethereum be above $1,400 on July 20?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.99,
+            "exit_price": 0.988,
+            "pnl": -0.2020202020202022
+          },
+          {
+            "question": "Will the price of Ethereum be above $1,500 on July 20?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.99,
+            "exit_price": 0.9895,
+            "pnl": -0.050505050505044946
+          },
+          {
+            "question": "Will the price of Ethereum be above $1,600 on July 20?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.99,
+            "exit_price": 0.9815,
+            "pnl": -0.8585858585858538
+          },
+          {
+            "question": "Will the price of Ethereum be above $2,200 on July 20?",
+            "target_id": "target_up_24h",
+            "direction": "long_no",
+            "entry_price": 0.99,
+            "exit_price": 0.9845,
+            "pnl": -0.5555555555555505
+          },
+          {
+            "question": "Will the price of Ethereum be above $1,400 on July 21?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.99,
+            "exit_price": 0.9855,
+            "pnl": -0.45454545454544937
+          },
+          {
+            "question": "Will the price of Ethereum be above $1,500 on July 21?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.99,
+            "exit_price": 0.984,
+            "pnl": -0.6060606060606066
+          },
+          {
+            "question": "Will the price of Ethereum be above $1,600 on July 21?",
+            "target_id": "target_up_24h",
+            "direction": "long_yes",
+            "entry_price": 0.99,
+            "exit_price": 0.987,
+            "pnl": -0.3030303030303033
+          },
+          {
+            "question": "Will the price of Ethereum be above $2,300 on July 21?",
+            "target_id": "target_up_24h",
+            "direction": "long_no",
+            "entry_price": 0.998,
+            "exit_price": 0.9865,
+            "pnl": -1.1523046092184324
+          },
+          {
+            "question": "Will Ethereum dip to $1,500 by December 31, 2026?",
+            "target_id": "target_up_24h",
+            "direction": "long_no",
+            "entry_price": 0.43000000000000005,
+            "exit_price": 0.56,
+            "pnl": 30.232558139534884
+          },
+          {
+            "question": "Will the price of Ethereum be above $1,800 on July 16?",
+            "target_id": "target_delta_24h",
+            "direction": "long_no",
+            "entry_price": 0.12,
+            "exit_price": 0.008000000000000007,
+            "pnl": -93.33333333333333
+          },
+          {
+            "question": "Will the price of Ethereum be above $2,000 on July 16?",
+            "target_id": "target_delta_24h",
+            "direction": "long_no",
+            "entry_price": 0.98,
+            "exit_price": 0.9535,
+            "pnl": -2.704081632653058
+          },
+          {
+            "question": "Will the price of Ethereum be above $1,400 on July 21?",
+            "target_id": "target_delta_24h",
+            "direction": "long_yes",
+            "entry_price": 0.99,
+            "exit_price": 0.9855,
+            "pnl": -0.45454545454544937
+          },
+          {
+            "question": "Will the price of Ethereum be above $1,500 on July 21?",
+            "target_id": "target_delta_24h",
+            "direction": "long_yes",
+            "entry_price": 0.99,
+            "exit_price": 0.984,
+            "pnl": -0.6060606060606066
+          },
+          {
+            "question": "Will the price of Ethereum be above $1,600 on July 21?",
+            "target_id": "target_delta_24h",
+            "direction": "long_yes",
+            "entry_price": 0.99,
+            "exit_price": 0.987,
+            "pnl": -0.3030303030303033
+          },
+          {
+            "question": "Will the price of Ethereum be above $2,300 on July 21?",
+            "target_id": "target_delta_24h",
+            "direction": "long_yes",
+            "entry_price": 0.02,
+            "exit_price": 0.0135,
+            "pnl": -32.5
+          },
+          {
+            "question": "Will Ethereum dip to $1,500 by December 31, 2026?",
+            "target_id": "target_delta_24h",
+            "direction": "long_no",
+            "entry_price": 0.43000000000000005,
+            "exit_price": 0.56,
+            "pnl": 30.232558139534884
+          }
+        ]
+      }
+    }
+  },
   "scenarios": {
+    "CRY01": {
+      "name": "加密每日阈值阶梯",
+      "pipeline_pass_days": 2,
+      "daily_statuses": {
+        "2026-07-13": "MISSING",
+        "2026-07-14": "MISSING",
+        "2026-07-15": "PIPELINE_PASS",
+        "2026-07-16": "PIPELINE_PASS",
+        "2026-07-17": "MISSING",
+        "2026-07-18": "MISSING",
+        "2026-07-19": "MISSING"
+      },
+      "effect_status": "INCONCLUSIVE",
+      "n_matured": {
+        "final_outcome_yes": 22
+      },
+      "n_pending": {
+        "final_outcome_yes": 132
+      },
+      "data_quality": {
+        "days_with_report": 2,
+        "avg_snapshot_rows": 0.0,
+        "total_api_errors": 0,
+        "latest_universe_size": 66
+      },
+      "recommendation": "continue",
+      "reasons": [
+        "效果尚无定论(INCONCLUSIVE),继续累积样本"
+      ]
+    },
+    "CRY02": {
+      "name": "加密每日涨跌",
+      "pipeline_pass_days": 2,
+      "daily_statuses": {
+        "2026-07-13": "MISSING",
+        "2026-07-14": "MISSING",
+        "2026-07-15": "PIPELINE_PASS",
+        "2026-07-16": "PIPELINE_PASS",
+        "2026-07-17": "MISSING",
+        "2026-07-18": "MISSING",
+        "2026-07-19": "MISSING"
+      },
+      "effect_status": "INCONCLUSIVE",
+      "n_matured": {
+        "final_outcome_yes": 2
+      },
+      "n_pending": {
+        "final_outcome_yes": 2
+      },
+      "data_quality": {
+        "days_with_report": 2,
+        "avg_snapshot_rows": 0.0,
+        "total_api_errors": 0,
+        "latest_universe_size": 1
+      },
+      "recommendation": "continue",
+      "reasons": [
+        "效果尚无定论(INCONCLUSIVE),继续累积样本"
+      ]
+    },
     "DOM01": {
       "name": "加密货币价格阈值",
-      "pipeline_pass_days": 0,
+      "pipeline_pass_days": 3,
       "daily_statuses": {
         "2026-07-13": "INSUFFICIENT_DATA",
-        "2026-07-14": "MISSING",
-        "2026-07-15": "MISSING",
-        "2026-07-16": "MISSING",
+        "2026-07-14": "PIPELINE_PASS",
+        "2026-07-15": "PIPELINE_PASS",
+        "2026-07-16": "PIPELINE_PASS",
         "2026-07-17": "MISSING",
         "2026-07-18": "MISSING",
         "2026-07-19": "MISSING"
       },
-      "effect_status": "INCONCLUSIVE",
+      "effect_status": "NOT_BETTER",
       "n_matured": {
-        "target_up_24h": 0,
-        "target_delta_24h": 0,
+        "target_up_24h": 119,
+        "target_delta_24h": 119,
         "final_outcome_yes": 0
       },
       "n_pending": {
-        "target_up_24h": 0,
-        "target_delta_24h": 0,
+        "target_up_24h": 518,
+        "target_delta_24h": 518,
         "final_outcome_yes": 0
       },
       "data_quality": {
-        "days_with_report": 1,
-        "avg_snapshot_rows": 60.0,
+        "days_with_report": 4,
+        "avg_snapshot_rows": 13632.75,
         "total_api_errors": 0,
-        "latest_universe_size": 60
+        "latest_universe_size": 1451
       },
-      "recommendation": "adjust",
+      "recommendation": "continue",
       "reasons": [
-        "INSUFFICIENT_DATA 为主(1/1 天),建议扩大 universe 或降低门槛"
-      ]
-    },
-    "DOM02": {
-      "name": "AI 模型发布",
-      "pipeline_pass_days": 0,
-      "daily_statuses": {
-        "2026-07-13": "INSUFFICIENT_DATA",
-        "2026-07-14": "MISSING",
-        "2026-07-15": "MISSING",
-        "2026-07-16": "MISSING",
-        "2026-07-17": "MISSING",
-        "2026-07-18": "MISSING",
-        "2026-07-19": "MISSING"
-      },
-      "effect_status": "INCONCLUSIVE",
-      "n_matured": {
-        "target_up_24h": 0,
-        "target_delta_24h": 0,
-        "final_outcome_yes": 0
-      },
-      "n_pending": {
-        "target_up_24h": 0,
-        "target_delta_24h": 0,
-        "final_outcome_yes": 0
-      },
-      "data_quality": {
-        "days_with_report": 1,
-        "avg_snapshot_rows": 60.0,
-        "total_api_errors": 0,
-        "latest_universe_size": 60
-      },
-      "recommendation": "adjust",
-      "reasons": [
-        "INSUFFICIENT_DATA 为主(1/1 天),建议扩大 universe 或降低门槛"
-      ]
-    },
-    "DOM03": {
-      "name": "宏观经济",
-      "pipeline_pass_days": 0,
-      "daily_statuses": {
-        "2026-07-13": "INSUFFICIENT_DATA",
-        "2026-07-14": "MISSING",
-        "2026-07-15": "MISSING",
-        "2026-07-16": "MISSING",
-        "2026-07-17": "MISSING",
-        "2026-07-18": "MISSING",
-        "2026-07-19": "MISSING"
-      },
-      "effect_status": "INCONCLUSIVE",
-      "n_matured": {
-        "target_up_24h": 0,
-        "target_delta_24h": 0,
-        "final_outcome_yes": 0
-      },
-      "n_pending": {
-        "target_up_24h": 0,
-        "target_delta_24h": 0,
-        "final_outcome_yes": 0
-      },
-      "data_quality": {
-        "days_with_report": 1,
-        "avg_snapshot_rows": 60.0,
-        "total_api_errors": 0,
-        "latest_universe_size": 60
-      },
-      "recommendation": "adjust",
-      "reasons": [
-        "INSUFFICIENT_DATA 为主(1/1 天),建议扩大 universe 或降低门槛"
-      ]
-    },
-    "DOM04": {
-      "name": "选举与立法",
-      "pipeline_pass_days": 0,
-      "daily_statuses": {
-        "2026-07-13": "INSUFFICIENT_DATA",
-        "2026-07-14": "MISSING",
-        "2026-07-15": "MISSING",
-        "2026-07-16": "MISSING",
-        "2026-07-17": "MISSING",
-        "2026-07-18": "MISSING",
-        "2026-07-19": "MISSING"
-      },
-      "effect_status": "INCONCLUSIVE",
-      "n_matured": {
-        "target_up_24h": 0,
-        "target_delta_24h": 0,
-        "final_outcome_yes": 0
-      },
-      "n_pending": {
-        "target_up_24h": 0,
-        "target_delta_24h": 0,
-        "final_outcome_yes": 0
-      },
-      "data_quality": {
-        "days_with_report": 1,
-        "avg_snapshot_rows": 69.0,
-        "total_api_errors": 0,
-        "latest_universe_size": 69
-      },
-      "recommendation": "adjust",
-      "reasons": [
-        "INSUFFICIENT_DATA 为主(1/1 天),建议扩大 universe 或降低门槛"
-      ]
-    },
-    "DOM05": {
-      "name": "地缘政治",
-      "pipeline_pass_days": 0,
-      "daily_statuses": {
-        "2026-07-13": "INSUFFICIENT_DATA",
-        "2026-07-14": "MISSING",
-        "2026-07-15": "MISSING",
-        "2026-07-16": "MISSING",
-        "2026-07-17": "MISSING",
-        "2026-07-18": "MISSING",
-        "2026-07-19": "MISSING"
-      },
-      "effect_status": "INCONCLUSIVE",
-      "n_matured": {
-        "target_up_24h": 0,
-        "target_delta_24h": 0,
-        "final_outcome_yes": 0
-      },
-      "n_pending": {
-        "target_up_24h": 0,
-        "target_delta_24h": 0,
-        "final_outcome_yes": 0
-      },
-      "data_quality": {
-        "days_with_report": 1,
-        "avg_snapshot_rows": 60.0,
-        "total_api_errors": 0,
-        "latest_universe_size": 60
-      },
-      "recommendation": "adjust",
-      "reasons": [
-        "INSUFFICIENT_DATA 为主(1/1 天),建议扩大 universe 或降低门槛"
+        "目标 target_up_24h:LimiX 模拟收益率 0.0215>0 且优于最好基线(n_trades=74≥30),建议继续(§18 最高优先级规则)",
+        "注意:该场景其余可交易目标未跑赢基线(整体效果 NOT_BETTER),continue 仅因上述单个目标当前盈利 —— 样本仍浅,勿据此下结论"
       ]
     },
     "TRD01": {
       "name": "1小时价格方向",
-      "pipeline_pass_days": 0,
+      "pipeline_pass_days": 4,
       "daily_statuses": {
-        "2026-07-13": "INSUFFICIENT_DATA",
-        "2026-07-14": "MISSING",
-        "2026-07-15": "MISSING",
-        "2026-07-16": "MISSING",
+        "2026-07-13": "PIPELINE_PASS",
+        "2026-07-14": "PIPELINE_PASS",
+        "2026-07-15": "PIPELINE_PASS",
+        "2026-07-16": "PIPELINE_PASS",
         "2026-07-17": "MISSING",
         "2026-07-18": "MISSING",
         "2026-07-19": "MISSING"
       },
-      "effect_status": "INCONCLUSIVE",
+      "effect_status": "NOT_BETTER",
       "n_matured": {
-        "target_up_1h": 0
+        "target_up_1h": 1540
       },
       "n_pending": {
-        "target_up_1h": 0
+        "target_up_1h": 380
       },
       "data_quality": {
-        "days_with_report": 1,
-        "avg_snapshot_rows": 400.0,
+        "days_with_report": 4,
+        "avg_snapshot_rows": 51242.25,
         "total_api_errors": 0,
-        "latest_universe_size": 400
+        "latest_universe_size": 2673
       },
       "recommendation": "adjust",
       "reasons": [
-        "INSUFFICIENT_DATA 为主(1/1 天),建议扩大 universe 或降低门槛"
+        "NOT_BETTER(证据:成交 79 笔),建议更换特征或模型档"
       ]
     },
     "TRD02": {
       "name": "6小时价差回归",
-      "pipeline_pass_days": 0,
+      "pipeline_pass_days": 3,
       "daily_statuses": {
         "2026-07-13": "INSUFFICIENT_DATA",
-        "2026-07-14": "MISSING",
-        "2026-07-15": "MISSING",
-        "2026-07-16": "MISSING",
+        "2026-07-14": "PIPELINE_PASS",
+        "2026-07-15": "PIPELINE_PASS",
+        "2026-07-16": "PIPELINE_PASS",
+        "2026-07-17": "MISSING",
+        "2026-07-18": "MISSING",
+        "2026-07-19": "MISSING"
+      },
+      "effect_status": "NOT_BETTER",
+      "n_matured": {
+        "target_delta_6h": 706
+      },
+      "n_pending": {
+        "target_delta_6h": 797
+      },
+      "data_quality": {
+        "days_with_report": 4,
+        "avg_snapshot_rows": 51242.25,
+        "total_api_errors": 0,
+        "latest_universe_size": 2673
+      },
+      "recommendation": "adjust",
+      "reasons": [
+        "NOT_BETTER(证据:成交 147 笔),建议更换特征或模型档"
+      ]
+    },
+    "DOM02": {
+      "name": "AI 模型发布",
+      "pipeline_pass_days": 3,
+      "daily_statuses": {
+        "2026-07-13": "INSUFFICIENT_DATA",
+        "2026-07-14": "PIPELINE_PASS",
+        "2026-07-15": "PIPELINE_PASS",
+        "2026-07-16": "PIPELINE_PASS",
         "2026-07-17": "MISSING",
         "2026-07-18": "MISSING",
         "2026-07-19": "MISSING"
       },
       "effect_status": "INCONCLUSIVE",
       "n_matured": {
-        "target_delta_6h": 0
+        "target_up_24h": 54,
+        "target_delta_24h": 54,
+        "final_outcome_yes": 0
       },
       "n_pending": {
-        "target_delta_6h": 0
+        "target_up_24h": 130,
+        "target_delta_24h": 130,
+        "final_outcome_yes": 0
       },
       "data_quality": {
-        "days_with_report": 1,
-        "avg_snapshot_rows": 400.0,
+        "days_with_report": 4,
+        "avg_snapshot_rows": 6545.25,
         "total_api_errors": 0,
-        "latest_universe_size": 400
+        "latest_universe_size": 169
+      },
+      "recommendation": "continue",
+      "reasons": [
+        "效果尚无定论(INCONCLUSIVE),继续累积样本"
+      ]
+    },
+    "DOM03": {
+      "name": "宏观经济",
+      "pipeline_pass_days": 3,
+      "daily_statuses": {
+        "2026-07-13": "INSUFFICIENT_DATA",
+        "2026-07-14": "PIPELINE_PASS",
+        "2026-07-15": "PIPELINE_PASS",
+        "2026-07-16": "PIPELINE_PASS",
+        "2026-07-17": "MISSING",
+        "2026-07-18": "MISSING",
+        "2026-07-19": "MISSING"
+      },
+      "effect_status": "NOT_BETTER",
+      "n_matured": {
+        "target_up_24h": 86,
+        "target_delta_24h": 86,
+        "final_outcome_yes": 0
+      },
+      "n_pending": {
+        "target_up_24h": 97,
+        "target_delta_24h": 97,
+        "final_outcome_yes": 0
+      },
+      "data_quality": {
+        "days_with_report": 4,
+        "avg_snapshot_rows": 6527.75,
+        "total_api_errors": 0,
+        "latest_universe_size": 154
       },
       "recommendation": "adjust",
       "reasons": [
-        "INSUFFICIENT_DATA 为主(1/1 天),建议扩大 universe 或降低门槛"
+        "NOT_BETTER(证据:成交 41 笔),建议更换特征或模型档"
+      ]
+    },
+    "DOM04": {
+      "name": "选举与立法",
+      "pipeline_pass_days": 3,
+      "daily_statuses": {
+        "2026-07-13": "INSUFFICIENT_DATA",
+        "2026-07-14": "PIPELINE_PASS",
+        "2026-07-15": "PIPELINE_PASS",
+        "2026-07-16": "PIPELINE_PASS",
+        "2026-07-17": "MISSING",
+        "2026-07-18": "MISSING",
+        "2026-07-19": "MISSING"
+      },
+      "effect_status": "INCONCLUSIVE",
+      "n_matured": {
+        "target_up_24h": 50,
+        "target_delta_24h": 50,
+        "final_outcome_yes": 0
+      },
+      "n_pending": {
+        "target_up_24h": 150,
+        "target_delta_24h": 150,
+        "final_outcome_yes": 0
+      },
+      "data_quality": {
+        "days_with_report": 4,
+        "avg_snapshot_rows": 6890.75,
+        "total_api_errors": 0,
+        "latest_universe_size": 181
+      },
+      "recommendation": "continue",
+      "reasons": [
+        "效果尚无定论(INCONCLUSIVE),继续累积样本"
+      ]
+    },
+    "DOM05": {
+      "name": "地缘政治",
+      "pipeline_pass_days": 3,
+      "daily_statuses": {
+        "2026-07-13": "INSUFFICIENT_DATA",
+        "2026-07-14": "PIPELINE_PASS",
+        "2026-07-15": "PIPELINE_PASS",
+        "2026-07-16": "PIPELINE_PASS",
+        "2026-07-17": "MISSING",
+        "2026-07-18": "MISSING",
+        "2026-07-19": "MISSING"
+      },
+      "effect_status": "NOT_BETTER",
+      "n_matured": {
+        "target_up_24h": 88,
+        "target_delta_24h": 88,
+        "final_outcome_yes": 0
+      },
+      "n_pending": {
+        "target_up_24h": 98,
+        "target_delta_24h": 98,
+        "final_outcome_yes": 0
+      },
+      "data_quality": {
+        "days_with_report": 4,
+        "avg_snapshot_rows": 6555.0,
+        "total_api_errors": 0,
+        "latest_universe_size": 151
+      },
+      "recommendation": "adjust",
+      "reasons": [
+        "NOT_BETTER(证据:成交 70 笔),建议更换特征或模型档"
       ]
     },
     "TRD03": {
       "name": "1小时成交量激增",
-      "pipeline_pass_days": 0,
+      "pipeline_pass_days": 3,
       "daily_statuses": {
         "2026-07-13": "INSUFFICIENT_DATA",
-        "2026-07-14": "MISSING",
-        "2026-07-15": "MISSING",
-        "2026-07-16": "MISSING",
+        "2026-07-14": "PIPELINE_PASS",
+        "2026-07-15": "PIPELINE_PASS",
+        "2026-07-16": "PIPELINE_PASS",
         "2026-07-17": "MISSING",
         "2026-07-18": "MISSING",
         "2026-07-19": "MISSING"
       },
-      "effect_status": "INCONCLUSIVE",
+      "effect_status": "NOT_BETTER",
       "n_matured": {
-        "target_volume_spike_1h": 0
+        "target_volume_spike_1h": 921
       },
       "n_pending": {
-        "target_volume_spike_1h": 0
+        "target_volume_spike_1h": 582
       },
       "data_quality": {
-        "days_with_report": 1,
-        "avg_snapshot_rows": 400.0,
+        "days_with_report": 4,
+        "avg_snapshot_rows": 51242.25,
         "total_api_errors": 0,
-        "latest_universe_size": 400
+        "latest_universe_size": 2673
       },
       "recommendation": "adjust",
       "reasons": [
-        "INSUFFICIENT_DATA 为主(1/1 天),建议扩大 universe 或降低门槛"
+        "NOT_BETTER(证据:成熟样本 n=921),建议更换特征或模型档"
       ]
     },
     "TRD04": {
       "name": "1小时买入滑点",
-      "pipeline_pass_days": 0,
+      "pipeline_pass_days": 4,
       "daily_statuses": {
-        "2026-07-13": "INSUFFICIENT_DATA",
-        "2026-07-14": "MISSING",
-        "2026-07-15": "MISSING",
-        "2026-07-16": "MISSING",
+        "2026-07-13": "PIPELINE_PASS",
+        "2026-07-14": "PIPELINE_PASS",
+        "2026-07-15": "PIPELINE_PASS",
+        "2026-07-16": "PIPELINE_PASS",
         "2026-07-17": "MISSING",
         "2026-07-18": "MISSING",
         "2026-07-19": "MISSING"
       },
-      "effect_status": "INCONCLUSIVE",
+      "effect_status": "BETTER_THAN_BASELINE",
       "n_matured": {
-        "target_buy_slippage_1000_1h": 0
+        "target_buy_slippage_1000_1h": 1667
       },
       "n_pending": {
-        "target_buy_slippage_1000_1h": 0
+        "target_buy_slippage_1000_1h": 253
       },
       "data_quality": {
-        "days_with_report": 1,
-        "avg_snapshot_rows": 400.0,
+        "days_with_report": 4,
+        "avg_snapshot_rows": 51242.25,
         "total_api_errors": 0,
-        "latest_universe_size": 400
+        "latest_universe_size": 2673
       },
-      "recommendation": "adjust",
+      "recommendation": "continue",
       "reasons": [
-        "INSUFFICIENT_DATA 为主(1/1 天),建议扩大 universe 或降低门槛"
+        "LimiX 优于全部基线(BETTER_THAN_BASELINE),建议继续"
       ]
     },
     "TRD05": {
       "name": "1小时可交易性",
-      "pipeline_pass_days": 0,
+      "pipeline_pass_days": 4,
       "daily_statuses": {
-        "2026-07-13": "INSUFFICIENT_DATA",
-        "2026-07-14": "MISSING",
-        "2026-07-15": "MISSING",
-        "2026-07-16": "MISSING",
+        "2026-07-13": "PIPELINE_PASS",
+        "2026-07-14": "PIPELINE_PASS",
+        "2026-07-15": "PIPELINE_PASS",
+        "2026-07-16": "PIPELINE_PASS",
         "2026-07-17": "MISSING",
         "2026-07-18": "MISSING",
         "2026-07-19": "MISSING"
       },
-      "effect_status": "INCONCLUSIVE",
+      "effect_status": "BETTER_THAN_BASELINE",
       "n_matured": {
-        "target_tradable_1h": 0
+        "target_tradable_1h": 1714
       },
       "n_pending": {
-        "target_tradable_1h": 0
+        "target_tradable_1h": 206
       },
       "data_quality": {
-        "days_with_report": 1,
-        "avg_snapshot_rows": 400.0,
+        "days_with_report": 4,
+        "avg_snapshot_rows": 51242.25,
         "total_api_errors": 0,
-        "latest_universe_size": 400
+        "latest_universe_size": 2673
       },
-      "recommendation": "adjust",
+      "recommendation": "continue",
       "reasons": [
-        "INSUFFICIENT_DATA 为主(1/1 天),建议扩大 universe 或降低门槛"
+        "LimiX 优于全部基线(BETTER_THAN_BASELINE),建议继续"
       ]
     }
   }
