@@ -1,6 +1,6 @@
 {
   "week": "2026-W29",
-  "generated_at": "2026-07-16T06:42:13.743419+00:00",
+  "generated_at": "2026-07-16T07:00:10.425611+00:00",
   "dates": [
     "2026-07-13",
     "2026-07-14",
@@ -1013,6 +1013,8 @@
   "scenarios": {
     "CRY01": {
       "name": "加密每日阈值阶梯",
+      "scenario_display": "比特币/以太坊「明天是否高于X价」",
+      "bet_type_hint": "本场景押什么:押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
       "pipeline_pass_days": 2,
       "daily_statuses": {
         "2026-07-13": "MISSING",
@@ -1043,6 +1045,8 @@
     },
     "CRY02": {
       "name": "加密每日涨跌",
+      "scenario_display": "比特币/以太坊「今天涨还是跌」",
+      "bet_type_hint": "本场景押什么:押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
       "pipeline_pass_days": 2,
       "daily_statuses": {
         "2026-07-13": "MISSING",
@@ -1073,6 +1077,8 @@
     },
     "DOM01": {
       "name": "加密货币价格阈值",
+      "scenario_display": "比特币/以太坊阈值市场",
+      "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓;押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
       "pipeline_pass_days": 3,
       "daily_statuses": {
         "2026-07-13": "INSUFFICIENT_DATA",
@@ -1102,12 +1108,14 @@
       },
       "recommendation": "continue",
       "reasons": [
-        "目标 target_up_24h:LimiX 模拟收益率 0.0215>0 且优于最好基线(n_trades=74≥30),建议继续(§18 最高优先级规则)",
+        "目标 押盘口24小时涨跌 (target_up_24h):LimiX 模拟收益率 0.0215>0 且优于最好基线(n_trades=74≥30),建议继续(§18 最高优先级规则)",
         "注意:该场景其余可交易目标未跑赢基线(整体效果 NOT_BETTER),continue 仅因上述单个目标当前盈利 —— 样本仍浅,勿据此下结论"
       ]
     },
     "TRD01": {
       "name": "1小时价格方向",
+      "scenario_display": "全部市场·1小时",
+      "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓。",
       "pipeline_pass_days": 4,
       "daily_statuses": {
         "2026-07-13": "PIPELINE_PASS",
@@ -1138,6 +1146,8 @@
     },
     "TRD02": {
       "name": "6小时价差回归",
+      "scenario_display": "全部市场·6小时",
+      "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓。",
       "pipeline_pass_days": 3,
       "daily_statuses": {
         "2026-07-13": "INSUFFICIENT_DATA",
@@ -1150,10 +1160,10 @@
       },
       "effect_status": "NOT_BETTER",
       "n_matured": {
-        "target_delta_6h": 706
+        "target_delta_6h": 708
       },
       "n_pending": {
-        "target_delta_6h": 797
+        "target_delta_6h": 795
       },
       "data_quality": {
         "days_with_report": 4,
@@ -1163,11 +1173,13 @@
       },
       "recommendation": "adjust",
       "reasons": [
-        "NOT_BETTER(证据:成交 147 笔),建议更换特征或模型档"
+        "NOT_BETTER(证据:成交 215 笔),建议更换特征或模型档"
       ]
     },
     "DOM02": {
       "name": "AI 模型发布",
+      "scenario_display": "AI产品发布市场",
+      "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓;押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
       "pipeline_pass_days": 3,
       "daily_statuses": {
         "2026-07-13": "INSUFFICIENT_DATA",
@@ -1202,6 +1214,8 @@
     },
     "DOM03": {
       "name": "宏观经济",
+      "scenario_display": "美联储/CPI宏观市场",
+      "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓;押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
       "pipeline_pass_days": 3,
       "daily_statuses": {
         "2026-07-13": "INSUFFICIENT_DATA",
@@ -1236,6 +1250,8 @@
     },
     "DOM04": {
       "name": "选举与立法",
+      "scenario_display": "选举市场",
+      "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓;押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
       "pipeline_pass_days": 3,
       "daily_statuses": {
         "2026-07-13": "INSUFFICIENT_DATA",
@@ -1270,6 +1286,8 @@
     },
     "DOM05": {
       "name": "地缘政治",
+      "scenario_display": "地缘政治市场",
+      "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓;押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
       "pipeline_pass_days": 3,
       "daily_statuses": {
         "2026-07-13": "INSUFFICIENT_DATA",
@@ -1304,6 +1322,8 @@
     },
     "TRD03": {
       "name": "1小时成交量激增",
+      "scenario_display": "全部市场·成交量",
+      "bet_type_hint": "本场景押什么:押交易条件 —— 赌的是这个市场的交易条件(成交量/滑点/能否成交),不押价格也不押结果。",
       "pipeline_pass_days": 3,
       "daily_statuses": {
         "2026-07-13": "INSUFFICIENT_DATA",
@@ -1334,6 +1354,8 @@
     },
     "TRD04": {
       "name": "1小时买入滑点",
+      "scenario_display": "全部市场·滑点",
+      "bet_type_hint": "本场景押什么:押交易条件 —— 赌的是这个市场的交易条件(成交量/滑点/能否成交),不押价格也不押结果。",
       "pipeline_pass_days": 4,
       "daily_statuses": {
         "2026-07-13": "PIPELINE_PASS",
@@ -1364,6 +1386,8 @@
     },
     "TRD05": {
       "name": "1小时可交易性",
+      "scenario_display": "全部市场·可交易性",
+      "bet_type_hint": "本场景押什么:押交易条件 —— 赌的是这个市场的交易条件(成交量/滑点/能否成交),不押价格也不押结果。",
       "pipeline_pass_days": 4,
       "daily_statuses": {
         "2026-07-13": "PIPELINE_PASS",
