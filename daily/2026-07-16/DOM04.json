@@ -2,8 +2,8 @@
   "scenario_id": "DOM04",
   "name": "选举与立法",
   "run_date": "2026-07-16",
-  "generated_at": "2026-07-16T02:30:21.517256+00:00",
-  "run_id": "25a2ad05-24c5-4615-89bb-5aa40770576e",
+  "generated_at": "2026-07-16T04:30:19.755362+00:00",
+  "run_id": "6d226432-637b-495a-829d-2fb1e049607f",
   "pipeline_status": "PIPELINE_PASS",
   "effect_status": "INCONCLUSIVE",
   "targets": {
@@ -180,11 +180,11 @@
     }
   },
   "data_quality": {
-    "snapshot_rows": 12510,
-    "freshest_snapshot": "2026-07-16T02:15:37.621906+00:00",
+    "snapshot_rows": 13061,
+    "freshest_snapshot": "2026-07-16T04:15:31.296988+00:00",
     "missing_rate": {
-      "mid_price": 0.116,
-      "spread": 0.116,
+      "mid_price": 0.1215,
+      "spread": 0.1215,
       "bid_depth": 0.011,
       "ask_depth": 0.011,
       "orderbook_imbalance": 0.011,
