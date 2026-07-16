@@ -1,9 +1,11 @@
 {
   "scenario_id": "DOM04",
   "name": "选举与立法",
+  "scenario_display": "选举市场",
+  "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓;押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
   "run_date": "2026-07-16",
-  "generated_at": "2026-07-16T04:30:19.755362+00:00",
-  "run_id": "6d226432-637b-495a-829d-2fb1e049607f",
+  "generated_at": "2026-07-16T07:30:20.041042+00:00",
+  "run_id": "6c272f54-faab-4c2f-9131-d37905b6a248",
   "pipeline_status": "PIPELINE_PASS",
   "effect_status": "INCONCLUSIVE",
   "targets": {
@@ -65,6 +67,7 @@
         "n_matured": 50
       },
       "pending_labels": 150,
+      "display": "押盘口24小时涨跌",
       "simtrade": {
         "n_trades": 28,
         "total_pnl": 4.190245851485576,
@@ -127,6 +130,7 @@
         "n_matured": 50
       },
       "pending_labels": 150,
+      "display": "押盘口24小时涨幅",
       "simtrade": {
         "n_trades": 22,
         "total_pnl": 88.1431607789769,
@@ -169,6 +173,7 @@
         "n_matured": 0
       },
       "pending_labels": 0,
+      "display": "押事件最终结果",
       "simtrade": {
         "n_trades": 0,
         "total_pnl": null,
@@ -180,33 +185,33 @@
     }
   },
   "data_quality": {
-    "snapshot_rows": 13061,
-    "freshest_snapshot": "2026-07-16T04:15:31.296988+00:00",
+    "snapshot_rows": 13806,
+    "freshest_snapshot": "2026-07-16T07:16:42.462081+00:00",
     "missing_rate": {
-      "mid_price": 0.1215,
-      "spread": 0.1215,
+      "mid_price": 0.1209,
+      "spread": 0.1209,
       "bid_depth": 0.011,
       "ask_depth": 0.011,
       "orderbook_imbalance": 0.011,
       "volume_1h": 0.0,
       "volume_24h": 0.0,
       "trade_count_1h": 0.0,
-      "return_1h": 0.0221,
+      "return_1h": 0.022,
       "return_6h": 0.0,
       "return_24h": 0.0,
       "volatility": 0.0,
       "liquidity": 0.0,
       "hours_to_resolution": 0.0,
-      "buy_slippage_1000_now": 0.0276,
+      "buy_slippage_1000_now": 0.0275,
       "fill_ratio_1000": 0.011,
       "tradable_now": 0.0,
       "threshold_num": 1.0,
-      "btc_spot": 0.0221,
-      "eth_spot": 0.0221,
+      "btc_spot": 0.022,
+      "eth_spot": 0.022,
       "threshold_ratio": 1.0
     },
     "api_errors": []
   },
-  "universe_size": 181,
+  "universe_size": 182,
   "primary_metric": "return_on_bankroll"
 }

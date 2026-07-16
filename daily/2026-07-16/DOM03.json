@@ -1,9 +1,11 @@
 {
   "scenario_id": "DOM03",
   "name": "宏观经济",
+  "scenario_display": "美联储/CPI宏观市场",
+  "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓;押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
   "run_date": "2026-07-16",
-  "generated_at": "2026-07-16T04:30:17.468662+00:00",
-  "run_id": "6d226432-637b-495a-829d-2fb1e049607f",
+  "generated_at": "2026-07-16T07:30:17.694664+00:00",
+  "run_id": "6c272f54-faab-4c2f-9131-d37905b6a248",
   "pipeline_status": "PIPELINE_PASS",
   "effect_status": "NOT_BETTER",
   "targets": {
@@ -65,6 +67,7 @@
         "n_matured": 86
       },
       "pending_labels": 97,
+      "display": "押盘口24小时涨跌",
       "simtrade": {
         "n_trades": 38,
         "total_pnl": -854.8127231289781,
@@ -127,6 +130,7 @@
         "n_matured": 86
       },
       "pending_labels": 97,
+      "display": "押盘口24小时涨幅",
       "simtrade": {
         "n_trades": 37,
         "total_pnl": -678.9555811169447,
@@ -169,6 +173,7 @@
         "n_matured": 0
       },
       "pending_labels": 0,
+      "display": "押事件最终结果",
       "simtrade": {
         "n_trades": 0,
         "total_pnl": null,
@@ -180,11 +185,11 @@
     }
   },
   "data_quality": {
-    "snapshot_rows": 12328,
-    "freshest_snapshot": "2026-07-16T04:16:04.514274+00:00",
+    "snapshot_rows": 13048,
+    "freshest_snapshot": "2026-07-16T07:17:17.746818+00:00",
     "missing_rate": {
-      "mid_price": 0.2143,
-      "spread": 0.2143,
+      "mid_price": 0.2208,
+      "spread": 0.2208,
       "bid_depth": 0.013,
       "ask_depth": 0.013,
       "orderbook_imbalance": 0.013,

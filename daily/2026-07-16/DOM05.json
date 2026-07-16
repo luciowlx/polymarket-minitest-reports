@@ -1,9 +1,11 @@
 {
   "scenario_id": "DOM05",
   "name": "地缘政治",
+  "scenario_display": "地缘政治市场",
+  "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓;押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
   "run_date": "2026-07-16",
-  "generated_at": "2026-07-16T04:30:21.959499+00:00",
-  "run_id": "6d226432-637b-495a-829d-2fb1e049607f",
+  "generated_at": "2026-07-16T07:30:22.583030+00:00",
+  "run_id": "6c272f54-faab-4c2f-9131-d37905b6a248",
   "pipeline_status": "PIPELINE_PASS",
   "effect_status": "NOT_BETTER",
   "targets": {
@@ -65,6 +67,7 @@
         "n_matured": 88
       },
       "pending_labels": 98,
+      "display": "押盘口24小时涨跌",
       "simtrade": {
         "n_trades": 47,
         "total_pnl": -334.119635500414,
@@ -127,6 +130,7 @@
         "n_matured": 88
       },
       "pending_labels": 98,
+      "display": "押盘口24小时涨幅",
       "simtrade": {
         "n_trades": 33,
         "total_pnl": -252.9703471986424,
@@ -169,6 +173,7 @@
         "n_matured": 0
       },
       "pending_labels": 0,
+      "display": "押事件最终结果",
       "simtrade": {
         "n_trades": 0,
         "total_pnl": null,
@@ -180,33 +185,33 @@
     }
   },
   "data_quality": {
-    "snapshot_rows": 12360,
-    "freshest_snapshot": "2026-07-16T04:16:00.186419+00:00",
+    "snapshot_rows": 13080,
+    "freshest_snapshot": "2026-07-16T07:17:11.355296+00:00",
     "missing_rate": {
-      "mid_price": 0.1523,
-      "spread": 0.1523,
-      "bid_depth": 0.0861,
-      "ask_depth": 0.0861,
-      "orderbook_imbalance": 0.0861,
-      "volume_1h": 0.0265,
+      "mid_price": 0.1579,
+      "spread": 0.1579,
+      "bid_depth": 0.0855,
+      "ask_depth": 0.0855,
+      "orderbook_imbalance": 0.0855,
+      "volume_1h": 0.0263,
       "volume_24h": 0.0,
       "trade_count_1h": 0.0,
-      "return_1h": 0.0464,
-      "return_6h": 0.0265,
-      "return_24h": 0.2318,
-      "volatility": 0.0265,
+      "return_1h": 0.0461,
+      "return_6h": 0.0263,
+      "return_24h": 0.2303,
+      "volatility": 0.0263,
       "liquidity": 0.0,
       "hours_to_resolution": 0.0,
-      "buy_slippage_1000_now": 0.1656,
-      "fill_ratio_1000": 0.0861,
+      "buy_slippage_1000_now": 0.1711,
+      "fill_ratio_1000": 0.0855,
       "tradable_now": 0.0,
       "threshold_num": 1.0,
-      "btc_spot": 0.0464,
-      "eth_spot": 0.0464,
+      "btc_spot": 0.0461,
+      "eth_spot": 0.0461,
       "threshold_ratio": 1.0
     },
     "api_errors": []
   },
-  "universe_size": 151,
+  "universe_size": 152,
   "primary_metric": "return_on_bankroll"
 }
