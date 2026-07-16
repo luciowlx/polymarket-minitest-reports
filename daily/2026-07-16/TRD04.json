@@ -2,8 +2,8 @@
   "scenario_id": "TRD04",
   "name": "1小时买入滑点",
   "run_date": "2026-07-16",
-  "generated_at": "2026-07-16T01:30:28.535796+00:00",
-  "run_id": "fb18bbbe-daff-4d01-a916-1f44282eeded",
+  "generated_at": "2026-07-16T02:30:38.198572+00:00",
+  "run_id": "25a2ad05-24c5-4615-89bb-5aa40770576e",
   "pipeline_status": "PIPELINE_PASS",
   "effect_status": "BETTER_THAN_BASELINE",
   "targets": {
@@ -23,73 +23,73 @@
       },
       "matured_metrics": {
         "limix": {
-          "n": 1224,
-          "mae": 0.010613,
-          "rmse": 0.035954,
-          "r2": 0.80805,
-          "direction_accuracy": 0.982843
+          "n": 1667,
+          "mae": 0.009672,
+          "rmse": 0.031953,
+          "r2": 0.837396,
+          "direction_accuracy": 0.980804
         },
         "base_rate": {
-          "n": 1224,
-          "mae": 0.045811,
-          "rmse": 0.0822,
-          "r2": -0.003311,
-          "direction_accuracy": 0.757353
+          "n": 1667,
+          "mae": 0.045207,
+          "rmse": 0.079402,
+          "r2": -0.004097,
+          "direction_accuracy": 0.782244
         },
         "price_unchanged": {
-          "n": 1224,
-          "mae": 0.039845,
-          "rmse": 0.091226,
-          "r2": -0.235748,
-          "direction_accuracy": 0.242647
+          "n": 1667,
+          "mae": 0.038931,
+          "rmse": 0.088287,
+          "r2": -0.241384,
+          "direction_accuracy": 0.217756
         },
         "mean_reversion": {
-          "n": 1224,
-          "mae": 0.040417,
-          "rmse": 0.091507,
-          "r2": -0.243365,
-          "direction_accuracy": 0.438725
+          "n": 1667,
+          "mae": 0.039631,
+          "rmse": 0.088633,
+          "r2": -0.25113,
+          "direction_accuracy": 0.430114
         },
         "momentum": {
-          "n": 1224,
-          "mae": 0.041104,
-          "rmse": 0.092961,
-          "r2": -0.2832,
-          "direction_accuracy": 0.473856
+          "n": 1667,
+          "mae": 0.040393,
+          "rmse": 0.089863,
+          "r2": -0.286117,
+          "direction_accuracy": 0.440912
         },
-        "n_matured": 1224
+        "n_matured": 1667
       },
-      "pending_labels": 696
+      "pending_labels": 253
     }
   },
   "data_quality": {
-    "snapshot_rows": 94107,
-    "freshest_snapshot": "2026-07-16T01:16:16.721230+00:00",
+    "snapshot_rows": 96027,
+    "freshest_snapshot": "2026-07-16T02:16:15.546157+00:00",
     "missing_rate": {
-      "mid_price": 0.4586,
-      "spread": 0.4586,
-      "bid_depth": 0.0344,
-      "ask_depth": 0.0344,
-      "orderbook_imbalance": 0.0971,
+      "mid_price": 0.4601,
+      "spread": 0.4601,
+      "bid_depth": 0.0343,
+      "ask_depth": 0.0343,
+      "orderbook_imbalance": 0.0968,
       "volume_1h": 0.0026,
-      "volume_24h": 0.258,
+      "volume_24h": 0.2564,
       "trade_count_1h": 0.0,
-      "return_1h": 0.2667,
-      "return_6h": 0.4424,
-      "return_24h": 0.5153,
-      "volatility": 0.4394,
-      "liquidity": 0.065,
+      "return_1h": 0.2658,
+      "return_6h": 0.4394,
+      "return_24h": 0.5139,
+      "volatility": 0.4379,
+      "liquidity": 0.0648,
       "hours_to_resolution": 0.0,
-      "buy_slippage_1000_now": 0.2614,
-      "fill_ratio_1000": 0.0344,
+      "buy_slippage_1000_now": 0.2624,
+      "fill_ratio_1000": 0.0343,
       "tradable_now": 0.0,
-      "threshold_num": 0.8761,
-      "btc_spot": 0.0181,
-      "eth_spot": 0.0181,
-      "threshold_ratio": 0.8988
+      "threshold_num": 0.8754,
+      "btc_spot": 0.0173,
+      "eth_spot": 0.0173,
+      "threshold_ratio": 0.8987
     },
     "api_errors": []
   },
-  "universe_size": 2647,
+  "universe_size": 2656,
   "primary_metric": "legacy"
 }

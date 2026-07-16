@@ -2,10 +2,10 @@
   "scenario_id": "TRD01",
   "name": "1小时价格方向",
   "run_date": "2026-07-16",
-  "generated_at": "2026-07-16T01:30:19.543809+00:00",
-  "run_id": "fb18bbbe-daff-4d01-a916-1f44282eeded",
+  "generated_at": "2026-07-16T02:30:25.855575+00:00",
+  "run_id": "25a2ad05-24c5-4615-89bb-5aa40770576e",
   "pipeline_status": "PIPELINE_PASS",
-  "effect_status": "BETTER_THAN_BASELINE",
+  "effect_status": "NOT_BETTER",
   "targets": {
     "target_up_1h": {
       "task": "classification",
@@ -23,86 +23,86 @@
       },
       "matured_metrics": {
         "limix": {
-          "n": 1126,
-          "logloss": 0.568405,
-          "brier": 0.299507,
-          "auc": 0.801874,
-          "balanced_accuracy": 0.440699,
-          "macro_f1": 0.450417
+          "n": 1540,
+          "logloss": 0.572418,
+          "brier": 0.309352,
+          "auc": 0.805811,
+          "balanced_accuracy": 0.435051,
+          "macro_f1": 0.444943
         },
         "base_rate": {
-          "n": 1126,
-          "logloss": 0.638576,
-          "brier": 0.336395,
-          "auc": 0.478501,
+          "n": 1540,
+          "logloss": 0.655636,
+          "brier": 0.347278,
+          "auc": 0.470312,
           "balanced_accuracy": 0.333333,
-          "macro_f1": 0.298332
+          "macro_f1": 0.296697
         },
         "price_unchanged": {
-          "n": 1126,
-          "logloss": 0.654685,
-          "brier": 0.338091,
+          "n": 1540,
+          "logloss": 0.677804,
+          "brier": 0.351688,
           "auc": 0.5,
           "balanced_accuracy": 0.333333,
-          "macro_f1": 0.298332
+          "macro_f1": 0.296697
         },
         "mean_reversion": {
-          "n": 1126,
-          "logloss": 0.611138,
-          "brier": 0.326952,
-          "auc": 0.624505,
+          "n": 1540,
+          "logloss": 0.627207,
+          "brier": 0.337604,
+          "auc": 0.633331,
           "balanced_accuracy": 0.333333,
-          "macro_f1": 0.298332
+          "macro_f1": 0.296697
         },
         "momentum": {
-          "n": 1126,
-          "logloss": 0.614604,
-          "brier": 0.328399,
-          "auc": 0.62909,
+          "n": 1540,
+          "logloss": 0.642165,
+          "brier": 0.343222,
+          "auc": 0.598844,
           "balanced_accuracy": 0.333333,
-          "macro_f1": 0.298332
+          "macro_f1": 0.296697
         },
-        "n_matured": 1126
+        "n_matured": 1540
       },
-      "pending_labels": 794,
+      "pending_labels": 380,
       "simtrade": {
-        "n_trades": 44,
-        "total_pnl": 100.86818794854369,
-        "return_on_bankroll": 0.010086818794854369,
-        "win_rate": 0.29545454545454547,
-        "max_drawdown": 84.25515733398284,
+        "n_trades": 79,
+        "total_pnl": -48.275232043243214,
+        "return_on_bankroll": -0.004827523204324322,
+        "win_rate": 0.21518987341772153,
+        "max_drawdown": 184.71572293553064,
         "n_unrealized": 0
       }
     }
   },
   "data_quality": {
-    "snapshot_rows": 94107,
-    "freshest_snapshot": "2026-07-16T01:16:16.721230+00:00",
+    "snapshot_rows": 96027,
+    "freshest_snapshot": "2026-07-16T02:16:15.546157+00:00",
     "missing_rate": {
-      "mid_price": 0.4586,
-      "spread": 0.4586,
-      "bid_depth": 0.0344,
-      "ask_depth": 0.0344,
-      "orderbook_imbalance": 0.0971,
+      "mid_price": 0.4601,
+      "spread": 0.4601,
+      "bid_depth": 0.0343,
+      "ask_depth": 0.0343,
+      "orderbook_imbalance": 0.0968,
       "volume_1h": 0.0026,
-      "volume_24h": 0.258,
+      "volume_24h": 0.2564,
       "trade_count_1h": 0.0,
-      "return_1h": 0.2667,
-      "return_6h": 0.4424,
-      "return_24h": 0.5153,
-      "volatility": 0.4394,
-      "liquidity": 0.065,
+      "return_1h": 0.2658,
+      "return_6h": 0.4394,
+      "return_24h": 0.5139,
+      "volatility": 0.4379,
+      "liquidity": 0.0648,
       "hours_to_resolution": 0.0,
-      "buy_slippage_1000_now": 0.2614,
-      "fill_ratio_1000": 0.0344,
+      "buy_slippage_1000_now": 0.2624,
+      "fill_ratio_1000": 0.0343,
       "tradable_now": 0.0,
-      "threshold_num": 0.8761,
-      "btc_spot": 0.0181,
-      "eth_spot": 0.0181,
-      "threshold_ratio": 0.8988
+      "threshold_num": 0.8754,
+      "btc_spot": 0.0173,
+      "eth_spot": 0.0173,
+      "threshold_ratio": 0.8987
     },
     "api_errors": []
   },
-  "universe_size": 2647,
+  "universe_size": 2656,
   "primary_metric": "return_on_bankroll"
 }

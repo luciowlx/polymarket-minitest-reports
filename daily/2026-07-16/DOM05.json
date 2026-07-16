@@ -2,10 +2,10 @@
   "scenario_id": "DOM05",
   "name": "地缘政治",
   "run_date": "2026-07-16",
-  "generated_at": "2026-07-16T01:30:17.760049+00:00",
-  "run_id": "fb18bbbe-daff-4d01-a916-1f44282eeded",
+  "generated_at": "2026-07-16T02:30:23.867304+00:00",
+  "run_id": "25a2ad05-24c5-4615-89bb-5aa40770576e",
   "pipeline_status": "PIPELINE_PASS",
-  "effect_status": "INCONCLUSIVE",
+  "effect_status": "NOT_BETTER",
   "targets": {
     "target_up_24h": {
       "task": "classification",
@@ -23,54 +23,54 @@
       },
       "matured_metrics": {
         "limix": {
-          "n": 42,
-          "logloss": 1.066939,
-          "brier": 0.643582,
-          "auc": 0.744317,
-          "balanced_accuracy": 0.516835,
-          "macro_f1": 0.45737
+          "n": 88,
+          "logloss": 1.030464,
+          "brier": 0.618413,
+          "auc": 0.765496,
+          "balanced_accuracy": 0.56746,
+          "macro_f1": 0.520258
         },
         "base_rate": {
-          "n": 42,
-          "logloss": 1.128486,
-          "brier": 0.690412,
-          "auc": 0.5,
-          "balanced_accuracy": 0.333333,
-          "macro_f1": 0.117647
+          "n": 88,
+          "logloss": 1.149387,
+          "brier": 0.697914,
+          "auc": 0.469289,
+          "balanced_accuracy": 0.325397,
+          "macro_f1": 0.251515
         },
         "price_unchanged": {
-          "n": 42,
-          "logloss": 2.23873,
-          "brier": 1.269762,
+          "n": 88,
+          "logloss": 2.076069,
+          "brier": 1.174091,
           "auc": 0.5,
           "balanced_accuracy": 0.333333,
-          "macro_f1": 0.138365
+          "macro_f1": 0.16092
         },
         "mean_reversion": {
-          "n": 42,
-          "logloss": 1.047634,
-          "brier": 0.628145,
-          "auc": 0.533614,
-          "balanced_accuracy": 0.405724,
-          "macro_f1": 0.345142
+          "n": 88,
+          "logloss": 1.118076,
+          "brier": 0.671523,
+          "auc": 0.538833,
+          "balanced_accuracy": 0.354497,
+          "macro_f1": 0.287572
         },
         "momentum": {
-          "n": 42,
-          "logloss": 1.137304,
-          "brier": 0.700499,
-          "auc": 0.566239,
-          "balanced_accuracy": 0.29798,
-          "macro_f1": 0.201201
+          "n": 88,
+          "logloss": 1.175978,
+          "brier": 0.71095,
+          "auc": 0.479982,
+          "balanced_accuracy": 0.322751,
+          "macro_f1": 0.23291
         },
-        "n_matured": 42
+        "n_matured": 88
       },
-      "pending_labels": 144,
+      "pending_labels": 98,
       "simtrade": {
-        "n_trades": 21,
-        "total_pnl": -357.8635794266195,
-        "return_on_bankroll": -0.035786357942661946,
-        "win_rate": 0.3333333333333333,
-        "max_drawdown": 364.68176124480135,
+        "n_trades": 47,
+        "total_pnl": -334.119635500414,
+        "return_on_bankroll": -0.0334119635500414,
+        "win_rate": 0.3829787234042553,
+        "max_drawdown": 381.4530242044906,
         "n_unrealized": 0
       }
     },
@@ -90,48 +90,48 @@
       },
       "matured_metrics": {
         "limix": {
-          "n": 42,
-          "mae": 0.123155,
-          "rmse": 0.199758,
-          "r2": -1.910939,
-          "direction_accuracy": 0.52381
+          "n": 88,
+          "mae": 0.08214,
+          "rmse": 0.150017,
+          "r2": -2.016379,
+          "direction_accuracy": 0.534091
         },
         "base_rate": {
-          "n": 42,
-          "mae": 0.080293,
-          "rmse": 0.132157,
-          "r2": -0.274105,
-          "direction_accuracy": 0.285714
+          "n": 88,
+          "mae": 0.056683,
+          "rmse": 0.096712,
+          "r2": -0.253622,
+          "direction_accuracy": 0.272727
         },
         "price_unchanged": {
-          "n": 42,
-          "mae": 0.055679,
-          "rmse": 0.120441,
-          "r2": -0.058219,
-          "direction_accuracy": 0.071429
+          "n": 88,
+          "mae": 0.038216,
+          "rmse": 0.087617,
+          "r2": -0.028936,
+          "direction_accuracy": 0.102273
         },
         "mean_reversion": {
-          "n": 42,
-          "mae": 0.061607,
-          "rmse": 0.127813,
-          "r2": -0.191719,
-          "direction_accuracy": 0.595238
+          "n": 88,
+          "mae": 0.050761,
+          "rmse": 0.105663,
+          "r2": -0.49642,
+          "direction_accuracy": 0.522727
         },
         "momentum": {
-          "n": 42,
-          "mae": 0.080667,
-          "rmse": 0.139831,
-          "r2": -0.426382,
-          "direction_accuracy": 0.309524
+          "n": 88,
+          "mae": 0.056068,
+          "rmse": 0.105298,
+          "r2": -0.486106,
+          "direction_accuracy": 0.397727
         },
-        "n_matured": 42
+        "n_matured": 88
       },
-      "pending_labels": 144,
+      "pending_labels": 98,
       "simtrade": {
-        "n_trades": 15,
-        "total_pnl": -283.8929942278195,
-        "return_on_bankroll": -0.028389299422781948,
-        "win_rate": 0.3333333333333333,
+        "n_trades": 33,
+        "total_pnl": -252.9703471986424,
+        "return_on_bankroll": -0.02529703471986424,
+        "win_rate": 0.3939393939393939,
         "max_drawdown": 288.26875922169955,
         "n_unrealized": 0
       }
@@ -180,8 +180,8 @@
     }
   },
   "data_quality": {
-    "snapshot_rows": 11640,
-    "freshest_snapshot": "2026-07-16T01:16:06.084747+00:00",
+    "snapshot_rows": 11880,
+    "freshest_snapshot": "2026-07-16T02:16:03.614267+00:00",
     "missing_rate": {
       "mid_price": 0.1523,
       "spread": 0.1523,
@@ -192,7 +192,7 @@
       "volume_24h": 0.0,
       "trade_count_1h": 0.0,
       "return_1h": 0.0464,
-      "return_6h": 0.0596,
+      "return_6h": 0.0331,
       "return_24h": 0.2318,
       "volatility": 0.0265,
       "liquidity": 0.0,
