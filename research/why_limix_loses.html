@@ -1,0 +1,59 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LimiX 为什么亏钱:把亏损拆成"判断"和"手续费"</title>
+<style>
+body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;margin:2rem auto;max-width:900px;padding:0 1rem;color:#1a1a1a;line-height:1.7}
+h1{font-size:1.4rem}h2{font-size:1.13rem;margin-top:2rem;border-bottom:2px solid #e0e0e0;padding-bottom:.3rem}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.9rem}
+th,td{border:1px solid #ddd;padding:.45rem .6rem;text-align:right}
+th{background:#f5f6f8}td:first-child,th:first-child{text-align:left}
+tr:nth-child(even){background:#fafbfc}
+.pos{color:#1a7f37;font-weight:600}.neg{color:#b03030;font-weight:600}
+.hl{background:#fff8dc;padding:.9rem 1.1rem;border-left:4px solid #b8860b;margin:1.2rem 0}
+.muted{color:#777;font-size:.85rem}
+.big{font-size:1.05rem;background:#f0f7f0;padding:1rem;border-left:4px solid #1a7f37;margin:1rem 0}
+</style></head><body>
+<h1>LimiX 为什么亏钱:把亏损拆成"判断"和"手续费"</h1>
+<p class="muted">2026-07-16 · 基于 687 笔已真实结算的模拟交易 · bootstrap 1 万次重抽样</p>
+
+<div class="big"><b>一句话结论:</b>LimiX 亏的 2,389 USDC 里,<b>2,076(87%)是买卖价差的手续费</b>;把手续费加回去,它的判断本身盈亏是 <b>−312,统计上等于零</b>。<br><br>
+<b>翻译成人话:</b>LimiX 的预测既没赚钱能力也没反向价值,就是<b>噪音</b>。它亏钱不是因为判断错,而是因为"每次开仓都要付过路费,而判断又带不来任何超额收益"。</div>
+
+<h2>1. 亏损归因</h2>
+<table>
+<tr><th>项目</th><th>金额 (USDC)</th><th>说明</th></tr>
+<tr><td>LimiX 实际总盈亏</td><td class="neg">−2,389</td><td style="text-align:left">687 笔已结算交易,每笔本金 100</td></tr>
+<tr><td>其中:买卖价差成本</td><td class="neg">−2,076</td><td style="text-align:left">占亏损的 <b>87%</b>;平均每笔 3.02 USDC</td></tr>
+<tr><td><b>剔除价差后的毛盈亏</b></td><td><b>−312</b></td><td style="text-align:left">95% CI = [−2,276, +1,909] → <b>与 0 无法区分</b></td></tr>
+<tr><td>反向操作(信号全反过来)</td><td>−1,764</td><td style="text-align:left">95% CI 含 0 → 反做也不赚,说明<b>不是反向指标,是噪音</b></td></tr>
+</table>
+<p class="muted">若 LimiX 有真实预测能力,毛盈亏应显著为正;若它系统性判断错误,反向操作应显著为正。两者都不成立,只剩"无信号"这一种解释。</p>
+
+<h2>2. 各模型的严格检验(同一批已结算交易)</h2>
+<table>
+<tr><th>模型</th><th>笔数</th><th>总盈亏</th><th>95% 置信区间</th><th>去掉最好5笔</th><th>胜率</th><th>结论</th></tr>
+<tr><td>均值回归(基线)</td><td>287</td><td class="pos">+1,495</td><td>[−509, +3,881]</td><td class="neg">−613</td><td>51%</td><td style="text-align:left"><b>假阳性</b>:CI 含 0、靠少数几笔、中位单笔 +0.2</td></tr>
+<tr><td><b>LimiX</b></td><td>687</td><td class="neg">−2,389</td><td>[−4,317, −235]</td><td>−3,972</td><td>37%</td><td style="text-align:left"><b>显著为负</b>(全部由价差解释)</td></tr>
+<tr><td>动量(基线)</td><td>268</td><td class="neg">−2,665</td><td>[−3,471, −1,886]</td><td>−2,948</td><td>35%</td><td style="text-align:left">显著为负,6/6 场景全亏</td></tr>
+<tr><td>基率(对照)</td><td>249</td><td class="neg">−3,243</td><td>[−5,877, −184]</td><td>−5,755</td><td>25%</td><td style="text-align:left">显著为负(垃圾策略对照组,符合预期)</td></tr>
+</table>
+
+<div class="hl"><b>特别更正:</b>此前口头汇报过"均值回归 +1,495 领先"——<b>那是错的</b>。用与拆穿 GBM 假阳性同一把尺子检验后:置信区间含 0、去掉最好 5 笔即转负、中位单笔约等于 0、胜率 51% 等同抛硬币。<b>均值回归没有赚钱能力,只是"没显著亏"而已。</b>目前所有模型里,没有任何一个被证明能赚钱。</div>
+
+<h2>3. 这对下一步意味着什么</h2>
+<ol>
+<li><b>优化执行成本救不了 LimiX。</b>毛盈亏≈0 说明信号本身是空的;就算把价差压到 0、开仓门槛调到最优,期望收益仍是 0。出路只有换特征或换场景。</li>
+<li><b>与历史回测完全吻合。</b>回测显示市场自身在比特币阶梯上校准极好(LogLoss 0.11)、无人能赢;前向实盘现在给出同一答案的另一面:LimiX 的超额信号为零。两条独立路径互证。</li>
+<li><b>值得试的方向</b>(按优先级):① 补更强特征——盘口历史(已发现未公开接口,可回填 8 个月完整买卖档)、资金费率、ETF 流入;② 转向做市竞争更弱的场景——体育胜负盘日均 377 场结算,统计功效是加密的 17 倍,能在一周内给出确定答案;③ 接受"预测市场高效"这个结论本身就是有价值的交付。</li>
+<li><b>不建议</b>继续在比特币阶梯上调参:那里的市场价格已经近乎有效,是全平台套利者最密集的战场。</li>
+</ol>
+
+<h2>4. 诚实边界</h2>
+<ul class="muted">
+<li>687 笔已结算,样本量足以支撑"显著为负"的结论,但仍是单一时间段(2026-07-13~16)</li>
+<li>价差成本按半价差 0.005 估算(近价档实测价差中位 0.007,合理略偏乐观);真实滑点未计入,计入后 LimiX 只会更差</li>
+<li>CRY 场景(比特币阶梯/涨跌)仅 28 笔结算,尚不足以单独下结论,数字仍会变动</li>
+<li>本页所有数字可复算:账本 <code>rolling_data/predictions|evaluations/</code>,重算命令 <code>python -m rolling simtrade</code></li>
+</ul>
+<p><a href="index.html">← 场景调研</a> · <a href="backtest_btc.html">BTC 阶梯回测</a> · <a href="backtest_cal.html">校准实验</a></p>
+</body></html>
