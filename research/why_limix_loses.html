@@ -2,22 +2,163 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>LimiX 为什么亏钱:把亏损拆成"判断"和"手续费"</title>
 <style>
-body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;margin:2rem auto;max-width:900px;padding:0 1rem;color:#1a1a1a;line-height:1.7}
-h1{font-size:1.4rem}h2{font-size:1.13rem;margin-top:2rem;border-bottom:2px solid #e0e0e0;padding-bottom:.3rem}
-table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.9rem}
-th,td{border:1px solid #ddd;padding:.45rem .6rem;text-align:right}
-th{background:#f5f6f8}td:first-child,th:first-child{text-align:left}
-tr:nth-child(even){background:#fafbfc}
-.pos{color:#1a7f37;font-weight:600}.neg{color:#b03030;font-weight:600}
-.hl{background:#fff8dc;padding:.9rem 1.1rem;border-left:4px solid #b8860b;margin:1.2rem 0}
-.muted{color:#777;font-size:.85rem}
-.big{font-size:1.05rem;background:#f0f7f0;padding:1rem;border-left:4px solid #1a7f37;margin:1rem 0}
-</style></head><body>
+:root{
+  color-scheme:light;
+  --page-bg:#f9f9f7;--card:#fcfcfb;--ink:#0b0b0b;--ink-2:#52514e;--ink-3:#898781;
+  --rule:#e1e0d9;--th-bg:#f0efec;--zebra:#fbfbf9;
+  --accent:#2a78d6;--warn:#eda100;
+  --pos-text:#006300;--neg-text:#b03030;
+  --hl-bg:rgba(237,161,0,.10);--hl-bd:#eda100;
+}
+@media (prefers-color-scheme:dark){:root:where(:not([data-theme="light"])){
+  color-scheme:dark;
+  --page-bg:#0d0d0d;--card:#1a1a19;--ink:#ffffff;--ink-2:#c3c2b7;--ink-3:#898781;
+  --rule:#2c2c2a;--th-bg:#232321;--zebra:#151514;
+  --accent:#3987e5;--warn:#c98500;
+  --pos-text:#0ca30c;--neg-text:#e66767;
+  --hl-bg:rgba(201,133,0,.14);--hl-bd:#c98500;
+}}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --page-bg:#0d0d0d;--card:#1a1a19;--ink:#ffffff;--ink-2:#c3c2b7;--ink-3:#898781;
+  --rule:#2c2c2a;--th-bg:#232321;--zebra:#151514;
+  --accent:#3987e5;--warn:#c98500;
+  --pos-text:#0ca30c;--neg-text:#e66767;
+  --hl-bg:rgba(201,133,0,.14);--hl-bd:#c98500;
+}
+body{font-family:system-ui,-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;margin:2rem auto;max-width:900px;padding:0 1rem;background:var(--page-bg);color:var(--ink);line-height:1.7}
+h1{font-size:1.4rem}h2{font-size:1.13rem;margin-top:2rem;border-bottom:1px solid var(--rule);padding-bottom:.3rem}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.9rem;font-variant-numeric:tabular-nums}
+th,td{border:1px solid var(--rule);padding:.45rem .6rem;text-align:right}
+th{background:var(--th-bg)}td:first-child,th:first-child{text-align:left}
+tr:nth-child(even){background:var(--zebra)}
+.pos{color:var(--pos-text);font-weight:600}.neg{color:var(--neg-text);font-weight:600}
+.hl{background:var(--hl-bg);padding:.9rem 1.1rem;border-left:4px solid var(--hl-bd);margin:1.2rem 0}
+.muted{color:var(--ink-2);font-size:.85rem}
+code{background:var(--th-bg);padding:.05rem .35rem;border-radius:4px}
+a{color:var(--accent)}
+/* ---- hero conclusion band ---- */
+.hero{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--accent);border-radius:8px;padding:1.3rem 1.4rem;margin:1.4rem 0 1.6rem}
+.hero-eyebrow{margin:0 0 .35rem;font-size:.72rem;font-weight:700;letter-spacing:.09em;color:var(--ink-3)}
+.hero-figure{margin:.1rem 0 .1rem;font-size:3.4rem;line-height:1.02;font-weight:650;letter-spacing:-.02em;color:var(--ink)}
+.hero-figure .unit{font-size:1.3rem;font-weight:600;color:var(--ink-2);margin-left:.4rem;letter-spacing:0}
+.hero-lede{margin:.55rem 0 0;font-size:1.05rem;color:var(--ink);max-width:64ch}
+.hero-sub{margin:.6rem 0 0;font-size:.95rem;color:var(--ink-2);max-width:64ch}
+</style><!--CHARTS_CSS_START--><style>
+.viz{
+  color-scheme: light;
+  --viz-surface:#fcfcfb; --viz-plane:#f9f9f7;
+  --viz-text:#0b0b0b; --viz-text-2:#52514e; --viz-muted:#898781;
+  --viz-grid:#e1e0d9; --viz-axis:#c3c2b7; --viz-border:rgba(11,11,11,0.10);
+  --viz-s1:#2a78d6; --viz-s2:#1baf7a; --viz-s3:#eda100; --viz-s5:#4a3aa7;
+  --viz-s6:#e34948; --viz-s7:#e87ba4; --viz-s8:#eb6834;
+  --viz-dim:#a9a89f;                /* de-emphasis / "not significant" gray */
+  --viz-good-text:#006300; --viz-bad-text:#d03b3b;
+  --viz-good:#0ca30c; --viz-bad:#d03b3b;
+  font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC",
+               "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  color: var(--viz-text);
+}
+@media (prefers-color-scheme: dark){
+  :root:where(:not([data-theme="light"])) .viz{
+    color-scheme: dark;
+    --viz-surface:#1a1a19; --viz-plane:#0d0d0d;
+    --viz-text:#ffffff; --viz-text-2:#c3c2b7; --viz-muted:#898781;
+    --viz-grid:#2c2c2a; --viz-axis:#383835; --viz-border:rgba(255,255,255,0.10);
+    --viz-s1:#3987e5; --viz-s2:#199e70; --viz-s3:#c98500; --viz-s5:#9085e9;
+    --viz-s6:#e66767; --viz-s7:#d55181; --viz-s8:#d95926;
+    --viz-dim:#6f6e68;
+    --viz-good-text:#0ca30c; --viz-bad-text:#e66767;
+    --viz-good:#0ca30c; --viz-bad:#e66767;
+  }
+}
+:root[data-theme="dark"] .viz{
+  color-scheme: dark;
+  --viz-surface:#1a1a19; --viz-plane:#0d0d0d;
+  --viz-text:#ffffff; --viz-text-2:#c3c2b7; --viz-muted:#898781;
+  --viz-grid:#2c2c2a; --viz-axis:#383835; --viz-border:rgba(255,255,255,0.10);
+  --viz-s1:#3987e5; --viz-s2:#199e70; --viz-s3:#c98500; --viz-s5:#9085e9;
+  --viz-s6:#e66767; --viz-s7:#d55181; --viz-s8:#d95926;
+  --viz-dim:#6f6e68;
+  --viz-good-text:#0ca30c; --viz-bad-text:#e66767;
+  --viz-good:#0ca30c; --viz-bad:#e66767;
+}
+
+.viz-fig{
+  margin:0 0 28px; padding:16px 18px 14px;
+  background:var(--viz-surface);
+  border:1px solid var(--viz-border); border-radius:10px;
+  max-width:100%; box-sizing:border-box;
+}
+.viz-head{margin-bottom:10px;}
+.viz-title{font-size:15px; font-weight:600; color:var(--viz-text); margin:0;}
+.viz-sub{font-size:13px; color:var(--viz-text-2); margin:4px 0 0; line-height:1.5;}
+.viz-plot{width:100%; overflow-x:auto;}
+.viz-plot svg{display:block; max-width:100%; height:auto;}
+
+/* hover layer: marks respond, hit targets are bigger than the mark */
+.viz-hit{fill:transparent; cursor:default;}
+.viz-mark{transition:opacity .12s ease;}
+.viz-row:hover .viz-mark{opacity:.72;}
+.viz-row:hover .viz-rowbg{fill:var(--viz-grid); opacity:.42;}
+.viz-rowbg{fill:transparent;}
+
+/* legend: line keys for lines, rects for bars */
+.viz-legend{display:flex; flex-wrap:wrap; gap:6px 16px; margin:2px 0 10px; padding:0; list-style:none;}
+.viz-legend li{display:flex; align-items:center; gap:6px; font-size:12px; color:var(--viz-text-2);}
+.viz-key{display:inline-block; border-radius:2px; flex:none;}
+.viz-key-line{width:14px; height:2px;}
+.viz-key-rect{width:10px; height:10px;}
+
+/* takeaway line under each chart */
+.viz-take{font-size:13px; color:var(--viz-text-2); margin:10px 0 0; line-height:1.6;}
+.viz-take strong{color:var(--viz-text); font-weight:600;}
+
+/* table view -- the accessibility twin of every chart */
+.viz-tv{margin-top:10px; font-size:12px;}
+.viz-tv summary{cursor:pointer; color:var(--viz-text-2); padding:4px 0;}
+.viz-tv table{border-collapse:collapse; width:100%; margin-top:8px;
+  font-variant-numeric: tabular-nums;}
+.viz-tv caption{text-align:left; color:var(--viz-text-2); padding-bottom:6px;}
+.viz-tv th,.viz-tv td{border-bottom:1px solid var(--viz-grid); padding:6px 8px;
+  text-align:right; color:var(--viz-text-2); white-space:nowrap;}
+.viz-tv th:first-child,.viz-tv td:first-child{text-align:left; white-space:normal;}
+.viz-tv th{color:var(--viz-text); font-weight:600;}
+
+/* stat tiles */
+.viz-kpi{display:flex; flex-wrap:wrap; gap:12px; margin:0 0 20px; padding:0; list-style:none;}
+.viz-tile{
+  flex:1 1 190px; min-width:170px; box-sizing:border-box;
+  background:var(--viz-surface); border:1px solid var(--viz-border);
+  border-left:3px solid var(--viz-axis); border-radius:8px; padding:12px 14px;
+}
+.viz-tile.tone-good{border-left-color:var(--viz-good);}
+.viz-tile.tone-bad{border-left-color:var(--viz-bad);}
+.viz-tile-label{font-size:12px; color:var(--viz-text-2); margin-bottom:6px;}
+/* proportional figures on standalone values (never tabular-nums here) */
+.viz-tile-value{font-size:26px; font-weight:600; color:var(--viz-text); line-height:1.15;}
+.viz-tile-sub{font-size:12px; color:var(--viz-text-2); margin-top:6px;
+  display:flex; align-items:center; gap:5px;}
+.viz-tile.tone-good .viz-tile-sub{color:var(--viz-good-text);}
+.viz-tile.tone-bad .viz-tile-sub{color:var(--viz-bad-text);}
+.viz-tone-dot{width:7px; height:7px; border-radius:50%; background:var(--viz-axis); flex:none;}
+.viz-tile.tone-good .viz-tone-dot{background:var(--viz-good);}
+.viz-tile.tone-bad .viz-tone-dot{background:var(--viz-bad);}
+</style><style>
+.viz-stack{display:flex;flex-direction:column;gap:1.5rem;margin:1.6rem 0 2rem}
+.viz-stack .viz-fig{margin:0}
+</style><!--CHARTS_CSS_END-->
+</head><body>
 <h1>LimiX 为什么亏钱:把亏损拆成"判断"和"手续费"</h1>
 <p class="muted">2026-07-16 · 基于 687 笔已真实结算的模拟交易 · bootstrap 1 万次重抽样</p>
 
-<div class="big"><b>一句话结论:</b>LimiX 亏的 2,389 USDC 里,<b>2,076(87%)是买卖价差的手续费</b>;把手续费加回去,它的判断本身盈亏是 <b>−312,统计上等于零</b>。<br><br>
-<b>翻译成人话:</b>LimiX 的预测既没赚钱能力也没反向价值,就是<b>噪音</b>。它亏钱不是因为判断错,而是因为"每次开仓都要付过路费,而判断又带不来任何超额收益"。</div>
+<section class="hero">
+  <p class="hero-eyebrow">一句话结论</p>
+  <p class="hero-figure">87%<span class="unit">的亏损是过路费,不是判断失误</span></p>
+  <p class="hero-lede">LimiX 亏的 <b>2,389 USDC</b> 里,<b>2,076(87%)是买卖价差</b>。把价差加回去,它判断本身的盈亏是 <b>−312 USDC,统计上等于零</b>。</p>
+  <p class="hero-sub"><b>翻译成人话:</b>LimiX 的预测既没赚钱能力、也没反向价值,就是<b>噪音</b>。它亏钱不是因为判断错,而是"每次开仓都要付过路费,而判断又带不来任何超额收益"。</p>
+</section>
+<!--CHARTS_START--><div class="viz-stack"><ul class="viz viz-kpi"><li class="viz-tile tone-bad"><div class="viz-tile-label">LimiX 实际总盈亏</div><div class="viz-tile-value">−2,389</div><div class="viz-tile-sub"><span class="viz-tone-dot"></span><span>687 笔已结算 · USDC</span></div></li><li class="viz-tile tone-bad"><div class="viz-tile-label">其中:买卖价差成本</div><div class="viz-tile-value">−2,076</div><div class="viz-tile-sub"><span class="viz-tone-dot"></span><span>占亏损 87% · 平均每笔 3.02</span></div></li><li class="viz-tile tone-neutral"><div class="viz-tile-label">剔除价差后的毛盈亏</div><div class="viz-tile-value">−312</div><div class="viz-tile-sub"><span class="viz-tone-dot"></span><span>95% CI [−2,276, +1,909] · 与 0 无法区分</span></div></li><li class="viz-tile tone-neutral"><div class="viz-tile-label">反向操作(信号反转)</div><div class="viz-tile-value">−1,764</div><div class="viz-tile-sub"><span class="viz-tone-dot"></span><span>CI 含 0 · 反做也不赚 = 噪音</span></div></li></ul><figure class="viz viz-fig" style="max-width:760px"><figcaption class="viz-head"><p class="viz-title">亏损拆解:判断没亏,过路费亏光了</p><p class="viz-sub">687 笔已结算模拟交易,单位 USDC。灰色是判断本身的盈亏(−312,95% CI [−2,276, +1,909],与 0 无法区分);红色是每次开仓都要付的买卖价差,它贡献了 87% 的亏损。(数值均取整,首尾差 1 为四舍五入)</p></figcaption><div class="viz-plot"><svg viewBox="0 0 760 274" width="760" height="274" role="img" aria-label="亏损拆解:判断没亏,过路费亏光了 瀑布图" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, Segoe UI, PingFang SC, sans-serif"><line x1="12.00" y1="41.29" x2="748.00" y2="41.29" stroke="var(--viz-axis)" stroke-width="1" shape-rendering="crispEdges"/><g class="viz-row"><path class="viz-mark" d="M122.67,41.29 V60.46 A4.00,4.00 0 0 0 126.67,64.46 H142.67 A4.00,4.00 0 0 0 146.67,60.46 V41.29 Z" fill="var(--viz-dim)"/><text x="134.67" y="35.29" text-anchor="middle" font-size="12" fill="var(--viz-text-2)">-312</text><text x="134.67" y="256.00" text-anchor="middle" font-size="12" fill="var(--viz-text-2)">判断本身(毛盈亏)</text><rect class="viz-hit" x="12.00" y="20.00" width="245.33" height="220.00"><title>判断本身(毛盈亏):-312</title></rect></g><line x1="146.67" y1="64.46" x2="368.00" y2="64.46" stroke="var(--viz-grid)" stroke-width="1" shape-rendering="crispEdges"/><g class="viz-row"><path class="viz-mark" d="M368.00,64.46 V214.64 A4.00,4.00 0 0 0 372.00,218.64 H388.00 A4.00,4.00 0 0 0 392.00,214.64 V64.46 Z" fill="var(--viz-s6)"/><text x="380.00" y="58.46" text-anchor="middle" font-size="12" fill="var(--viz-text-2)">-2,076</text><text x="380.00" y="256.00" text-anchor="middle" font-size="12" fill="var(--viz-text-2)">买卖价差成本</text><rect class="viz-hit" x="257.33" y="20.00" width="245.33" height="220.00"><title>买卖价差成本:-2,076</title></rect></g><line x1="392.00" y1="218.64" x2="613.33" y2="218.64" stroke="var(--viz-grid)" stroke-width="1" shape-rendering="crispEdges"/><g class="viz-row"><path class="viz-mark" d="M613.33,41.29 V214.71 A4.00,4.00 0 0 0 617.33,218.71 H633.33 A4.00,4.00 0 0 0 637.33,214.71 V41.29 Z" fill="var(--viz-dim)"/><text x="625.33" y="35.29" text-anchor="middle" font-size="12" fill="var(--viz-text-2)">-2,389</text><text x="625.33" y="256.00" text-anchor="middle" font-size="12" fill="var(--viz-text-2)">实际总盈亏</text><rect class="viz-hit" x="502.67" y="20.00" width="245.33" height="220.00"><title>实际总盈亏:-2,389</title></rect></g></svg></div><details class="viz-tv"><summary>表格视图(可复制的原始数字)</summary><table><caption>亏损拆解:判断没亏,过路费亏光了</caption><thead><tr><th>步骤</th><th>变化</th><th>累计</th></tr></thead><tbody><tr><td>判断本身(毛盈亏)</td><td>-312</td><td>-312</td></tr><tr><td>买卖价差成本</td><td>-2,076</td><td>-2,388</td></tr><tr><td>实际总盈亏</td><td>-2,389</td><td>-2,389</td></tr></tbody></table></details></figure><figure class="viz viz-fig" style="max-width:760px"><figcaption class="viz-head"><p class="viz-title">四个模型的 bootstrap 95% 置信区间(总盈亏 USDC)</p><p class="viz-sub">同一批已结算交易 · 1 万次重抽样。横线跨过 0 = 无法与「没有能力」区分。均值回归的 +1,495 正是这种情况——它不是领先,只是没显著亏。</p></figcaption><div class="viz-plot"><svg viewBox="0 0 760 162" width="760" height="162" role="img" aria-label="四个模型的 bootstrap 95% 置信区间(总盈亏 USDC) 点线图" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, Segoe UI, PingFang SC, sans-serif"><line x1="172.28" y1="6.00" x2="172.28" y2="142.00" stroke="var(--viz-grid)" stroke-width="1" shape-rendering="crispEdges"/><text x="172.28" y="155.00" text-anchor="middle" font-size="11" fill="var(--viz-muted)" font-variant-numeric="tabular-nums">-5,000</text><line x1="290.36" y1="6.00" x2="290.36" y2="142.00" stroke="var(--viz-grid)" stroke-width="1" shape-rendering="crispEdges"/><text x="290.36" y="155.00" text-anchor="middle" font-size="11" fill="var(--viz-muted)" font-variant-numeric="tabular-nums">-2,500</text><line x1="526.52" y1="6.00" x2="526.52" y2="142.00" stroke="var(--viz-grid)" stroke-width="1" shape-rendering="crispEdges"/><text x="526.52" y="155.00" text-anchor="middle" font-size="11" fill="var(--viz-muted)" font-variant-numeric="tabular-nums">2,500</text><line x1="408.44" y1="6.00" x2="408.44" y2="142.00" stroke="var(--viz-axis)" stroke-width="1" shape-rendering="crispEdges"/><text x="408.44" y="155.00" text-anchor="middle" font-size="11" fill="var(--viz-text-2)">0</text><g class="viz-row"><rect class="viz-rowbg" x="97.20" y="6.00" width="528.20" height="34.00" rx="3"/><text x="89.20" y="23.00" text-anchor="end" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">均值回归(基线)</text><line class="viz-mark" x1="384.40" y1="23.00" x2="591.75" y2="23.00" stroke="var(--viz-dim)" stroke-width="2" stroke-linecap="round"/><line class="viz-mark" x1="384.40" y1="19.00" x2="384.40" y2="27.00" stroke="var(--viz-dim)" stroke-width="2" stroke-linecap="round"/><line class="viz-mark" x1="591.75" y1="19.00" x2="591.75" y2="27.00" stroke="var(--viz-dim)" stroke-width="2" stroke-linecap="round"/><circle class="viz-mark" cx="479.05" cy="23.00" r="5" fill="var(--viz-dim)" stroke="var(--viz-surface)" stroke-width="2"/><text x="750.00" y="23.00" text-anchor="end" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">+1,495  不显著(跨0)</text><rect class="viz-hit" x="97.20" y="6.00" width="528.20" height="34.00"><title>均值回归(基线):+1,495(95% 区间 -509 ~ +3,881)· 不显著(跨0)</title></rect></g><g class="viz-row"><rect class="viz-rowbg" x="97.20" y="40.00" width="528.20" height="34.00" rx="3"/><text x="89.20" y="57.00" text-anchor="end" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">LimiX</text><line class="viz-mark" x1="204.54" y1="57.00" x2="397.34" y2="57.00" stroke="var(--viz-s6)" stroke-width="2" stroke-linecap="round"/><line class="viz-mark" x1="204.54" y1="53.00" x2="204.54" y2="61.00" stroke="var(--viz-s6)" stroke-width="2" stroke-linecap="round"/><line class="viz-mark" x1="397.34" y1="53.00" x2="397.34" y2="61.00" stroke="var(--viz-s6)" stroke-width="2" stroke-linecap="round"/><circle class="viz-mark" cx="295.60" cy="57.00" r="5" fill="var(--viz-s6)" stroke="var(--viz-surface)" stroke-width="2"/><text x="750.00" y="57.00" text-anchor="end" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">-2,389  显著</text><rect class="viz-hit" x="97.20" y="40.00" width="528.20" height="34.00"><title>LimiX:-2,389(95% 区间 -4,317 ~ -235)· 显著</title></rect></g><g class="viz-row"><rect class="viz-rowbg" x="97.20" y="74.00" width="528.20" height="34.00" rx="3"/><text x="89.20" y="91.00" text-anchor="end" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">动量(基线)</text><line class="viz-mark" x1="244.49" y1="91.00" x2="319.36" y2="91.00" stroke="var(--viz-s6)" stroke-width="2" stroke-linecap="round"/><line class="viz-mark" x1="244.49" y1="87.00" x2="244.49" y2="95.00" stroke="var(--viz-s6)" stroke-width="2" stroke-linecap="round"/><line class="viz-mark" x1="319.36" y1="87.00" x2="319.36" y2="95.00" stroke="var(--viz-s6)" stroke-width="2" stroke-linecap="round"/><circle class="viz-mark" cx="282.56" cy="91.00" r="5" fill="var(--viz-s6)" stroke="var(--viz-surface)" stroke-width="2"/><text x="750.00" y="91.00" text-anchor="end" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">-2,665  显著</text><rect class="viz-hit" x="97.20" y="74.00" width="528.20" height="34.00"><title>动量(基线):-2,665(95% 区间 -3,471 ~ -1,886)· 显著</title></rect></g><g class="viz-row"><rect class="viz-rowbg" x="97.20" y="108.00" width="528.20" height="34.00" rx="3"/><text x="89.20" y="125.00" text-anchor="end" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">基率(对照)</text><line class="viz-mark" x1="130.85" y1="125.00" x2="399.75" y2="125.00" stroke="var(--viz-s6)" stroke-width="2" stroke-linecap="round"/><line class="viz-mark" x1="130.85" y1="121.00" x2="130.85" y2="129.00" stroke="var(--viz-s6)" stroke-width="2" stroke-linecap="round"/><line class="viz-mark" x1="399.75" y1="121.00" x2="399.75" y2="129.00" stroke="var(--viz-s6)" stroke-width="2" stroke-linecap="round"/><circle class="viz-mark" cx="255.26" cy="125.00" r="5" fill="var(--viz-s6)" stroke="var(--viz-surface)" stroke-width="2"/><text x="750.00" y="125.00" text-anchor="end" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">-3,243  显著</text><rect class="viz-hit" x="97.20" y="108.00" width="528.20" height="34.00"><title>基率(对照):-3,243(95% 区间 -5,877 ~ -184)· 显著</title></rect></g></svg></div><details class="viz-tv"><summary>表格视图(可复制的原始数字)</summary><table><caption>四个模型的 bootstrap 95% 置信区间(总盈亏 USDC)</caption><thead><tr><th>项目</th><th>中心值</th><th>95% 下限</th><th>95% 上限</th><th>是否显著</th></tr></thead><tbody><tr><td>均值回归(基线)</td><td>+1,495</td><td>-509</td><td>+3,881</td><td>不显著(跨0)</td></tr><tr><td>LimiX</td><td>-2,389</td><td>-4,317</td><td>-235</td><td>显著</td></tr><tr><td>动量(基线)</td><td>-2,665</td><td>-3,471</td><td>-1,886</td><td>显著</td></tr><tr><td>基率(对照)</td><td>-3,243</td><td>-5,877</td><td>-184</td><td>显著</td></tr></tbody></table></details></figure></div><!--CHARTS_END-->
 
 <h2>1. 亏损归因</h2>
 <table>

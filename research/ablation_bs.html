@@ -2,23 +2,169 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>关键实验:1973 年的公式打败了 LimiX</title>
 <style>
-body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;margin:2rem auto;max-width:900px;padding:0 1rem;color:#1a1a1a;line-height:1.7}
-h1{font-size:1.4rem}h2{font-size:1.13rem;margin-top:2rem;border-bottom:2px solid #e0e0e0;padding-bottom:.3rem}
-table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.9rem}
-th,td{border:1px solid #ddd;padding:.5rem .6rem;text-align:right}
-th{background:#f5f6f8}td:first-child,th:first-child{text-align:left}
-tr:nth-child(even){background:#fafbfc}
-.win{background:#eef6ee;font-weight:600}
-.bad{color:#b03030;font-weight:600}
-.big{font-size:1.05rem;background:#f0f7f0;padding:1rem;border-left:4px solid #1a7f37;margin:1rem 0}
-.hl{background:#fff8dc;padding:.9rem 1.1rem;border-left:4px solid #b8860b;margin:1.2rem 0}
-.muted{color:#777;font-size:.85rem}
-code{background:#f0f1f3;padding:.05rem .35rem;border-radius:4px}
-</style></head><body>
+:root{
+  color-scheme:light;
+  --page-bg:#f9f9f7;--card:#fcfcfb;--ink:#0b0b0b;--ink-2:#52514e;--ink-3:#898781;
+  --rule:#e1e0d9;--th-bg:#f0efec;--zebra:#fbfbf9;
+  --accent:#2a78d6;--warn:#eda100;
+  --pos-text:#006300;--neg-text:#b03030;
+  --win-bg:rgba(42,120,214,.08);
+  --hl-bg:rgba(237,161,0,.10);--hl-bd:#eda100;
+}
+@media (prefers-color-scheme:dark){:root:where(:not([data-theme="light"])){
+  color-scheme:dark;
+  --page-bg:#0d0d0d;--card:#1a1a19;--ink:#ffffff;--ink-2:#c3c2b7;--ink-3:#898781;
+  --rule:#2c2c2a;--th-bg:#232321;--zebra:#151514;
+  --accent:#3987e5;--warn:#c98500;
+  --pos-text:#0ca30c;--neg-text:#e66767;
+  --win-bg:rgba(57,135,229,.14);
+  --hl-bg:rgba(201,133,0,.14);--hl-bd:#c98500;
+}}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --page-bg:#0d0d0d;--card:#1a1a19;--ink:#ffffff;--ink-2:#c3c2b7;--ink-3:#898781;
+  --rule:#2c2c2a;--th-bg:#232321;--zebra:#151514;
+  --accent:#3987e5;--warn:#c98500;
+  --pos-text:#0ca30c;--neg-text:#e66767;
+  --win-bg:rgba(57,135,229,.14);
+  --hl-bg:rgba(201,133,0,.14);--hl-bd:#c98500;
+}
+body{font-family:system-ui,-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;margin:2rem auto;max-width:900px;padding:0 1rem;background:var(--page-bg);color:var(--ink);line-height:1.7}
+h1{font-size:1.4rem}h2{font-size:1.13rem;margin-top:2rem;border-bottom:1px solid var(--rule);padding-bottom:.3rem}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.9rem;font-variant-numeric:tabular-nums}
+th,td{border:1px solid var(--rule);padding:.5rem .6rem;text-align:right}
+th{background:var(--th-bg)}td:first-child,th:first-child{text-align:left}
+tr:nth-child(even){background:var(--zebra)}
+.win{background:var(--win-bg);font-weight:600}
+.bad{color:var(--neg-text);font-weight:600}
+.hl{background:var(--hl-bg);padding:.9rem 1.1rem;border-left:4px solid var(--hl-bd);margin:1.2rem 0}
+.muted{color:var(--ink-2);font-size:.85rem}
+code{background:var(--th-bg);padding:.05rem .35rem;border-radius:4px}
+a{color:var(--accent)}
+/* ---- hero conclusion band ---- */
+.hero{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--accent);border-radius:8px;padding:1.3rem 1.4rem;margin:1.4rem 0 1.6rem}
+.hero-eyebrow{margin:0 0 .35rem;font-size:.72rem;font-weight:700;letter-spacing:.09em;color:var(--ink-3)}
+.hero-figure{margin:.1rem 0 .1rem;font-size:3.4rem;line-height:1.02;font-weight:650;letter-spacing:-.02em;color:var(--ink)}
+.hero-figure .unit{font-size:1.3rem;font-weight:600;color:var(--ink-2);margin-left:.4rem;letter-spacing:0}
+.hero-lede{margin:.55rem 0 0;font-size:1.05rem;color:var(--ink);max-width:64ch}
+.hero-sub{margin:.6rem 0 0;font-size:.95rem;color:var(--ink-2);max-width:64ch}
+</style><!--CHARTS_CSS_START--><style>
+.viz{
+  color-scheme: light;
+  --viz-surface:#fcfcfb; --viz-plane:#f9f9f7;
+  --viz-text:#0b0b0b; --viz-text-2:#52514e; --viz-muted:#898781;
+  --viz-grid:#e1e0d9; --viz-axis:#c3c2b7; --viz-border:rgba(11,11,11,0.10);
+  --viz-s1:#2a78d6; --viz-s2:#1baf7a; --viz-s3:#eda100; --viz-s5:#4a3aa7;
+  --viz-s6:#e34948; --viz-s7:#e87ba4; --viz-s8:#eb6834;
+  --viz-dim:#a9a89f;                /* de-emphasis / "not significant" gray */
+  --viz-good-text:#006300; --viz-bad-text:#d03b3b;
+  --viz-good:#0ca30c; --viz-bad:#d03b3b;
+  font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC",
+               "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  color: var(--viz-text);
+}
+@media (prefers-color-scheme: dark){
+  :root:where(:not([data-theme="light"])) .viz{
+    color-scheme: dark;
+    --viz-surface:#1a1a19; --viz-plane:#0d0d0d;
+    --viz-text:#ffffff; --viz-text-2:#c3c2b7; --viz-muted:#898781;
+    --viz-grid:#2c2c2a; --viz-axis:#383835; --viz-border:rgba(255,255,255,0.10);
+    --viz-s1:#3987e5; --viz-s2:#199e70; --viz-s3:#c98500; --viz-s5:#9085e9;
+    --viz-s6:#e66767; --viz-s7:#d55181; --viz-s8:#d95926;
+    --viz-dim:#6f6e68;
+    --viz-good-text:#0ca30c; --viz-bad-text:#e66767;
+    --viz-good:#0ca30c; --viz-bad:#e66767;
+  }
+}
+:root[data-theme="dark"] .viz{
+  color-scheme: dark;
+  --viz-surface:#1a1a19; --viz-plane:#0d0d0d;
+  --viz-text:#ffffff; --viz-text-2:#c3c2b7; --viz-muted:#898781;
+  --viz-grid:#2c2c2a; --viz-axis:#383835; --viz-border:rgba(255,255,255,0.10);
+  --viz-s1:#3987e5; --viz-s2:#199e70; --viz-s3:#c98500; --viz-s5:#9085e9;
+  --viz-s6:#e66767; --viz-s7:#d55181; --viz-s8:#d95926;
+  --viz-dim:#6f6e68;
+  --viz-good-text:#0ca30c; --viz-bad-text:#e66767;
+  --viz-good:#0ca30c; --viz-bad:#e66767;
+}
+
+.viz-fig{
+  margin:0 0 28px; padding:16px 18px 14px;
+  background:var(--viz-surface);
+  border:1px solid var(--viz-border); border-radius:10px;
+  max-width:100%; box-sizing:border-box;
+}
+.viz-head{margin-bottom:10px;}
+.viz-title{font-size:15px; font-weight:600; color:var(--viz-text); margin:0;}
+.viz-sub{font-size:13px; color:var(--viz-text-2); margin:4px 0 0; line-height:1.5;}
+.viz-plot{width:100%; overflow-x:auto;}
+.viz-plot svg{display:block; max-width:100%; height:auto;}
+
+/* hover layer: marks respond, hit targets are bigger than the mark */
+.viz-hit{fill:transparent; cursor:default;}
+.viz-mark{transition:opacity .12s ease;}
+.viz-row:hover .viz-mark{opacity:.72;}
+.viz-row:hover .viz-rowbg{fill:var(--viz-grid); opacity:.42;}
+.viz-rowbg{fill:transparent;}
+
+/* legend: line keys for lines, rects for bars */
+.viz-legend{display:flex; flex-wrap:wrap; gap:6px 16px; margin:2px 0 10px; padding:0; list-style:none;}
+.viz-legend li{display:flex; align-items:center; gap:6px; font-size:12px; color:var(--viz-text-2);}
+.viz-key{display:inline-block; border-radius:2px; flex:none;}
+.viz-key-line{width:14px; height:2px;}
+.viz-key-rect{width:10px; height:10px;}
+
+/* takeaway line under each chart */
+.viz-take{font-size:13px; color:var(--viz-text-2); margin:10px 0 0; line-height:1.6;}
+.viz-take strong{color:var(--viz-text); font-weight:600;}
+
+/* table view -- the accessibility twin of every chart */
+.viz-tv{margin-top:10px; font-size:12px;}
+.viz-tv summary{cursor:pointer; color:var(--viz-text-2); padding:4px 0;}
+.viz-tv table{border-collapse:collapse; width:100%; margin-top:8px;
+  font-variant-numeric: tabular-nums;}
+.viz-tv caption{text-align:left; color:var(--viz-text-2); padding-bottom:6px;}
+.viz-tv th,.viz-tv td{border-bottom:1px solid var(--viz-grid); padding:6px 8px;
+  text-align:right; color:var(--viz-text-2); white-space:nowrap;}
+.viz-tv th:first-child,.viz-tv td:first-child{text-align:left; white-space:normal;}
+.viz-tv th{color:var(--viz-text); font-weight:600;}
+
+/* stat tiles */
+.viz-kpi{display:flex; flex-wrap:wrap; gap:12px; margin:0 0 20px; padding:0; list-style:none;}
+.viz-tile{
+  flex:1 1 190px; min-width:170px; box-sizing:border-box;
+  background:var(--viz-surface); border:1px solid var(--viz-border);
+  border-left:3px solid var(--viz-axis); border-radius:8px; padding:12px 14px;
+}
+.viz-tile.tone-good{border-left-color:var(--viz-good);}
+.viz-tile.tone-bad{border-left-color:var(--viz-bad);}
+.viz-tile-label{font-size:12px; color:var(--viz-text-2); margin-bottom:6px;}
+/* proportional figures on standalone values (never tabular-nums here) */
+.viz-tile-value{font-size:26px; font-weight:600; color:var(--viz-text); line-height:1.15;}
+.viz-tile-sub{font-size:12px; color:var(--viz-text-2); margin-top:6px;
+  display:flex; align-items:center; gap:5px;}
+.viz-tile.tone-good .viz-tile-sub{color:var(--viz-good-text);}
+.viz-tile.tone-bad .viz-tile-sub{color:var(--viz-bad-text);}
+.viz-tone-dot{width:7px; height:7px; border-radius:50%; background:var(--viz-axis); flex:none;}
+.viz-tile.tone-good .viz-tone-dot{background:var(--viz-good);}
+.viz-tile.tone-bad .viz-tone-dot{background:var(--viz-bad);}
+</style><style>
+.viz-stack{display:flex;flex-direction:column;gap:1.5rem;margin:1.6rem 0 2rem}
+.viz-stack .viz-fig{margin:0}
+</style><!--CHARTS_CSS_END-->
+</head><body>
 <h1>关键实验:1973 年的公式打败了 LimiX</h1>
 <p class="muted">2026-07-16 · 比特币/以太坊阶梯市场 · 训练 2025-08~2026-04,测试 2026-05-01~07-14(9,934 个决策点)</p>
 
-<div class="big"><b>做了什么:</b>之前 LimiX 的输入里包含"市场当前报价",所以它 AUC 0.99 很可能只是<b>在抄市场的答案</b>。这次把市场价拿掉,问一个干净的问题:<b>光靠现货价、行权价、波动率、剩余时间,LimiX 能自己算出定价吗?</b><br><br>
+<section class="hero">
+  <p class="hero-eyebrow">一句话结论</p>
+  <p class="hero-figure">1973<span class="unit">年的闭式解,零训练、零数据,预测得比 LimiX 更准</span></p>
+  <p class="hero-lede">Black-Scholes 理论价 <b>LogLoss 0.1142</b>,LimiX <b>0.1355</b>。而且 BS 与市场价的相关性高达 <b>0.9943</b>——<b>市场本来就在用这个公式报价</b>,这里没有信息差可捡。</p>
+  <p class="hero-sub"><b>翻译成人话:</b>比特币阶梯就是一道二元期权定价题,它有标准答案。LimiX 没算对这道题;更糟的是,<b>把市场价这个近乎完美的答案直接递给它,它反而更差了</b>(0.1355 → 0.1491)。</p>
+</section>
+<!--CHARTS_START--><div class="viz-stack"><ul class="viz viz-kpi"><li class="viz-tile tone-neutral"><div class="viz-tile-label">市场自身报价(标尺)</div><div class="viz-tile-value">0.1054</div><div class="viz-tile-sub"><span class="viz-tone-dot"></span><span>LogLoss · 越低越好</span></div></li><li class="viz-tile tone-good"><div class="viz-tile-label">Black-Scholes 理论价</div><div class="viz-tile-value">0.1142</div><div class="viz-tile-sub"><span class="viz-tone-dot"></span><span>1973 年公式 · 零训练 · 赢过 LimiX</span></div></li><li class="viz-tile tone-bad"><div class="viz-tile-label">LimiX(看不到市场价)</div><div class="viz-tile-value">0.1355</div><div class="viz-tile-sub"><span class="viz-tone-dot"></span><span>输给一个闭式解</span></div></li><li class="viz-tile tone-bad"><div class="viz-tile-label">LimiX(能看到市场价)</div><div class="viz-tile-value">0.1491</div><div class="viz-tile-sub"><span class="viz-tone-dot"></span><span>把答案递给它,反而更差</span></div></li></ul><figure class="viz viz-fig" style="max-width:760px"><figcaption class="viz-head"><p class="viz-title">LogLoss:柱子越短越准(9,934 个决策点)</p><p class="viz-sub">蓝色那根是 1973 年的 Black-Scholes 闭式解——不训练、不看任何历史数据,却比 LimiX(0.1355)更准。而把市场价这个近乎完美的特征递给 LimiX 之后,它反而退化到 0.1491,是全场最差。</p></figcaption><div class="viz-plot"><svg viewBox="0 0 760 164" width="760" height="164" role="img" aria-label="LogLoss:柱子越短越准(9,934 个决策点) 条形图" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, Segoe UI, PingFang SC, sans-serif"><line x1="144.40" y1="6.00" x2="144.40" y2="156.00" stroke="var(--viz-axis)" stroke-width="1" shape-rendering="crispEdges"/><g class="viz-row"><rect class="viz-rowbg" x="144.40" y="6.00" width="607.60" height="30.00" rx="3"/><text x="132.40" y="21.00" text-anchor="end" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">市场自身报价(标尺)</text><path class="viz-mark" d="M144.40,12.00 H536.27 A4.00,4.00 0 0 1 540.27,16.00 V26.00 A4.00,4.00 0 0 1 536.27,30.00 H144.40 Z" fill="var(--viz-dim)"/><text x="546.27" y="21.00" text-anchor="start" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">0.1054</text><rect class="viz-hit" x="144.40" y="6.00" width="607.60" height="30.00"><title>市场自身报价(标尺):0.1054</title></rect></g><g class="viz-row"><rect class="viz-rowbg" x="144.40" y="36.00" width="607.60" height="30.00" rx="3"/><text x="132.40" y="51.00" text-anchor="end" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">Black-Scholes 理论价</text><path class="viz-mark" d="M144.40,42.00 H569.32 A4.00,4.00 0 0 1 573.32,46.00 V56.00 A4.00,4.00 0 0 1 569.32,60.00 H144.40 Z" fill="var(--viz-s1)"/><text x="579.32" y="51.00" text-anchor="start" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">0.1142</text><rect class="viz-hit" x="144.40" y="36.00" width="607.60" height="30.00"><title>Black-Scholes 理论价:0.1142</title></rect></g><g class="viz-row"><rect class="viz-rowbg" x="144.40" y="66.00" width="607.60" height="30.00" rx="3"/><text x="132.40" y="81.00" text-anchor="end" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">LimiX(无市场价)</text><path class="viz-mark" d="M144.40,72.00 H649.32 A4.00,4.00 0 0 1 653.32,76.00 V86.00 A4.00,4.00 0 0 1 649.32,90.00 H144.40 Z" fill="var(--viz-dim)"/><text x="659.32" y="81.00" text-anchor="start" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">0.1355</text><rect class="viz-hit" x="144.40" y="66.00" width="607.60" height="30.00"><title>LimiX(无市场价):0.1355</title></rect></g><g class="viz-row"><rect class="viz-rowbg" x="144.40" y="96.00" width="607.60" height="30.00" rx="3"/><text x="132.40" y="111.00" text-anchor="end" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">GBM(无市场价)</text><path class="viz-mark" d="M144.40,102.00 H656.83 A4.00,4.00 0 0 1 660.83,106.00 V116.00 A4.00,4.00 0 0 1 656.83,120.00 H144.40 Z" fill="var(--viz-dim)"/><text x="666.83" y="111.00" text-anchor="start" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">0.1375</text><rect class="viz-hit" x="144.40" y="96.00" width="607.60" height="30.00"><title>GBM(无市场价):0.1375</title></rect></g><g class="viz-row"><rect class="viz-rowbg" x="144.40" y="126.00" width="607.60" height="30.00" rx="3"/><text x="132.40" y="141.00" text-anchor="end" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">LimiX(有市场价)</text><path class="viz-mark" d="M144.40,132.00 H700.40 A4.00,4.00 0 0 1 704.40,136.00 V146.00 A4.00,4.00 0 0 1 700.40,150.00 H144.40 Z" fill="var(--viz-dim)"/><text x="710.40" y="141.00" text-anchor="start" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">0.1491</text><rect class="viz-hit" x="144.40" y="126.00" width="607.60" height="30.00"><title>LimiX(有市场价):0.1491</title></rect></g></svg></div><details class="viz-tv"><summary>表格视图(可复制的原始数字)</summary><table><caption>LogLoss:柱子越短越准(9,934 个决策点)</caption><thead><tr><th>项目</th><th>数值</th></tr></thead><tbody><tr><td>市场自身报价(标尺)</td><td>0.1054</td></tr><tr><td>Black-Scholes 理论价</td><td>0.1142</td></tr><tr><td>LimiX(无市场价)</td><td>0.1355</td></tr><tr><td>GBM(无市场价)</td><td>0.1375</td></tr><tr><td>LimiX(有市场价)</td><td>0.1491</td></tr></tbody></table></details></figure><figure class="viz viz-fig" style="max-width:760px"><figcaption class="viz-head"><p class="viz-title">与市场价的差距:1 − 相关系数(越短 = 越像市场报价)</p><p class="viz-sub">BS 理论价与市场价的相关性是 0.9943——市场基本上就是在用这个公式报价,所以这里没有信息差可捡。(直接画相关系数会让三根柱子都贴到 1 附近、看不出差别,故改画「离完美相关还差多少」;原始相关系数写在标签里。)</p></figcaption><div class="viz-plot"><svg viewBox="0 0 760 104" width="760" height="104" role="img" aria-label="与市场价的差距:1 − 相关系数(越短 = 越像市场报价) 条形图" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, Segoe UI, PingFang SC, sans-serif"><line x1="161.20" y1="6.00" x2="161.20" y2="96.00" stroke="var(--viz-axis)" stroke-width="1" shape-rendering="crispEdges"/><g class="viz-row"><rect class="viz-rowbg" x="161.20" y="6.00" width="590.80" height="30.00" rx="3"/><text x="149.20" y="21.00" text-anchor="end" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">Black-Scholes · 0.9943</text><path class="viz-mark" d="M161.20,12.00 H276.29 A4.00,4.00 0 0 1 280.29,16.00 V26.00 A4.00,4.00 0 0 1 276.29,30.00 H161.20 Z" fill="var(--viz-s1)"/><text x="286.29" y="21.00" text-anchor="start" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">0.0057</text><rect class="viz-hit" x="161.20" y="6.00" width="590.80" height="30.00"><title>Black-Scholes · 0.9943:0.0057</title></rect></g><g class="viz-row"><rect class="viz-rowbg" x="161.20" y="36.00" width="590.80" height="30.00" rx="3"/><text x="149.20" y="51.00" text-anchor="end" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">LimiX 有市场价 · 0.978</text><path class="viz-mark" d="M161.20,42.00 H616.83 A4.00,4.00 0 0 1 620.83,46.00 V56.00 A4.00,4.00 0 0 1 616.83,60.00 H161.20 Z" fill="var(--viz-dim)"/><text x="626.83" y="51.00" text-anchor="start" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">0.0220</text><rect class="viz-hit" x="161.20" y="36.00" width="590.80" height="30.00"><title>LimiX 有市场价 · 0.978:0.0220</title></rect></g><g class="viz-row"><rect class="viz-rowbg" x="161.20" y="66.00" width="590.80" height="30.00" rx="3"/><text x="149.20" y="81.00" text-anchor="end" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">LimiX 无市场价 · 0.974</text><path class="viz-mark" d="M161.20,72.00 H700.40 A4.00,4.00 0 0 1 704.40,76.00 V86.00 A4.00,4.00 0 0 1 700.40,90.00 H161.20 Z" fill="var(--viz-dim)"/><text x="710.40" y="81.00" text-anchor="start" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">0.0260</text><rect class="viz-hit" x="161.20" y="66.00" width="590.80" height="30.00"><title>LimiX 无市场价 · 0.974:0.0260</title></rect></g></svg></div><details class="viz-tv"><summary>表格视图(可复制的原始数字)</summary><table><caption>与市场价的差距:1 − 相关系数(越短 = 越像市场报价)</caption><thead><tr><th>项目</th><th>数值</th></tr></thead><tbody><tr><td>Black-Scholes · 0.9943</td><td>0.0057</td></tr><tr><td>LimiX 有市场价 · 0.978</td><td>0.0220</td></tr><tr><td>LimiX 无市场价 · 0.974</td><td>0.0260</td></tr></tbody></table></details></figure></div><!--CHARTS_END-->
+
+<div class="hl" style="border-left-color:var(--accent);background:var(--win-bg)"><b>做了什么:</b>之前 LimiX 的输入里包含"市场当前报价",所以它 AUC 0.99 很可能只是<b>在抄市场的答案</b>。这次把市场价拿掉,问一个干净的问题:<b>光靠现货价、行权价、波动率、剩余时间,LimiX 能自己算出定价吗?</b><br><br>
 比特币阶梯("明天比特币是否高于 6.2 万")本质是<b>二元期权</b>,而二元期权有 1973 年的 Black-Scholes 闭式解——不需要训练、不需要任何历史数据,一个公式直接算出答案。用它当标尺。</div>
 
 <h2>1. 结果</h2>

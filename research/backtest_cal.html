@@ -2,21 +2,166 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>加密全家族回测 + 校准实验(2026-07-15)</title>
 <style>
-body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;margin:2rem auto;max-width:980px;padding:0 1rem;color:#1a1a1a;line-height:1.65}
-h1{font-size:1.4rem}h2{font-size:1.15rem;margin-top:2rem;border-bottom:2px solid #e0e0e0;padding-bottom:.3rem}
-table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.88rem}
-th,td{border:1px solid #ddd;padding:.4rem .55rem;text-align:right}
-th{background:#f5f6f8}td:first-child,th:first-child{text-align:left}
-tr:nth-child(even){background:#fafbfc}
-.pos{color:#1a7f37;font-weight:600}.neg{color:#b03030;font-weight:600}
-.hl{background:#fff8dc;padding:.8rem 1rem;border-left:4px solid #b8860b;margin:1rem 0}
-.muted{color:#777;font-size:.85rem}code{background:#f0f1f3;padding:.05rem .35rem;border-radius:4px}
-b.mk{background:#eef6ee;padding:0 .3rem}
-</style></head><body>
+:root{
+  color-scheme:light;
+  --page-bg:#f9f9f7;--card:#fcfcfb;--ink:#0b0b0b;--ink-2:#52514e;--ink-3:#898781;
+  --rule:#e1e0d9;--th-bg:#f0efec;--zebra:#fbfbf9;
+  --accent:#2a78d6;--warn:#eda100;
+  --pos-text:#006300;--neg-text:#b03030;
+  --win-bg:rgba(42,120,214,.08);
+  --hl-bg:rgba(237,161,0,.10);--hl-bd:#eda100;
+}
+@media (prefers-color-scheme:dark){:root:where(:not([data-theme="light"])){
+  color-scheme:dark;
+  --page-bg:#0d0d0d;--card:#1a1a19;--ink:#ffffff;--ink-2:#c3c2b7;--ink-3:#898781;
+  --rule:#2c2c2a;--th-bg:#232321;--zebra:#151514;
+  --accent:#3987e5;--warn:#c98500;
+  --pos-text:#0ca30c;--neg-text:#e66767;
+  --win-bg:rgba(57,135,229,.14);
+  --hl-bg:rgba(201,133,0,.14);--hl-bd:#c98500;
+}}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --page-bg:#0d0d0d;--card:#1a1a19;--ink:#ffffff;--ink-2:#c3c2b7;--ink-3:#898781;
+  --rule:#2c2c2a;--th-bg:#232321;--zebra:#151514;
+  --accent:#3987e5;--warn:#c98500;
+  --pos-text:#0ca30c;--neg-text:#e66767;
+  --win-bg:rgba(57,135,229,.14);
+  --hl-bg:rgba(201,133,0,.14);--hl-bd:#c98500;
+}
+body{font-family:system-ui,-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;margin:2rem auto;max-width:980px;padding:0 1rem;background:var(--page-bg);color:var(--ink);line-height:1.65}
+h1{font-size:1.4rem}h2{font-size:1.15rem;margin-top:2rem;border-bottom:1px solid var(--rule);padding-bottom:.3rem}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.88rem;font-variant-numeric:tabular-nums}
+th,td{border:1px solid var(--rule);padding:.4rem .55rem;text-align:right}
+th{background:var(--th-bg)}td:first-child,th:first-child{text-align:left}
+tr:nth-child(even){background:var(--zebra)}
+.pos{color:var(--pos-text);font-weight:600}.neg{color:var(--neg-text);font-weight:600}
+.muted{color:var(--ink-2);font-size:.85rem}
+code{background:var(--th-bg);padding:.05rem .35rem;border-radius:4px}
+b.mk{background:var(--win-bg);padding:0 .3rem}
+a{color:var(--accent)}
+/* ---- hero conclusion band ---- */
+.hero{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--accent);border-radius:8px;padding:1.3rem 1.4rem;margin:1.4rem 0 1.6rem}
+.hero-eyebrow{margin:0 0 .35rem;font-size:.72rem;font-weight:700;letter-spacing:.09em;color:var(--ink-3)}
+.hero-figure{margin:.1rem 0 .1rem;font-size:3.2rem;line-height:1.02;font-weight:650;letter-spacing:-.02em;color:var(--ink)}
+.hero-figure .unit{font-size:1.3rem;font-weight:600;color:var(--ink-2);margin-left:.4rem;letter-spacing:0}
+.hero-lede{margin:.55rem 0 0;font-size:1.05rem;color:var(--ink);max-width:64ch}
+.hero-sub{margin:.6rem 0 0;font-size:.95rem;color:var(--ink-2);max-width:64ch}
+</style><!--CHARTS_CSS_START--><style>
+.viz{
+  color-scheme: light;
+  --viz-surface:#fcfcfb; --viz-plane:#f9f9f7;
+  --viz-text:#0b0b0b; --viz-text-2:#52514e; --viz-muted:#898781;
+  --viz-grid:#e1e0d9; --viz-axis:#c3c2b7; --viz-border:rgba(11,11,11,0.10);
+  --viz-s1:#2a78d6; --viz-s2:#1baf7a; --viz-s3:#eda100; --viz-s5:#4a3aa7;
+  --viz-s6:#e34948; --viz-s7:#e87ba4; --viz-s8:#eb6834;
+  --viz-dim:#a9a89f;                /* de-emphasis / "not significant" gray */
+  --viz-good-text:#006300; --viz-bad-text:#d03b3b;
+  --viz-good:#0ca30c; --viz-bad:#d03b3b;
+  font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC",
+               "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  color: var(--viz-text);
+}
+@media (prefers-color-scheme: dark){
+  :root:where(:not([data-theme="light"])) .viz{
+    color-scheme: dark;
+    --viz-surface:#1a1a19; --viz-plane:#0d0d0d;
+    --viz-text:#ffffff; --viz-text-2:#c3c2b7; --viz-muted:#898781;
+    --viz-grid:#2c2c2a; --viz-axis:#383835; --viz-border:rgba(255,255,255,0.10);
+    --viz-s1:#3987e5; --viz-s2:#199e70; --viz-s3:#c98500; --viz-s5:#9085e9;
+    --viz-s6:#e66767; --viz-s7:#d55181; --viz-s8:#d95926;
+    --viz-dim:#6f6e68;
+    --viz-good-text:#0ca30c; --viz-bad-text:#e66767;
+    --viz-good:#0ca30c; --viz-bad:#e66767;
+  }
+}
+:root[data-theme="dark"] .viz{
+  color-scheme: dark;
+  --viz-surface:#1a1a19; --viz-plane:#0d0d0d;
+  --viz-text:#ffffff; --viz-text-2:#c3c2b7; --viz-muted:#898781;
+  --viz-grid:#2c2c2a; --viz-axis:#383835; --viz-border:rgba(255,255,255,0.10);
+  --viz-s1:#3987e5; --viz-s2:#199e70; --viz-s3:#c98500; --viz-s5:#9085e9;
+  --viz-s6:#e66767; --viz-s7:#d55181; --viz-s8:#d95926;
+  --viz-dim:#6f6e68;
+  --viz-good-text:#0ca30c; --viz-bad-text:#e66767;
+  --viz-good:#0ca30c; --viz-bad:#e66767;
+}
+
+.viz-fig{
+  margin:0 0 28px; padding:16px 18px 14px;
+  background:var(--viz-surface);
+  border:1px solid var(--viz-border); border-radius:10px;
+  max-width:100%; box-sizing:border-box;
+}
+.viz-head{margin-bottom:10px;}
+.viz-title{font-size:15px; font-weight:600; color:var(--viz-text); margin:0;}
+.viz-sub{font-size:13px; color:var(--viz-text-2); margin:4px 0 0; line-height:1.5;}
+.viz-plot{width:100%; overflow-x:auto;}
+.viz-plot svg{display:block; max-width:100%; height:auto;}
+
+/* hover layer: marks respond, hit targets are bigger than the mark */
+.viz-hit{fill:transparent; cursor:default;}
+.viz-mark{transition:opacity .12s ease;}
+.viz-row:hover .viz-mark{opacity:.72;}
+.viz-row:hover .viz-rowbg{fill:var(--viz-grid); opacity:.42;}
+.viz-rowbg{fill:transparent;}
+
+/* legend: line keys for lines, rects for bars */
+.viz-legend{display:flex; flex-wrap:wrap; gap:6px 16px; margin:2px 0 10px; padding:0; list-style:none;}
+.viz-legend li{display:flex; align-items:center; gap:6px; font-size:12px; color:var(--viz-text-2);}
+.viz-key{display:inline-block; border-radius:2px; flex:none;}
+.viz-key-line{width:14px; height:2px;}
+.viz-key-rect{width:10px; height:10px;}
+
+/* takeaway line under each chart */
+.viz-take{font-size:13px; color:var(--viz-text-2); margin:10px 0 0; line-height:1.6;}
+.viz-take strong{color:var(--viz-text); font-weight:600;}
+
+/* table view -- the accessibility twin of every chart */
+.viz-tv{margin-top:10px; font-size:12px;}
+.viz-tv summary{cursor:pointer; color:var(--viz-text-2); padding:4px 0;}
+.viz-tv table{border-collapse:collapse; width:100%; margin-top:8px;
+  font-variant-numeric: tabular-nums;}
+.viz-tv caption{text-align:left; color:var(--viz-text-2); padding-bottom:6px;}
+.viz-tv th,.viz-tv td{border-bottom:1px solid var(--viz-grid); padding:6px 8px;
+  text-align:right; color:var(--viz-text-2); white-space:nowrap;}
+.viz-tv th:first-child,.viz-tv td:first-child{text-align:left; white-space:normal;}
+.viz-tv th{color:var(--viz-text); font-weight:600;}
+
+/* stat tiles */
+.viz-kpi{display:flex; flex-wrap:wrap; gap:12px; margin:0 0 20px; padding:0; list-style:none;}
+.viz-tile{
+  flex:1 1 190px; min-width:170px; box-sizing:border-box;
+  background:var(--viz-surface); border:1px solid var(--viz-border);
+  border-left:3px solid var(--viz-axis); border-radius:8px; padding:12px 14px;
+}
+.viz-tile.tone-good{border-left-color:var(--viz-good);}
+.viz-tile.tone-bad{border-left-color:var(--viz-bad);}
+.viz-tile-label{font-size:12px; color:var(--viz-text-2); margin-bottom:6px;}
+/* proportional figures on standalone values (never tabular-nums here) */
+.viz-tile-value{font-size:26px; font-weight:600; color:var(--viz-text); line-height:1.15;}
+.viz-tile-sub{font-size:12px; color:var(--viz-text-2); margin-top:6px;
+  display:flex; align-items:center; gap:5px;}
+.viz-tile.tone-good .viz-tile-sub{color:var(--viz-good-text);}
+.viz-tile.tone-bad .viz-tile-sub{color:var(--viz-bad-text);}
+.viz-tone-dot{width:7px; height:7px; border-radius:50%; background:var(--viz-axis); flex:none;}
+.viz-tile.tone-good .viz-tone-dot{background:var(--viz-good);}
+.viz-tile.tone-bad .viz-tone-dot{background:var(--viz-bad);}
+</style><style>
+.viz-stack{display:flex;flex-direction:column;gap:1.5rem;margin:1.6rem 0 2rem}
+.viz-stack .viz-fig{margin:0}
+</style><!--CHARTS_CSS_END-->
+</head><body>
 <h1>加密全家族回测 + 等渗/Platt 校准实验</h1>
 <p class="muted">2026-07-15 · BTC+ETH 阶梯与涨跌共 7,790 个已结算市场 · walk-forward(2026-05-01 前训练 / 后测试)· 回答"校准能否让 LimiX 翻盘"</p>
 
-<div class="hl"><b>两个硬结论:</b>① <b>校准(等渗/Platt)不能稳健地让 LimiX 赢过市场或 raw</b>——有时改善 LogLoss,但收益率不跟随,我上线时标记的"过度矫正"担忧被证实。② 更重要:<b>单个 2.5 个月窗口的模拟收益率被方差主导,不能用来判优</b>——仅把训练截止点挪动 45 天,同一个 raw LimiX 的阶梯 tte24 收益率就从 −4% 崩到 −85%。这把结论钉死在:<b>要判断 LimiX 是否有 alpha,必须靠前向实验长期累积每日结算样本,而不是任何单窗口回测。</b></div>
+<section class="hero">
+  <p class="hero-eyebrow">一句话结论</p>
+  <p class="hero-figure">−4% → −85%<span class="unit">同一个模型、同一个测试集,只把训练截止点挪了 45 天</span></p>
+  <p class="hero-lede"><b>单个 2.5 个月窗口的模拟收益率被方差主导,不能用来判优。</b>raw LimiX 的阶梯 tte24 收益率仅因训练窗变化就从 −4.32% 崩到 −85.02%——这个摆幅比任何模型间的差异都大。</p>
+  <p class="hero-sub"><b>另一个硬结论:校准(等渗/Platt)不是银弹</b>——有时改善 LogLoss,但收益率不跟随,上线时标记的"过度矫正"担忧被证实。<b>要判断 LimiX 是否有 alpha,只能靠前向实验长期累积每日结算样本,而不是任何单窗口回测。</b></p>
+</section>
+<!--CHARTS_START--><div class="viz-stack"><ul class="viz viz-kpi"><li class="viz-tile tone-neutral"><div class="viz-tile-label">raw LimiX · 45 天校准窗</div><div class="viz-tile-value">−4.32%</div><div class="viz-tile-sub"><span class="viz-tone-dot"></span><span>阶梯 tte24 收益率</span></div></li><li class="viz-tile tone-bad"><div class="viz-tile-label">raw LimiX · 90 天校准窗</div><div class="viz-tile-value">−85.02%</div><div class="viz-tile-sub"><span class="viz-tone-dot"></span><span>同一模型、同一测试集,只挪训练截止点</span></div></li><li class="viz-tile tone-neutral"><div class="viz-tile-label">市场自身</div><div class="viz-tile-value">0.1054</div><div class="viz-tile-sub"><span class="viz-tone-dot"></span><span>LogLoss / ECE 0.010 · 仍是校准最好的「模型」</span></div></li><li class="viz-tile tone-neutral"><div class="viz-tile-label">校准是不是银弹</div><div class="viz-tile-value">不是</div><div class="viz-tile-sub"><span class="viz-tone-dot"></span><span>等渗/Platt 无一在两个窗口都稳健获胜</span></div></li></ul><figure class="viz viz-fig" style="max-width:760px"><figcaption class="viz-head"><p class="viz-title">tte24 收益率:每两根柱是同一个变体,只换了训练窗(阶梯家族)</p><p class="viz-sub">同一测试集 9,934 行。raw LimiX 从 −4.32% 崩到 −85.02%,等渗校准从 −40.16% 翻到 +0.79%——训练窗一挪 45 天,摆幅就比模型之间的差异大得多。这不是校准效应,是方差。</p></figcaption><div class="viz-plot"><svg viewBox="0 0 760 194" width="760" height="194" role="img" aria-label="tte24 收益率:每两根柱是同一个变体,只换了训练窗(阶梯家族) 条形图" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, Segoe UI, PingFang SC, sans-serif"><line x1="699.69" y1="6.00" x2="699.69" y2="186.00" stroke="var(--viz-axis)" stroke-width="1" shape-rendering="crispEdges"/><g class="viz-row"><rect class="viz-rowbg" x="139.00" y="6.00" width="613.00" height="30.00" rx="3"/><text x="127.00" y="21.00" text-anchor="end" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">raw LimiX · 45 天窗</text><path class="viz-mark" d="M699.69,12.00 H677.96 A4.00,4.00 0 0 0 673.96,16.00 V26.00 A4.00,4.00 0 0 0 677.96,30.00 H699.69 Z" fill="var(--viz-s6)"/><text x="667.96" y="21.00" text-anchor="end" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">-4.32%</text><rect class="viz-hit" x="139.00" y="6.00" width="613.00" height="30.00"><title>raw LimiX · 45 天窗:-4.32%</title></rect></g><g class="viz-row"><rect class="viz-rowbg" x="139.00" y="36.00" width="613.00" height="30.00" rx="3"/><text x="127.00" y="51.00" text-anchor="end" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">raw LimiX · 90 天窗</text><path class="viz-mark" d="M699.69,42.00 H197.20 A4.00,4.00 0 0 0 193.20,46.00 V56.00 A4.00,4.00 0 0 0 197.20,60.00 H699.69 Z" fill="var(--viz-s6)"/><text x="187.20" y="51.00" text-anchor="end" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">-85.02%</text><rect class="viz-hit" x="139.00" y="36.00" width="613.00" height="30.00"><title>raw LimiX · 90 天窗:-85.02%</title></rect></g><g class="viz-row"><rect class="viz-rowbg" x="139.00" y="66.00" width="613.00" height="30.00" rx="3"/><text x="127.00" y="81.00" text-anchor="end" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">等渗校准 · 45 天窗</text><path class="viz-mark" d="M699.69,72.00 H464.45 A4.00,4.00 0 0 0 460.45,76.00 V86.00 A4.00,4.00 0 0 0 464.45,90.00 H699.69 Z" fill="var(--viz-s6)"/><text x="454.45" y="81.00" text-anchor="end" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">-40.16%</text><rect class="viz-hit" x="139.00" y="66.00" width="613.00" height="30.00"><title>等渗校准 · 45 天窗:-40.16%</title></rect></g><g class="viz-row"><rect class="viz-rowbg" x="139.00" y="96.00" width="613.00" height="30.00" rx="3"/><text x="127.00" y="111.00" text-anchor="end" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">等渗校准 · 90 天窗</text><path class="viz-mark" d="M699.69,102.00 H700.40 A4.00,4.00 0 0 1 704.40,106.00 V116.00 A4.00,4.00 0 0 1 700.40,120.00 H699.69 Z" fill="var(--viz-s1)"/><text x="710.40" y="111.00" text-anchor="start" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">+0.79%</text><rect class="viz-hit" x="139.00" y="96.00" width="613.00" height="30.00"><title>等渗校准 · 90 天窗:+0.79%</title></rect></g><g class="viz-row"><rect class="viz-rowbg" x="139.00" y="126.00" width="613.00" height="30.00" rx="3"/><text x="127.00" y="141.00" text-anchor="end" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">Platt · 45 天窗</text><path class="viz-mark" d="M699.69,132.00 H558.57 A4.00,4.00 0 0 0 554.57,136.00 V146.00 A4.00,4.00 0 0 0 558.57,150.00 H699.69 Z" fill="var(--viz-s6)"/><text x="548.57" y="141.00" text-anchor="end" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">-24.36%</text><rect class="viz-hit" x="139.00" y="126.00" width="613.00" height="30.00"><title>Platt · 45 天窗:-24.36%</title></rect></g><g class="viz-row"><rect class="viz-rowbg" x="139.00" y="156.00" width="613.00" height="30.00" rx="3"/><text x="127.00" y="171.00" text-anchor="end" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">Platt · 90 天窗</text><path class="viz-mark" d="M699.69,162.00 H644.78 A4.00,4.00 0 0 0 640.78,166.00 V176.00 A4.00,4.00 0 0 0 644.78,180.00 H699.69 Z" fill="var(--viz-s6)"/><text x="634.78" y="171.00" text-anchor="end" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">-9.89%</text><rect class="viz-hit" x="139.00" y="156.00" width="613.00" height="30.00"><title>Platt · 90 天窗:-9.89%</title></rect></g></svg></div><details class="viz-tv"><summary>表格视图(可复制的原始数字)</summary><table><caption>tte24 收益率:每两根柱是同一个变体,只换了训练窗(阶梯家族)</caption><thead><tr><th>项目</th><th>数值</th></tr></thead><tbody><tr><td>raw LimiX · 45 天窗</td><td>-4.32%</td></tr><tr><td>raw LimiX · 90 天窗</td><td>-85.02%</td></tr><tr><td>等渗校准 · 45 天窗</td><td>-40.16%</td></tr><tr><td>等渗校准 · 90 天窗</td><td>+0.79%</td></tr><tr><td>Platt · 45 天窗</td><td>-24.36%</td></tr><tr><td>Platt · 90 天窗</td><td>-9.89%</td></tr></tbody></table></details></figure><figure class="viz viz-fig" style="max-width:760px"><figcaption class="viz-head"><p class="viz-title">同一批数据,只把决策时点挪到 tte6,结论整个翻过来</p><p class="viz-sub">上一张图里全线为负的六个变体,在到期前 6h 决策时全线转正,最高 +49.10%。同一批数据能得出相反的结论——这就是「单窗口收益率不能用来判优」的直接证据。</p></figcaption><div class="viz-plot"><svg viewBox="0 0 760 194" width="760" height="194" role="img" aria-label="同一批数据,只把决策时点挪到 tte6,结论整个翻过来 条形图" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, Segoe UI, PingFang SC, sans-serif"><line x1="294.09" y1="6.00" x2="294.09" y2="186.00" stroke="var(--viz-axis)" stroke-width="1" shape-rendering="crispEdges"/><g class="viz-row"><rect class="viz-rowbg" x="139.00" y="6.00" width="613.00" height="30.00" rx="3"/><text x="127.00" y="21.00" text-anchor="end" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">raw LimiX · 45 天窗</text><path class="viz-mark" d="M294.09,12.00 H588.64 A4.00,4.00 0 0 1 592.64,16.00 V26.00 A4.00,4.00 0 0 1 588.64,30.00 H294.09 Z" fill="var(--viz-s1)"/><text x="598.64" y="21.00" text-anchor="start" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">+36.31%</text><rect class="viz-hit" x="139.00" y="6.00" width="613.00" height="30.00"><title>raw LimiX · 45 天窗:+36.31%</title></rect></g><g class="viz-row"><rect class="viz-rowbg" x="139.00" y="36.00" width="613.00" height="30.00" rx="3"/><text x="127.00" y="51.00" text-anchor="end" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">raw LimiX · 90 天窗</text><path class="viz-mark" d="M294.09,42.00 H197.20 A4.00,4.00 0 0 0 193.20,46.00 V56.00 A4.00,4.00 0 0 0 197.20,60.00 H294.09 Z" fill="var(--viz-s6)"/><text x="187.20" y="51.00" text-anchor="end" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">-12.27%</text><rect class="viz-hit" x="139.00" y="36.00" width="613.00" height="30.00"><title>raw LimiX · 90 天窗:-12.27%</title></rect></g><g class="viz-row"><rect class="viz-rowbg" x="139.00" y="66.00" width="613.00" height="30.00" rx="3"/><text x="127.00" y="81.00" text-anchor="end" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">等渗校准 · 45 天窗</text><path class="viz-mark" d="M294.09,72.00 H476.90 A4.00,4.00 0 0 1 480.90,76.00 V86.00 A4.00,4.00 0 0 1 476.90,90.00 H294.09 Z" fill="var(--viz-s1)"/><text x="486.90" y="81.00" text-anchor="start" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">+22.72%</text><rect class="viz-hit" x="139.00" y="66.00" width="613.00" height="30.00"><title>等渗校准 · 45 天窗:+22.72%</title></rect></g><g class="viz-row"><rect class="viz-rowbg" x="139.00" y="96.00" width="613.00" height="30.00" rx="3"/><text x="127.00" y="111.00" text-anchor="end" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">等渗校准 · 90 天窗</text><path class="viz-mark" d="M294.09,102.00 H635.09 A4.00,4.00 0 0 1 639.09,106.00 V116.00 A4.00,4.00 0 0 1 635.09,120.00 H294.09 Z" fill="var(--viz-s1)"/><text x="645.09" y="111.00" text-anchor="start" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">+41.96%</text><rect class="viz-hit" x="139.00" y="96.00" width="613.00" height="30.00"><title>等渗校准 · 90 天窗:+41.96%</title></rect></g><g class="viz-row"><rect class="viz-rowbg" x="139.00" y="126.00" width="613.00" height="30.00" rx="3"/><text x="127.00" y="141.00" text-anchor="end" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">Platt · 45 天窗</text><path class="viz-mark" d="M294.09,132.00 H393.11 A4.00,4.00 0 0 1 397.11,136.00 V146.00 A4.00,4.00 0 0 1 393.11,150.00 H294.09 Z" fill="var(--viz-s1)"/><text x="403.11" y="141.00" text-anchor="start" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">+12.53%</text><rect class="viz-hit" x="139.00" y="126.00" width="613.00" height="30.00"><title>Platt · 45 天窗:+12.53%</title></rect></g><g class="viz-row"><rect class="viz-rowbg" x="139.00" y="156.00" width="613.00" height="30.00" rx="3"/><text x="127.00" y="171.00" text-anchor="end" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">Platt · 90 天窗</text><path class="viz-mark" d="M294.09,162.00 H693.80 A4.00,4.00 0 0 1 697.80,166.00 V176.00 A4.00,4.00 0 0 1 693.80,180.00 H294.09 Z" fill="var(--viz-s1)"/><text x="703.80" y="171.00" text-anchor="start" dominant-baseline="central" font-size="12" fill="var(--viz-text-2)">+49.10%</text><rect class="viz-hit" x="139.00" y="156.00" width="613.00" height="30.00"><title>Platt · 90 天窗:+49.10%</title></rect></g></svg></div><details class="viz-tv"><summary>表格视图(可复制的原始数字)</summary><table><caption>同一批数据,只把决策时点挪到 tte6,结论整个翻过来</caption><thead><tr><th>项目</th><th>数值</th></tr></thead><tbody><tr><td>raw LimiX · 45 天窗</td><td>+36.31%</td></tr><tr><td>raw LimiX · 90 天窗</td><td>-12.27%</td></tr><tr><td>等渗校准 · 45 天窗</td><td>+22.72%</td></tr><tr><td>等渗校准 · 90 天窗</td><td>+41.96%</td></tr><tr><td>Platt · 45 天窗</td><td>+12.53%</td></tr><tr><td>Platt · 90 天窗</td><td>+49.10%</td></tr></tbody></table></details></figure></div><!--CHARTS_END-->
 
 <h2>1. 校准三方对照(阶梯家族,同一测试集 9,934 行)</h2>
 <table>
