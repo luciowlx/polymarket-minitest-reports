@@ -4,8 +4,8 @@
   "scenario_display": "全部市场·6小时",
   "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓。",
   "run_date": "2026-07-17",
-  "generated_at": "2026-07-17T07:30:40.132786+00:00",
-  "run_id": "0441aa32-2713-4a2f-a80c-b6713b87e45a",
+  "generated_at": "2026-07-17T10:30:41.782935+00:00",
+  "run_id": "11e3bc0a-a200-4920-b663-d7cb721ebcd6",
   "pipeline_status": "PIPELINE_PASS",
   "effect_status": "NOT_BETTER",
   "targets": {
@@ -25,82 +25,82 @@
       },
       "matured_metrics": {
         "limix": {
-          "n": 1084,
-          "mae": 0.017735,
-          "rmse": 0.040245,
-          "r2": -1.054583,
-          "direction_accuracy": 0.629151
+          "n": 1497,
+          "mae": 0.019526,
+          "rmse": 0.045186,
+          "r2": -0.895408,
+          "direction_accuracy": 0.629259
         },
         "base_rate": {
-          "n": 1084,
-          "mae": 0.013841,
-          "rmse": 0.028795,
-          "r2": -0.051795,
-          "direction_accuracy": 0.539668
+          "n": 1497,
+          "mae": 0.015476,
+          "rmse": 0.033385,
+          "r2": -0.034669,
+          "direction_accuracy": 0.561122
         },
         "price_unchanged": {
-          "n": 1084,
-          "mae": 0.011089,
-          "rmse": 0.028104,
-          "r2": -0.001923,
-          "direction_accuracy": 0.328413
+          "n": 1497,
+          "mae": 0.0132,
+          "rmse": 0.032838,
+          "r2": -0.000996,
+          "direction_accuracy": 0.342017
         },
         "mean_reversion": {
-          "n": 1084,
-          "mae": 0.010958,
-          "rmse": 0.027635,
-          "r2": 0.031212,
-          "direction_accuracy": 0.54059
+          "n": 1497,
+          "mae": 0.013608,
+          "rmse": 0.034279,
+          "r2": -0.090785,
+          "direction_accuracy": 0.539078
         },
         "momentum": {
-          "n": 1084,
-          "mae": 0.012342,
-          "rmse": 0.0305,
-          "r2": -0.180066,
-          "direction_accuracy": 0.49631
+          "n": 1497,
+          "mae": 0.013728,
+          "rmse": 0.033101,
+          "r2": -0.017126,
+          "direction_accuracy": 0.541082
         },
-        "n_matured": 1084
+        "n_matured": 1497
       },
-      "pending_labels": 972,
+      "pending_labels": 559,
       "display": "押盘口6小时涨幅",
       "simtrade": {
-        "n_trades": 215,
-        "total_pnl": -771.0285090311421,
-        "return_on_bankroll": -0.07710285090311421,
-        "win_rate": 0.30697674418604654,
-        "max_drawdown": 843.5820739543358,
+        "n_trades": 275,
+        "total_pnl": -1437.9373132923095,
+        "return_on_bankroll": -0.14379373132923096,
+        "win_rate": 0.29454545454545455,
+        "max_drawdown": 1510.4908782155032,
         "n_unrealized": 0
       }
     }
   },
   "data_quality": {
-    "snapshot_rows": 137175,
-    "freshest_snapshot": "2026-07-17T07:18:16.234363+00:00",
+    "snapshot_rows": 143586,
+    "freshest_snapshot": "2026-07-17T10:16:58.483897+00:00",
     "missing_rate": {
-      "mid_price": 0.4749,
-      "spread": 0.4749,
-      "bid_depth": 0.0288,
-      "ask_depth": 0.0288,
-      "orderbook_imbalance": 0.0951,
-      "volume_1h": 0.0017,
-      "volume_24h": 0.2882,
+      "mid_price": 0.4741,
+      "spread": 0.4741,
+      "bid_depth": 0.0282,
+      "ask_depth": 0.0282,
+      "orderbook_imbalance": 0.0971,
+      "volume_1h": 0.0016,
+      "volume_24h": 0.285,
       "trade_count_1h": 0.0,
-      "return_1h": 0.2852,
-      "return_6h": 0.4999,
-      "return_24h": 0.565,
-      "volatility": 0.4965,
-      "liquidity": 0.066,
+      "return_1h": 0.2866,
+      "return_6h": 0.5039,
+      "return_24h": 0.5709,
+      "volatility": 0.5007,
+      "liquidity": 0.067,
       "hours_to_resolution": 0.0,
-      "buy_slippage_1000_now": 0.2666,
-      "fill_ratio_1000": 0.0288,
+      "buy_slippage_1000_now": 0.2651,
+      "fill_ratio_1000": 0.0282,
       "tradable_now": 0.0,
-      "threshold_num": 0.8932,
-      "btc_spot": 0.0103,
-      "eth_spot": 0.0103,
-      "threshold_ratio": 0.9143
+      "threshold_num": 0.8943,
+      "btc_spot": 0.0099,
+      "eth_spot": 0.0099,
+      "threshold_ratio": 0.9161
     },
     "api_errors": []
   },
-  "universe_size": 3605,
+  "universe_size": 3719,
   "primary_metric": "return_on_bankroll"
 }
