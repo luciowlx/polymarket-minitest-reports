@@ -1,0 +1,60 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>关键实验:1973 年的公式打败了 LimiX</title>
+<style>
+body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;margin:2rem auto;max-width:900px;padding:0 1rem;color:#1a1a1a;line-height:1.7}
+h1{font-size:1.4rem}h2{font-size:1.13rem;margin-top:2rem;border-bottom:2px solid #e0e0e0;padding-bottom:.3rem}
+table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.9rem}
+th,td{border:1px solid #ddd;padding:.5rem .6rem;text-align:right}
+th{background:#f5f6f8}td:first-child,th:first-child{text-align:left}
+tr:nth-child(even){background:#fafbfc}
+.win{background:#eef6ee;font-weight:600}
+.bad{color:#b03030;font-weight:600}
+.big{font-size:1.05rem;background:#f0f7f0;padding:1rem;border-left:4px solid #1a7f37;margin:1rem 0}
+.hl{background:#fff8dc;padding:.9rem 1.1rem;border-left:4px solid #b8860b;margin:1.2rem 0}
+.muted{color:#777;font-size:.85rem}
+code{background:#f0f1f3;padding:.05rem .35rem;border-radius:4px}
+</style></head><body>
+<h1>关键实验:1973 年的公式打败了 LimiX</h1>
+<p class="muted">2026-07-16 · 比特币/以太坊阶梯市场 · 训练 2025-08~2026-04,测试 2026-05-01~07-14(9,934 个决策点)</p>
+
+<div class="big"><b>做了什么:</b>之前 LimiX 的输入里包含"市场当前报价",所以它 AUC 0.99 很可能只是<b>在抄市场的答案</b>。这次把市场价拿掉,问一个干净的问题:<b>光靠现货价、行权价、波动率、剩余时间,LimiX 能自己算出定价吗?</b><br><br>
+比特币阶梯("明天比特币是否高于 6.2 万")本质是<b>二元期权</b>,而二元期权有 1973 年的 Black-Scholes 闭式解——不需要训练、不需要任何历史数据,一个公式直接算出答案。用它当标尺。</div>
+
+<h2>1. 结果</h2>
+<table>
+<tr><th>变体</th><th>LogLoss(越低越好)</th><th>AUC</th><th>校准误差</th><th>与市场价相关性</th></tr>
+<tr class="win"><td>市场自身报价(标尺)</td><td>0.1054</td><td>0.993</td><td>0.0105</td><td>—</td></tr>
+<tr class="win"><td><b>Black-Scholes 理论价</b>(1973 年公式,零训练)</td><td><b>0.1142</b></td><td>0.993</td><td>0.0098</td><td><b>0.9943</b></td></tr>
+<tr><td>LimiX(看不到市场价)</td><td>0.1355</td><td>0.990</td><td>0.0237</td><td>0.974</td></tr>
+<tr><td>GBM(看不到市场价,学习器对照)</td><td>0.1375</td><td>0.991</td><td>0.0213</td><td>—</td></tr>
+<tr><td class="bad">LimiX(能看到市场价)</td><td class="bad">0.1491</td><td>0.992</td><td>0.0322</td><td>0.978</td></tr>
+</table>
+
+<h2>2. 三个结论</h2>
+<ol>
+<li><b>市场就是在用 Black-Scholes 报价。</b>BS 理论价与市场价相关性 <b>0.9943</b>,校准误差比市场自身还小一点。套利者早已把这个市场定准到教科书公式的精度——这解释了为什么之前的实盘里 LimiX 的超额信号为零:<b>这里没有信息差可捡</b>。</li>
+<li><b>一个 1973 年的公式,不训练、不看数据,比 LimiX 更准</b>(LogLoss 0.1142 vs 0.1355)。对一个"表格基础大模型"来说,在一个有解析解的定价问题上输给解析解本身,说明它没有学到这个问题的结构。</li>
+<li><b>把答案递给它,它反而更差。</b>市场价是一个近乎完美的特征(自己就能拿 0.1054),但 LimiX 拿到它之后反而从 0.1355 退化到 <b>0.1491</b>——它没能力"直接采用"一个高信息量特征,而是把它揉进树结构里扭曲掉了。这是比"跑不赢市场"更值得警惕的信号:<b>面对强特征时会主动变差</b>。</li>
+</ol>
+
+<div class="hl"><b>另外:LimiX 与 GBM 打平</b>(0.1355 vs 0.1375)。在这个任务上,LimiX 相对一个标准梯度提升树没有任何优势——花在 API 调用上的成本没有换来能力。</div>
+
+<h2>3. 对业务的意思</h2>
+<ul>
+<li><b>这个场景不需要机器学习。</b>要给比特币阶梯定价,Black-Scholes 就够了,而且比 LimiX 好、比 LimiX 快、还免费。</li>
+<li><b>停止在此场景调参是对的。</b>此前实盘归因已证明 LimiX 毛盈亏≈0、亏损 87% 来自价差;本实验从模型能力侧给出同一结论的根因:<b>不是模型不够大,是这个市场没有可捡的信息差</b>。</li>
+<li><b>如果还要继续验证 LimiX,必须换一类问题</b>:去找那些<b>没有闭式解、也没有成熟做市商把价格打准</b>的场景。加密价格市场同时具备"有解析解"和"套利密集"两个特征,是最不利于展示表格模型价值的战场。</li>
+<li><b>一个正面的可交付</b>:本实验本身证明了 Polymarket 加密市场的定价效率达到理论公式精度——这是个有价值的市场结构结论,可以独立成文。</li>
+</ul>
+
+<h2>4. 方法与诚实边界</h2>
+<ul class="muted">
+<li>BS 二元看涨(cash-or-nothing):P(S<sub>T</sub>&gt;K) = N(d₂),d₂ = [ln(S/K) − σ²T/2] / (σ√T),无风险利率取 0,σ 用 24 小时已实现波动率按 √(剩余小时/24) 缩放到剩余期限</li>
+<li>严格时点安全:现货只用决策时刻之前已收盘的 1 小时 K 线;训练集只含到期日早于测试窗的市场</li>
+<li>"看不到市场价"变体同时移除了 mid / 成交量 / 流动性(均为市场派生量),只保留物理量与阶梯结构</li>
+<li>单一测试窗(2.5 个月、9,934 个决策点);LogLoss 差异稳定,但此前已证明单窗口 PnL 不可判优,故本页只报预测质量不报收益率</li>
+<li>LimiX 任务号:full=26d5e928…、nomid=5112dd65…;脚本 <code>backtest/run_ablation.py</code>,可复算</li>
+</ul>
+<p><a href="index.html">← 场景调研</a> · <a href="why_limix_loses.html">亏损归因</a> · <a href="backtest_btc.html">BTC 阶梯回测</a> · <a href="backtest_cal.html">校准实验</a></p>
+</body></html>

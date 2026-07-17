@@ -4,23 +4,21 @@
   "scenario_display": "比特币/以太坊阈值市场",
   "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓;押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
   "run_date": "2026-07-17",
-  "generated_at": "2026-07-17T01:30:19.951178+00:00",
-  "run_id": "12b1a29d-3f71-4d84-bd77-1508dfb725d0",
-  "pipeline_status": "INSUFFICIENT_DATA",
+  "generated_at": "2026-07-17T02:33:25.884771+00:00",
+  "run_id": "f5a30609-b6c2-4a03-874f-8d56e73e9d1d",
+  "pipeline_status": "PIPELINE_PASS",
   "effect_status": "NOT_BETTER",
   "targets": {
     "target_up_24h": {
       "task": "classification",
       "n_train": 5000,
-      "n_predict": 0,
-      "status": "INSUFFICIENT_DATA",
-      "notes": [
-        "empty_predict_set"
-      ],
+      "n_predict": 190,
+      "status": "ok",
+      "notes": [],
       "limix": {
-        "task_id": "",
-        "model_type": "",
-        "elapsed_s": 0.0,
+        "task_id": "46165ad7ba6d3f2dd042b26eb3fc1a51",
+        "model_type": "LIMIX_7M",
+        "elapsed_s": 5.547,
         "error": null
       },
       "matured_metrics": {
@@ -66,7 +64,7 @@
         },
         "n_matured": 119
       },
-      "pending_labels": 518,
+      "pending_labels": 708,
       "display": "押盘口24小时涨跌",
       "simtrade": {
         "n_trades": 74,
@@ -80,15 +78,13 @@
     "target_delta_24h": {
       "task": "regression",
       "n_train": 5000,
-      "n_predict": 0,
-      "status": "INSUFFICIENT_DATA",
-      "notes": [
-        "empty_predict_set"
-      ],
+      "n_predict": 190,
+      "status": "ok",
+      "notes": [],
       "limix": {
-        "task_id": "",
-        "model_type": "",
-        "elapsed_s": 0.0,
+        "task_id": "7862c13c2e8be880dbd2f4625674daae",
+        "model_type": "LIMIX_7M",
+        "elapsed_s": 18.859,
         "error": null
       },
       "matured_metrics": {
@@ -129,7 +125,7 @@
         },
         "n_matured": 119
       },
-      "pending_labels": 518,
+      "pending_labels": 708,
       "display": "押盘口24小时涨幅",
       "simtrade": {
         "n_trades": 52,
@@ -185,33 +181,33 @@
     }
   },
   "data_quality": {
-    "snapshot_rows": 38012,
-    "freshest_snapshot": "2026-07-16T17:33:10.939038+00:00",
+    "snapshot_rows": 38664,
+    "freshest_snapshot": "2026-07-17T02:19:34.042783+00:00",
     "missing_rate": {
-      "mid_price": 0.59,
-      "spread": 0.59,
-      "bid_depth": 0.0032,
-      "ask_depth": 0.0032,
-      "orderbook_imbalance": 0.1134,
+      "mid_price": 0.5829,
+      "spread": 0.5829,
+      "bid_depth": 0.0031,
+      "ask_depth": 0.0031,
+      "orderbook_imbalance": 0.1097,
       "volume_1h": 0.0005,
-      "volume_24h": 0.476,
+      "volume_24h": 0.4753,
       "trade_count_1h": 0.0,
-      "return_1h": 0.4622,
-      "return_6h": 0.8371,
-      "return_24h": 0.8536,
-      "volatility": 0.8355,
-      "liquidity": 0.1145,
+      "return_1h": 0.4624,
+      "return_6h": 0.828,
+      "return_24h": 0.8553,
+      "volatility": 0.8265,
+      "liquidity": 0.1107,
       "hours_to_resolution": 0.0,
-      "buy_slippage_1000_now": 0.328,
-      "fill_ratio_1000": 0.0032,
+      "buy_slippage_1000_now": 0.3229,
+      "fill_ratio_1000": 0.0031,
       "tradable_now": 0.0,
-      "threshold_num": 0.8355,
+      "threshold_num": 0.8265,
       "btc_spot": 0.0005,
       "eth_spot": 0.0005,
-      "threshold_ratio": 0.8493
+      "threshold_ratio": 0.8419
     },
     "api_errors": []
   },
-  "universe_size": 1878,
+  "universe_size": 1942,
   "primary_metric": "return_on_bankroll"
 }

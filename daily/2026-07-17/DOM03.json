@@ -4,23 +4,21 @@
   "scenario_display": "美联储/CPI宏观市场",
   "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓;押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
   "run_date": "2026-07-17",
-  "generated_at": "2026-07-17T01:30:26.230580+00:00",
-  "run_id": "12b1a29d-3f71-4d84-bd77-1508dfb725d0",
-  "pipeline_status": "INSUFFICIENT_DATA",
+  "generated_at": "2026-07-17T02:33:34.235776+00:00",
+  "run_id": "f5a30609-b6c2-4a03-874f-8d56e73e9d1d",
+  "pipeline_status": "PIPELINE_PASS",
   "effect_status": "NOT_BETTER",
   "targets": {
     "target_up_24h": {
       "task": "classification",
       "n_train": 5000,
-      "n_predict": 0,
-      "status": "INSUFFICIENT_DATA",
-      "notes": [
-        "empty_predict_set"
-      ],
+      "n_predict": 60,
+      "status": "ok",
+      "notes": [],
       "limix": {
-        "task_id": "",
-        "model_type": "",
-        "elapsed_s": 0.0,
+        "task_id": "7e651aeba658131751eb83773d6db430",
+        "model_type": "LIMIX_7M",
+        "elapsed_s": 5.52,
         "error": null
       },
       "matured_metrics": {
@@ -66,7 +64,7 @@
         },
         "n_matured": 86
       },
-      "pending_labels": 97,
+      "pending_labels": 157,
       "display": "押盘口24小时涨跌",
       "simtrade": {
         "n_trades": 38,
@@ -80,15 +78,13 @@
     "target_delta_24h": {
       "task": "regression",
       "n_train": 5000,
-      "n_predict": 0,
-      "status": "INSUFFICIENT_DATA",
-      "notes": [
-        "empty_predict_set"
-      ],
+      "n_predict": 60,
+      "status": "ok",
+      "notes": [],
       "limix": {
-        "task_id": "",
-        "model_type": "",
-        "elapsed_s": 0.0,
+        "task_id": "d111c98c7193fc31b3464330ab630e91",
+        "model_type": "LIMIX_7M",
+        "elapsed_s": 22.154,
         "error": null
       },
       "matured_metrics": {
@@ -129,7 +125,7 @@
         },
         "n_matured": 86
       },
-      "pending_labels": 97,
+      "pending_labels": 157,
       "display": "押盘口24小时涨幅",
       "simtrade": {
         "n_trades": 37,
@@ -185,8 +181,8 @@
     }
   },
   "data_quality": {
-    "snapshot_rows": 15508,
-    "freshest_snapshot": "2026-07-16T17:33:02.579410+00:00",
+    "snapshot_rows": 15748,
+    "freshest_snapshot": "2026-07-17T02:19:26.486889+00:00",
     "missing_rate": {
       "mid_price": 0.2,
       "spread": 0.2,

@@ -4,23 +4,21 @@
   "scenario_display": "AI产品发布市场",
   "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓;押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
   "run_date": "2026-07-17",
-  "generated_at": "2026-07-17T01:30:23.824147+00:00",
-  "run_id": "12b1a29d-3f71-4d84-bd77-1508dfb725d0",
-  "pipeline_status": "INSUFFICIENT_DATA",
+  "generated_at": "2026-07-17T02:33:30.843208+00:00",
+  "run_id": "f5a30609-b6c2-4a03-874f-8d56e73e9d1d",
+  "pipeline_status": "PIPELINE_PASS",
   "effect_status": "INCONCLUSIVE",
   "targets": {
     "target_up_24h": {
       "task": "classification",
-      "n_train": 3922,
-      "n_predict": 0,
-      "status": "INSUFFICIENT_DATA",
-      "notes": [
-        "empty_predict_set"
-      ],
+      "n_train": 4034,
+      "n_predict": 60,
+      "status": "ok",
+      "notes": [],
       "limix": {
-        "task_id": "",
-        "model_type": "",
-        "elapsed_s": 0.0,
+        "task_id": "ac6dae9b487d8ceaaa4574a682f37d43",
+        "model_type": "LIMIX_7M",
+        "elapsed_s": 5.448,
         "error": null
       },
       "matured_metrics": {
@@ -66,7 +64,7 @@
         },
         "n_matured": 54
       },
-      "pending_labels": 130,
+      "pending_labels": 190,
       "display": "押盘口24小时涨跌",
       "simtrade": {
         "n_trades": 28,
@@ -79,16 +77,14 @@
     },
     "target_delta_24h": {
       "task": "regression",
-      "n_train": 3922,
-      "n_predict": 0,
-      "status": "INSUFFICIENT_DATA",
-      "notes": [
-        "empty_predict_set"
-      ],
+      "n_train": 4034,
+      "n_predict": 60,
+      "status": "ok",
+      "notes": [],
       "limix": {
-        "task_id": "",
-        "model_type": "",
-        "elapsed_s": 0.0,
+        "task_id": "ec59c04b334f4260591ff991f0ff7c08",
+        "model_type": "LIMIX_7M",
+        "elapsed_s": 18.452,
         "error": null
       },
       "matured_metrics": {
@@ -129,7 +125,7 @@
         },
         "n_matured": 54
       },
-      "pending_labels": 130,
+      "pending_labels": 190,
       "display": "押盘口24小时涨幅",
       "simtrade": {
         "n_trades": 18,
@@ -185,11 +181,11 @@
     }
   },
   "data_quality": {
-    "snapshot_rows": 15527,
-    "freshest_snapshot": "2026-07-16T17:32:51.444631+00:00",
+    "snapshot_rows": 15767,
+    "freshest_snapshot": "2026-07-17T02:19:18.598942+00:00",
     "missing_rate": {
-      "mid_price": 0.2599,
-      "spread": 0.2599,
+      "mid_price": 0.257,
+      "spread": 0.257,
       "bid_depth": 0.0,
       "ask_depth": 0.0,
       "orderbook_imbalance": 0.0,
@@ -202,16 +198,16 @@
       "volatility": 0.0,
       "liquidity": 0.0,
       "hours_to_resolution": 0.0,
-      "buy_slippage_1000_now": 0.0282,
+      "buy_slippage_1000_now": 0.0279,
       "fill_ratio_1000": 0.0,
       "tradable_now": 0.0,
-      "threshold_num": 0.8927,
-      "btc_spot": 0.0678,
-      "eth_spot": 0.0678,
+      "threshold_num": 0.8883,
+      "btc_spot": 0.067,
+      "eth_spot": 0.067,
       "threshold_ratio": 1.0
     },
     "api_errors": []
   },
-  "universe_size": 177,
+  "universe_size": 179,
   "primary_metric": "return_on_bankroll"
 }
