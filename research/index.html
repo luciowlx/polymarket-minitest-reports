@@ -68,10 +68,10 @@ a{color:var(--accent)}
   <span class="note">687 笔实盘结算:87% 亏损来自价差,判断本身盈亏 ≈ 0</span></li>
 <li><a href="ablation_bs.html">🧪 关键实验:1973 年的公式打败了 LimiX(2026-07-16)</a>
   <span class="note">拿掉市场价后对比 Black-Scholes:市场即 BS(相关性 0.9943),BS 优于 LimiX</span></li>
-<li><a href="backtest_cal.html">📊 加密全家族回测 + 校准实验(2026-07-15)</a>
-  <span class="note">7,790 市场,BTC+ETH×阶梯+涨跌,等渗/Platt 校准对照;单窗口收益率不可判优</span></li>
+<li><a href="backtest_cal.html">📊 加密全家族回测 + 概率矫正实验(2026-07-15)</a>
+  <span class="note">7,790 市场,BTC+ETH×阶梯+涨跌,两种概率矫正方法对照;单窗口收益率不可判优</span></li>
 <li><a href="backtest_btc.html">📊 BTC 每日阈值阶梯 · LimiX 历史回测(2026-07-14)</a>
-  <span class="note">3,431 个已结算市场,walk-forward + 模拟盘收益;无模型显著跑赢市场</span></li>
+  <span class="note">3,431 个已结算市场,按时间顺序验证 + 模拟盘收益;无模型显著跑赢市场</span></li>
 </ul>
 
 <p class="muted">2026-07-14 · 5 个并行调研智能体 · 全部结论来自本次会话的真实 API 调用(约 700 次请求) · 服务于 LimiX 结构化预测 + 模拟交易实验</p>
@@ -83,7 +83,7 @@ a{color:var(--accent)}
 <table>
 <tr><th>#</th><th>场景</th><th>因果</th><th>因果驱动(免费数据源,均已实测)</th><th>结算频率</th><th>历史样本</th><th>回测可行性</th><th>LimiX 适配</th></tr>
 <tr><td>1</td><td><b>每日加密阈值阶梯</b><br>"Bitcoin above $X on July 15?"(BTC/ETH/SOL/XRP,各 11 档×5 个到期日)</td><td><span class="badge b5">5</span></td><td>币安 BTC/USDT 1 分钟 K 线 12:00 ET 收盘 vs 行权价(OKX K 线免费,已 2/2 交叉验证结算)</td><td>每日</td><td>~13,500 市场(2025-08 起)<br>≈230 万小时级特征行</td><td><b>最强</b>:价格史+结算全可回填</td><td><b>最佳</b>:spot-strike 距离、TTE、波动率 → 二元期权框架</td></tr>
-<tr><td>2</td><td><b>每日 Up or Down</b>(BTC/ETH/SOL/XRP/BNB/DOGE,昨日正午→今日正午)</td><td><span class="badge b5">5</span></td><td>同上(币安收盘差符号)</td><td>每日</td><td>~2,000 市场(2025-04 起)</td><td>强</td><td>好:干净方向标签,~50/50 基率,最诚实的检验</td></tr>
+<tr><td>2</td><td><b>每日 Up or Down</b>(BTC/ETH/SOL/XRP/BNB/DOGE,昨日正午→今日正午)</td><td><span class="badge b5">5</span></td><td>同上(币安收盘差符号)</td><td>每日</td><td>~2,000 市场(2025-04 起)</td><td>强</td><td>好:干净方向标签,~50/50 基础概率,最诚实的检验</td></tr>
 <tr><td>3</td><td><b>每日城市温度区间</b>(~25 个城市最高/最低温 buckets)</td><td><span class="badge b5">5</span></td><td>NOAA/NWS 与 Open-Meteo 预报(免费,预报+历史存档都已实测)</td><td>每日 ~50 城市日</td><td>726 已结算事件</td><td>强(市场仅提前 2-3 天开)</td><td><b>极佳</b>:预报值 vs 区间 = 教科书式表格任务</td></tr>
 <tr><td>4</td><td><b>Trump 周度支持率区间</b></td><td><span class="badge b5">5</span></td><td>VoteHub 聚合民调 API(免费,已实测 1,017 条)</td><td>每周×6 档</td><td>70 事件(2025-03 起)≈420 结果</td><td>可行(每市场约 6 天价格史)</td><td>好:宏观/政治家族中唯一样本充裕的</td></tr>
 <tr><td>5</td><td><b>体育胜负盘</b>(MLB/网球/足球/UFC/电竞)</td><td><span class="badge b3">3</span></td><td>博彩赔率/球队评级(部分免费;这是短板)</td><td><b>每日 ~377 场结算</b></td><td>数万</td><td>价格史可回填;赔率史需外购</td><td>好:平台最大流动性家族;先做纯价格特征版</td></tr>
