@@ -4,8 +4,8 @@
   "scenario_display": "全部市场·滑点",
   "bet_type_hint": "本场景押什么:押交易条件 —— 赌的是这个市场的交易条件(成交量/滑点/能否成交),不押价格也不押结果。",
   "run_date": "2026-07-17",
-  "generated_at": "2026-07-17T02:33:58.931256+00:00",
-  "run_id": "f5a30609-b6c2-4a03-874f-8d56e73e9d1d",
+  "generated_at": "2026-07-17T04:30:42.334852+00:00",
+  "run_id": "3e9cfd23-75b9-414b-a186-3ba60071116d",
   "pipeline_status": "PIPELINE_PASS",
   "effect_status": "BETTER_THAN_BASELINE",
   "targets": {
@@ -14,83 +14,85 @@
       "n_train": 5000,
       "n_predict": 553,
       "status": "ok",
-      "notes": [],
+      "notes": [
+        "idempotent_skip"
+      ],
       "limix": {
         "task_id": "fa78bd895fa8d73741bc34bb68285b20",
         "model_type": "LIMIX_7M",
-        "elapsed_s": 19.065,
+        "elapsed_s": 0.0,
         "error": null
       },
       "matured_metrics": {
         "limix": {
-          "n": 1667,
-          "mae": 0.009672,
-          "rmse": 0.031953,
-          "r2": 0.837396,
-          "direction_accuracy": 0.980804
+          "n": 2143,
+          "mae": 0.00926,
+          "rmse": 0.02939,
+          "r2": 0.851283,
+          "direction_accuracy": 0.978068
         },
         "base_rate": {
-          "n": 1667,
-          "mae": 0.045207,
-          "rmse": 0.079402,
-          "r2": -0.004097,
-          "direction_accuracy": 0.782244
+          "n": 2143,
+          "mae": 0.044578,
+          "rmse": 0.076324,
+          "r2": -0.002992,
+          "direction_accuracy": 0.779748
         },
         "price_unchanged": {
-          "n": 1667,
-          "mae": 0.038931,
-          "rmse": 0.088287,
-          "r2": -0.241384,
-          "direction_accuracy": 0.217756
+          "n": 2143,
+          "mae": 0.037985,
+          "rmse": 0.085152,
+          "r2": -0.248427,
+          "direction_accuracy": 0.220252
         },
         "mean_reversion": {
-          "n": 1667,
-          "mae": 0.039631,
-          "rmse": 0.088633,
-          "r2": -0.25113,
-          "direction_accuracy": 0.430114
+          "n": 2143,
+          "mae": 0.039018,
+          "rmse": 0.085802,
+          "r2": -0.267561,
+          "direction_accuracy": 0.433504
         },
         "momentum": {
-          "n": 1667,
-          "mae": 0.040393,
-          "rmse": 0.089863,
-          "r2": -0.286117,
-          "direction_accuracy": 0.440912
+          "n": 2143,
+          "mae": 0.039781,
+          "rmse": 0.086934,
+          "r2": -0.301222,
+          "direction_accuracy": 0.436771
         },
-        "n_matured": 1667
+        "n_matured": 2143
       },
-      "pending_labels": 806,
+      "pending_labels": 330,
       "display": "押1小时买入滑点"
     }
   },
   "data_quality": {
-    "snapshot_rows": 129260,
-    "freshest_snapshot": "2026-07-17T02:19:34.042783+00:00",
+    "snapshot_rows": 133476,
+    "freshest_snapshot": "2026-07-17T04:17:15.250904+00:00",
     "missing_rate": {
-      "mid_price": 0.4706,
-      "spread": 0.4706,
-      "bid_depth": 0.0301,
-      "ask_depth": 0.0301,
-      "orderbook_imbalance": 0.0912,
-      "volume_1h": 0.0018,
-      "volume_24h": 0.2741,
+      "mid_price": 0.4759,
+      "spread": 0.4759,
+      "bid_depth": 0.0296,
+      "ask_depth": 0.0296,
+      "orderbook_imbalance": 0.0934,
+      "volume_1h": 0.0017,
+      "volume_24h": 0.2835,
       "trade_count_1h": 0.0,
-      "return_1h": 0.2768,
-      "return_6h": 0.4786,
-      "return_24h": 0.5541,
-      "volatility": 0.4751,
-      "liquidity": 0.0634,
+      "return_1h": 0.2844,
+      "return_6h": 0.4925,
+      "return_24h": 0.5582,
+      "volatility": 0.489,
+      "liquidity": 0.0646,
       "hours_to_resolution": 0.0,
-      "buy_slippage_1000_now": 0.2653,
-      "fill_ratio_1000": 0.0301,
+      "buy_slippage_1000_now": 0.2673,
+      "fill_ratio_1000": 0.0296,
       "tradable_now": 0.0,
-      "threshold_num": 0.8882,
-      "btc_spot": 0.0112,
-      "eth_spot": 0.0112,
-      "threshold_ratio": 0.9094
+      "threshold_num": 0.8913,
+      "btc_spot": 0.0108,
+      "eth_spot": 0.0108,
+      "threshold_ratio": 0.9123
     },
     "api_errors": []
   },
-  "universe_size": 3389,
+  "universe_size": 3513,
   "primary_metric": "legacy"
 }
