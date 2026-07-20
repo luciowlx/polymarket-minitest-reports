@@ -4,8 +4,8 @@
   "scenario_display": "选举市场",
   "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓;押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
   "run_date": "2026-07-20",
-  "generated_at": "2026-07-20T07:30:34.356374+00:00",
-  "run_id": "c2ef6ebf-e4a1-4225-a0e2-c5cc30127151",
+  "generated_at": "2026-07-20T10:30:45.351743+00:00",
+  "run_id": "a1b323ce-06d9-4b43-ac87-e7064f6ac431",
   "pipeline_status": "PIPELINE_PASS",
   "effect_status": "INCONCLUSIVE",
   "targets": {
@@ -185,14 +185,14 @@
     }
   },
   "data_quality": {
-    "snapshot_rows": 21329,
-    "freshest_snapshot": "2026-07-20T07:16:11.684178+00:00",
+    "snapshot_rows": 22099,
+    "freshest_snapshot": "2026-07-20T10:16:18.093891+00:00",
     "missing_rate": {
-      "mid_price": 0.1642,
-      "spread": 0.1642,
-      "bid_depth": 0.0075,
-      "ask_depth": 0.0075,
-      "orderbook_imbalance": 0.0075,
+      "mid_price": 0.1636,
+      "spread": 0.1636,
+      "bid_depth": 0.0074,
+      "ask_depth": 0.0074,
+      "orderbook_imbalance": 0.0074,
       "volume_1h": 0.0,
       "volume_24h": 0.0,
       "trade_count_1h": 0.0,
@@ -202,8 +202,8 @@
       "volatility": 0.0,
       "liquidity": 0.0,
       "hours_to_resolution": 0.0,
-      "buy_slippage_1000_now": 0.0299,
-      "fill_ratio_1000": 0.0075,
+      "buy_slippage_1000_now": 0.026,
+      "fill_ratio_1000": 0.0074,
       "tradable_now": 0.0,
       "threshold_num": 1.0,
       "btc_spot": 0.0112,
@@ -212,6 +212,6 @@
     },
     "api_errors": []
   },
-  "universe_size": 268,
+  "universe_size": 269,
   "primary_metric": "return_on_bankroll"
 }

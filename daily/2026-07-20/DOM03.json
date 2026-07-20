@@ -4,8 +4,8 @@
   "scenario_display": "美联储/CPI宏观市场",
   "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓;押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
   "run_date": "2026-07-20",
-  "generated_at": "2026-07-20T07:30:30.272208+00:00",
-  "run_id": "c2ef6ebf-e4a1-4225-a0e2-c5cc30127151",
+  "generated_at": "2026-07-20T10:30:40.172732+00:00",
+  "run_id": "a1b323ce-06d9-4b43-ac87-e7064f6ac431",
   "pipeline_status": "PIPELINE_PASS",
   "effect_status": "NOT_BETTER",
   "targets": {
@@ -185,8 +185,8 @@
     }
   },
   "data_quality": {
-    "snapshot_rows": 20146,
-    "freshest_snapshot": "2026-07-20T07:16:53.281306+00:00",
+    "snapshot_rows": 20866,
+    "freshest_snapshot": "2026-07-20T10:16:59.954639+00:00",
     "missing_rate": {
       "mid_price": 0.2049,
       "spread": 0.2049,
