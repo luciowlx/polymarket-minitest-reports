@@ -4,21 +4,23 @@
   "scenario_display": "比特币/以太坊「明天是否高于X价」",
   "bet_type_hint": "本场景押什么:押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
   "run_date": "2026-07-20",
-  "generated_at": "2026-07-20T02:20:17.235032+00:00",
-  "run_id": "9ab659c3-39ef-4946-acf4-83525bbdeac4",
+  "generated_at": "2026-07-20T10:03:34.906223+00:00",
+  "run_id": "decab94a-30df-4391-9279-e5bd9afb220d",
   "pipeline_status": "PIPELINE_PASS",
-  "effect_status": "NOT_BETTER",
+  "effect_status": "INCONCLUSIVE",
   "targets": {
     "final_outcome_yes": {
       "task": "classification",
       "n_train": 39884,
-      "n_predict": 110,
+      "n_predict": 132,
       "status": "PIPELINE_PASS",
-      "notes": [],
+      "notes": [
+        "limix_64m_error: limix failed after retries: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+      ],
       "limix": {
-        "task_id": "dbc954710cad214dac6edd41c53633fc",
+        "task_id": "10c16726fb8c56bdee2d9c943dc2b3c2",
         "model_type": "LIMIX_7M",
-        "elapsed_s": 19.989,
+        "elapsed_s": 35.27,
         "error": null
       },
       "matured_metrics": {
@@ -32,12 +34,12 @@
       "pending_labels": 0,
       "display": "押事件最终结果",
       "simtrade": {
-        "n_trades": 77,
-        "total_pnl": -760.9928732220438,
-        "return_on_bankroll": -0.07609928732220439,
-        "win_rate": 0.44155844155844154,
-        "max_drawdown": 1886.1593325446213,
-        "n_unrealized": 51
+        "n_trades": 92,
+        "total_pnl": -2140.8144708068667,
+        "return_on_bankroll": -0.21408144708068666,
+        "win_rate": 0.32608695652173914,
+        "max_drawdown": 2478.274870155889,
+        "n_unrealized": 66
       }
     }
   },
@@ -47,6 +49,6 @@
     "missing_rate": {},
     "api_errors": []
   },
-  "universe_size": 110,
+  "universe_size": 132,
   "primary_metric": "return_on_bankroll"
 }
