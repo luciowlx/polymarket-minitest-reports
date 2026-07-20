@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-20T07:15:30.669866+00:00",
+  "generated_at": "2026-07-20T08:15:26.793687+00:00",
   "scenario_id": "DOM01",
   "model": "limix",
   "bankroll": 10000.0,
@@ -18,7 +18,8 @@
       "pnl": 47.923077,
       "realized": true,
       "anchor_ts": "2026-07-14T07:15:00+00:00",
-      "exit_ts": "2026-07-15T07:15:00+00:00"
+      "exit_ts": "2026-07-15T07:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $64,000 on July 15?",
@@ -29,7 +30,8 @@
       "pnl": 443.333333,
       "realized": true,
       "anchor_ts": "2026-07-14T07:15:00+00:00",
-      "exit_ts": "2026-07-15T07:15:00+00:00"
+      "exit_ts": "2026-07-15T07:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin reach $67,500 in July?",
@@ -40,7 +42,8 @@
       "pnl": -32.608696,
       "realized": true,
       "anchor_ts": "2026-07-14T07:15:00+00:00",
-      "exit_ts": "2026-07-15T07:15:00+00:00"
+      "exit_ts": "2026-07-15T07:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin reach $80,000 by December 31, 2026?",
@@ -51,7 +54,8 @@
       "pnl": 8.333333,
       "realized": true,
       "anchor_ts": "2026-07-14T07:15:00+00:00",
-      "exit_ts": "2026-07-15T07:15:00+00:00"
+      "exit_ts": "2026-07-15T07:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin dip to $57,500 in July?",
@@ -62,7 +66,8 @@
       "pnl": 21.527778,
       "realized": true,
       "anchor_ts": "2026-07-14T07:15:00+00:00",
-      "exit_ts": "2026-07-15T07:15:00+00:00"
+      "exit_ts": "2026-07-15T07:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $62,000 on July 16?",
@@ -73,7 +78,8 @@
       "pnl": 47.923077,
       "realized": true,
       "anchor_ts": "2026-07-14T07:15:00+00:00",
-      "exit_ts": "2026-07-15T07:15:00+00:00"
+      "exit_ts": "2026-07-15T07:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $60,000 on July 15?",
@@ -84,7 +90,8 @@
       "pnl": 3.147575,
       "realized": true,
       "anchor_ts": "2026-07-14T07:15:00+00:00",
-      "exit_ts": "2026-07-15T07:15:00+00:00"
+      "exit_ts": "2026-07-15T07:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin reach $72,500 in July?",
@@ -95,7 +102,8 @@
       "pnl": -7.8125,
       "realized": true,
       "anchor_ts": "2026-07-14T07:15:00+00:00",
-      "exit_ts": "2026-07-15T07:15:00+00:00"
+      "exit_ts": "2026-07-15T07:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $62,000 on July 15?",
@@ -106,7 +114,8 @@
       "pnl": 43.550725,
       "realized": true,
       "anchor_ts": "2026-07-14T07:15:00+00:00",
-      "exit_ts": "2026-07-15T07:15:00+00:00"
+      "exit_ts": "2026-07-15T07:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $60,000 on July 15?",
@@ -117,7 +126,8 @@
       "pnl": 3.147575,
       "realized": true,
       "anchor_ts": "2026-07-14T07:15:00+00:00",
-      "exit_ts": "2026-07-15T07:15:00+00:00"
+      "exit_ts": "2026-07-15T07:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $62,000 on July 15?",
@@ -128,7 +138,8 @@
       "pnl": 43.550725,
       "realized": true,
       "anchor_ts": "2026-07-14T07:15:00+00:00",
-      "exit_ts": "2026-07-15T07:15:00+00:00"
+      "exit_ts": "2026-07-15T07:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin dip to $55,000 by December 31, 2026?",
@@ -139,7 +150,8 @@
       "pnl": 23.75,
       "realized": true,
       "anchor_ts": "2026-07-14T07:15:00+00:00",
-      "exit_ts": "2026-07-15T07:15:00+00:00"
+      "exit_ts": "2026-07-15T07:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin dip to $60,000 in July?",
@@ -150,7 +162,8 @@
       "pnl": -42.241379,
       "realized": true,
       "anchor_ts": "2026-07-14T07:15:00+00:00",
-      "exit_ts": "2026-07-15T07:15:00+00:00"
+      "exit_ts": "2026-07-15T07:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $68,000 on July 16?",
@@ -161,7 +174,8 @@
       "pnl": -1.755266,
       "realized": true,
       "anchor_ts": "2026-07-14T07:15:00+00:00",
-      "exit_ts": "2026-07-15T07:15:00+00:00"
+      "exit_ts": "2026-07-15T07:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin reach $72,500 in July?",
@@ -172,7 +186,8 @@
       "pnl": -7.8125,
       "realized": true,
       "anchor_ts": "2026-07-14T07:15:00+00:00",
-      "exit_ts": "2026-07-15T07:15:00+00:00"
+      "exit_ts": "2026-07-15T07:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin dip to $55,000 in July?",
@@ -183,7 +198,8 @@
       "pnl": 10.0,
       "realized": true,
       "anchor_ts": "2026-07-14T07:15:00+00:00",
-      "exit_ts": "2026-07-15T07:15:00+00:00"
+      "exit_ts": "2026-07-15T07:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $66,000 on July 15?",
@@ -194,7 +210,8 @@
       "pnl": -6.300403,
       "realized": true,
       "anchor_ts": "2026-07-14T07:15:00+00:00",
-      "exit_ts": "2026-07-15T07:15:00+00:00"
+      "exit_ts": "2026-07-15T07:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin dip to $60,000 in July?",
@@ -205,7 +222,8 @@
       "pnl": -42.241379,
       "realized": true,
       "anchor_ts": "2026-07-14T07:15:00+00:00",
-      "exit_ts": "2026-07-15T07:15:00+00:00"
+      "exit_ts": "2026-07-15T07:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin reach $70,000 in July?",
@@ -216,7 +234,8 @@
       "pnl": -15.340909,
       "realized": true,
       "anchor_ts": "2026-07-14T07:15:00+00:00",
-      "exit_ts": "2026-07-15T07:15:00+00:00"
+      "exit_ts": "2026-07-15T07:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin dip to $57,500 in July?",
@@ -227,7 +246,8 @@
       "pnl": 21.527778,
       "realized": true,
       "anchor_ts": "2026-07-14T07:15:00+00:00",
-      "exit_ts": "2026-07-15T07:15:00+00:00"
+      "exit_ts": "2026-07-15T07:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin reach $67,500 in July?",
@@ -238,7 +258,8 @@
       "pnl": -32.608696,
       "realized": true,
       "anchor_ts": "2026-07-14T07:15:00+00:00",
-      "exit_ts": "2026-07-15T07:15:00+00:00"
+      "exit_ts": "2026-07-15T07:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin dip to $50,000 by December 31, 2026?",
@@ -249,7 +270,8 @@
       "pnl": -21.590909,
       "realized": true,
       "anchor_ts": "2026-07-14T07:15:00+00:00",
-      "exit_ts": "2026-07-15T07:15:00+00:00"
+      "exit_ts": "2026-07-15T07:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin reach $70,000 July 13-19?",
@@ -260,7 +282,8 @@
       "pnl": -3.647416,
       "realized": true,
       "anchor_ts": "2026-07-14T07:15:00+00:00",
-      "exit_ts": "2026-07-15T07:15:00+00:00"
+      "exit_ts": "2026-07-15T07:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $58,000 on July 20?",
@@ -271,7 +294,8 @@
       "pnl": -0.252781,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $64,000 on July 20?",
@@ -282,7 +306,8 @@
       "pnl": -5.0,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $62,000 on July 21?",
@@ -293,7 +318,8 @@
       "pnl": 2.97619,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin dip to $55,000 in July?",
@@ -304,7 +330,8 @@
       "pnl": -30.714286,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $74,000 on July 21?",
@@ -315,7 +342,8 @@
       "pnl": -0.250501,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $68,000 on July 20?",
@@ -326,7 +354,8 @@
       "pnl": 3.503893,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $74,000 on July 21?",
@@ -337,7 +366,8 @@
       "pnl": -77.5,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $64,000 on July 21?",
@@ -348,7 +378,8 @@
       "pnl": -0.819672,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin dip to $55,000 by December 31, 2026?",
@@ -359,7 +390,8 @@
       "pnl": 5.102041,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $66,000 on July 20?",
@@ -370,7 +402,8 @@
       "pnl": 5.714286,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $68,000 on July 17?",
@@ -381,7 +414,8 @@
       "pnl": 3.003161,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $70,000 on July 21?",
@@ -392,7 +426,8 @@
       "pnl": -51.0,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $66,000 on July 17?",
@@ -403,7 +438,8 @@
       "pnl": 8.773087,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin dip to $60,000 in July?",
@@ -414,7 +450,8 @@
       "pnl": -13.235294,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin reach $77,500 in July?",
@@ -425,7 +462,8 @@
       "pnl": 0.356779,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $66,000 on July 21?",
@@ -436,7 +474,8 @@
       "pnl": -7.8125,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $70,000 on July 21?",
@@ -447,7 +486,8 @@
       "pnl": 0.56701,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $68,000 on July 16?",
@@ -458,7 +498,8 @@
       "pnl": 2.104723,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin dip to $60,000 July 13-19?",
@@ -469,7 +510,8 @@
       "pnl": -60.0,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $60,000 on July 17?",
@@ -480,7 +522,8 @@
       "pnl": 0.760649,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $64,000 on July 17?",
@@ -491,7 +534,8 @@
       "pnl": -12.5,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin dip to $55,000 in July?",
@@ -502,7 +546,8 @@
       "pnl": -30.714286,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin reach $68,000 July 13-19?",
@@ -513,7 +558,8 @@
       "pnl": 7.859734,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $68,000 on July 21?",
@@ -524,7 +570,8 @@
       "pnl": -34.615385,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin reach $72,500 in July?",
@@ -535,7 +582,8 @@
       "pnl": 2.808989,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $66,000 on July 20?",
@@ -546,7 +594,8 @@
       "pnl": 5.714286,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin dip to $40,000 by December 31, 2026?",
@@ -557,7 +606,8 @@
       "pnl": -23.684211,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $66,000 on July 17?",
@@ -568,7 +618,8 @@
       "pnl": 8.773087,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $64,000 on July 20?",
@@ -579,7 +630,8 @@
       "pnl": 0.0,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin reach $70,000 in July?",
@@ -590,7 +642,8 @@
       "pnl": 4.72973,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin reach $75,000 in July?",
@@ -601,7 +654,8 @@
       "pnl": 1.102941,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin dip to $57,500 in July?",
@@ -612,7 +666,8 @@
       "pnl": -17.857143,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $60,000 on July 17?",
@@ -623,7 +678,8 @@
       "pnl": -71.73913,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $64,000 on July 16?",
@@ -634,7 +690,8 @@
       "pnl": -39.0625,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin reach $70,000 July 13-19?",
@@ -645,7 +702,8 @@
       "pnl": 3.075292,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin reach $67,500 in July?",
@@ -656,7 +714,8 @@
       "pnl": 7.608696,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin dip to $57,500 in July?",
@@ -667,7 +726,8 @@
       "pnl": -17.857143,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin reach $68,000 July 13-19?",
@@ -678,7 +738,8 @@
       "pnl": 7.859734,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $64,000 on July 21?",
@@ -689,7 +750,8 @@
       "pnl": -0.819672,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $60,000 on July 21?",
@@ -700,7 +762,8 @@
       "pnl": 0.894737,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $70,000 on July 20?",
@@ -711,7 +774,8 @@
       "pnl": 0.766871,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin dip to $50,000 by December 31, 2026?",
@@ -722,7 +786,8 @@
       "pnl": 3.787879,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $60,000 on July 21?",
@@ -733,7 +798,8 @@
       "pnl": 0.894737,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin dip to $60,000 July 13-19?",
@@ -744,7 +810,8 @@
       "pnl": -60.0,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $62,000 on July 20?",
@@ -755,7 +822,8 @@
       "pnl": -25.0,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin reach $72,500 in July?",
@@ -766,7 +834,8 @@
       "pnl": 2.808989,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $62,000 on July 17?",
@@ -777,7 +846,8 @@
       "pnl": -53.888889,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $62,000 on July 21?",
@@ -788,7 +858,8 @@
       "pnl": 2.97619,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $68,000 on July 21?",
@@ -799,7 +870,8 @@
       "pnl": -34.615385,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin dip to $55,000 by December 31, 2026?",
@@ -810,7 +882,8 @@
       "pnl": 5.102041,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $68,000 on July 20?",
@@ -821,7 +894,8 @@
       "pnl": 3.503893,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $60,000 on July 20?",
@@ -832,7 +906,8 @@
       "pnl": 0.78125,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $54,000 on July 21?",
@@ -843,7 +918,8 @@
       "pnl": -0.150301,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $54,000 on July 20?",
@@ -854,7 +930,8 @@
       "pnl": -0.500501,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $62,000 on July 16?",
@@ -865,7 +942,8 @@
       "pnl": 3.128259,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin reach $70,000 in July?",
@@ -876,7 +954,8 @@
       "pnl": 4.72973,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $56,000 on July 20?",
@@ -887,7 +966,8 @@
       "pnl": 0.404449,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $52,000 on July 20?",
@@ -898,7 +978,8 @@
       "pnl": -0.35035,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin dip to $50,000 by December 31, 2026?",
@@ -909,7 +990,8 @@
       "pnl": 3.787879,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $54,000 on July 21?",
@@ -920,7 +1002,8 @@
       "pnl": -0.150301,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin dip to $60,000 in July?",
@@ -931,7 +1014,8 @@
       "pnl": -13.235294,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $62,000 on July 20?",
@@ -942,7 +1026,8 @@
       "pnl": 3.529412,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $64,000 on July 16?",
@@ -953,7 +1038,8 @@
       "pnl": 16.666667,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $66,000 on July 21?",
@@ -964,7 +1050,8 @@
       "pnl": -7.8125,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin reach $70,000 July 13-19?",
@@ -975,7 +1062,8 @@
       "pnl": 3.075292,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $68,000 on July 17?",
@@ -986,7 +1074,8 @@
       "pnl": 3.003161,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will Bitcoin reach $67,500 in July?",
@@ -997,7 +1086,8 @@
       "pnl": 7.608696,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $62,000 on July 16?",
@@ -1008,7 +1098,8 @@
       "pnl": -74.418605,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $64,000 on July 17?",
@@ -1019,7 +1110,8 @@
       "pnl": 5.384615,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $66,000 on July 16?",
@@ -1030,7 +1122,8 @@
       "pnl": 15.198511,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $62,000 on July 17?",
@@ -1041,7 +1134,8 @@
       "pnl": 4.184783,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $68,000 on July 16?",
@@ -1052,7 +1146,8 @@
       "pnl": 2.104723,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     },
     {
       "question": "Will the price of Bitcoin be above $66,000 on July 16?",
@@ -1063,7 +1158,8 @@
       "pnl": 15.198511,
       "realized": true,
       "anchor_ts": "2026-07-15T02:15:00+00:00",
-      "exit_ts": "2026-07-16T02:15:00+00:00"
+      "exit_ts": "2026-07-16T02:15:00+00:00",
+      "exit_reason": "horizon"
     }
   ],
   "eth_comparison": {
@@ -1082,7 +1178,8 @@
         "pnl": 149.615385,
         "realized": true,
         "anchor_ts": "2026-07-14T07:15:00+00:00",
-        "exit_ts": "2026-07-15T07:15:00+00:00"
+        "exit_ts": "2026-07-15T07:15:00+00:00",
+        "exit_reason": "horizon"
       },
       {
         "question": "Will the price of Ethereum be above $1,700 on July 15?",
@@ -1093,7 +1190,8 @@
         "pnl": 6.110521,
         "realized": true,
         "anchor_ts": "2026-07-14T07:15:00+00:00",
-        "exit_ts": "2026-07-15T07:15:00+00:00"
+        "exit_ts": "2026-07-15T07:15:00+00:00",
+        "exit_reason": "horizon"
       },
       {
         "question": "Will the price of Ethereum be above $1,800 on July 15?",
@@ -1104,7 +1202,8 @@
         "pnl": 149.615385,
         "realized": true,
         "anchor_ts": "2026-07-14T07:15:00+00:00",
-        "exit_ts": "2026-07-15T07:15:00+00:00"
+        "exit_ts": "2026-07-15T07:15:00+00:00",
+        "exit_reason": "horizon"
       },
       {
         "question": "Will the price of Ethereum be above $1,700 on July 15?",
@@ -1115,7 +1214,8 @@
         "pnl": 6.110521,
         "realized": true,
         "anchor_ts": "2026-07-14T07:15:00+00:00",
-        "exit_ts": "2026-07-15T07:15:00+00:00"
+        "exit_ts": "2026-07-15T07:15:00+00:00",
+        "exit_reason": "horizon"
       },
       {
         "question": "Will the price of Ethereum be above $1,900 on July 15?",
@@ -1126,7 +1226,8 @@
         "pnl": -12.436548,
         "realized": true,
         "anchor_ts": "2026-07-14T07:15:00+00:00",
-        "exit_ts": "2026-07-15T07:15:00+00:00"
+        "exit_ts": "2026-07-15T07:15:00+00:00",
+        "exit_reason": "horizon"
       },
       {
         "question": "Will Ethereum reach $2,000 in July?",
@@ -1137,7 +1238,8 @@
         "pnl": 86.0,
         "realized": true,
         "anchor_ts": "2026-07-14T07:15:00+00:00",
-        "exit_ts": "2026-07-15T07:15:00+00:00"
+        "exit_ts": "2026-07-15T07:15:00+00:00",
+        "exit_reason": "horizon"
       },
       {
         "question": "Will Ethereum dip to $1,500 by December 31, 2026?",
@@ -1148,7 +1250,8 @@
         "pnl": 30.232558,
         "realized": true,
         "anchor_ts": "2026-07-15T02:15:00+00:00",
-        "exit_ts": "2026-07-16T02:15:00+00:00"
+        "exit_ts": "2026-07-16T02:15:00+00:00",
+        "exit_reason": "horizon"
       },
       {
         "question": "Will the price of Ethereum be above $1,400 on July 21?",
@@ -1159,7 +1262,8 @@
         "pnl": -0.454545,
         "realized": true,
         "anchor_ts": "2026-07-15T02:15:00+00:00",
-        "exit_ts": "2026-07-16T02:15:00+00:00"
+        "exit_ts": "2026-07-16T02:15:00+00:00",
+        "exit_reason": "horizon"
       },
       {
         "question": "Will the price of Ethereum be above $2,000 on July 16?",
@@ -1170,7 +1274,8 @@
         "pnl": -2.704082,
         "realized": true,
         "anchor_ts": "2026-07-15T02:15:00+00:00",
-        "exit_ts": "2026-07-16T02:15:00+00:00"
+        "exit_ts": "2026-07-16T02:15:00+00:00",
+        "exit_reason": "horizon"
       },
       {
         "question": "Will the price of Ethereum be above $1,600 on July 20?",
@@ -1181,7 +1286,8 @@
         "pnl": -0.858586,
         "realized": true,
         "anchor_ts": "2026-07-15T02:15:00+00:00",
-        "exit_ts": "2026-07-16T02:15:00+00:00"
+        "exit_ts": "2026-07-16T02:15:00+00:00",
+        "exit_reason": "horizon"
       },
       {
         "question": "Will the price of Ethereum be above $1,400 on July 20?",
@@ -1192,7 +1298,8 @@
         "pnl": -0.20202,
         "realized": true,
         "anchor_ts": "2026-07-15T02:15:00+00:00",
-        "exit_ts": "2026-07-16T02:15:00+00:00"
+        "exit_ts": "2026-07-16T02:15:00+00:00",
+        "exit_reason": "horizon"
       },
       {
         "question": "Will the price of Ethereum be above $1,500 on July 21?",
@@ -1203,7 +1310,8 @@
         "pnl": -0.606061,
         "realized": true,
         "anchor_ts": "2026-07-15T02:15:00+00:00",
-        "exit_ts": "2026-07-16T02:15:00+00:00"
+        "exit_ts": "2026-07-16T02:15:00+00:00",
+        "exit_reason": "horizon"
       },
       {
         "question": "Will the price of Ethereum be above $2,000 on July 16?",
@@ -1214,7 +1322,8 @@
         "pnl": -2.704082,
         "realized": true,
         "anchor_ts": "2026-07-15T02:15:00+00:00",
-        "exit_ts": "2026-07-16T02:15:00+00:00"
+        "exit_ts": "2026-07-16T02:15:00+00:00",
+        "exit_reason": "horizon"
       },
       {
         "question": "Will the price of Ethereum be above $1,500 on July 21?",
@@ -1225,7 +1334,8 @@
         "pnl": -0.606061,
         "realized": true,
         "anchor_ts": "2026-07-15T02:15:00+00:00",
-        "exit_ts": "2026-07-16T02:15:00+00:00"
+        "exit_ts": "2026-07-16T02:15:00+00:00",
+        "exit_reason": "horizon"
       },
       {
         "question": "Will the price of Ethereum be above $1,600 on July 21?",
@@ -1236,7 +1346,8 @@
         "pnl": -0.30303,
         "realized": true,
         "anchor_ts": "2026-07-15T02:15:00+00:00",
-        "exit_ts": "2026-07-16T02:15:00+00:00"
+        "exit_ts": "2026-07-16T02:15:00+00:00",
+        "exit_reason": "horizon"
       },
       {
         "question": "Will the price of Ethereum be above $1,400 on July 21?",
@@ -1247,7 +1358,8 @@
         "pnl": -0.454545,
         "realized": true,
         "anchor_ts": "2026-07-15T02:15:00+00:00",
-        "exit_ts": "2026-07-16T02:15:00+00:00"
+        "exit_ts": "2026-07-16T02:15:00+00:00",
+        "exit_reason": "horizon"
       },
       {
         "question": "Will the price of Ethereum be above $1,800 on July 16?",
@@ -1258,7 +1370,8 @@
         "pnl": -93.333333,
         "realized": true,
         "anchor_ts": "2026-07-15T02:15:00+00:00",
-        "exit_ts": "2026-07-16T02:15:00+00:00"
+        "exit_ts": "2026-07-16T02:15:00+00:00",
+        "exit_reason": "horizon"
       },
       {
         "question": "Will the price of Ethereum be above $2,300 on July 21?",
@@ -1269,7 +1382,8 @@
         "pnl": -32.5,
         "realized": true,
         "anchor_ts": "2026-07-15T02:15:00+00:00",
-        "exit_ts": "2026-07-16T02:15:00+00:00"
+        "exit_ts": "2026-07-16T02:15:00+00:00",
+        "exit_reason": "horizon"
       },
       {
         "question": "Will the price of Ethereum be above $1,500 on July 20?",
@@ -1280,7 +1394,8 @@
         "pnl": -0.050505,
         "realized": true,
         "anchor_ts": "2026-07-15T02:15:00+00:00",
-        "exit_ts": "2026-07-16T02:15:00+00:00"
+        "exit_ts": "2026-07-16T02:15:00+00:00",
+        "exit_reason": "horizon"
       },
       {
         "question": "Will the price of Ethereum be above $1,600 on July 21?",
@@ -1291,7 +1406,8 @@
         "pnl": -0.30303,
         "realized": true,
         "anchor_ts": "2026-07-15T02:15:00+00:00",
-        "exit_ts": "2026-07-16T02:15:00+00:00"
+        "exit_ts": "2026-07-16T02:15:00+00:00",
+        "exit_reason": "horizon"
       },
       {
         "question": "Will the price of Ethereum be above $2,300 on July 21?",
@@ -1302,7 +1418,8 @@
         "pnl": -1.152305,
         "realized": true,
         "anchor_ts": "2026-07-15T02:15:00+00:00",
-        "exit_ts": "2026-07-16T02:15:00+00:00"
+        "exit_ts": "2026-07-16T02:15:00+00:00",
+        "exit_reason": "horizon"
       },
       {
         "question": "Will Ethereum dip to $1,500 by December 31, 2026?",
@@ -1313,7 +1430,8 @@
         "pnl": 30.232558,
         "realized": true,
         "anchor_ts": "2026-07-15T02:15:00+00:00",
-        "exit_ts": "2026-07-16T02:15:00+00:00"
+        "exit_ts": "2026-07-16T02:15:00+00:00",
+        "exit_reason": "horizon"
       },
       {
         "question": "Will the price of Ethereum be above $2,200 on July 20?",
@@ -1324,7 +1442,8 @@
         "pnl": -0.555556,
         "realized": true,
         "anchor_ts": "2026-07-15T02:15:00+00:00",
-        "exit_ts": "2026-07-16T02:15:00+00:00"
+        "exit_ts": "2026-07-16T02:15:00+00:00",
+        "exit_reason": "horizon"
       },
       {
         "question": "Will the price of Ethereum be above $1,800 on July 16?",
@@ -1335,7 +1454,8 @@
         "pnl": 11.460674,
         "realized": true,
         "anchor_ts": "2026-07-15T02:15:00+00:00",
-        "exit_ts": "2026-07-16T02:15:00+00:00"
+        "exit_ts": "2026-07-16T02:15:00+00:00",
+        "exit_reason": "horizon"
       }
     ]
   }
