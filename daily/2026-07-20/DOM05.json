@@ -4,8 +4,8 @@
   "scenario_display": "地缘政治市场",
   "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓;押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
   "run_date": "2026-07-20",
-  "generated_at": "2026-07-20T02:30:39.056840+00:00",
-  "run_id": "4f6e2595-8a1d-449e-83d0-475ec9f177fd",
+  "generated_at": "2026-07-20T04:30:34.618740+00:00",
+  "run_id": "8dcd930d-04b9-4c3b-891e-6531eb4ccb5c",
   "pipeline_status": "PIPELINE_PASS",
   "effect_status": "NOT_BETTER",
   "targets": {
@@ -185,8 +185,8 @@
     }
   },
   "data_quality": {
-    "snapshot_rows": 19140,
-    "freshest_snapshot": "2026-07-20T02:16:22.678144+00:00",
+    "snapshot_rows": 19620,
+    "freshest_snapshot": "2026-07-20T04:15:58.533464+00:00",
     "missing_rate": {
       "mid_price": 0.1302,
       "spread": 0.1302,

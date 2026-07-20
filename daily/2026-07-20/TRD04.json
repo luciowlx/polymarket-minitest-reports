@@ -4,8 +4,8 @@
   "scenario_display": "全部市场·滑点",
   "bet_type_hint": "本场景押什么:押交易条件 —— 赌的是这个市场的交易条件(成交量/滑点/能否成交),不押价格也不押结果。",
   "run_date": "2026-07-20",
-  "generated_at": "2026-07-20T02:31:02.327059+00:00",
-  "run_id": "4f6e2595-8a1d-449e-83d0-475ec9f177fd",
+  "generated_at": "2026-07-20T04:30:56.289497+00:00",
+  "run_id": "8dcd930d-04b9-4c3b-891e-6531eb4ccb5c",
   "pipeline_status": "PIPELINE_PASS",
   "effect_status": "BETTER_THAN_BASELINE",
   "targets": {
@@ -25,74 +25,74 @@
       },
       "matured_metrics": {
         "limix": {
-          "n": 2143,
-          "mae": 0.00926,
-          "rmse": 0.02939,
-          "r2": 0.851283,
-          "direction_accuracy": 0.978068
+          "n": 2626,
+          "mae": 0.009246,
+          "rmse": 0.029367,
+          "r2": 0.848559,
+          "direction_accuracy": 0.978675
         },
         "base_rate": {
-          "n": 2144,
-          "mae": 0.044561,
-          "rmse": 0.076307,
-          "r2": -0.002992,
-          "direction_accuracy": 0.779851
+          "n": 2627,
+          "mae": 0.04375,
+          "rmse": 0.075547,
+          "r2": -0.002584,
+          "direction_accuracy": 0.78759
         },
         "price_unchanged": {
-          "n": 2144,
-          "mae": 0.037988,
-          "rmse": 0.085138,
-          "r2": -0.248586,
-          "direction_accuracy": 0.220149
+          "n": 2627,
+          "mae": 0.038074,
+          "rmse": 0.084512,
+          "r2": -0.254644,
+          "direction_accuracy": 0.21241
         },
         "mean_reversion": {
-          "n": 2144,
-          "mae": 0.039021,
-          "rmse": 0.085788,
-          "r2": -0.267719,
-          "direction_accuracy": 0.433302
+          "n": 2627,
+          "mae": 0.039192,
+          "rmse": 0.08518,
+          "r2": -0.27456,
+          "direction_accuracy": 0.422535
         },
         "momentum": {
-          "n": 2144,
-          "mae": 0.039783,
-          "rmse": 0.086919,
-          "r2": -0.30138,
-          "direction_accuracy": 0.436567
+          "n": 2627,
+          "mae": 0.039594,
+          "rmse": 0.086008,
+          "r2": -0.299449,
+          "direction_accuracy": 0.444614
         },
-        "n_matured": 2144
+        "n_matured": 2627
       },
-      "pending_labels": 884,
+      "pending_labels": 401,
       "display": "押1小时买入滑点"
     }
   },
   "data_quality": {
-    "snapshot_rows": 159973,
-    "freshest_snapshot": "2026-07-20T02:16:55.321312+00:00",
+    "snapshot_rows": 164335,
+    "freshest_snapshot": "2026-07-20T04:16:25.101261+00:00",
     "missing_rate": {
-      "mid_price": 0.4636,
-      "spread": 0.4636,
-      "bid_depth": 0.0418,
-      "ask_depth": 0.0418,
-      "orderbook_imbalance": 0.1093,
+      "mid_price": 0.4637,
+      "spread": 0.4637,
+      "bid_depth": 0.0414,
+      "ask_depth": 0.0414,
+      "orderbook_imbalance": 0.1088,
       "volume_1h": 0.0015,
-      "volume_24h": 0.2809,
+      "volume_24h": 0.2844,
       "trade_count_1h": 0.0,
-      "return_1h": 0.271,
-      "return_6h": 0.4899,
-      "return_24h": 0.5629,
-      "volatility": 0.4871,
-      "liquidity": 0.0686,
+      "return_1h": 0.2709,
+      "return_6h": 0.4951,
+      "return_24h": 0.5689,
+      "volatility": 0.4923,
+      "liquidity": 0.0693,
       "hours_to_resolution": 0.0,
-      "buy_slippage_1000_now": 0.268,
-      "fill_ratio_1000": 0.0418,
+      "buy_slippage_1000_now": 0.2671,
+      "fill_ratio_1000": 0.0414,
       "tradable_now": 0.0,
-      "threshold_num": 0.8959,
-      "btc_spot": 0.0077,
-      "eth_spot": 0.0077,
-      "threshold_ratio": 0.9154
+      "threshold_num": 0.8945,
+      "btc_spot": 0.0075,
+      "eth_spot": 0.0075,
+      "threshold_ratio": 0.914
     },
     "api_errors": []
   },
-  "universe_size": 4564,
+  "universe_size": 4662,
   "primary_metric": "legacy"
 }
