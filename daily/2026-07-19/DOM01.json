@@ -1,0 +1,216 @@
+{
+  "scenario_id": "DOM01",
+  "name": "加密货币价格阈值",
+  "scenario_display": "比特币/以太坊阈值市场",
+  "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓;押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
+  "run_date": "2026-07-19",
+  "generated_at": "2026-07-19T15:27:56.991730+00:00",
+  "run_id": "b940c0f9-700e-4d8a-aeaa-359345b8066f",
+  "pipeline_status": "PIPELINE_FAIL",
+  "effect_status": "NOT_BETTER",
+  "targets": {
+    "target_up_24h": {
+      "task": "classification",
+      "n_train": 5000,
+      "n_predict": 254,
+      "status": "PIPELINE_FAIL",
+      "notes": [],
+      "limix": {
+        "task_id": "",
+        "model_type": "LIMIX_7M",
+        "elapsed_s": 13.417,
+        "error": "LimixError: upload failed after retries: limix code=4501 message=未知错误 body={'code': 4501, 'message': '未知错误'}"
+      },
+      "matured_metrics": {
+        "limix": {
+          "n": 119,
+          "logloss": 0.955939,
+          "brier": 0.532157,
+          "auc": 0.744956,
+          "balanced_accuracy": 0.591671,
+          "macro_f1": 0.599853
+        },
+        "base_rate": {
+          "n": 119,
+          "logloss": 1.111719,
+          "brier": 0.675625,
+          "auc": 0.464752,
+          "balanced_accuracy": 0.301197,
+          "macro_f1": 0.19985
+        },
+        "price_unchanged": {
+          "n": 119,
+          "logloss": 2.388511,
+          "brier": 1.357857,
+          "auc": 0.5,
+          "balanced_accuracy": 0.333333,
+          "macro_f1": 0.115741
+        },
+        "mean_reversion": {
+          "n": 119,
+          "logloss": 1.23545,
+          "brier": 0.742029,
+          "auc": 0.488957,
+          "balanced_accuracy": 0.334514,
+          "macro_f1": 0.318658
+        },
+        "momentum": {
+          "n": 119,
+          "logloss": 1.169736,
+          "brier": 0.699071,
+          "auc": 0.549636,
+          "balanced_accuracy": 0.39481,
+          "macro_f1": 0.3951
+        },
+        "n_matured": 119
+      },
+      "pending_labels": 708,
+      "display": "押盘口24小时涨跌",
+      "simtrade": {
+        "n_trades": 74,
+        "total_pnl": 214.6871939510968,
+        "return_on_bankroll": 0.02146871939510968,
+        "win_rate": 0.5405405405405406,
+        "max_drawdown": 227.9599891699196,
+        "n_unrealized": 0
+      }
+    },
+    "target_delta_24h": {
+      "task": "regression",
+      "n_train": 5000,
+      "n_predict": 254,
+      "status": "PIPELINE_FAIL",
+      "notes": [],
+      "limix": {
+        "task_id": "",
+        "model_type": "LIMIX_7M",
+        "elapsed_s": 13.535,
+        "error": "LimixError: upload failed after retries: limix code=4501 message=未知错误 body={'code': 4501, 'message': '未知错误'}"
+      },
+      "matured_metrics": {
+        "limix": {
+          "n": 119,
+          "mae": 0.085451,
+          "rmse": 0.154109,
+          "r2": -0.532166,
+          "direction_accuracy": 0.529412
+        },
+        "base_rate": {
+          "n": 119,
+          "mae": 0.069412,
+          "rmse": 0.125125,
+          "r2": -0.010045,
+          "direction_accuracy": 0.546218
+        },
+        "price_unchanged": {
+          "n": 119,
+          "mae": 0.065828,
+          "rmse": 0.12891,
+          "r2": -0.072074,
+          "direction_accuracy": 0.008403
+        },
+        "mean_reversion": {
+          "n": 119,
+          "mae": 0.090519,
+          "rmse": 0.157307,
+          "r2": -0.59641,
+          "direction_accuracy": 0.352941
+        },
+        "momentum": {
+          "n": 119,
+          "mae": 0.073897,
+          "rmse": 0.133009,
+          "r2": -0.141326,
+          "direction_accuracy": 0.453782
+        },
+        "n_matured": 119
+      },
+      "pending_labels": 708,
+      "display": "押盘口24小时涨幅",
+      "simtrade": {
+        "n_trades": 52,
+        "total_pnl": 33.829144067396896,
+        "return_on_bankroll": 0.0033829144067396896,
+        "win_rate": 0.46153846153846156,
+        "max_drawdown": 614.5281200511687,
+        "n_unrealized": 0
+      }
+    },
+    "final_outcome_yes": {
+      "task": "classification",
+      "n_train": 0,
+      "n_predict": 0,
+      "status": "INSUFFICIENT_DATA",
+      "notes": [
+        "train_rows=0<MIN_TRAIN_ROWS(30)"
+      ],
+      "limix": {
+        "task_id": "",
+        "model_type": "",
+        "elapsed_s": 0.0,
+        "error": null
+      },
+      "matured_metrics": {
+        "limix": {
+          "n": 0
+        },
+        "base_rate": {
+          "n": 0
+        },
+        "price_unchanged": {
+          "n": 0
+        },
+        "mean_reversion": {
+          "n": 0
+        },
+        "momentum": {
+          "n": 0
+        },
+        "n_matured": 0
+      },
+      "pending_labels": 0,
+      "display": "押事件最终结果",
+      "simtrade": {
+        "n_trades": 0,
+        "total_pnl": null,
+        "return_on_bankroll": null,
+        "win_rate": null,
+        "max_drawdown": null,
+        "n_unrealized": 0
+      }
+    }
+  },
+  "data_quality": {
+    "snapshot_rows": 47658,
+    "freshest_snapshot": "2026-07-19T15:23:43.395466+00:00",
+    "missing_rate": {
+      "mid_price": 0.5675,
+      "spread": 0.5675,
+      "bid_depth": 0.0164,
+      "ask_depth": 0.0164,
+      "orderbook_imbalance": 0.1354,
+      "volume_1h": 0.0004,
+      "volume_24h": 0.4822,
+      "trade_count_1h": 0.0,
+      "return_1h": 0.4564,
+      "return_6h": 0.8407,
+      "return_24h": 0.8654,
+      "volatility": 0.8395,
+      "liquidity": 0.1213,
+      "hours_to_resolution": 0.0,
+      "buy_slippage_1000_now": 0.3256,
+      "fill_ratio_1000": 0.0164,
+      "tradable_now": 0.0,
+      "threshold_num": 0.8395,
+      "btc_spot": 0.0004,
+      "eth_spot": 0.0004,
+      "threshold_ratio": 0.8544
+    },
+    "api_errors": [
+      "target_up_24h:limix: LimixError: upload failed after retries: limix code=4501 message=未知错误 body={'code': 4501, 'message': '未知错误'}",
+      "target_delta_24h:limix: LimixError: upload failed after retries: limix code=4501 message=未知错误 body={'code': 4501, 'message': '未知错误'}"
+    ]
+  },
+  "universe_size": 2555,
+  "primary_metric": "return_on_bankroll"
+}

@@ -1,0 +1,216 @@
+{
+  "scenario_id": "DOM05",
+  "name": "地缘政治",
+  "scenario_display": "地缘政治市场",
+  "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓;押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
+  "run_date": "2026-07-19",
+  "generated_at": "2026-07-19T15:28:02.833638+00:00",
+  "run_id": "b940c0f9-700e-4d8a-aeaa-359345b8066f",
+  "pipeline_status": "PIPELINE_FAIL",
+  "effect_status": "NOT_BETTER",
+  "targets": {
+    "target_up_24h": {
+      "task": "classification",
+      "n_train": 5000,
+      "n_predict": 61,
+      "status": "PIPELINE_FAIL",
+      "notes": [],
+      "limix": {
+        "task_id": "",
+        "model_type": "LIMIX_7M",
+        "elapsed_s": 13.481,
+        "error": "LimixError: upload failed after retries: limix code=4501 message=未知错误 body={'code': 4501, 'message': '未知错误'}"
+      },
+      "matured_metrics": {
+        "limix": {
+          "n": 88,
+          "logloss": 1.030464,
+          "brier": 0.618413,
+          "auc": 0.765496,
+          "balanced_accuracy": 0.56746,
+          "macro_f1": 0.520258
+        },
+        "base_rate": {
+          "n": 88,
+          "logloss": 1.149387,
+          "brier": 0.697914,
+          "auc": 0.469289,
+          "balanced_accuracy": 0.325397,
+          "macro_f1": 0.251515
+        },
+        "price_unchanged": {
+          "n": 88,
+          "logloss": 2.076069,
+          "brier": 1.174091,
+          "auc": 0.5,
+          "balanced_accuracy": 0.333333,
+          "macro_f1": 0.16092
+        },
+        "mean_reversion": {
+          "n": 88,
+          "logloss": 1.118076,
+          "brier": 0.671523,
+          "auc": 0.538833,
+          "balanced_accuracy": 0.354497,
+          "macro_f1": 0.287572
+        },
+        "momentum": {
+          "n": 88,
+          "logloss": 1.175978,
+          "brier": 0.71095,
+          "auc": 0.479982,
+          "balanced_accuracy": 0.322751,
+          "macro_f1": 0.23291
+        },
+        "n_matured": 88
+      },
+      "pending_labels": 160,
+      "display": "押盘口24小时涨跌",
+      "simtrade": {
+        "n_trades": 47,
+        "total_pnl": -334.119635500414,
+        "return_on_bankroll": -0.0334119635500414,
+        "win_rate": 0.3829787234042553,
+        "max_drawdown": 381.4530242044906,
+        "n_unrealized": 0
+      }
+    },
+    "target_delta_24h": {
+      "task": "regression",
+      "n_train": 5000,
+      "n_predict": 61,
+      "status": "PIPELINE_FAIL",
+      "notes": [],
+      "limix": {
+        "task_id": "",
+        "model_type": "LIMIX_7M",
+        "elapsed_s": 11.507,
+        "error": "LimixError: upload failed after retries: limix code=4501 message=未知错误 body={'code': 4501, 'message': '未知错误'}"
+      },
+      "matured_metrics": {
+        "limix": {
+          "n": 88,
+          "mae": 0.08214,
+          "rmse": 0.150017,
+          "r2": -2.016379,
+          "direction_accuracy": 0.534091
+        },
+        "base_rate": {
+          "n": 88,
+          "mae": 0.056683,
+          "rmse": 0.096712,
+          "r2": -0.253622,
+          "direction_accuracy": 0.272727
+        },
+        "price_unchanged": {
+          "n": 88,
+          "mae": 0.038216,
+          "rmse": 0.087617,
+          "r2": -0.028936,
+          "direction_accuracy": 0.102273
+        },
+        "mean_reversion": {
+          "n": 88,
+          "mae": 0.050761,
+          "rmse": 0.105663,
+          "r2": -0.49642,
+          "direction_accuracy": 0.522727
+        },
+        "momentum": {
+          "n": 88,
+          "mae": 0.056068,
+          "rmse": 0.105298,
+          "r2": -0.486106,
+          "direction_accuracy": 0.397727
+        },
+        "n_matured": 88
+      },
+      "pending_labels": 160,
+      "display": "押盘口24小时涨幅",
+      "simtrade": {
+        "n_trades": 33,
+        "total_pnl": -252.9703471986424,
+        "return_on_bankroll": -0.02529703471986424,
+        "win_rate": 0.3939393939393939,
+        "max_drawdown": 288.26875922169955,
+        "n_unrealized": 0
+      }
+    },
+    "final_outcome_yes": {
+      "task": "classification",
+      "n_train": 0,
+      "n_predict": 0,
+      "status": "INSUFFICIENT_DATA",
+      "notes": [
+        "train_rows=0<MIN_TRAIN_ROWS(30)"
+      ],
+      "limix": {
+        "task_id": "",
+        "model_type": "",
+        "elapsed_s": 0.0,
+        "error": null
+      },
+      "matured_metrics": {
+        "limix": {
+          "n": 0
+        },
+        "base_rate": {
+          "n": 0
+        },
+        "price_unchanged": {
+          "n": 0
+        },
+        "mean_reversion": {
+          "n": 0
+        },
+        "momentum": {
+          "n": 0
+        },
+        "n_matured": 0
+      },
+      "pending_labels": 0,
+      "display": "押事件最终结果",
+      "simtrade": {
+        "n_trades": 0,
+        "total_pnl": null,
+        "return_on_bankroll": null,
+        "win_rate": null,
+        "max_drawdown": null,
+        "n_unrealized": 0
+      }
+    }
+  },
+  "data_quality": {
+    "snapshot_rows": 18780,
+    "freshest_snapshot": "2026-07-19T15:23:00.636324+00:00",
+    "missing_rate": {
+      "mid_price": 0.1309,
+      "spread": 0.1309,
+      "bid_depth": 0.0628,
+      "ask_depth": 0.0628,
+      "orderbook_imbalance": 0.0628,
+      "volume_1h": 0.0157,
+      "volume_24h": 0.0,
+      "trade_count_1h": 0.0,
+      "return_1h": 0.0314,
+      "return_6h": 0.0157,
+      "return_24h": 0.1571,
+      "volatility": 0.0157,
+      "liquidity": 0.0,
+      "hours_to_resolution": 0.0,
+      "buy_slippage_1000_now": 0.1309,
+      "fill_ratio_1000": 0.0628,
+      "tradable_now": 0.0,
+      "threshold_num": 1.0,
+      "btc_spot": 0.0366,
+      "eth_spot": 0.0366,
+      "threshold_ratio": 1.0
+    },
+    "api_errors": [
+      "target_up_24h:limix: LimixError: upload failed after retries: limix code=4501 message=未知错误 body={'code': 4501, 'message': '未知错误'}",
+      "target_delta_24h:limix: LimixError: upload failed after retries: limix code=4501 message=未知错误 body={'code': 4501, 'message': '未知错误'}"
+    ]
+  },
+  "universe_size": 191,
+  "primary_metric": "return_on_bankroll"
+}

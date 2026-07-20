@@ -1,0 +1,103 @@
+{
+  "scenario_id": "TRD05",
+  "name": "1小时可交易性",
+  "scenario_display": "全部市场·可交易性",
+  "bet_type_hint": "本场景押什么:押交易条件 —— 赌的是这个市场的交易条件(成交量/滑点/能否成交),不押价格也不押结果。",
+  "run_date": "2026-07-19",
+  "generated_at": "2026-07-19T15:28:10.806088+00:00",
+  "run_id": "b940c0f9-700e-4d8a-aeaa-359345b8066f",
+  "pipeline_status": "PIPELINE_FAIL",
+  "effect_status": "BETTER_THAN_BASELINE",
+  "targets": {
+    "target_tradable_1h": {
+      "task": "classification",
+      "n_train": 5000,
+      "n_predict": 676,
+      "status": "PIPELINE_FAIL",
+      "notes": [],
+      "limix": {
+        "task_id": "",
+        "model_type": "LIMIX_7M",
+        "elapsed_s": 11.382,
+        "error": "LimixError: upload failed after retries: limix code=4501 message=未知错误 body={'code': 4501, 'message': '未知错误'}"
+      },
+      "matured_metrics": {
+        "limix": {
+          "n": 2203,
+          "logloss": 0.308708,
+          "brier": 0.189178,
+          "auc": 0.936695,
+          "balanced_accuracy": 0.852981,
+          "macro_f1": 0.850275
+        },
+        "base_rate": {
+          "n": 2203,
+          "logloss": 0.626471,
+          "brier": 0.435289,
+          "auc": 0.562364,
+          "balanced_accuracy": 0.5,
+          "macro_f1": 0.403466
+        },
+        "price_unchanged": {
+          "n": 2203,
+          "logloss": 0.816491,
+          "brier": 0.537839,
+          "auc": 0.5,
+          "balanced_accuracy": 0.5,
+          "macro_f1": 0.403466
+        },
+        "mean_reversion": {
+          "n": 2203,
+          "logloss": 0.617307,
+          "brier": 0.427156,
+          "auc": 0.601688,
+          "balanced_accuracy": 0.521262,
+          "macro_f1": 0.485327
+        },
+        "momentum": {
+          "n": 2203,
+          "logloss": 0.61834,
+          "brier": 0.428132,
+          "auc": 0.598086,
+          "balanced_accuracy": 0.521262,
+          "macro_f1": 0.485327
+        },
+        "n_matured": 2203
+      },
+      "pending_labels": 270,
+      "display": "押1小时是否可交易"
+    }
+  },
+  "data_quality": {
+    "snapshot_rows": 156596,
+    "freshest_snapshot": "2026-07-19T15:23:43.395466+00:00",
+    "missing_rate": {
+      "mid_price": 0.4629,
+      "spread": 0.4629,
+      "bid_depth": 0.0432,
+      "ask_depth": 0.0432,
+      "orderbook_imbalance": 0.1121,
+      "volume_1h": 0.0018,
+      "volume_24h": 0.2814,
+      "trade_count_1h": 0.0,
+      "return_1h": 0.2751,
+      "return_6h": 0.4896,
+      "return_24h": 0.5651,
+      "volatility": 0.4867,
+      "liquidity": 0.0701,
+      "hours_to_resolution": 0.0,
+      "buy_slippage_1000_now": 0.2699,
+      "fill_ratio_1000": 0.0432,
+      "tradable_now": 0.0,
+      "threshold_num": 0.896,
+      "btc_spot": 0.0079,
+      "eth_spot": 0.0079,
+      "threshold_ratio": 0.9159
+    },
+    "api_errors": [
+      "target_tradable_1h:limix: LimixError: upload failed after retries: limix code=4501 message=未知错误 body={'code': 4501, 'message': '未知错误'}"
+    ]
+  },
+  "universe_size": 4424,
+  "primary_metric": "legacy"
+}

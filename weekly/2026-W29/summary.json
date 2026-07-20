@@ -1,6 +1,6 @@
 {
   "week": "2026-W29",
-  "generated_at": "2026-07-16T07:00:10.425611+00:00",
+  "generated_at": "2026-07-20T01:39:06.377312+00:00",
   "dates": [
     "2026-07-13",
     "2026-07-14",
@@ -1015,60 +1015,60 @@
       "name": "加密每日阈值阶梯",
       "scenario_display": "比特币/以太坊「明天是否高于X价」",
       "bet_type_hint": "本场景押什么:押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
-      "pipeline_pass_days": 2,
+      "pipeline_pass_days": 3,
       "daily_statuses": {
         "2026-07-13": "MISSING",
         "2026-07-14": "MISSING",
         "2026-07-15": "PIPELINE_PASS",
         "2026-07-16": "PIPELINE_PASS",
-        "2026-07-17": "MISSING",
+        "2026-07-17": "PIPELINE_PASS",
         "2026-07-18": "MISSING",
-        "2026-07-19": "MISSING"
+        "2026-07-19": "PIPELINE_FAIL"
       },
-      "effect_status": "INCONCLUSIVE",
+      "effect_status": "NOT_BETTER",
       "n_matured": {
-        "final_outcome_yes": 22
+        "final_outcome_yes": 198
       },
       "n_pending": {
-        "final_outcome_yes": 132
+        "final_outcome_yes": 198
       },
       "data_quality": {
-        "days_with_report": 2,
+        "days_with_report": 4,
         "avg_snapshot_rows": 0.0,
         "total_api_errors": 0,
-        "latest_universe_size": 66
+        "latest_universe_size": 110
       },
-      "recommendation": "continue",
+      "recommendation": "adjust",
       "reasons": [
-        "效果尚无定论(INCONCLUSIVE),继续累积样本"
+        "NOT_BETTER(证据:成交 311 笔),建议更换特征或模型档"
       ]
     },
     "CRY02": {
       "name": "加密每日涨跌",
       "scenario_display": "比特币/以太坊「今天涨还是跌」",
       "bet_type_hint": "本场景押什么:押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
-      "pipeline_pass_days": 2,
+      "pipeline_pass_days": 3,
       "daily_statuses": {
         "2026-07-13": "MISSING",
         "2026-07-14": "MISSING",
         "2026-07-15": "PIPELINE_PASS",
         "2026-07-16": "PIPELINE_PASS",
-        "2026-07-17": "MISSING",
+        "2026-07-17": "PIPELINE_PASS",
         "2026-07-18": "MISSING",
-        "2026-07-19": "MISSING"
+        "2026-07-19": "PIPELINE_FAIL"
       },
       "effect_status": "INCONCLUSIVE",
       "n_matured": {
-        "final_outcome_yes": 2
+        "final_outcome_yes": 11
       },
       "n_pending": {
-        "final_outcome_yes": 2
+        "final_outcome_yes": 0
       },
       "data_quality": {
-        "days_with_report": 2,
+        "days_with_report": 4,
         "avg_snapshot_rows": 0.0,
         "total_api_errors": 0,
-        "latest_universe_size": 1
+        "latest_universe_size": 3
       },
       "recommendation": "continue",
       "reasons": [
@@ -1079,15 +1079,15 @@
       "name": "加密货币价格阈值",
       "scenario_display": "比特币/以太坊阈值市场",
       "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓;押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
-      "pipeline_pass_days": 3,
+      "pipeline_pass_days": 4,
       "daily_statuses": {
         "2026-07-13": "INSUFFICIENT_DATA",
         "2026-07-14": "PIPELINE_PASS",
         "2026-07-15": "PIPELINE_PASS",
         "2026-07-16": "PIPELINE_PASS",
-        "2026-07-17": "MISSING",
+        "2026-07-17": "PIPELINE_PASS",
         "2026-07-18": "MISSING",
-        "2026-07-19": "MISSING"
+        "2026-07-19": "PIPELINE_FAIL"
       },
       "effect_status": "NOT_BETTER",
       "n_matured": {
@@ -1096,15 +1096,15 @@
         "final_outcome_yes": 0
       },
       "n_pending": {
-        "target_up_24h": 518,
-        "target_delta_24h": 518,
+        "target_up_24h": 708,
+        "target_delta_24h": 708,
         "final_outcome_yes": 0
       },
       "data_quality": {
-        "days_with_report": 4,
-        "avg_snapshot_rows": 13632.75,
-        "total_api_errors": 0,
-        "latest_universe_size": 1451
+        "days_with_report": 6,
+        "avg_snapshot_rows": 24969.833333333332,
+        "total_api_errors": 2,
+        "latest_universe_size": 2555
       },
       "recommendation": "continue",
       "reasons": [
@@ -1116,79 +1116,79 @@
       "name": "1小时价格方向",
       "scenario_display": "全部市场·1小时",
       "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓。",
-      "pipeline_pass_days": 4,
+      "pipeline_pass_days": 5,
       "daily_statuses": {
         "2026-07-13": "PIPELINE_PASS",
         "2026-07-14": "PIPELINE_PASS",
         "2026-07-15": "PIPELINE_PASS",
         "2026-07-16": "PIPELINE_PASS",
-        "2026-07-17": "MISSING",
+        "2026-07-17": "PIPELINE_PASS",
         "2026-07-18": "MISSING",
-        "2026-07-19": "MISSING"
+        "2026-07-19": "PIPELINE_FAIL"
       },
       "effect_status": "NOT_BETTER",
       "n_matured": {
-        "target_up_1h": 1540
+        "target_up_1h": 1981
       },
       "n_pending": {
-        "target_up_1h": 380
+        "target_up_1h": 492
       },
       "data_quality": {
-        "days_with_report": 4,
-        "avg_snapshot_rows": 51242.25,
-        "total_api_errors": 0,
-        "latest_universe_size": 2673
+        "days_with_report": 6,
+        "avg_snapshot_rows": 86218.66666666667,
+        "total_api_errors": 1,
+        "latest_universe_size": 4424
       },
       "recommendation": "adjust",
       "reasons": [
-        "NOT_BETTER(证据:成交 79 笔),建议更换特征或模型档"
+        "NOT_BETTER(证据:成交 106 笔),建议更换特征或模型档"
       ]
     },
     "TRD02": {
       "name": "6小时价差回归",
       "scenario_display": "全部市场·6小时",
       "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓。",
-      "pipeline_pass_days": 3,
+      "pipeline_pass_days": 4,
       "daily_statuses": {
         "2026-07-13": "INSUFFICIENT_DATA",
         "2026-07-14": "PIPELINE_PASS",
         "2026-07-15": "PIPELINE_PASS",
         "2026-07-16": "PIPELINE_PASS",
-        "2026-07-17": "MISSING",
+        "2026-07-17": "PIPELINE_PASS",
         "2026-07-18": "MISSING",
-        "2026-07-19": "MISSING"
+        "2026-07-19": "PIPELINE_FAIL"
       },
       "effect_status": "NOT_BETTER",
       "n_matured": {
-        "target_delta_6h": 708
+        "target_delta_6h": 1497
       },
       "n_pending": {
-        "target_delta_6h": 795
+        "target_delta_6h": 559
       },
       "data_quality": {
-        "days_with_report": 4,
-        "avg_snapshot_rows": 51242.25,
-        "total_api_errors": 0,
-        "latest_universe_size": 2673
+        "days_with_report": 6,
+        "avg_snapshot_rows": 86218.66666666667,
+        "total_api_errors": 1,
+        "latest_universe_size": 4424
       },
       "recommendation": "adjust",
       "reasons": [
-        "NOT_BETTER(证据:成交 215 笔),建议更换特征或模型档"
+        "NOT_BETTER(证据:成交 275 笔),建议更换特征或模型档"
       ]
     },
     "DOM02": {
       "name": "AI 模型发布",
       "scenario_display": "AI产品发布市场",
       "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓;押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
-      "pipeline_pass_days": 3,
+      "pipeline_pass_days": 4,
       "daily_statuses": {
         "2026-07-13": "INSUFFICIENT_DATA",
         "2026-07-14": "PIPELINE_PASS",
         "2026-07-15": "PIPELINE_PASS",
         "2026-07-16": "PIPELINE_PASS",
-        "2026-07-17": "MISSING",
+        "2026-07-17": "PIPELINE_PASS",
         "2026-07-18": "MISSING",
-        "2026-07-19": "MISSING"
+        "2026-07-19": "PIPELINE_FAIL"
       },
       "effect_status": "INCONCLUSIVE",
       "n_matured": {
@@ -1197,15 +1197,15 @@
         "final_outcome_yes": 0
       },
       "n_pending": {
-        "target_up_24h": 130,
-        "target_delta_24h": 130,
+        "target_up_24h": 190,
+        "target_delta_24h": 190,
         "final_outcome_yes": 0
       },
       "data_quality": {
-        "days_with_report": 4,
-        "avg_snapshot_rows": 6545.25,
-        "total_api_errors": 0,
-        "latest_universe_size": 169
+        "days_with_report": 6,
+        "avg_snapshot_rows": 10629.166666666666,
+        "total_api_errors": 2,
+        "latest_universe_size": 220
       },
       "recommendation": "continue",
       "reasons": [
@@ -1216,15 +1216,15 @@
       "name": "宏观经济",
       "scenario_display": "美联储/CPI宏观市场",
       "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓;押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
-      "pipeline_pass_days": 3,
+      "pipeline_pass_days": 4,
       "daily_statuses": {
         "2026-07-13": "INSUFFICIENT_DATA",
         "2026-07-14": "PIPELINE_PASS",
         "2026-07-15": "PIPELINE_PASS",
         "2026-07-16": "PIPELINE_PASS",
-        "2026-07-17": "MISSING",
+        "2026-07-17": "PIPELINE_PASS",
         "2026-07-18": "MISSING",
-        "2026-07-19": "MISSING"
+        "2026-07-19": "PIPELINE_FAIL"
       },
       "effect_status": "NOT_BETTER",
       "n_matured": {
@@ -1233,15 +1233,15 @@
         "final_outcome_yes": 0
       },
       "n_pending": {
-        "target_up_24h": 97,
-        "target_delta_24h": 97,
+        "target_up_24h": 157,
+        "target_delta_24h": 157,
         "final_outcome_yes": 0
       },
       "data_quality": {
-        "days_with_report": 4,
-        "avg_snapshot_rows": 6527.75,
-        "total_api_errors": 0,
-        "latest_universe_size": 154
+        "days_with_report": 6,
+        "avg_snapshot_rows": 10608.166666666666,
+        "total_api_errors": 2,
+        "latest_universe_size": 205
       },
       "recommendation": "adjust",
       "reasons": [
@@ -1252,15 +1252,15 @@
       "name": "选举与立法",
       "scenario_display": "选举市场",
       "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓;押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
-      "pipeline_pass_days": 3,
+      "pipeline_pass_days": 4,
       "daily_statuses": {
         "2026-07-13": "INSUFFICIENT_DATA",
         "2026-07-14": "PIPELINE_PASS",
         "2026-07-15": "PIPELINE_PASS",
         "2026-07-16": "PIPELINE_PASS",
-        "2026-07-17": "MISSING",
+        "2026-07-17": "PIPELINE_PASS",
         "2026-07-18": "MISSING",
-        "2026-07-19": "MISSING"
+        "2026-07-19": "PIPELINE_FAIL"
       },
       "effect_status": "INCONCLUSIVE",
       "n_matured": {
@@ -1269,15 +1269,15 @@
         "final_outcome_yes": 0
       },
       "n_pending": {
-        "target_up_24h": 150,
-        "target_delta_24h": 150,
+        "target_up_24h": 212,
+        "target_delta_24h": 212,
         "final_outcome_yes": 0
       },
       "data_quality": {
-        "days_with_report": 4,
-        "avg_snapshot_rows": 6890.75,
-        "total_api_errors": 0,
-        "latest_universe_size": 181
+        "days_with_report": 6,
+        "avg_snapshot_rows": 11110.333333333334,
+        "total_api_errors": 2,
+        "latest_universe_size": 254
       },
       "recommendation": "continue",
       "reasons": [
@@ -1288,15 +1288,15 @@
       "name": "地缘政治",
       "scenario_display": "地缘政治市场",
       "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓;押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
-      "pipeline_pass_days": 3,
+      "pipeline_pass_days": 4,
       "daily_statuses": {
         "2026-07-13": "INSUFFICIENT_DATA",
         "2026-07-14": "PIPELINE_PASS",
         "2026-07-15": "PIPELINE_PASS",
         "2026-07-16": "PIPELINE_PASS",
-        "2026-07-17": "MISSING",
+        "2026-07-17": "PIPELINE_PASS",
         "2026-07-18": "MISSING",
-        "2026-07-19": "MISSING"
+        "2026-07-19": "PIPELINE_FAIL"
       },
       "effect_status": "NOT_BETTER",
       "n_matured": {
@@ -1305,15 +1305,15 @@
         "final_outcome_yes": 0
       },
       "n_pending": {
-        "target_up_24h": 98,
-        "target_delta_24h": 98,
+        "target_up_24h": 160,
+        "target_delta_24h": 160,
         "final_outcome_yes": 0
       },
       "data_quality": {
-        "days_with_report": 4,
-        "avg_snapshot_rows": 6555.0,
-        "total_api_errors": 0,
-        "latest_universe_size": 151
+        "days_with_report": 6,
+        "avg_snapshot_rows": 10640.0,
+        "total_api_errors": 2,
+        "latest_universe_size": 191
       },
       "recommendation": "adjust",
       "reasons": [
@@ -1324,60 +1324,60 @@
       "name": "1小时成交量激增",
       "scenario_display": "全部市场·成交量",
       "bet_type_hint": "本场景押什么:押交易条件 —— 赌的是这个市场的交易条件(成交量/滑点/能否成交),不押价格也不押结果。",
-      "pipeline_pass_days": 3,
+      "pipeline_pass_days": 4,
       "daily_statuses": {
         "2026-07-13": "INSUFFICIENT_DATA",
         "2026-07-14": "PIPELINE_PASS",
         "2026-07-15": "PIPELINE_PASS",
         "2026-07-16": "PIPELINE_PASS",
-        "2026-07-17": "MISSING",
+        "2026-07-17": "PIPELINE_PASS",
         "2026-07-18": "MISSING",
-        "2026-07-19": "MISSING"
+        "2026-07-19": "PIPELINE_FAIL"
       },
       "effect_status": "NOT_BETTER",
       "n_matured": {
-        "target_volume_spike_1h": 921
+        "target_volume_spike_1h": 1267
       },
       "n_pending": {
-        "target_volume_spike_1h": 582
+        "target_volume_spike_1h": 789
       },
       "data_quality": {
-        "days_with_report": 4,
-        "avg_snapshot_rows": 51242.25,
-        "total_api_errors": 0,
-        "latest_universe_size": 2673
+        "days_with_report": 6,
+        "avg_snapshot_rows": 86218.66666666667,
+        "total_api_errors": 1,
+        "latest_universe_size": 4424
       },
       "recommendation": "adjust",
       "reasons": [
-        "NOT_BETTER(证据:成熟样本 n=921),建议更换特征或模型档"
+        "NOT_BETTER(证据:成熟样本 n=1267),建议更换特征或模型档"
       ]
     },
     "TRD04": {
       "name": "1小时买入滑点",
       "scenario_display": "全部市场·滑点",
       "bet_type_hint": "本场景押什么:押交易条件 —— 赌的是这个市场的交易条件(成交量/滑点/能否成交),不押价格也不押结果。",
-      "pipeline_pass_days": 4,
+      "pipeline_pass_days": 5,
       "daily_statuses": {
         "2026-07-13": "PIPELINE_PASS",
         "2026-07-14": "PIPELINE_PASS",
         "2026-07-15": "PIPELINE_PASS",
         "2026-07-16": "PIPELINE_PASS",
-        "2026-07-17": "MISSING",
+        "2026-07-17": "PIPELINE_PASS",
         "2026-07-18": "MISSING",
-        "2026-07-19": "MISSING"
+        "2026-07-19": "PIPELINE_FAIL"
       },
       "effect_status": "BETTER_THAN_BASELINE",
       "n_matured": {
-        "target_buy_slippage_1000_1h": 1667
+        "target_buy_slippage_1000_1h": 2143
       },
       "n_pending": {
-        "target_buy_slippage_1000_1h": 253
+        "target_buy_slippage_1000_1h": 330
       },
       "data_quality": {
-        "days_with_report": 4,
-        "avg_snapshot_rows": 51242.25,
-        "total_api_errors": 0,
-        "latest_universe_size": 2673
+        "days_with_report": 6,
+        "avg_snapshot_rows": 86218.66666666667,
+        "total_api_errors": 1,
+        "latest_universe_size": 4424
       },
       "recommendation": "continue",
       "reasons": [
@@ -1388,28 +1388,28 @@
       "name": "1小时可交易性",
       "scenario_display": "全部市场·可交易性",
       "bet_type_hint": "本场景押什么:押交易条件 —— 赌的是这个市场的交易条件(成交量/滑点/能否成交),不押价格也不押结果。",
-      "pipeline_pass_days": 4,
+      "pipeline_pass_days": 5,
       "daily_statuses": {
         "2026-07-13": "PIPELINE_PASS",
         "2026-07-14": "PIPELINE_PASS",
         "2026-07-15": "PIPELINE_PASS",
         "2026-07-16": "PIPELINE_PASS",
-        "2026-07-17": "MISSING",
+        "2026-07-17": "PIPELINE_PASS",
         "2026-07-18": "MISSING",
-        "2026-07-19": "MISSING"
+        "2026-07-19": "PIPELINE_FAIL"
       },
       "effect_status": "BETTER_THAN_BASELINE",
       "n_matured": {
-        "target_tradable_1h": 1714
+        "target_tradable_1h": 2203
       },
       "n_pending": {
-        "target_tradable_1h": 206
+        "target_tradable_1h": 270
       },
       "data_quality": {
-        "days_with_report": 4,
-        "avg_snapshot_rows": 51242.25,
-        "total_api_errors": 0,
-        "latest_universe_size": 2673
+        "days_with_report": 6,
+        "avg_snapshot_rows": 86218.66666666667,
+        "total_api_errors": 1,
+        "latest_universe_size": 4424
       },
       "recommendation": "continue",
       "reasons": [
