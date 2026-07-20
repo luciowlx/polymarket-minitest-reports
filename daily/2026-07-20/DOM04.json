@@ -4,8 +4,8 @@
   "scenario_display": "选举市场",
   "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓;押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
   "run_date": "2026-07-20",
-  "generated_at": "2026-07-20T02:17:52.515155+00:00",
-  "run_id": "a71f8066-b324-41a8-8968-f16d49223dbb",
+  "generated_at": "2026-07-20T02:30:34.821958+00:00",
+  "run_id": "4f6e2595-8a1d-449e-83d0-475ec9f177fd",
   "pipeline_status": "PIPELINE_PASS",
   "effect_status": "INCONCLUSIVE",
   "targets": {
@@ -14,11 +14,13 @@
       "n_train": 4834,
       "n_predict": 73,
       "status": "ok",
-      "notes": [],
+      "notes": [
+        "idempotent_skip"
+      ],
       "limix": {
         "task_id": "a8724fbb8309e03c65a38a8217932113",
         "model_type": "LIMIX_7M",
-        "elapsed_s": 5.374,
+        "elapsed_s": 0.0,
         "error": null
       },
       "matured_metrics": {
@@ -80,11 +82,13 @@
       "n_train": 4834,
       "n_predict": 73,
       "status": "ok",
-      "notes": [],
+      "notes": [
+        "idempotent_skip"
+      ],
       "limix": {
         "task_id": "62ca5375805e8a4bc0bf8ad2a252a85a",
         "model_type": "LIMIX_7M",
-        "elapsed_s": 5.847,
+        "elapsed_s": 0.0,
         "error": null
       },
       "matured_metrics": {
@@ -142,7 +146,7 @@
       "n_predict": 0,
       "status": "INSUFFICIENT_DATA",
       "notes": [
-        "train_rows=0<MIN_TRAIN_ROWS(30)"
+        "idempotent_skip"
       ],
       "limix": {
         "task_id": "",
@@ -181,11 +185,11 @@
     }
   },
   "data_quality": {
-    "snapshot_rows": 19841,
-    "freshest_snapshot": "2026-07-20T02:00:40.852750+00:00",
+    "snapshot_rows": 19912,
+    "freshest_snapshot": "2026-07-20T02:15:57.129340+00:00",
     "missing_rate": {
-      "mid_price": 0.1521,
-      "spread": 0.1521,
+      "mid_price": 0.1483,
+      "spread": 0.1483,
       "bid_depth": 0.0076,
       "ask_depth": 0.0076,
       "orderbook_imbalance": 0.0076,
