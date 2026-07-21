@@ -4,21 +4,21 @@
   "scenario_display": "AI产品发布市场",
   "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓;押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
   "run_date": "2026-07-21",
-  "generated_at": "2026-07-21T04:34:27.186964+00:00",
-  "run_id": "21954c55-d4b6-4df4-9f19-d35218591fcb",
+  "generated_at": "2026-07-21T07:43:26.124974+00:00",
+  "run_id": "c9bca65a-d073-42a5-8b60-aea5d414f489",
   "pipeline_status": "PIPELINE_FAIL",
   "effect_status": "NOT_BETTER",
   "targets": {
     "target_up_24h": {
       "task": "classification",
       "n_train": 5000,
-      "n_predict": 60,
+      "n_predict": 61,
       "status": "PIPELINE_FAIL",
       "notes": [],
       "limix": {
         "task_id": "",
         "model_type": "LIMIX_7M",
-        "elapsed_s": 15.767,
+        "elapsed_s": 61.234,
         "error": "LimixError: upload failed after retries: limix code=4501 message=未知错误 body={'code': 4501, 'message': '未知错误'}"
       },
       "matured_metrics": {
@@ -78,13 +78,13 @@
     "target_delta_24h": {
       "task": "regression",
       "n_train": 5000,
-      "n_predict": 60,
+      "n_predict": 61,
       "status": "PIPELINE_FAIL",
       "notes": [],
       "limix": {
         "task_id": "",
         "model_type": "LIMIX_7M",
-        "elapsed_s": 14.66,
+        "elapsed_s": 44.579,
         "error": "LimixError: upload failed after retries: limix code=4501 message=未知错误 body={'code': 4501, 'message': '未知错误'}"
       },
       "matured_metrics": {
@@ -181,8 +181,8 @@
     }
   },
   "data_quality": {
-    "snapshot_rows": 22487,
-    "freshest_snapshot": "2026-07-21T04:16:31.740127+00:00",
+    "snapshot_rows": 23207,
+    "freshest_snapshot": "2026-07-21T07:18:52.297187+00:00",
     "missing_rate": {
       "mid_price": 0.211,
       "spread": 0.211,

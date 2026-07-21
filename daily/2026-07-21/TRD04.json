@@ -4,21 +4,21 @@
   "scenario_display": "全部市场·滑点",
   "bet_type_hint": "本场景押什么:押交易条件 —— 赌的是这个市场的交易条件(成交量/滑点/能否成交),不押价格也不押结果。",
   "run_date": "2026-07-21",
-  "generated_at": "2026-07-21T04:35:15.426254+00:00",
-  "run_id": "21954c55-d4b6-4df4-9f19-d35218591fcb",
+  "generated_at": "2026-07-21T07:44:44.278918+00:00",
+  "run_id": "c9bca65a-d073-42a5-8b60-aea5d414f489",
   "pipeline_status": "PIPELINE_FAIL",
   "effect_status": "BETTER_THAN_BASELINE",
   "targets": {
     "target_buy_slippage_1000_1h": {
       "task": "regression",
       "n_train": 5000,
-      "n_predict": 589,
+      "n_predict": 602,
       "status": "PIPELINE_FAIL",
       "notes": [],
       "limix": {
         "task_id": "",
         "model_type": "LIMIX_7M",
-        "elapsed_s": 14.209,
+        "elapsed_s": 55.53,
         "error": "LimixError: upload failed after retries: limix code=4501 message=未知错误 body={'code': 4501, 'message': '未知错误'}"
       },
       "matured_metrics": {
@@ -30,69 +30,69 @@
           "direction_accuracy": 0.978675
         },
         "base_rate": {
-          "n": 3110,
-          "mae": 0.043263,
-          "rmse": 0.074112,
-          "r2": -0.002076,
-          "direction_accuracy": 0.796141
+          "n": 3593,
+          "mae": 0.042718,
+          "rmse": 0.07311,
+          "r2": -0.001747,
+          "direction_accuracy": 0.801559
         },
         "price_unchanged": {
-          "n": 3110,
-          "mae": 0.037494,
-          "rmse": 0.082988,
-          "r2": -0.256482,
-          "direction_accuracy": 0.203859
+          "n": 3593,
+          "mae": 0.03718,
+          "rmse": 0.081964,
+          "r2": -0.259067,
+          "direction_accuracy": 0.198441
         },
         "mean_reversion": {
-          "n": 3110,
-          "mae": 0.038587,
-          "rmse": 0.083631,
-          "r2": -0.276025,
-          "direction_accuracy": 0.415434
+          "n": 3593,
+          "mae": 0.038419,
+          "rmse": 0.082604,
+          "r2": -0.278817,
+          "direction_accuracy": 0.401614
         },
         "momentum": {
-          "n": 3110,
-          "mae": 0.039161,
-          "rmse": 0.084425,
-          "r2": -0.300381,
-          "direction_accuracy": 0.436013
+          "n": 3593,
+          "mae": 0.0388,
+          "rmse": 0.083308,
+          "r2": -0.300705,
+          "direction_accuracy": 0.435847
         },
-        "n_matured": 3110
+        "n_matured": 3593
       },
       "pending_labels": 401,
       "display": "押1小时买入滑点"
     }
   },
   "data_quality": {
-    "snapshot_rows": 190226,
-    "freshest_snapshot": "2026-07-21T04:16:55.320013+00:00",
+    "snapshot_rows": 196636,
+    "freshest_snapshot": "2026-07-21T07:19:25.932730+00:00",
     "missing_rate": {
-      "mid_price": 0.4655,
-      "spread": 0.4655,
-      "bid_depth": 0.0387,
-      "ask_depth": 0.0387,
-      "orderbook_imbalance": 0.1089,
+      "mid_price": 0.4683,
+      "spread": 0.4683,
+      "bid_depth": 0.0381,
+      "ask_depth": 0.0381,
+      "orderbook_imbalance": 0.109,
       "volume_1h": 0.0011,
-      "volume_24h": 0.2805,
+      "volume_24h": 0.2821,
       "trade_count_1h": 0.0,
-      "return_1h": 0.2646,
-      "return_6h": 0.5142,
-      "return_24h": 0.5842,
-      "volatility": 0.5118,
-      "liquidity": 0.0734,
+      "return_1h": 0.2679,
+      "return_6h": 0.5217,
+      "return_24h": 0.5911,
+      "volatility": 0.5191,
+      "liquidity": 0.0747,
       "hours_to_resolution": 0.0,
-      "buy_slippage_1000_now": 0.2663,
-      "fill_ratio_1000": 0.0387,
+      "buy_slippage_1000_now": 0.2681,
+      "fill_ratio_1000": 0.0381,
       "tradable_now": 0.0,
-      "threshold_num": 0.8981,
-      "btc_spot": 0.0061,
-      "eth_spot": 0.0061,
-      "threshold_ratio": 0.9179
+      "threshold_num": 0.9003,
+      "btc_spot": 0.0059,
+      "eth_spot": 0.0059,
+      "threshold_ratio": 0.9195
     },
     "api_errors": [
       "target_buy_slippage_1000_1h:limix: LimixError: upload failed after retries: limix code=4501 message=未知错误 body={'code': 4501, 'message': '未知错误'}"
     ]
   },
-  "universe_size": 5272,
+  "universe_size": 5405,
   "primary_metric": "legacy"
 }

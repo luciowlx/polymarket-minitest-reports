@@ -4,21 +4,21 @@
   "scenario_display": "全部市场·1小时",
   "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓。",
   "run_date": "2026-07-21",
-  "generated_at": "2026-07-21T04:34:48.826641+00:00",
-  "run_id": "21954c55-d4b6-4df4-9f19-d35218591fcb",
+  "generated_at": "2026-07-21T07:44:01.213808+00:00",
+  "run_id": "c9bca65a-d073-42a5-8b60-aea5d414f489",
   "pipeline_status": "PIPELINE_FAIL",
   "effect_status": "NOT_BETTER",
   "targets": {
     "target_up_1h": {
       "task": "classification",
       "n_train": 5000,
-      "n_predict": 589,
+      "n_predict": 602,
       "status": "PIPELINE_FAIL",
       "notes": [],
       "limix": {
         "task_id": "",
         "model_type": "LIMIX_7M",
-        "elapsed_s": 14.837,
+        "elapsed_s": 45.289,
         "error": "LimixError: upload failed after retries: limix code=4501 message=未知错误 body={'code': 4501, 'message': '未知错误'}"
       },
       "matured_metrics": {
@@ -31,38 +31,38 @@
           "macro_f1": 0.477412
         },
         "base_rate": {
-          "n": 2853,
-          "logloss": 0.694663,
-          "brier": 0.374561,
-          "auc": 0.498111,
+          "n": 3295,
+          "logloss": 0.688315,
+          "brier": 0.370323,
+          "auc": 0.493563,
           "balanced_accuracy": 0.333333,
-          "macro_f1": 0.291814
+          "macro_f1": 0.292639
         },
         "price_unchanged": {
-          "n": 2853,
-          "logloss": 0.745639,
-          "brier": 0.391586,
+          "n": 3295,
+          "logloss": 0.734312,
+          "brier": 0.384924,
           "auc": 0.5,
           "balanced_accuracy": 0.333333,
-          "macro_f1": 0.291814
+          "macro_f1": 0.292639
         },
         "mean_reversion": {
-          "n": 2853,
-          "logloss": 0.667203,
-          "brier": 0.363878,
-          "auc": 0.628249,
+          "n": 3295,
+          "logloss": 0.658362,
+          "brier": 0.358595,
+          "auc": 0.635231,
           "balanced_accuracy": 0.333333,
-          "macro_f1": 0.291814
+          "macro_f1": 0.292639
         },
         "momentum": {
-          "n": 2853,
-          "logloss": 0.663703,
-          "brier": 0.359826,
-          "auc": 0.633834,
+          "n": 3295,
+          "logloss": 0.656808,
+          "brier": 0.355754,
+          "auc": 0.630082,
           "balanced_accuracy": 0.333333,
-          "macro_f1": 0.291814
+          "macro_f1": 0.292639
         },
-        "n_matured": 2853
+        "n_matured": 3295
       },
       "pending_labels": 614,
       "display": "押盘口1小时涨跌",
@@ -77,35 +77,35 @@
     }
   },
   "data_quality": {
-    "snapshot_rows": 190226,
-    "freshest_snapshot": "2026-07-21T04:16:55.320013+00:00",
+    "snapshot_rows": 196636,
+    "freshest_snapshot": "2026-07-21T07:19:25.932730+00:00",
     "missing_rate": {
-      "mid_price": 0.4655,
-      "spread": 0.4655,
-      "bid_depth": 0.0387,
-      "ask_depth": 0.0387,
-      "orderbook_imbalance": 0.1089,
+      "mid_price": 0.4683,
+      "spread": 0.4683,
+      "bid_depth": 0.0381,
+      "ask_depth": 0.0381,
+      "orderbook_imbalance": 0.109,
       "volume_1h": 0.0011,
-      "volume_24h": 0.2805,
+      "volume_24h": 0.2821,
       "trade_count_1h": 0.0,
-      "return_1h": 0.2646,
-      "return_6h": 0.5142,
-      "return_24h": 0.5842,
-      "volatility": 0.5118,
-      "liquidity": 0.0734,
+      "return_1h": 0.2679,
+      "return_6h": 0.5217,
+      "return_24h": 0.5911,
+      "volatility": 0.5191,
+      "liquidity": 0.0747,
       "hours_to_resolution": 0.0,
-      "buy_slippage_1000_now": 0.2663,
-      "fill_ratio_1000": 0.0387,
+      "buy_slippage_1000_now": 0.2681,
+      "fill_ratio_1000": 0.0381,
       "tradable_now": 0.0,
-      "threshold_num": 0.8981,
-      "btc_spot": 0.0061,
-      "eth_spot": 0.0061,
-      "threshold_ratio": 0.9179
+      "threshold_num": 0.9003,
+      "btc_spot": 0.0059,
+      "eth_spot": 0.0059,
+      "threshold_ratio": 0.9195
     },
     "api_errors": [
       "target_up_1h:limix: LimixError: upload failed after retries: limix code=4501 message=未知错误 body={'code': 4501, 'message': '未知错误'}"
     ]
   },
-  "universe_size": 5272,
+  "universe_size": 5405,
   "primary_metric": "return_on_bankroll"
 }
