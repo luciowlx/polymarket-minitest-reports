@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-21T10:15:35.235255+00:00",
+  "generated_at": "2026-07-21T11:15:37.651941+00:00",
   "scenario_id": "DOM01",
   "model": "limix",
   "bankroll": 10000.0,
@@ -1921,7 +1921,7 @@
   "eth_comparison": {
     "status": "OK",
     "n_trades": 30,
-    "n_skipped": 462,
+    "n_skipped": 553,
     "total_pnl": 132.254936,
     "final_return_pct": 1.3225,
     "trades": [

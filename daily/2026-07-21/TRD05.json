@@ -4,22 +4,22 @@
   "scenario_display": "全部市场·可交易性",
   "bet_type_hint": "本场景押什么:押交易条件 —— 赌的是这个市场的交易条件(成交量/滑点/能否成交),不押价格也不押结果。",
   "run_date": "2026-07-21",
-  "generated_at": "2026-07-21T07:44:50.450483+00:00",
-  "run_id": "c9bca65a-d073-42a5-8b60-aea5d414f489",
-  "pipeline_status": "PIPELINE_FAIL",
+  "generated_at": "2026-07-21T10:34:06.949371+00:00",
+  "run_id": "b12b216b-f5a1-4797-b730-0a1bad29946f",
+  "pipeline_status": "PIPELINE_PASS",
   "effect_status": "BETTER_THAN_BASELINE",
   "targets": {
     "target_tradable_1h": {
       "task": "classification",
       "n_train": 5000,
-      "n_predict": 602,
-      "status": "PIPELINE_FAIL",
+      "n_predict": 548,
+      "status": "ok",
       "notes": [],
       "limix": {
-        "task_id": "",
+        "task_id": "1b4f0c0867129a4acd78e8d62776f4c9",
         "model_type": "LIMIX_7M",
-        "elapsed_s": 42.475,
-        "error": "LimixError: upload failed after retries: limix code=4501 message=未知错误 body={'code': 4501, 'message': '未知错误'}"
+        "elapsed_s": 6.012,
+        "error": null
       },
       "matured_metrics": {
         "limix": {
@@ -31,73 +31,71 @@
           "macro_f1": 0.843846
         },
         "base_rate": {
-          "n": 3698,
-          "logloss": 0.580269,
-          "brier": 0.392251,
-          "auc": 0.583574,
+          "n": 4199,
+          "logloss": 0.585877,
+          "brier": 0.396871,
+          "auc": 0.558727,
           "balanced_accuracy": 0.5,
-          "macro_f1": 0.420739
+          "macro_f1": 0.419867
         },
         "price_unchanged": {
-          "n": 3698,
-          "logloss": 0.706656,
-          "brier": 0.457858,
+          "n": 4199,
+          "logloss": 0.712358,
+          "brier": 0.46201,
           "auc": 0.5,
           "balanced_accuracy": 0.5,
-          "macro_f1": 0.420739
+          "macro_f1": 0.419867
         },
         "mean_reversion": {
-          "n": 3698,
-          "logloss": 0.574606,
-          "brier": 0.387432,
-          "auc": 0.610204,
-          "balanced_accuracy": 0.52041,
-          "macro_f1": 0.484429
+          "n": 4199,
+          "logloss": 0.581124,
+          "brier": 0.392771,
+          "auc": 0.581611,
+          "balanced_accuracy": 0.517576,
+          "macro_f1": 0.476603
         },
         "momentum": {
-          "n": 3698,
-          "logloss": 0.575372,
-          "brier": 0.388124,
-          "auc": 0.609698,
-          "balanced_accuracy": 0.52041,
-          "macro_f1": 0.484429
+          "n": 4199,
+          "logloss": 0.581287,
+          "brier": 0.393028,
+          "auc": 0.58456,
+          "balanced_accuracy": 0.517576,
+          "macro_f1": 0.476603
         },
-        "n_matured": 3698
+        "n_matured": 4199
       },
-      "pending_labels": 326,
+      "pending_labels": 874,
       "display": "押1小时是否可交易"
     }
   },
   "data_quality": {
-    "snapshot_rows": 196636,
-    "freshest_snapshot": "2026-07-21T07:19:25.932730+00:00",
+    "snapshot_rows": 201517,
+    "freshest_snapshot": "2026-07-21T10:17:21.142903+00:00",
     "missing_rate": {
-      "mid_price": 0.4683,
-      "spread": 0.4683,
-      "bid_depth": 0.0381,
-      "ask_depth": 0.0381,
-      "orderbook_imbalance": 0.109,
+      "mid_price": 0.4662,
+      "spread": 0.4662,
+      "bid_depth": 0.0379,
+      "ask_depth": 0.0379,
+      "orderbook_imbalance": 0.1088,
       "volume_1h": 0.0011,
-      "volume_24h": 0.2821,
+      "volume_24h": 0.2814,
       "trade_count_1h": 0.0,
-      "return_1h": 0.2679,
-      "return_6h": 0.5217,
-      "return_24h": 0.5911,
-      "volatility": 0.5191,
-      "liquidity": 0.0747,
+      "return_1h": 0.2653,
+      "return_6h": 0.5243,
+      "return_24h": 0.595,
+      "volatility": 0.5218,
+      "liquidity": 0.0739,
       "hours_to_resolution": 0.0,
-      "buy_slippage_1000_now": 0.2681,
-      "fill_ratio_1000": 0.0381,
+      "buy_slippage_1000_now": 0.2672,
+      "fill_ratio_1000": 0.0379,
       "tradable_now": 0.0,
-      "threshold_num": 0.9003,
-      "btc_spot": 0.0059,
-      "eth_spot": 0.0059,
-      "threshold_ratio": 0.9195
+      "threshold_num": 0.9011,
+      "btc_spot": 0.0058,
+      "eth_spot": 0.0058,
+      "threshold_ratio": 0.9199
     },
-    "api_errors": [
-      "target_tradable_1h:limix: LimixError: upload failed after retries: limix code=4501 message=未知错误 body={'code': 4501, 'message': '未知错误'}"
-    ]
+    "api_errors": []
   },
-  "universe_size": 5405,
+  "universe_size": 5508,
   "primary_metric": "legacy"
 }

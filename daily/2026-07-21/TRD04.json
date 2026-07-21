@@ -4,22 +4,22 @@
   "scenario_display": "全部市场·滑点",
   "bet_type_hint": "本场景押什么:押交易条件 —— 赌的是这个市场的交易条件(成交量/滑点/能否成交),不押价格也不押结果。",
   "run_date": "2026-07-21",
-  "generated_at": "2026-07-21T07:44:44.278918+00:00",
-  "run_id": "c9bca65a-d073-42a5-8b60-aea5d414f489",
-  "pipeline_status": "PIPELINE_FAIL",
+  "generated_at": "2026-07-21T10:34:01.480803+00:00",
+  "run_id": "b12b216b-f5a1-4797-b730-0a1bad29946f",
+  "pipeline_status": "PIPELINE_PASS",
   "effect_status": "BETTER_THAN_BASELINE",
   "targets": {
     "target_buy_slippage_1000_1h": {
       "task": "regression",
       "n_train": 5000,
-      "n_predict": 602,
-      "status": "PIPELINE_FAIL",
+      "n_predict": 548,
+      "status": "ok",
       "notes": [],
       "limix": {
-        "task_id": "",
+        "task_id": "e36d37a7f3e9d902572acd6ba5e5c0dd",
         "model_type": "LIMIX_7M",
-        "elapsed_s": 55.53,
-        "error": "LimixError: upload failed after retries: limix code=4501 message=未知错误 body={'code': 4501, 'message': '未知错误'}"
+        "elapsed_s": 6.307,
+        "error": null
       },
       "matured_metrics": {
         "limix": {
@@ -30,69 +30,67 @@
           "direction_accuracy": 0.978675
         },
         "base_rate": {
-          "n": 3593,
-          "mae": 0.042718,
-          "rmse": 0.07311,
-          "r2": -0.001747,
-          "direction_accuracy": 0.801559
+          "n": 4079,
+          "mae": 0.04181,
+          "rmse": 0.071003,
+          "r2": -0.000818,
+          "direction_accuracy": 0.803383
         },
         "price_unchanged": {
-          "n": 3593,
-          "mae": 0.03718,
-          "rmse": 0.081964,
-          "r2": -0.259067,
-          "direction_accuracy": 0.198441
+          "n": 4079,
+          "mae": 0.036356,
+          "rmse": 0.079744,
+          "r2": -0.262397,
+          "direction_accuracy": 0.196617
         },
         "mean_reversion": {
-          "n": 3593,
-          "mae": 0.038419,
-          "rmse": 0.082604,
-          "r2": -0.278817,
-          "direction_accuracy": 0.401614
+          "n": 4079,
+          "mae": 0.037806,
+          "rmse": 0.080567,
+          "r2": -0.288567,
+          "direction_accuracy": 0.390537
         },
         "momentum": {
-          "n": 3593,
-          "mae": 0.0388,
-          "rmse": 0.083308,
-          "r2": -0.300705,
-          "direction_accuracy": 0.435847
+          "n": 4079,
+          "mae": 0.03797,
+          "rmse": 0.081118,
+          "r2": -0.306267,
+          "direction_accuracy": 0.443736
         },
-        "n_matured": 3593
+        "n_matured": 4079
       },
-      "pending_labels": 401,
+      "pending_labels": 949,
       "display": "押1小时买入滑点"
     }
   },
   "data_quality": {
-    "snapshot_rows": 196636,
-    "freshest_snapshot": "2026-07-21T07:19:25.932730+00:00",
+    "snapshot_rows": 201517,
+    "freshest_snapshot": "2026-07-21T10:17:21.142903+00:00",
     "missing_rate": {
-      "mid_price": 0.4683,
-      "spread": 0.4683,
-      "bid_depth": 0.0381,
-      "ask_depth": 0.0381,
-      "orderbook_imbalance": 0.109,
+      "mid_price": 0.4662,
+      "spread": 0.4662,
+      "bid_depth": 0.0379,
+      "ask_depth": 0.0379,
+      "orderbook_imbalance": 0.1088,
       "volume_1h": 0.0011,
-      "volume_24h": 0.2821,
+      "volume_24h": 0.2814,
       "trade_count_1h": 0.0,
-      "return_1h": 0.2679,
-      "return_6h": 0.5217,
-      "return_24h": 0.5911,
-      "volatility": 0.5191,
-      "liquidity": 0.0747,
+      "return_1h": 0.2653,
+      "return_6h": 0.5243,
+      "return_24h": 0.595,
+      "volatility": 0.5218,
+      "liquidity": 0.0739,
       "hours_to_resolution": 0.0,
-      "buy_slippage_1000_now": 0.2681,
-      "fill_ratio_1000": 0.0381,
+      "buy_slippage_1000_now": 0.2672,
+      "fill_ratio_1000": 0.0379,
       "tradable_now": 0.0,
-      "threshold_num": 0.9003,
-      "btc_spot": 0.0059,
-      "eth_spot": 0.0059,
-      "threshold_ratio": 0.9195
+      "threshold_num": 0.9011,
+      "btc_spot": 0.0058,
+      "eth_spot": 0.0058,
+      "threshold_ratio": 0.9199
     },
-    "api_errors": [
-      "target_buy_slippage_1000_1h:limix: LimixError: upload failed after retries: limix code=4501 message=未知错误 body={'code': 4501, 'message': '未知错误'}"
-    ]
+    "api_errors": []
   },
-  "universe_size": 5405,
+  "universe_size": 5508,
   "primary_metric": "legacy"
 }

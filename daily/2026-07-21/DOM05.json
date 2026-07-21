@@ -4,22 +4,22 @@
   "scenario_display": "地缘政治市场",
   "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓;押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
   "run_date": "2026-07-21",
-  "generated_at": "2026-07-21T07:43:52.837384+00:00",
-  "run_id": "c9bca65a-d073-42a5-8b60-aea5d414f489",
-  "pipeline_status": "PIPELINE_FAIL",
+  "generated_at": "2026-07-21T10:33:04.898964+00:00",
+  "run_id": "b12b216b-f5a1-4797-b730-0a1bad29946f",
+  "pipeline_status": "PIPELINE_PASS",
   "effect_status": "NOT_BETTER",
   "targets": {
     "target_up_24h": {
       "task": "classification",
       "n_train": 5000,
-      "n_predict": 62,
-      "status": "PIPELINE_FAIL",
+      "n_predict": 61,
+      "status": "ok",
       "notes": [],
       "limix": {
-        "task_id": "",
+        "task_id": "ec069d1904bc40921d5d89fb68fcf973",
         "model_type": "LIMIX_7M",
-        "elapsed_s": 39.794,
-        "error": "LimixError: upload failed after retries: limix code=4501 message=未知错误 body={'code': 4501, 'message': '未知错误'}"
+        "elapsed_s": 5.884,
+        "error": null
       },
       "matured_metrics": {
         "limix": {
@@ -64,7 +64,7 @@
         },
         "n_matured": 125
       },
-      "pending_labels": 183,
+      "pending_labels": 244,
       "display": "押盘口24小时涨跌",
       "simtrade": {
         "n_trades": 72,
@@ -78,14 +78,14 @@
     "target_delta_24h": {
       "task": "regression",
       "n_train": 5000,
-      "n_predict": 62,
-      "status": "PIPELINE_FAIL",
+      "n_predict": 61,
+      "status": "ok",
       "notes": [],
       "limix": {
-        "task_id": "",
+        "task_id": "214a3a3a369051e8eb68b9e0ea012ffa",
         "model_type": "LIMIX_7M",
-        "elapsed_s": 50.368,
-        "error": "LimixError: upload failed after retries: limix code=4501 message=未知错误 body={'code': 4501, 'message': '未知错误'}"
+        "elapsed_s": 5.859,
+        "error": null
       },
       "matured_metrics": {
         "limix": {
@@ -125,7 +125,7 @@
         },
         "n_matured": 125
       },
-      "pending_labels": 183,
+      "pending_labels": 244,
       "display": "押盘口24小时涨幅",
       "simtrade": {
         "n_trades": 47,
@@ -181,8 +181,8 @@
     }
   },
   "data_quality": {
-    "snapshot_rows": 23220,
-    "freshest_snapshot": "2026-07-21T07:18:46.727476+00:00",
+    "snapshot_rows": 23760,
+    "freshest_snapshot": "2026-07-21T10:17:00.156585+00:00",
     "missing_rate": {
       "mid_price": 0.1307,
       "spread": 0.1307,
@@ -206,10 +206,7 @@
       "eth_spot": 0.0352,
       "threshold_ratio": 1.0
     },
-    "api_errors": [
-      "target_up_24h:limix: LimixError: upload failed after retries: limix code=4501 message=未知错误 body={'code': 4501, 'message': '未知错误'}",
-      "target_delta_24h:limix: LimixError: upload failed after retries: limix code=4501 message=未知错误 body={'code': 4501, 'message': '未知错误'}"
-    ]
+    "api_errors": []
   },
   "universe_size": 199,
   "primary_metric": "return_on_bankroll"

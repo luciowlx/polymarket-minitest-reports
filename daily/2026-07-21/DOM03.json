@@ -4,22 +4,22 @@
   "scenario_display": "美联储/CPI宏观市场",
   "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓;押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
   "run_date": "2026-07-21",
-  "generated_at": "2026-07-21T07:43:34.937701+00:00",
-  "run_id": "c9bca65a-d073-42a5-8b60-aea5d414f489",
-  "pipeline_status": "PIPELINE_FAIL",
+  "generated_at": "2026-07-21T10:32:48.970036+00:00",
+  "run_id": "b12b216b-f5a1-4797-b730-0a1bad29946f",
+  "pipeline_status": "PIPELINE_PASS",
   "effect_status": "NOT_BETTER",
   "targets": {
     "target_up_24h": {
       "task": "classification",
       "n_train": 5000,
-      "n_predict": 60,
-      "status": "PIPELINE_FAIL",
+      "n_predict": 61,
+      "status": "ok",
       "notes": [],
       "limix": {
-        "task_id": "",
+        "task_id": "c717a2a87dbb238a72b12648a9747908",
         "model_type": "LIMIX_7M",
-        "elapsed_s": 41.272,
-        "error": "LimixError: upload failed after retries: limix code=4501 message=未知错误 body={'code': 4501, 'message': '未知错误'}"
+        "elapsed_s": 5.833,
+        "error": null
       },
       "matured_metrics": {
         "limix": {
@@ -64,7 +64,7 @@
         },
         "n_matured": 125
       },
-      "pending_labels": 177,
+      "pending_labels": 238,
       "display": "押盘口24小时涨跌",
       "simtrade": {
         "n_trades": 48,
@@ -78,14 +78,14 @@
     "target_delta_24h": {
       "task": "regression",
       "n_train": 5000,
-      "n_predict": 60,
-      "status": "PIPELINE_FAIL",
+      "n_predict": 61,
+      "status": "ok",
       "notes": [],
       "limix": {
-        "task_id": "",
+        "task_id": "b781df547d77cc5dc8334fb161910042",
         "model_type": "LIMIX_7M",
-        "elapsed_s": 50.039,
-        "error": "LimixError: upload failed after retries: limix code=4501 message=未知错误 body={'code': 4501, 'message': '未知错误'}"
+        "elapsed_s": 6.067,
+        "error": null
       },
       "matured_metrics": {
         "limix": {
@@ -125,7 +125,7 @@
         },
         "n_matured": 125
       },
-      "pending_labels": 177,
+      "pending_labels": 238,
       "display": "押盘口24小时涨幅",
       "simtrade": {
         "n_trades": 42,
@@ -181,36 +181,33 @@
     }
   },
   "data_quality": {
-    "snapshot_rows": 23076,
-    "freshest_snapshot": "2026-07-21T07:19:00.776989+00:00",
+    "snapshot_rows": 23616,
+    "freshest_snapshot": "2026-07-21T10:17:04.034526+00:00",
     "missing_rate": {
-      "mid_price": 0.1872,
-      "spread": 0.1872,
-      "bid_depth": 0.0091,
-      "ask_depth": 0.0091,
-      "orderbook_imbalance": 0.0091,
-      "volume_1h": 0.0046,
-      "volume_24h": 0.0365,
+      "mid_price": 0.183,
+      "spread": 0.183,
+      "bid_depth": 0.0089,
+      "ask_depth": 0.0089,
+      "orderbook_imbalance": 0.0089,
+      "volume_1h": 0.0045,
+      "volume_24h": 0.0357,
       "trade_count_1h": 0.0,
-      "return_1h": 0.0046,
-      "return_6h": 0.0091,
-      "return_24h": 0.032,
-      "volatility": 0.0046,
+      "return_1h": 0.0045,
+      "return_6h": 0.0045,
+      "return_24h": 0.0536,
+      "volatility": 0.0045,
       "liquidity": 0.0,
       "hours_to_resolution": 0.0,
-      "buy_slippage_1000_now": 0.0274,
-      "fill_ratio_1000": 0.0091,
+      "buy_slippage_1000_now": 0.0268,
+      "fill_ratio_1000": 0.0089,
       "tradable_now": 0.0,
-      "threshold_num": 0.9452,
-      "btc_spot": 0.0502,
-      "eth_spot": 0.0502,
+      "threshold_num": 0.9464,
+      "btc_spot": 0.0491,
+      "eth_spot": 0.0491,
       "threshold_ratio": 1.0
     },
-    "api_errors": [
-      "target_up_24h:limix: LimixError: upload failed after retries: limix code=4501 message=未知错误 body={'code': 4501, 'message': '未知错误'}",
-      "target_delta_24h:limix: LimixError: upload failed after retries: limix code=4501 message=未知错误 body={'code': 4501, 'message': '未知错误'}"
-    ]
+    "api_errors": []
   },
-  "universe_size": 219,
+  "universe_size": 224,
   "primary_metric": "return_on_bankroll"
 }
