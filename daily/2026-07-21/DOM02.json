@@ -1,0 +1,216 @@
+{
+  "scenario_id": "DOM02",
+  "name": "AI 模型发布",
+  "scenario_display": "AI产品发布市场",
+  "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓;押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
+  "run_date": "2026-07-21",
+  "generated_at": "2026-07-21T04:34:27.186964+00:00",
+  "run_id": "21954c55-d4b6-4df4-9f19-d35218591fcb",
+  "pipeline_status": "PIPELINE_FAIL",
+  "effect_status": "NOT_BETTER",
+  "targets": {
+    "target_up_24h": {
+      "task": "classification",
+      "n_train": 5000,
+      "n_predict": 60,
+      "status": "PIPELINE_FAIL",
+      "notes": [],
+      "limix": {
+        "task_id": "",
+        "model_type": "LIMIX_7M",
+        "elapsed_s": 15.767,
+        "error": "LimixError: upload failed after retries: limix code=4501 message=未知错误 body={'code': 4501, 'message': '未知错误'}"
+      },
+      "matured_metrics": {
+        "limix": {
+          "n": 84,
+          "logloss": 0.909198,
+          "brier": 0.586737,
+          "auc": 0.723054,
+          "balanced_accuracy": 0.510115,
+          "macro_f1": 0.509829
+        },
+        "base_rate": {
+          "n": 84,
+          "logloss": 1.113056,
+          "brier": 0.675059,
+          "auc": 0.482031,
+          "balanced_accuracy": 0.355556,
+          "macro_f1": 0.279942
+        },
+        "price_unchanged": {
+          "n": 84,
+          "logloss": 1.963457,
+          "brier": 1.107857,
+          "auc": 0.5,
+          "balanced_accuracy": 0.333333,
+          "macro_f1": 0.175439
+        },
+        "mean_reversion": {
+          "n": 84,
+          "logloss": 1.0908,
+          "brier": 0.659728,
+          "auc": 0.549066,
+          "balanced_accuracy": 0.434176,
+          "macro_f1": 0.423817
+        },
+        "momentum": {
+          "n": 84,
+          "logloss": 1.126258,
+          "brier": 0.681788,
+          "auc": 0.487168,
+          "balanced_accuracy": 0.2741,
+          "macro_f1": 0.250472
+        },
+        "n_matured": 84
+      },
+      "pending_labels": 221,
+      "display": "押盘口24小时涨跌",
+      "simtrade": {
+        "n_trades": 39,
+        "total_pnl": 175.10123525195957,
+        "return_on_bankroll": 0.017510123525195955,
+        "win_rate": 0.4358974358974359,
+        "max_drawdown": 143.31719627308613,
+        "n_unrealized": 0
+      }
+    },
+    "target_delta_24h": {
+      "task": "regression",
+      "n_train": 5000,
+      "n_predict": 60,
+      "status": "PIPELINE_FAIL",
+      "notes": [],
+      "limix": {
+        "task_id": "",
+        "model_type": "LIMIX_7M",
+        "elapsed_s": 14.66,
+        "error": "LimixError: upload failed after retries: limix code=4501 message=未知错误 body={'code': 4501, 'message': '未知错误'}"
+      },
+      "matured_metrics": {
+        "limix": {
+          "n": 84,
+          "mae": 0.06058,
+          "rmse": 0.124547,
+          "r2": -0.252549,
+          "direction_accuracy": 0.47619
+        },
+        "base_rate": {
+          "n": 84,
+          "mae": 0.055257,
+          "rmse": 0.111618,
+          "r2": -0.005995,
+          "direction_accuracy": 0.5
+        },
+        "price_unchanged": {
+          "n": 84,
+          "mae": 0.053607,
+          "rmse": 0.111297,
+          "r2": -0.000215,
+          "direction_accuracy": 0.119048
+        },
+        "mean_reversion": {
+          "n": 84,
+          "mae": 0.056015,
+          "rmse": 0.117634,
+          "r2": -0.117356,
+          "direction_accuracy": 0.654762
+        },
+        "momentum": {
+          "n": 84,
+          "mae": 0.070634,
+          "rmse": 0.135658,
+          "r2": -0.485988,
+          "direction_accuracy": 0.404762
+        },
+        "n_matured": 84
+      },
+      "pending_labels": 221,
+      "display": "押盘口24小时涨幅",
+      "simtrade": {
+        "n_trades": 30,
+        "total_pnl": 86.63823800255953,
+        "return_on_bankroll": 0.008663823800255953,
+        "win_rate": 0.43333333333333335,
+        "max_drawdown": 144.3580855579977,
+        "n_unrealized": 0
+      }
+    },
+    "final_outcome_yes": {
+      "task": "classification",
+      "n_train": 0,
+      "n_predict": 0,
+      "status": "INSUFFICIENT_DATA",
+      "notes": [
+        "train_rows=0<MIN_TRAIN_ROWS(30)"
+      ],
+      "limix": {
+        "task_id": "",
+        "model_type": "",
+        "elapsed_s": 0.0,
+        "error": null
+      },
+      "matured_metrics": {
+        "limix": {
+          "n": 0
+        },
+        "base_rate": {
+          "n": 0
+        },
+        "price_unchanged": {
+          "n": 0
+        },
+        "mean_reversion": {
+          "n": 0
+        },
+        "momentum": {
+          "n": 0
+        },
+        "n_matured": 0
+      },
+      "pending_labels": 0,
+      "display": "押事件最终结果",
+      "simtrade": {
+        "n_trades": 0,
+        "total_pnl": null,
+        "return_on_bankroll": null,
+        "win_rate": null,
+        "max_drawdown": null,
+        "n_unrealized": 0
+      }
+    }
+  },
+  "data_quality": {
+    "snapshot_rows": 22487,
+    "freshest_snapshot": "2026-07-21T04:16:31.740127+00:00",
+    "missing_rate": {
+      "mid_price": 0.211,
+      "spread": 0.211,
+      "bid_depth": 0.0,
+      "ask_depth": 0.0,
+      "orderbook_imbalance": 0.0,
+      "volume_1h": 0.0,
+      "volume_24h": 0.0,
+      "trade_count_1h": 0.0,
+      "return_1h": 0.0042,
+      "return_6h": 0.0,
+      "return_24h": 0.0,
+      "volatility": 0.0,
+      "liquidity": 0.0,
+      "hours_to_resolution": 0.0,
+      "buy_slippage_1000_now": 0.0211,
+      "fill_ratio_1000": 0.0,
+      "tradable_now": 0.0,
+      "threshold_num": 0.865,
+      "btc_spot": 0.0422,
+      "eth_spot": 0.0422,
+      "threshold_ratio": 1.0
+    },
+    "api_errors": [
+      "target_up_24h:limix: LimixError: upload failed after retries: limix code=4501 message=未知错误 body={'code': 4501, 'message': '未知错误'}",
+      "target_delta_24h:limix: LimixError: upload failed after retries: limix code=4501 message=未知错误 body={'code': 4501, 'message': '未知错误'}"
+    ]
+  },
+  "universe_size": 237,
+  "primary_metric": "return_on_bankroll"
+}
