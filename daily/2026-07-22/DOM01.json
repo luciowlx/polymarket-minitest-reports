@@ -4,8 +4,8 @@
   "scenario_display": "比特币/以太坊阈值市场",
   "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓;押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
   "run_date": "2026-07-22",
-  "generated_at": "2026-07-22T01:02:19.317063+00:00",
-  "run_id": "affc99d0-69f3-4b5c-b542-8bea761ef246",
+  "generated_at": "2026-07-22T01:30:30.163854+00:00",
+  "run_id": "e846ca4b-46f5-44a1-94d8-1726d08e8870",
   "pipeline_status": "PIPELINE_PASS",
   "effect_status": "NOT_BETTER",
   "targets": {
@@ -14,11 +14,13 @@
       "n_train": 5000,
       "n_predict": 219,
       "status": "ok",
-      "notes": [],
+      "notes": [
+        "idempotent_skip"
+      ],
       "limix": {
         "task_id": "2dd03f1c78934daf76a3f08f79499346",
         "model_type": "LIMIX_7M",
-        "elapsed_s": 6.036,
+        "elapsed_s": 0.0,
         "error": null
       },
       "matured_metrics": {
@@ -80,11 +82,13 @@
       "n_train": 5000,
       "n_predict": 219,
       "status": "ok",
-      "notes": [],
+      "notes": [
+        "idempotent_skip"
+      ],
       "limix": {
         "task_id": "3484fa6af67c80f03ac6d7ce5490781d",
         "model_type": "LIMIX_7M",
-        "elapsed_s": 5.989,
+        "elapsed_s": 0.0,
         "error": null
       },
       "matured_metrics": {
@@ -142,7 +146,7 @@
       "n_predict": 0,
       "status": "INSUFFICIENT_DATA",
       "notes": [
-        "train_rows=0<MIN_TRAIN_ROWS(30)"
+        "idempotent_skip"
       ],
       "limix": {
         "task_id": "",
@@ -181,33 +185,33 @@
     }
   },
   "data_quality": {
-    "snapshot_rows": 76541,
-    "freshest_snapshot": "2026-07-22T00:46:23.779220+00:00",
+    "snapshot_rows": 76941,
+    "freshest_snapshot": "2026-07-22T01:16:26.361139+00:00",
     "missing_rate": {
-      "mid_price": 0.5388,
-      "spread": 0.5388,
-      "bid_depth": 0.0112,
-      "ask_depth": 0.0112,
-      "orderbook_imbalance": 0.125,
+      "mid_price": 0.5356,
+      "spread": 0.5356,
+      "bid_depth": 0.0111,
+      "ask_depth": 0.0111,
+      "orderbook_imbalance": 0.1239,
       "volume_1h": 0.0003,
-      "volume_24h": 0.4584,
+      "volume_24h": 0.4601,
       "trade_count_1h": 0.0,
-      "return_1h": 0.4071,
-      "return_6h": 0.8666,
-      "return_24h": 0.8865,
-      "volatility": 0.8656,
-      "liquidity": 0.1194,
+      "return_1h": 0.4042,
+      "return_6h": 0.8678,
+      "return_24h": 0.8875,
+      "volatility": 0.8668,
+      "liquidity": 0.1183,
       "hours_to_resolution": 0.0,
-      "buy_slippage_1000_now": 0.3043,
-      "fill_ratio_1000": 0.0112,
+      "buy_slippage_1000_now": 0.3023,
+      "fill_ratio_1000": 0.0111,
       "tradable_now": 0.0,
-      "threshold_num": 0.8656,
+      "threshold_num": 0.8668,
       "btc_spot": 0.0,
       "eth_spot": 0.0,
-      "threshold_ratio": 0.8796
+      "threshold_ratio": 0.8807
     },
     "api_errors": []
   },
-  "universe_size": 3920,
+  "universe_size": 3956,
   "primary_metric": "return_on_bankroll"
 }

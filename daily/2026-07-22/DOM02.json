@@ -4,8 +4,8 @@
   "scenario_display": "AI产品发布市场",
   "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓;押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
   "run_date": "2026-07-22",
-  "generated_at": "2026-07-22T01:02:30.274674+00:00",
-  "run_id": "affc99d0-69f3-4b5c-b542-8bea761ef246",
+  "generated_at": "2026-07-22T01:30:41.425097+00:00",
+  "run_id": "e846ca4b-46f5-44a1-94d8-1726d08e8870",
   "pipeline_status": "PIPELINE_PASS",
   "effect_status": "NOT_BETTER",
   "targets": {
@@ -14,11 +14,13 @@
       "n_train": 5000,
       "n_predict": 62,
       "status": "ok",
-      "notes": [],
+      "notes": [
+        "idempotent_skip"
+      ],
       "limix": {
         "task_id": "bea4ac2dc071e40aada4af151adab2b4",
         "model_type": "LIMIX_7M",
-        "elapsed_s": 5.729,
+        "elapsed_s": 0.0,
         "error": null
       },
       "matured_metrics": {
@@ -80,11 +82,13 @@
       "n_train": 5000,
       "n_predict": 62,
       "status": "ok",
-      "notes": [],
+      "notes": [
+        "idempotent_skip"
+      ],
       "limix": {
         "task_id": "4766af20fccd99a4633bc40d9bbc4272",
         "model_type": "LIMIX_7M",
-        "elapsed_s": 6.51,
+        "elapsed_s": 0.0,
         "error": null
       },
       "matured_metrics": {
@@ -142,7 +146,7 @@
       "n_predict": 0,
       "status": "INSUFFICIENT_DATA",
       "notes": [
-        "train_rows=0<MIN_TRAIN_ROWS(30)"
+        "idempotent_skip"
       ],
       "limix": {
         "task_id": "",
@@ -181,8 +185,8 @@
     }
   },
   "data_quality": {
-    "snapshot_rows": 27227,
-    "freshest_snapshot": "2026-07-22T00:46:03.757110+00:00",
+    "snapshot_rows": 27347,
+    "freshest_snapshot": "2026-07-22T01:16:08.222390+00:00",
     "missing_rate": {
       "mid_price": 0.2075,
       "spread": 0.2075,

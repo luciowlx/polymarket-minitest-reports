@@ -4,8 +4,8 @@
   "scenario_display": "美联储/CPI宏观市场",
   "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓;押事件最终结果 —— 赌的是事件最终结果本身,持仓到结算(0 或 1)。",
   "run_date": "2026-07-22",
-  "generated_at": "2026-07-22T01:02:36.887387+00:00",
-  "run_id": "affc99d0-69f3-4b5c-b542-8bea761ef246",
+  "generated_at": "2026-07-22T01:30:48.079840+00:00",
+  "run_id": "e846ca4b-46f5-44a1-94d8-1726d08e8870",
   "pipeline_status": "PIPELINE_PASS",
   "effect_status": "NOT_BETTER",
   "targets": {
@@ -14,11 +14,13 @@
       "n_train": 5000,
       "n_predict": 60,
       "status": "ok",
-      "notes": [],
+      "notes": [
+        "idempotent_skip"
+      ],
       "limix": {
         "task_id": "ac27fac5cf2d5b6f97c9e3d8dfe1c62f",
         "model_type": "LIMIX_7M",
-        "elapsed_s": 6.347,
+        "elapsed_s": 0.0,
         "error": null
       },
       "matured_metrics": {
@@ -80,11 +82,13 @@
       "n_train": 5000,
       "n_predict": 60,
       "status": "ok",
-      "notes": [],
+      "notes": [
+        "idempotent_skip"
+      ],
       "limix": {
         "task_id": "2938ef3c6ae602c363c36e64faaeb962",
         "model_type": "LIMIX_7M",
-        "elapsed_s": 9.471,
+        "elapsed_s": 0.0,
         "error": null
       },
       "matured_metrics": {
@@ -142,7 +146,7 @@
       "n_predict": 0,
       "status": "INSUFFICIENT_DATA",
       "notes": [
-        "train_rows=0<MIN_TRAIN_ROWS(30)"
+        "idempotent_skip"
       ],
       "limix": {
         "task_id": "",
@@ -181,8 +185,8 @@
     }
   },
   "data_quality": {
-    "snapshot_rows": 27096,
-    "freshest_snapshot": "2026-07-22T00:46:07.150282+00:00",
+    "snapshot_rows": 27216,
+    "freshest_snapshot": "2026-07-22T01:16:10.869068+00:00",
     "missing_rate": {
       "mid_price": 0.1762,
       "spread": 0.1762,
@@ -194,7 +198,7 @@
       "trade_count_1h": 0.0,
       "return_1h": 0.0044,
       "return_6h": 0.0044,
-      "return_24h": 0.0661,
+      "return_24h": 0.0441,
       "volatility": 0.0044,
       "liquidity": 0.0,
       "hours_to_resolution": 0.0,
