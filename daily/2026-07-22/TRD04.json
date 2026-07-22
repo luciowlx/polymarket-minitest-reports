@@ -1,0 +1,96 @@
+{
+  "scenario_id": "TRD04",
+  "name": "1小时买入滑点",
+  "scenario_display": "全部市场·滑点",
+  "bet_type_hint": "本场景押什么:押交易条件 —— 赌的是这个市场的交易条件(成交量/滑点/能否成交),不押价格也不押结果。",
+  "run_date": "2026-07-22",
+  "generated_at": "2026-07-22T01:03:27.624201+00:00",
+  "run_id": "affc99d0-69f3-4b5c-b542-8bea761ef246",
+  "pipeline_status": "PIPELINE_PASS",
+  "effect_status": "BETTER_THAN_BASELINE",
+  "targets": {
+    "target_buy_slippage_1000_1h": {
+      "task": "regression",
+      "n_train": 5000,
+      "n_predict": 554,
+      "status": "ok",
+      "notes": [],
+      "limix": {
+        "task_id": "ecc762a77cb39e68fc752f3e2d0afc44",
+        "model_type": "LIMIX_7M",
+        "elapsed_s": 6.23,
+        "error": null
+      },
+      "matured_metrics": {
+        "limix": {
+          "n": 3105,
+          "mae": 0.00936,
+          "rmse": 0.029928,
+          "r2": 0.837153,
+          "direction_accuracy": 0.977456
+        },
+        "base_rate": {
+          "n": 4558,
+          "mae": 0.041569,
+          "rmse": 0.070555,
+          "r2": -0.000955,
+          "direction_accuracy": 0.802764
+        },
+        "price_unchanged": {
+          "n": 4558,
+          "mae": 0.036215,
+          "rmse": 0.079277,
+          "r2": -0.263719,
+          "direction_accuracy": 0.197236
+        },
+        "mean_reversion": {
+          "n": 4558,
+          "mae": 0.03761,
+          "rmse": 0.080022,
+          "r2": -0.287576,
+          "direction_accuracy": 0.387451
+        },
+        "momentum": {
+          "n": 4558,
+          "mae": 0.037755,
+          "rmse": 0.080626,
+          "r2": -0.307102,
+          "direction_accuracy": 0.448004
+        },
+        "n_matured": 4558
+      },
+      "pending_labels": 1024,
+      "display": "押1小时买入滑点"
+    }
+  },
+  "data_quality": {
+    "snapshot_rows": 232896,
+    "freshest_snapshot": "2026-07-22T00:46:23.779220+00:00",
+    "missing_rate": {
+      "mid_price": 0.4733,
+      "spread": 0.4733,
+      "bid_depth": 0.0372,
+      "ask_depth": 0.0372,
+      "orderbook_imbalance": 0.1087,
+      "volume_1h": 0.001,
+      "volume_24h": 0.2873,
+      "trade_count_1h": 0.0,
+      "return_1h": 0.2617,
+      "return_6h": 0.5435,
+      "return_24h": 0.6156,
+      "volatility": 0.5411,
+      "liquidity": 0.0747,
+      "hours_to_resolution": 0.0,
+      "buy_slippage_1000_now": 0.2711,
+      "fill_ratio_1000": 0.0372,
+      "tradable_now": 0.0,
+      "threshold_num": 0.9067,
+      "btc_spot": 0.0049,
+      "eth_spot": 0.0049,
+      "threshold_ratio": 0.9249
+    },
+    "api_errors": []
+  },
+  "universe_size": 6282,
+  "primary_metric": "legacy"
+}

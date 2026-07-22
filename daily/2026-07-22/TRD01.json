@@ -1,0 +1,109 @@
+{
+  "scenario_id": "TRD01",
+  "name": "1小时价格方向",
+  "scenario_display": "全部市场·1小时",
+  "bet_type_hint": "本场景押什么:押盘口涨跌/涨幅 —— 赌的是这个市场的报价短期怎么走(像炒股),不等事件揭晓。",
+  "run_date": "2026-07-22",
+  "generated_at": "2026-07-22T01:02:56.338304+00:00",
+  "run_id": "affc99d0-69f3-4b5c-b542-8bea761ef246",
+  "pipeline_status": "PIPELINE_PASS",
+  "effect_status": "NOT_BETTER",
+  "targets": {
+    "target_up_1h": {
+      "task": "classification",
+      "n_train": 5000,
+      "n_predict": 554,
+      "status": "ok",
+      "notes": [],
+      "limix": {
+        "task_id": "5cc23141a8ea963339369ba804ec9959",
+        "model_type": "LIMIX_7M",
+        "elapsed_s": 6.147,
+        "error": null
+      },
+      "matured_metrics": {
+        "limix": {
+          "n": 2848,
+          "logloss": 0.593572,
+          "brier": 0.322589,
+          "auc": 0.812082,
+          "balanced_accuracy": 0.45718,
+          "macro_f1": 0.464836
+        },
+        "base_rate": {
+          "n": 4170,
+          "logloss": 0.710737,
+          "brier": 0.384499,
+          "auc": 0.472326,
+          "balanced_accuracy": 0.333333,
+          "macro_f1": 0.290279
+        },
+        "price_unchanged": {
+          "n": 4170,
+          "logloss": 0.766611,
+          "brier": 0.403921,
+          "auc": 0.5,
+          "balanced_accuracy": 0.333333,
+          "macro_f1": 0.290279
+        },
+        "mean_reversion": {
+          "n": 4170,
+          "logloss": 0.67933,
+          "brier": 0.370933,
+          "auc": 0.624705,
+          "balanced_accuracy": 0.333333,
+          "macro_f1": 0.290279
+        },
+        "momentum": {
+          "n": 4170,
+          "logloss": 0.677001,
+          "brier": 0.369063,
+          "auc": 0.623962,
+          "balanced_accuracy": 0.333333,
+          "macro_f1": 0.290279
+        },
+        "n_matured": 4170
+      },
+      "pending_labels": 1281,
+      "display": "押盘口1小时涨跌",
+      "simtrade": {
+        "n_trades": 162,
+        "total_pnl": -476.39144995840076,
+        "return_on_bankroll": -0.04763914499584008,
+        "win_rate": 0.24691358024691357,
+        "max_drawdown": 622.0929544842704,
+        "n_unrealized": 0
+      }
+    }
+  },
+  "data_quality": {
+    "snapshot_rows": 232896,
+    "freshest_snapshot": "2026-07-22T00:46:23.779220+00:00",
+    "missing_rate": {
+      "mid_price": 0.4733,
+      "spread": 0.4733,
+      "bid_depth": 0.0372,
+      "ask_depth": 0.0372,
+      "orderbook_imbalance": 0.1087,
+      "volume_1h": 0.001,
+      "volume_24h": 0.2873,
+      "trade_count_1h": 0.0,
+      "return_1h": 0.2617,
+      "return_6h": 0.5435,
+      "return_24h": 0.6156,
+      "volatility": 0.5411,
+      "liquidity": 0.0747,
+      "hours_to_resolution": 0.0,
+      "buy_slippage_1000_now": 0.2711,
+      "fill_ratio_1000": 0.0372,
+      "tradable_now": 0.0,
+      "threshold_num": 0.9067,
+      "btc_spot": 0.0049,
+      "eth_spot": 0.0049,
+      "threshold_ratio": 0.9249
+    },
+    "api_errors": []
+  },
+  "universe_size": 6282,
+  "primary_metric": "return_on_bankroll"
+}
